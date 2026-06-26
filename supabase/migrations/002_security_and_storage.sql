@@ -20,12 +20,5 @@ CREATE POLICY "Allow authenticated update" ON public.cards
 CREATE POLICY "Allow authenticated delete" ON public.cards
     FOR DELETE TO authenticated USING (auth.uid() = user_id);
 
--- Storage: creazione bucket pubblico per immagini carte
--- Eseguire manualmente dal pannello Supabase Storage:
--- Nome bucket: card-images
--- Visibilità: Pubblico
--- Policy RLS da applicare sul bucket:
---   SELECT: auth.role() = 'authenticated'
---   INSERT: auth.role() = 'authenticated'
---   UPDATE: auth.role() = 'authenticated'
---   DELETE: auth.role() = 'authenticated'
+-- Nota: le immagini sono gestite tramite URL esterni (colonna image_url).
+-- Non è necessario creare bucket Storage su Supabase.

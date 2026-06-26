@@ -1,0 +1,27 @@
+{
+  "short_name": "GundamDB",
+  "name": "Gundam Collection Database",
+  "description": "Gestisci la tua collezione di carte Gundam TCG",
+  "start_url": "./index.html",
+  "scope": "./",
+  "background_color": "#111827",
+  "theme_color": "#1f2937",
+  "display": "standalone",
+  "orientation": "portrait",
+  "categories": ["lifestyle", "utilities"],
+  "lang": "it",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ]
+}
