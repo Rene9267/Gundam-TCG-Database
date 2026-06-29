@@ -23,13 +23,9 @@ const SET_TOTALS = {
   'GD02 Dual Impact': 187,
   'GD03 Steel Requiem': 202,
   'GD04 Phantom Aria': 144,
-  // ── Extra / Altro ──
-  'Beta Edition': 86,
-  'Promo Cards': 109,
-  'Basic Cards': 2,
 };
 
-// Ordine di visualizzazione: ST → GD → Altro
+// Ordine di visualizzazione: ST → GD
 const SET_ORDER = Object.keys(SET_TOTALS);
 
 // ============ State ============
@@ -158,16 +154,23 @@ function renderCompletionCircles() {
 
   const r = 50;
   const circumference = 2 * Math.PI * r;
+  let lastGroup = null;
 
-  container.innerHTML = SET_ORDER.map(setName => {
+  const items = [];
+  SET_ORDER.forEach(setName => {
+    const group = setGroup(setName);
+    if (lastGroup && group !== lastGroup) {
+      items.push(`<div class="col-span-full border-t border-gray-300 my-2"></div>`);
+    }
+    lastGroup = group;
+
     const total = SET_TOTALS[setName];
     const owned = ownedMap[setName] ? ownedMap[setName].size : 0;
     const pct = total > 0 ? Math.min(Math.round((owned / total) * 100), 100) : 0;
     const offset = circumference - (pct / 100) * circumference;
-    const group = setGroup(setName);
-    const strokeColor = group === 'st' ? '#eab308' : group === 'gd' ? '#2563eb' : '#94a3b8';
+    const strokeColor = group === 'st' ? '#eab308' : '#2563eb';
 
-    return `
+    items.push(`
       <div class="set-circle flex flex-col items-center gap-1 py-2 cursor-pointer rounded-lg hover:bg-gray-50 transition" data-set="${setName}">
         <div class="relative w-[120px] h-[120px] flex items-center justify-center">
           <svg width="120" height="120" viewBox="0 0 120 120" class="completion-ring absolute inset-0">
@@ -183,8 +186,10 @@ function renderCompletionCircles() {
         <span class="text-sm text-gundam-muted text-center max-w-[120px] truncate leading-tight" title="${setName}">${setName}</span>
         <span class="text-xs text-gundam-muted/60">${owned}/${total}</span>
       </div>
-    `;
-  }).join('');
+    `);
+  });
+
+  container.innerHTML = items.join('');
 
   // Click sui cerchi → vai alla collezione filtrata per quel set
   container.querySelectorAll('.set-circle').forEach(el => {
