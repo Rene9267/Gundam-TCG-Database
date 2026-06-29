@@ -93,6 +93,32 @@ body::after {
   transition: stroke-dashoffset 0.6s ease;
 }
 
+/* ---- Quarter circle badge (copie) ---- */
+.qty-quarter {
+  width: 36px;
+  height: 36px;
+  background: #eab308;
+  border-radius: 0 0 100% 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 3px;
+  flex-shrink: 0;
+}
+
+/* ---- Playset diamond (sull'immagine) ---- */
+.playset-diamond {
+  width: 14px;
+  height: 14px;
+  background: #eab308;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  border: 1.5px solid white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
 /* ---- Diamond quantity badge ---- */
 .qty-diamond {
   width: 9px;
