@@ -156,7 +156,8 @@ function renderCompletionCircles() {
     ownedMap[key].add(c.card_code);
   }
 
-  const circumference = 2 * Math.PI * 40; // r=40
+  const r = 50;
+  const circumference = 2 * Math.PI * r;
 
   container.innerHTML = SET_ORDER.map(setName => {
     const total = SET_TOTALS[setName];
@@ -167,19 +168,20 @@ function renderCompletionCircles() {
     const strokeColor = group === 'st' ? '#eab308' : group === 'gd' ? '#2563eb' : '#94a3b8';
 
     return `
-      <div class="flex flex-col items-center gap-1">
-        <div class="relative w-[100px] h-[100px] flex items-center justify-center">
-          <svg width="100" height="100" viewBox="0 0 100 100" class="completion-ring absolute inset-0">
-            <circle cx="50" cy="50" r="40" class="completion-ring-bg"/>
-            <circle cx="50" cy="50" r="40" class="completion-ring-fg"
+      <div class="flex flex-col items-center gap-1 py-2">
+        <div class="relative w-[120px] h-[120px] flex items-center justify-center">
+          <svg width="120" height="120" viewBox="0 0 120 120" class="completion-ring absolute inset-0">
+            <circle cx="60" cy="60" r="${r}" class="completion-ring-bg" stroke-width="7"/>
+            <circle cx="60" cy="60" r="${r}" class="completion-ring-fg"
+              stroke-width="7"
               stroke-dasharray="${circumference}"
               stroke-dashoffset="${owned > 0 ? offset : circumference}"
               stroke="${strokeColor}"/>
           </svg>
-          <span class="text-lg font-bold text-gundam-dark z-10">${pct}%</span>
+          <span class="text-xl font-bold text-gundam-dark z-10">${pct}%</span>
         </div>
-        <span class="text-xs text-gundam-muted text-center max-w-[100px] truncate leading-tight" title="${setName}">${setName}</span>
-        <span class="text-[10px] text-gundam-muted/60">${owned}/${total}</span>
+        <span class="text-sm text-gundam-muted text-center max-w-[120px] truncate leading-tight" title="${setName}">${setName}</span>
+        <span class="text-xs text-gundam-muted/60">${owned}/${total}</span>
       </div>
     `;
   }).join('');
