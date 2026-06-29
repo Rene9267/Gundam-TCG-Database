@@ -53,23 +53,42 @@
   <div id="app-section" class="hidden">
     <!-- Navbar -->
     <nav class="bg-white shadow-sm px-4 py-3 flex items-center justify-between border-b border-gray-200">
-      <div class="flex items-center gap-2">
+      <div class="flex items-center gap-3">
+        <button id="hamburger-btn" class="w-9 h-9 flex flex-col items-center justify-center gap-1 rounded hover:bg-gray-100 transition">
+          <span class="w-5 h-0.5 bg-gundam-dark rounded"></span>
+          <span class="w-5 h-0.5 bg-gundam-dark rounded"></span>
+          <span class="w-5 h-0.5 bg-gundam-dark rounded"></span>
+        </button>
         <span class="text-2xl font-bold tracking-wider text-gundam-yellow">GUNDAM</span>
         <span class="text-gundam-blue text-sm font-semibold self-end pb-0.5">DB</span>
       </div>
       <button id="logout-btn" class="bg-gray-50 hover:bg-gray-100 text-gundam-muted hover:text-gundam-dark text-sm px-3 py-1.5 rounded border border-gray-200 transition">Esci</button>
     </nav>
 
-    <!-- Navigation Tabs -->
-    <div class="bg-white border-b border-gray-200">
-      <div class="max-w-6xl mx-auto px-4 flex">
-        <button id="nav-dashboard" class="nav-tab active px-5 py-3 text-sm font-semibold border-b-2 border-gundam-yellow text-gundam-yellow">Dashboard</button>
-        <button id="nav-collection" class="nav-tab px-5 py-3 text-sm font-semibold border-b-2 border-transparent text-gundam-muted hover:text-gundam-dark">Collezione</button>
+    <!-- Sidebar overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/30 z-40 hidden" style="transition: opacity 0.2s ease;"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed top-0 left-0 z-50 h-full w-64 bg-white shadow-xl border-r border-gray-200 transform -translate-x-full transition-transform duration-200 ease-in-out">
+      <div class="p-4 border-b border-gray-200 flex items-center justify-between">
+        <span class="text-lg font-bold tracking-wider text-gundam-yellow">GUNDAM</span>
+        <button id="sidebar-close" class="text-gray-400 hover:text-gundam-dark text-xl leading-none">&times;</button>
       </div>
-    </div>
+      <nav class="p-3 flex flex-col gap-1">
+        <button id="side-dashboard" class="side-nav active flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-sm font-semibold text-gundam-yellow bg-yellow-50 transition">
+          <span class="text-lg">📊</span> Dashboard
+        </button>
+        <button id="side-collection" class="side-nav flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-sm font-semibold text-gundam-muted hover:text-gundam-dark hover:bg-gray-50 transition">
+          <span class="text-lg">📇</span> Collezione
+        </button>
+      </nav>
+      <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-100">
+        <p class="text-xs text-gundam-muted">Gundam Collection DB</p>
+      </div>
+    </aside>
 
     <!-- Floating Add Button -->
-    <button id="fab-add" class="fixed bottom-6 right-6 z-40 w-14 h-14 bg-gundam-blue hover:bg-gundam-blue-hover rounded-full shadow-lg flex items-center justify-center text-2xl text-white font-bold transition hover:scale-110">+</button>
+    <button id="fab-add" class="fixed bottom-6 right-6 z-30 w-14 h-14 bg-gundam-blue hover:bg-gundam-blue-hover rounded-full shadow-lg flex items-center justify-center text-2xl text-white font-bold transition hover:scale-110">+</button>
 
     <!-- ===== DASHBOARD VIEW ===== -->
     <div id="view-dashboard" class="max-w-6xl mx-auto px-4 py-6">
@@ -79,7 +98,7 @@
         </h2>
         <div id="latest-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
         <div id="latest-empty" class="hidden text-center py-10">
-          <p class="text-gundam-muted">Nessuna carta ancora. Aggiungi la prima!</p>
+          <p class="text-gundam-muted text-sm">Nessuna carta ancora. Aggiungi la prima!</p>
         </div>
       </section>
 
@@ -87,10 +106,12 @@
         <h2 class="text-lg font-semibold text-gundam-dark mb-4 flex items-center gap-2">
           <span class="text-gundam-yellow">◆</span> Completamento Collezione
         </h2>
-        <div id="completion-circles" class="flex flex-wrap gap-6 justify-center sm:justify-start"></div>
-        <div id="completion-empty" class="hidden text-center py-10">
-          <p class="text-gundam-muted">Aggiungi carte per vedere le statistiche.</p>
+        <div class="mb-4 flex flex-wrap gap-3 text-xs text-gundam-muted">
+          <span class="inline-flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-gundam-yellow inline-block"></span> ST — Starter Deck</span>
+          <span class="inline-flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-gundam-blue inline-block"></span> GD — Booster Pack</span>
+          <span class="inline-flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-gray-400 inline-block"></span> Altro</span>
         </div>
+        <div id="completion-circles" class="flex flex-wrap gap-6 justify-center sm:justify-start"></div>
       </section>
     </div>
 

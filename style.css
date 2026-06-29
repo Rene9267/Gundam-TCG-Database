@@ -1,6 +1,5 @@
 /* ==========================================
    GUNDAM TCG DATABASE - Custom Styles
-   Colori: Bianco, Giallo, Rosso, Blu
    ========================================== */
 
 /* ---- Card hover ---- */
@@ -14,15 +13,6 @@
   box-shadow: 0 8px 25px rgba(37, 99, 235, 0.12);
 }
 
-/* ---- Modal ---- */
-#card-modal {
-  transition: opacity 0.15s ease;
-}
-#card-modal > div {
-  scrollbar-width: thin;
-  scrollbar-color: #2563eb transparent;
-}
-
 /* ---- Image fallback ---- */
 .card-img-fallback {
   background: linear-gradient(135deg, #f8fafc, #e2e8f0);
@@ -30,11 +20,6 @@
   align-items: center;
   justify-content: center;
   font-size: 2.5rem;
-}
-
-/* ---- Navigation tabs ---- */
-.nav-tab {
-  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 /* ---- Completion Circle (SVG ring) ---- */
@@ -61,6 +46,18 @@
   transform: rotate(45deg);
   display: inline-block;
   flex-shrink: 0;
+}
+
+/* ---- Sidebar ---- */
+#sidebar {
+  z-index: 50;
+}
+#sidebar.open {
+  transform: translateX(0);
+}
+
+.side-nav {
+  transition: background 0.15s ease, color 0.15s ease;
 }
 
 /* ---- Prevent body scroll when modal is open ---- */
