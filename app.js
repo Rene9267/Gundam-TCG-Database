@@ -86,14 +86,14 @@ function hideError(el) {
 
 function rarityColor(rarity) {
   const map = {
-    'Common': 'text-gray-300',
-    'Uncommon': 'text-green-400',
-    'Rare': 'text-blue-400',
-    'Super Rare': 'text-purple-400',
-    'Secret Rare': 'text-yellow-400',
-    'Promo': 'text-orange-400'
+    'Common': 'text-gray-500',
+    'Uncommon': 'text-green-600',
+    'Rare': 'text-blue-600',
+    'Super Rare': 'text-purple-600',
+    'Secret Rare': 'text-yellow-600',
+    'Promo': 'text-orange-600'
   };
-  return map[rarity] || 'text-gray-300';
+  return map[rarity] || 'text-gray-500';
 }
 
 function imageOrFallback(url, name) {
@@ -118,7 +118,7 @@ function renderLatest() {
     <div class="card-entry bg-gundam-card rounded-lg overflow-hidden shadow-lg border border-gundam-blue/10">
       ${imageOrFallback(c.image_url, c.card_name)}
       <div class="p-3">
-        <h3 class="font-semibold text-sm truncate text-gundam-white" title="${c.card_name}">${c.card_name}</h3>
+        <h3 class="font-semibold text-sm truncate text-gundam-dark" title="${c.card_name}">${c.card_name}</h3>
         <p class="text-xs text-gundam-muted truncate">${c.card_code}</p>
         ${c.set_name ? `<p class="text-xs text-gundam-muted/60 truncate mt-0.5">${c.set_name}</p>` : ''}
       </div>
@@ -167,7 +167,7 @@ function renderCompletionCircles() {
               stroke-dashoffset="${hasTotal ? offset : 0}"
               stroke="${hasTotal ? '#eab308' : '#3b82f6'}"/>
           </svg>
-          <span class="text-lg font-bold text-gundam-white z-10">${label}</span>
+          <span class="text-lg font-bold text-gundam-dark z-10">${label}</span>
         </div>
         <span class="text-xs text-gundam-muted text-center max-w-[100px] truncate" title="${setName}">${setName}</span>
         <span class="text-[10px] text-gundam-muted/60">${sub}</span>
@@ -198,15 +198,15 @@ function renderCollection(cards) {
       <div class="px-3 pb-3 pt-2">
         <div class="flex items-center gap-2 mb-1.5">
           <span class="qty-diamond"></span>
-          <span class="text-sm font-bold text-gundam-white">${c.quantity}</span>
+          <span class="text-sm font-bold text-gundam-dark">${c.quantity}</span>
         </div>
-        <h3 class="font-semibold text-xs truncate text-gundam-white" title="${c.card_name}">${c.card_name}</h3>
+        <h3 class="font-semibold text-xs truncate text-gundam-dark" title="${c.card_name}">${c.card_name}</h3>
         <p class="text-[11px] text-gundam-muted truncate">${c.card_code}</p>
         <div class="flex items-center justify-between mt-1.5">
           <span class="text-[10px] font-medium ${rarityColor(c.rarity)}">${c.rarity || '—'}</span>
           <div class="flex gap-1.5">
             <button class="col-edit text-[10px] bg-gundam-blue hover:bg-gundam-blue-hover text-white rounded px-1.5 py-0.5 transition" data-id="${c.id}">✎</button>
-            <button class="col-delete text-[10px] bg-red-700 hover:bg-red-600 text-white rounded px-1.5 py-0.5 transition" data-id="${c.id}">✕</button>
+            <button class="col-delete text-[10px] bg-gundam-red hover:bg-gundam-red-hover text-white rounded px-1.5 py-0.5 transition" data-id="${c.id}">✕</button>
           </div>
         </div>
       </div>
