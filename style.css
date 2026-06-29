@@ -1,15 +1,17 @@
 /* ==========================================
    GUNDAM TCG DATABASE - Custom Styles
-   Colori: Bianco, Giallo, Blu
+   Colori: Bianco, Giallo, Rosso, Blu
    ========================================== */
 
 /* ---- Card hover ---- */
 .card-entry {
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
 }
 .card-entry:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.12);
 }
 
 /* ---- Modal ---- */
@@ -18,12 +20,12 @@
 }
 #card-modal > div {
   scrollbar-width: thin;
-  scrollbar-color: #3b82f6 transparent;
+  scrollbar-color: #2563eb transparent;
 }
 
 /* ---- Image fallback ---- */
 .card-img-fallback {
-  background: linear-gradient(135deg, #1e2347, #151a3a);
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,12 +43,11 @@
 }
 .completion-ring-bg {
   fill: none;
-  stroke: #1e2347;
+  stroke: #e2e8f0;
   stroke-width: 6;
 }
 .completion-ring-fg {
   fill: none;
-  stroke: #eab308;
   stroke-width: 6;
   stroke-linecap: round;
   transition: stroke-dashoffset 0.6s ease;
@@ -56,7 +57,7 @@
 .qty-diamond {
   width: 9px;
   height: 9px;
-  background: #3b82f6;
+  background: #2563eb;
   transform: rotate(45deg);
   display: inline-block;
   flex-shrink: 0;
@@ -72,15 +73,15 @@ body.modal-open {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0e27;
+  background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #3b82f6;
+  background: #2563eb;
   border-radius: 3px;
 }
 
 /* ---- Selection ---- */
 ::selection {
-  background: #3b82f6;
+  background: #2563eb;
   color: white;
 }
