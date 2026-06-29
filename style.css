@@ -1,45 +1,86 @@
-/* ============ Gundam TCG Database - Custom Styles ============ */
+/* ==========================================
+   GUNDAM TCG DATABASE - Custom Styles
+   Colori: Bianco, Giallo, Blu
+   ========================================== */
 
-/* Smooth transitions for card hover */
+/* ---- Card hover ---- */
 .card-entry {
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .card-entry:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
 }
 
-/* Modal animation */
+/* ---- Modal ---- */
 #card-modal {
   transition: opacity 0.15s ease;
 }
-
-/* Custom scrollbar for modal */
 #card-modal > div {
   scrollbar-width: thin;
-  scrollbar-color: #4b5563 transparent;
+  scrollbar-color: #3b82f6 transparent;
 }
 
-/* Image fallback */
+/* ---- Image fallback ---- */
 .card-img-fallback {
-  background: linear-gradient(135deg, #1f2937, #374151);
+  background: linear-gradient(135deg, #1e2347, #151a3a);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2.5rem;
 }
 
-/* Auth tab active/inactive */
-.auth-tab-active {
-  border-bottom-color: #ef4444;
-  color: white;
-}
-.auth-tab-inactive {
-  border-bottom-color: #4b5563;
-  color: #9ca3af;
+/* ---- Navigation tabs ---- */
+.nav-tab {
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-/* Prevent body scroll when modal is open */
+/* ---- Completion Circle (SVG ring) ---- */
+.completion-ring {
+  transform: rotate(-90deg);
+}
+.completion-ring-bg {
+  fill: none;
+  stroke: #1e2347;
+  stroke-width: 6;
+}
+.completion-ring-fg {
+  fill: none;
+  stroke: #eab308;
+  stroke-width: 6;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.6s ease;
+}
+
+/* ---- Diamond quantity badge ---- */
+.qty-diamond {
+  width: 9px;
+  height: 9px;
+  background: #3b82f6;
+  transform: rotate(45deg);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* ---- Prevent body scroll when modal is open ---- */
 body.modal-open {
   overflow: hidden;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0e27;
+}
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 3px;
+}
+
+/* ---- Selection ---- */
+::selection {
+  background: #3b82f6;
+  color: white;
 }
