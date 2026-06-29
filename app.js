@@ -4,29 +4,47 @@ const SUPABASE_ANON_KEY = 'sb_publishable_yeP5henLm-YdNtkwCFuV0Q_tE1koERf';
 
 let _supabase = null;
 
-// ============ Set Gundam TCG (dati ufficiali) ============
-// ST = Starter Deck, GD = Booster Pack
-// Totale carte per set (incluse varianti / alt art)
-const SET_TOTALS = {
-  // ── Starter Deck (ST) ──
-  'ST01 Heroic Beginnings': 35,
-  'ST02 Wings of Advance': 34,
-  'ST03 Zeon\'s Rush': 34,
-  'ST04 SEED Strike': 35,
-  'ST05 Iron Bloom': 32,
-  'ST06 Clan Unity': 32,
-  'ST07 Celestial Drive': 32,
-  'ST08 Flash of Radiance': 32,
-  'ST09 Destiny Ignition': 39,
-  // ── Booster Pack (GD) ──
-  'GD01 Newtype Rising': 179,
-  'GD02 Dual Impact': 187,
-  'GD03 Steel Requiem': 202,
-  'GD04 Phantom Aria': 144,
-};
+// ============ Reference Cards (database mastro) ============
+let refCards = [];
+let refCardByCode = {};
+let setTotals = {};
+let setOrder = [];
 
-// Ordine di visualizzazione: ST → GD
-const SET_ORDER = Object.keys(SET_TOTALS);
+function computeSetData() {
+  // Raggruppa per set_name (es. "Heroic Beginnings [ST01]")
+  const groups = {};
+  for (const rc of refCards) {
+    if (!groups[rc.set_name]) groups[rc.set_name] = 0;
+    groups[rc.set_name]++;
+  }
+  // Ordine: ST → GD (numerico)
+  setOrder = Object.keys(groups).sort((a, b) => {
+    const aCode = a.match(/\[(\w+)\]/)?.[1] || '';
+    const bCode = b.match(/\[(\w+)\]/)?.[1] || '';
+    const aNum = parseInt(aCode.replace(/\D/g, ''), 10) || 0;
+    const bNum = parseInt(bCode.replace(/\D/g, ''), 10) || 0;
+    const aPref = aCode.startsWith('ST') ? 0 : 1;
+    const bPref = bCode.startsWith('ST') ? 0 : 1;
+    return aPref !== bPref ? aPref - bPref : aNum - bNum;
+  });
+  setTotals = groups;
+  // Mappa card_code → ref card
+  refCardByCode = {};
+  for (const rc of refCards) {
+    refCardByCode[rc.card_code] = rc;
+  }
+}
+
+async function loadReferenceCards() {
+  try {
+    const res = await fetch('reference_cards.json');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    refCards = await res.json();
+    computeSetData();
+  } catch (err) {
+    console.warn('Impossibile caricare reference_cards.json:', err.message);
+  }
+}
 
 // ============ State ============
 let allCards = [];
@@ -110,8 +128,9 @@ function imageOrFallback(url, name) {
 }
 
 function setGroup(setName) {
-  if (setName.startsWith('ST')) return 'st';
-  if (setName.startsWith('GD')) return 'gd';
+  const code = setName.match(/\[(\w+)\]/)?.[1] || '';
+  if (code.startsWith('ST')) return 'st';
+  if (code.startsWith('GD')) return 'gd';
   return 'other';
 }
 
@@ -156,15 +175,17 @@ function renderCompletionCircles() {
   const circumference = 2 * Math.PI * r;
   let lastGroup = null;
 
+  if (!setOrder.length) return;
+
   const items = [];
-  SET_ORDER.forEach(setName => {
+  setOrder.forEach(setName => {
     const group = setGroup(setName);
     if (lastGroup && group !== lastGroup) {
       items.push(`<div class="col-span-full border-t border-gundam-red my-2"></div>`);
     }
     lastGroup = group;
 
-    const total = SET_TOTALS[setName];
+    const total = setTotals[setName] || 0;
     const owned = ownedMap[setName] ? ownedMap[setName].size : 0;
     const pct = total > 0 ? Math.min(Math.round((owned / total) * 100), 100) : 0;
     const offset = circumference - (pct / 100) * circumference;
@@ -222,30 +243,41 @@ function renderCollection(cards) {
   }
 
   empty.classList.add('hidden');
-  summary.textContent = `Mostrando ${cards.length} carta${cards.length !== 1 ? 'e' : ''}`;
+  const total = cards.length;
+  const owned = cards.filter(c => !c.isMissing).length;
+  const missing = total - owned;
+  summary.textContent = `${owned}/${total} carte possedute${missing > 0 ? ` (${missing} mancanti)` : ''}`;
 
   grid.innerHTML = cards.map(c => {
     const isPlayset = c.quantity >= 4;
+    const isMissing = c.isMissing;
     return `
-    <div class="card-entry rounded-lg overflow-hidden shadow-sm relative" data-id="${c.id}">
+    <div class="card-entry rounded-lg overflow-hidden shadow-sm relative${isMissing ? ' card-missing' : ''}" data-id="${c.id}" data-code="${c.card_code}">
       <div class="relative">
-        ${imageOrFallback(c.image_url, c.card_name)}
+        <div class="card-img-wrapper ${isMissing ? 'grayscale' : ''}">
+          ${imageOrFallback(c.image_url, c.card_name)}
+        </div>
         ${isPlayset ? '<span class="playset-diamond"></span>' : ''}
+        ${isMissing ? '<div class="missing-overlay"><span>+</span></div>' : ''}
       </div>
       <div class="px-3 pb-3 pt-2">
         <div class="flex items-start justify-between gap-2">
           <div class="min-w-0 flex-1">
             <h3 class="font-semibold text-xs truncate text-gundam-dark" title="${c.card_name}">${c.card_name}</h3>
             <p class="text-[11px] text-gundam-muted truncate">${c.card_code}</p>
-            <span class="text-[10px] font-medium ${rarityColor(c.rarity)}">${c.rarity || '—'}</span>
+            ${isMissing ? '<span class="text-[10px] text-gundam-red font-medium">non posseduta</span>' :
+              `<span class="text-[10px] font-medium ${rarityColor(c.rarity)}">${c.rarity || '—'}</span>`}
           </div>
-          <div class="qty-quarter shrink-0">
+          ${!isMissing ? `<div class="qty-quarter shrink-0">
             <span class="text-xs font-bold text-white leading-none">${c.quantity}</span>
-          </div>
+          </div>` : ''}
         </div>
         <div class="flex gap-1.5 mt-2 justify-end">
-          <button class="col-edit text-[10px] bg-gundam-blue hover:bg-gundam-blue-hover text-white rounded px-1.5 py-0.5 transition" data-id="${c.id}">✎</button>
-          <button class="col-delete text-[10px] bg-gundam-red hover:bg-gundam-red-hover text-white rounded px-1.5 py-0.5 transition" data-id="${c.id}">✕</button>
+          ${isMissing
+            ? `<button class="col-add-missing text-[10px] bg-gundam-yellow hover:bg-yellow-500 text-white rounded px-1.5 py-0.5 transition" data-code="${c.card_code}" data-name="${c.card_name}" data-set="${c.set_name}" data-image="${c.image_url}">+ Aggiungi</button>`
+            : `<button class="col-edit text-[10px] bg-gundam-blue hover:bg-gundam-blue-hover text-white rounded px-1.5 py-0.5 transition" data-id="${c.id}">✎</button>
+               <button class="col-delete text-[10px] bg-gundam-red hover:bg-gundam-red-hover text-white rounded px-1.5 py-0.5 transition" data-id="${c.id}">✕</button>`
+          }
         </div>
       </div>
     </div>`;
@@ -265,18 +297,50 @@ function renderCollection(cards) {
       }
     });
   });
+
+  // Aggiungi carte mancanti → apre modale pre-compilata
+  grid.querySelectorAll('.col-add-missing').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = {
+        card_code: btn.dataset.code,
+        card_name: btn.dataset.name,
+        set_name: btn.dataset.set,
+        image_url: btn.dataset.image,
+        rarity: '',
+        quantity: 1,
+      };
+      openModal(card);
+    });
+  });
+
+  // Click sul "+" overlay o sulla card mancante → apre modale
+  grid.querySelectorAll('.card-missing .missing-overlay, .card-missing .card-img-wrapper').forEach(el => {
+    el.addEventListener('click', (e) => {
+      const entry = e.currentTarget.closest('.card-entry');
+      if (!entry) return;
+      const code = entry.dataset.code;
+      const rc = refCardByCode[code];
+      if (rc) {
+        openModal({
+          card_code: rc.card_code,
+          card_name: rc.card_name,
+          set_name: rc.set_name,
+          image_url: rc.image_url,
+          rarity: '',
+          quantity: 1,
+        });
+      }
+    });
+  });
 }
 
 function populateSetFilter() {
   const sel = document.getElementById('col-set-filter');
-  // Mostra i set nell'ordine definito da SET_ORDER
-  const available = SET_ORDER.filter(s => {
-    // Mostra solo set che hanno match nei dati o tutti
-    return allCards.some(c => c.set_name === s);
-  });
-  // Aggiungi anche eventuali set non in SET_TOTALS ma nei dati
-  const extra = [...new Set(allCards.map(c => c.set_name).filter(Boolean))].filter(s => !SET_TOTALS[s]);
-  const allSets = [...available, ...extra.filter(s => available.indexOf(s) === -1)];
+  // Usa l'ordine da reference_cards (tutti i set, non solo quelli con carte possedute)
+  const sets = setOrder.length ? setOrder : [];
+  // Aggiungi eventuali set extra dai dati dell'utente non in reference_cards
+  const extra = [...new Set(allCards.map(c => c.set_name).filter(Boolean))].filter(s => sets.indexOf(s) === -1);
+  const allSets = [...sets, ...extra];
   sel.innerHTML = '<option value="">Tutte le espansioni</option>' +
     allSets.map(s => `<option value="${s}">${s}</option>`).join('');
 }
@@ -284,12 +348,42 @@ function populateSetFilter() {
 function filterCollection() {
   const query = document.getElementById('col-search').value.toLowerCase();
   const setFilter = document.getElementById('col-set-filter').value;
-  return allCards.filter(c => {
-    const matchSearch = !query ||
-      c.card_name.toLowerCase().includes(query) ||
-      c.card_code.toLowerCase().includes(query);
-    const matchSet = !setFilter || c.set_name === setFilter;
-    return matchSearch && matchSet;
+
+  // Se nessun filtro set → mostra solo carte possedute
+  if (!setFilter) {
+    return allCards.filter(c => {
+      return !query ||
+        c.card_name.toLowerCase().includes(query) ||
+        c.card_code.toLowerCase().includes(query);
+    });
+  }
+
+  // Filtro set attivo → mostra TUTTE le carte di reference + owned
+  const refs = refCards.filter(rc => rc.set_name === setFilter);
+  const ownedMap = {};
+  for (const c of allCards) {
+    if (c.set_name === setFilter) {
+      ownedMap[c.card_code] = c;
+    }
+  }
+
+  return refs.map(rc => {
+    const owned = ownedMap[rc.card_code];
+    return {
+      id: owned?.id || null,
+      card_code: rc.card_code,
+      card_name: rc.card_name,
+      set_name: rc.set_name,
+      set_code: rc.set_code,
+      image_url: rc.image_url,
+      quantity: owned?.quantity || 0,
+      rarity: owned?.rarity || null,
+      isMissing: !owned,
+    };
+  }).filter(c => {
+    if (!query) return true;
+    return c.card_name.toLowerCase().includes(query) ||
+           c.card_code.toLowerCase().includes(query);
   });
 }
 
@@ -298,7 +392,7 @@ let editingCardId = null;
 
 function openModal(card) {
   editingCardId = card ? card.id : null;
-  document.getElementById('modal-title').textContent = card ? 'Modifica Carta' : 'Aggiungi Carta';
+  document.getElementById('modal-title').textContent = editingCardId ? 'Modifica Carta' : 'Aggiungi Carta';
   document.getElementById('field-card-name').value = card ? card.card_name : '';
   document.getElementById('field-card-code').value = card ? card.card_code : '';
   document.getElementById('field-set-name').value = card ? (card.set_name || '') : '';
@@ -377,6 +471,7 @@ async function startApp() {
       throw new Error('Manca la chiave API. Inseriscila in app.js:3.');
     }
     _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    await loadReferenceCards();
     await refreshCards();
     showSection('app-section');
   } catch (err) {

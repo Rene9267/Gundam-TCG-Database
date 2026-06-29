@@ -158,6 +158,56 @@ body.modal-open {
   border-radius: 3px;
 }
 
+/* ---- Missing Card (non posseduta) ---- */
+.card-missing {
+  opacity: 0.85;
+  border-color: #cbd5e1;
+}
+.card-missing:hover {
+  transform: none;
+  box-shadow: 0 2px 8px rgba(234, 179, 8, 0.15);
+  border-color: #eab308;
+  cursor: pointer;
+}
+.card-img-wrapper.grayscale img {
+  filter: grayscale(1);
+}
+.missing-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.3);
+  transition: background 0.15s ease;
+}
+.missing-overlay span {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(234, 179, 8, 0.85);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.card-missing:hover .missing-overlay {
+  background: rgba(255, 255, 255, 0.15);
+}
+.card-missing:hover .missing-overlay span {
+  transform: scale(1.1);
+  background: #eab308;
+}
+/* Per le carte mancanti, cliccando si apre la modale */
+.card-missing .card-img-wrapper {
+  cursor: pointer;
+}
+
 /* ---- Selection ---- */
 ::selection {
   background: #2563eb;
