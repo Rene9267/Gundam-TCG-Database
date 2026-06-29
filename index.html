@@ -35,43 +35,29 @@
 </head>
 <body class="bg-gundam-white text-gundam-dark min-h-screen">
 
-  <!-- ============ AUTH SECTION ============ -->
-  <div id="auth-section" class="min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-blue-50 via-white to-yellow-50">
-    <div class="w-full max-w-sm">
-      <div class="text-center mb-8">
-        <h1 class="text-5xl font-bold tracking-wider text-gundam-yellow" style="text-shadow: 0 2px 4px rgba(234,179,8,0.3);">GUNDAM</h1>
-        <p class="text-gundam-blue text-lg font-semibold -mt-1">CARD COLLECTION</p>
+  <!-- ============ SPLASH / AVVIA ============ -->
+  <div id="splash-section" class="min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-blue-50 via-white to-yellow-50">
+    <div class="text-center">
+      <div class="mb-6">
+        <h1 class="text-6xl font-bold tracking-wider text-gundam-yellow" style="text-shadow: 0 2px 8px rgba(234,179,8,0.3);">GUNDAM</h1>
+        <p class="text-gundam-blue text-xl font-semibold -mt-1">CARD COLLECTION</p>
       </div>
-      <div class="bg-white rounded-lg p-6 shadow-lg border border-gray-200">
-        <h2 class="text-center font-semibold text-gundam-dark mb-4">Accedi</h2>
-        <form id="auth-form">
-          <div>
-            <label class="block text-sm text-gundam-muted mb-1">Email</label>
-            <input type="email" id="auth-email" class="w-full border border-gray-300 rounded px-3 py-2.5 text-gundam-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gundam-blue focus:border-transparent" placeholder="email@esempio.com" required>
-          </div>
-          <div class="mt-3">
-            <label class="block text-sm text-gundam-muted mb-1">Password</label>
-            <input type="password" id="auth-password" class="w-full border border-gray-300 rounded px-3 py-2.5 text-gundam-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gundam-blue focus:border-transparent" placeholder="••••••••" required>
-          </div>
-          <p id="auth-error" class="text-red-500 text-sm mt-2 hidden"></p>
-          <button type="submit" id="auth-submit" class="w-full mt-4 bg-gundam-blue hover:bg-gundam-blue-hover rounded py-2.5 font-semibold transition text-white shadow-sm">Accedi</button>
-        </form>
-      </div>
+      <button id="start-btn" class="bg-gundam-blue hover:bg-gundam-blue-hover text-white text-lg font-bold px-10 py-4 rounded-full shadow-lg transition hover:scale-105 active:scale-95">
+        AVVIA
+      </button>
+      <p id="start-error" class="text-red-500 text-sm mt-4 hidden"></p>
     </div>
   </div>
 
-  <!-- ============ DASHBOARD SECTION ============ -->
-  <div id="dashboard-section" class="hidden">
+  <!-- ============ APP SECTION ============ -->
+  <div id="app-section" class="hidden">
     <!-- Navbar -->
     <nav class="bg-white shadow-sm px-4 py-3 flex items-center justify-between border-b border-gray-200">
       <div class="flex items-center gap-2">
         <span class="text-2xl font-bold tracking-wider text-gundam-yellow">GUNDAM</span>
         <span class="text-gundam-blue text-sm font-semibold self-end pb-0.5">DB</span>
       </div>
-      <div class="flex items-center gap-4">
-        <span id="user-email" class="text-sm text-gundam-muted hidden sm:inline"></span>
-        <button id="logout-btn" class="bg-gray-50 hover:bg-gray-100 text-gundam-muted hover:text-gundam-dark text-sm px-3 py-1.5 rounded border border-gray-200 transition">Esci</button>
-      </div>
+      <button id="logout-btn" class="bg-gray-50 hover:bg-gray-100 text-gundam-muted hover:text-gundam-dark text-sm px-3 py-1.5 rounded border border-gray-200 transition">Esci</button>
     </nav>
 
     <!-- Navigation Tabs -->
@@ -87,36 +73,29 @@
 
     <!-- ===== DASHBOARD VIEW ===== -->
     <div id="view-dashboard" class="max-w-6xl mx-auto px-4 py-6">
-      <!-- Ultime Aggiunte -->
       <section>
         <h2 class="text-lg font-semibold text-gundam-dark mb-4 flex items-center gap-2">
           <span class="text-gundam-yellow">✦</span> Ultime Aggiunte
         </h2>
-        <div id="latest-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <!-- rendered by JS -->
-        </div>
+        <div id="latest-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
         <div id="latest-empty" class="hidden text-center py-10">
           <p class="text-gundam-muted">Nessuna carta ancora. Aggiungi la prima!</p>
         </div>
       </section>
 
-      <!-- Completamento Collezione -->
       <section class="mt-10">
         <h2 class="text-lg font-semibold text-gundam-dark mb-4 flex items-center gap-2">
           <span class="text-gundam-yellow">◆</span> Completamento Collezione
         </h2>
-        <div id="completion-circles" class="flex flex-wrap gap-6 justify-center sm:justify-start">
-          <!-- rendered by JS -->
-        </div>
+        <div id="completion-circles" class="flex flex-wrap gap-6 justify-center sm:justify-start"></div>
         <div id="completion-empty" class="hidden text-center py-10">
-          <p class="text-gundam-muted">Aggiungi carte per vedere le statistiche di completamento.</p>
+          <p class="text-gundam-muted">Aggiungi carte per vedere le statistiche.</p>
         </div>
       </section>
     </div>
 
     <!-- ===== COLLECTION VIEW ===== -->
     <div id="view-collection" class="hidden max-w-6xl mx-auto px-4 py-6">
-      <!-- Filter -->
       <div class="flex flex-col sm:flex-row gap-3 mb-6">
         <div class="flex-1">
           <input type="text" id="col-search" class="w-full border border-gray-300 rounded px-4 py-2.5 text-gundam-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gundam-blue focus:border-transparent" placeholder="Cerca per nome o codice...">
@@ -126,15 +105,10 @@
         </select>
       </div>
 
-      <!-- Collection Grid -->
-      <div id="collection-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <!-- rendered by JS -->
-      </div>
+      <div id="collection-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
       <div id="collection-empty" class="hidden text-center py-16">
         <p class="text-gundam-muted text-lg">Nessuna carta trovata</p>
       </div>
-
-      <!-- Summary -->
       <div id="collection-summary" class="mt-6 text-center text-gundam-muted text-sm"></div>
     </div>
   </div>

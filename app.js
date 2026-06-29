@@ -4,28 +4,11 @@ const SUPABASE_ANON_KEY = '';  // ← Inserisci qui la tua anon key
 
 const supabase = supabaseJs.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-// ============ Configurazione Set (modifica qui i totali) ============
-// Inserisci il nome esatto dell'espansione e il totale carte dell'intero set.
-// Le espansioni non elencate mostreranno solo il conteggio senza percentuale.
-const SET_TOTALS = {
-  // Esempio: "Beta Booster": 120,
-};
+// ============ Configurazione Set ============
+const SET_TOTALS = {};
 
 // ============ State ============
-let currentUser = null;
 let allCards = [];
-
-// ============ Auth ============
-async function login(email, password) {
-  const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-  if (error) throw error;
-  return data;
-}
-
-async function logout() {
-  const { error } = await supabase.auth.signOut();
-  if (error) throw error;
-}
 
 // ============ Cards CRUD ============
 async function loadCards() {
@@ -40,7 +23,7 @@ async function loadCards() {
 async function addCard(card) {
   const { data, error } = await supabase
     .from('cards')
-    .insert([{ ...card, user_id: currentUser.id }])
+    .insert([card])
     .select();
   if (error) throw error;
   return data[0];
@@ -66,22 +49,13 @@ async function deleteCard(id) {
 
 // ============ UI Helpers ============
 function showSection(id) {
-  document.querySelectorAll('#auth-section, #dashboard-section').forEach(el => el.classList.add('hidden'));
+  document.querySelectorAll('#splash-section, #app-section').forEach(el => el.classList.add('hidden'));
   document.getElementById(id).classList.remove('hidden');
 }
 
 function showView(id) {
   document.querySelectorAll('#view-dashboard, #view-collection').forEach(el => el.classList.add('hidden'));
   document.getElementById(id).classList.remove('hidden');
-}
-
-function showError(el, msg) {
-  el.textContent = msg;
-  el.classList.remove('hidden');
-}
-
-function hideError(el) {
-  el.classList.add('hidden');
 }
 
 function rarityColor(rarity) {
@@ -101,7 +75,7 @@ function imageOrFallback(url, name) {
   return `<img src="${url}" alt="${name}" class="w-full aspect-[3/4] object-cover" loading="lazy" onerror="this.outerHTML='<div class=\\'card-img-fallback w-full aspect-[3/4]\\'>🃏</div>'">`;
 }
 
-// ============ Dashboard — Render Ultime Aggiunte ============
+// ============ Dashboard ============
 function renderLatest() {
   const grid = document.getElementById('latest-grid');
   const empty = document.getElementById('latest-empty');
@@ -115,7 +89,7 @@ function renderLatest() {
 
   empty.classList.add('hidden');
   grid.innerHTML = latest.map(c => `
-    <div class="card-entry bg-gundam-card rounded-lg overflow-hidden shadow-lg border border-gundam-blue/10">
+    <div class="card-entry rounded-lg overflow-hidden shadow-sm">
       ${imageOrFallback(c.image_url, c.card_name)}
       <div class="p-3">
         <h3 class="font-semibold text-sm truncate text-gundam-dark" title="${c.card_name}">${c.card_name}</h3>
@@ -126,12 +100,10 @@ function renderLatest() {
   `).join('');
 }
 
-// ============ Dashboard — Render Cerchi Completamento ============
 function renderCompletionCircles() {
   const container = document.getElementById('completion-circles');
   const empty = document.getElementById('completion-empty');
 
-  // Raggruppa per set e conta carte uniche (per card_code)
   const setMap = {};
   for (const c of allCards) {
     const key = c.set_name || 'Senza set';
@@ -152,7 +124,7 @@ function renderCompletionCircles() {
     const total = SET_TOTALS[setName];
     const hasTotal = total != null && total > 0;
     const pct = hasTotal ? Math.min(Math.round((count / total) * 100), 100) : 100;
-    const circumference = 2 * Math.PI * 40; // r=40
+    const circumference = 2 * Math.PI * 40;
     const offset = circumference - (pct / 100) * circumference;
     const label = hasTotal ? `${pct}%` : `${count}`;
     const sub = hasTotal ? `${count}/${total}` : `${count} unique`;
@@ -165,7 +137,7 @@ function renderCompletionCircles() {
             <circle cx="50" cy="50" r="40" class="completion-ring-fg"
               stroke-dasharray="${circumference}"
               stroke-dashoffset="${hasTotal ? offset : 0}"
-              stroke="${hasTotal ? '#eab308' : '#3b82f6'}"/>
+              stroke="${hasTotal ? '#eab308' : '#2563eb'}"/>
           </svg>
           <span class="text-lg font-bold text-gundam-dark z-10">${label}</span>
         </div>
@@ -176,7 +148,7 @@ function renderCompletionCircles() {
   }).join('');
 }
 
-// ============ Collection — Render Griglia ============
+// ============ Collection ============
 function renderCollection(cards) {
   const grid = document.getElementById('collection-grid');
   const empty = document.getElementById('collection-empty');
@@ -193,7 +165,7 @@ function renderCollection(cards) {
   summary.textContent = `Mostrando ${cards.length} carta${cards.length !== 1 ? 'e' : ''}`;
 
   grid.innerHTML = cards.map(c => `
-    <div class="card-entry bg-gundam-card rounded-lg overflow-hidden shadow-lg border border-gundam-blue/10" data-id="${c.id}">
+    <div class="card-entry rounded-lg overflow-hidden shadow-sm" data-id="${c.id}">
       ${imageOrFallback(c.image_url, c.card_name)}
       <div class="px-3 pb-3 pt-2">
         <div class="flex items-center gap-2 mb-1.5">
@@ -229,7 +201,28 @@ function renderCollection(cards) {
   });
 }
 
+function populateSetFilter() {
+  const sel = document.getElementById('col-set-filter');
+  const sets = [...new Set(allCards.map(c => c.set_name).filter(Boolean))].sort();
+  sel.innerHTML = '<option value="">Tutte le espansioni</option>' +
+    sets.map(s => `<option value="${s}">${s}</option>`).join('');
+}
+
+function filterCollection() {
+  const query = document.getElementById('col-search').value.toLowerCase();
+  const setFilter = document.getElementById('col-set-filter').value;
+  return allCards.filter(c => {
+    const matchSearch = !query ||
+      c.card_name.toLowerCase().includes(query) ||
+      c.card_code.toLowerCase().includes(query);
+    const matchSet = !setFilter || c.set_name === setFilter;
+    return matchSearch && matchSet;
+  });
+}
+
 // ============ Modal ============
+let editingCardId = null;
+
 function openModal(card) {
   editingCardId = card ? card.id : null;
   document.getElementById('modal-title').textContent = card ? 'Modifica Carta' : 'Aggiungi Carta';
@@ -239,7 +232,6 @@ function openModal(card) {
   document.getElementById('field-rarity').value = card ? (card.rarity || '') : '';
   document.getElementById('field-quantity').value = card ? card.quantity : 1;
   document.getElementById('field-image-url').value = card ? (card.image_url || '') : '';
-  hideError(document.getElementById('form-error'));
   document.getElementById('card-modal').classList.remove('hidden');
   document.body.classList.add('modal-open');
 }
@@ -250,12 +242,10 @@ function closeModal() {
   editingCardId = null;
 }
 
-let editingCardId = null;
-
 async function handleCardSubmit(e) {
   e.preventDefault();
   const errEl = document.getElementById('form-error');
-  hideError(errEl);
+  errEl.classList.add('hidden');
 
   const cardData = {
     card_name: document.getElementById('field-card-name').value.trim(),
@@ -267,7 +257,8 @@ async function handleCardSubmit(e) {
   };
 
   if (!cardData.card_name || !cardData.card_code) {
-    showError(errEl, 'Nome e Codice sono obbligatori.');
+    errEl.textContent = 'Nome e Codice sono obbligatori.';
+    errEl.classList.remove('hidden');
     return;
   }
 
@@ -280,29 +271,9 @@ async function handleCardSubmit(e) {
     closeModal();
     await refreshCards();
   } catch (err) {
-    showError(errEl, err.message || 'Errore durante il salvataggio.');
+    errEl.textContent = err.message || 'Errore durante il salvataggio.';
+    errEl.classList.remove('hidden');
   }
-}
-
-// ============ Popola filtro set ============
-function populateSetFilter() {
-  const sel = document.getElementById('col-set-filter');
-  const sets = [...new Set(allCards.map(c => c.set_name).filter(Boolean))].sort();
-  sel.innerHTML = '<option value="">Tutte le espansioni</option>' +
-    sets.map(s => `<option value="${s}">${s}</option>`).join('');
-}
-
-// ============ Filtra collezione ============
-function filterCollection() {
-  const query = document.getElementById('col-search').value.toLowerCase();
-  const setFilter = document.getElementById('col-set-filter').value;
-  return allCards.filter(c => {
-    const matchSearch = !query ||
-      c.card_name.toLowerCase().includes(query) ||
-      c.card_code.toLowerCase().includes(query);
-    const matchSet = !setFilter || c.set_name === setFilter;
-    return matchSearch && matchSet;
-  });
 }
 
 // ============ Refresh ============
@@ -318,68 +289,48 @@ async function refreshCards() {
   }
 }
 
-// ============ Init ============
-async function init() {
-  // Auth state listener
-  supabase.auth.onAuthStateChange((event, session) => {
-    if (session) {
-      currentUser = session.user;
-      document.getElementById('user-email').textContent = currentUser.email;
-      showSection('dashboard-section');
-      refreshCards();
-    } else {
-      currentUser = null;
-      allCards = [];
-      showSection('auth-section');
-    }
-  });
+// ============ Start ============
+async function startApp() {
+  const errEl = document.getElementById('start-error');
+  errEl.classList.add('hidden');
 
-  // Check existing session
-  const { data: { session } } = await supabase.auth.getSession();
-  if (session) {
-    currentUser = session.user;
-    document.getElementById('user-email').textContent = currentUser.email;
-    showSection('dashboard-section');
-    refreshCards();
+  try {
+    await refreshCards();
+    showSection('app-section');
+  } catch (err) {
+    errEl.textContent = 'Errore di connessione: ' + err.message;
+    errEl.classList.remove('hidden');
   }
+}
 
-  // --- Login ---
-  document.getElementById('auth-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const errEl = document.getElementById('auth-error');
-    hideError(errEl);
-    const email = document.getElementById('auth-email').value.trim();
-    const password = document.getElementById('auth-password').value;
+// ============ Init ============
+document.addEventListener('DOMContentLoaded', () => {
+  // Start button
+  document.getElementById('start-btn').addEventListener('click', startApp);
 
-    try {
-      await login(email, password);
-    } catch (err) {
-      showError(errEl, err.message);
-    }
+  // Esci button (torna alla splash)
+  document.getElementById('logout-btn').addEventListener('click', () => {
+    allCards = [];
+    showSection('splash-section');
   });
 
-  // --- Logout ---
-  document.getElementById('logout-btn').addEventListener('click', async () => {
-    await logout();
-  });
-
-  // --- Navigation ---
+  // Navigation
   document.getElementById('nav-dashboard').addEventListener('click', () => {
     document.getElementById('nav-dashboard').className = 'nav-tab active px-5 py-3 text-sm font-semibold border-b-2 border-gundam-yellow text-gundam-yellow';
-    document.getElementById('nav-collection').className = 'nav-tab px-5 py-3 text-sm font-semibold border-b-2 border-transparent text-gundam-muted hover:text-gundam-white';
+    document.getElementById('nav-collection').className = 'nav-tab px-5 py-3 text-sm font-semibold border-b-2 border-transparent text-gundam-muted hover:text-gundam-dark';
     showView('view-dashboard');
   });
 
   document.getElementById('nav-collection').addEventListener('click', () => {
     document.getElementById('nav-collection').className = 'nav-tab active px-5 py-3 text-sm font-semibold border-b-2 border-gundam-yellow text-gundam-yellow';
-    document.getElementById('nav-dashboard').className = 'nav-tab px-5 py-3 text-sm font-semibold border-b-2 border-transparent text-gundam-muted hover:text-gundam-white';
+    document.getElementById('nav-dashboard').className = 'nav-tab px-5 py-3 text-sm font-semibold border-b-2 border-transparent text-gundam-muted hover:text-gundam-dark';
     showView('view-collection');
   });
 
-  // --- Add card (FAB) ---
+  // FAB add
   document.getElementById('fab-add').addEventListener('click', () => openModal(null));
 
-  // --- Modal events ---
+  // Modal events
   document.getElementById('modal-close').addEventListener('click', closeModal);
   document.getElementById('modal-cancel').addEventListener('click', closeModal);
   document.getElementById('card-modal').addEventListener('click', (e) => {
@@ -387,7 +338,7 @@ async function init() {
   });
   document.getElementById('card-form').addEventListener('submit', handleCardSubmit);
 
-  // --- Collection filters ---
+  // Collection filters
   let searchTimeout;
   document.getElementById('col-search').addEventListener('input', () => {
     clearTimeout(searchTimeout);
@@ -399,7 +350,4 @@ async function init() {
   document.getElementById('col-set-filter').addEventListener('change', () => {
     renderCollection(filterCollection());
   });
-}
-
-// ============ Start ============
-document.addEventListener('DOMContentLoaded', init);
+});
