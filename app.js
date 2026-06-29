@@ -168,7 +168,7 @@ function renderCompletionCircles() {
     const strokeColor = group === 'st' ? '#eab308' : group === 'gd' ? '#2563eb' : '#94a3b8';
 
     return `
-      <div class="flex flex-col items-center gap-1 py-2">
+      <div class="set-circle flex flex-col items-center gap-1 py-2 cursor-pointer rounded-lg hover:bg-gray-50 transition" data-set="${setName}">
         <div class="relative w-[120px] h-[120px] flex items-center justify-center">
           <svg width="120" height="120" viewBox="0 0 120 120" class="completion-ring absolute inset-0">
             <circle cx="60" cy="60" r="${r}" class="completion-ring-bg" stroke-width="7"/>
@@ -185,6 +185,22 @@ function renderCompletionCircles() {
       </div>
     `;
   }).join('');
+
+  // Click sui cerchi → vai alla collezione filtrata per quel set
+  container.querySelectorAll('.set-circle').forEach(el => {
+    el.addEventListener('click', () => {
+      const setName = el.dataset.set;
+      document.getElementById('col-set-filter').value = setName;
+      document.getElementById('col-search').value = '';
+      // Attiva nav collezione nella sidebar
+      document.querySelectorAll('.side-nav').forEach(n => {
+        n.className = 'side-nav flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-sm font-semibold text-gundam-muted hover:text-gundam-dark hover:bg-gray-50 transition';
+      });
+      document.getElementById('side-collection').className = 'side-nav active flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-sm font-semibold text-gundam-yellow bg-yellow-50 transition';
+      showView('view-collection');
+      renderCollection(filterCollection());
+    });
+  });
 }
 
 // ============ Collection ============
