@@ -2,7 +2,7 @@
 const SUPABASE_URL = 'https://zhrvhhzcsdadoolxqpro.supabase.co';
 const SUPABASE_ANON_KEY = '';  // ← Inserisci qui la tua anon key
 
-const supabase = supabaseJs.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // ============ Configurazione Set ============
 const SET_TOTALS = {};
@@ -12,7 +12,7 @@ let allCards = [];
 
 // ============ Cards CRUD ============
 async function loadCards() {
-  const { data, error } = await supabase
+  const { data, error } = await _supabase
     .from('cards')
     .select('*')
     .order('created_at', { ascending: false });
@@ -21,7 +21,7 @@ async function loadCards() {
 }
 
 async function addCard(card) {
-  const { data, error } = await supabase
+  const { data, error } = await _supabase
     .from('cards')
     .insert([card])
     .select();
@@ -30,7 +30,7 @@ async function addCard(card) {
 }
 
 async function updateCard(id, updates) {
-  const { data, error } = await supabase
+  const { data, error } = await _supabase
     .from('cards')
     .update(updates)
     .eq('id', id)
@@ -40,7 +40,7 @@ async function updateCard(id, updates) {
 }
 
 async function deleteCard(id) {
-  const { error } = await supabase
+  const { error } = await _supabase
     .from('cards')
     .delete()
     .eq('id', id);
