@@ -1,9 +1,9 @@
 -- Migration 001: Creazione tabella cards e indici
--- Eseguire nel Supabase SQL Editor
+-- Modalità single-user: nessuna FK su auth.users, nessun RLS
 
 CREATE TABLE public.cards (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-    user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE,
+    user_id UUID,
     card_name TEXT NOT NULL,
     card_code TEXT NOT NULL,
     set_name TEXT,
