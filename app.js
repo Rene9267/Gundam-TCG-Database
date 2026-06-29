@@ -2,13 +2,19 @@
 const SUPABASE_URL = 'https://zhrvhhzcsdadoolxqpro.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_yeP5henLm-YdNtkwCFuV0Q_tE1koERf';
 
-let _supabase = null;
 
 // ============ Reference Cards (database mastro) ============
 let refCards = [];
 let refCardByCode = {};
 let setTotals = {};
 let setOrder = [];
+
+// Alt Art: nome → prima espansione in cui è apparso
+let nameFirstSet = {};
+// CardCode → { isAltArt, originalSet }
+let cardAltInfo = {};
+// Set di card_code che sono T-* o R-*
+const isTokenOrResource = (code) => code.startsWith('T-') || code.startsWith('R-');
 
 function computeSetData() {
   // Raggruppa per set_name (es. "Heroic Beginnings [ST01]")
@@ -33,6 +39,26 @@ function computeSetData() {
   for (const rc of refCards) {
     refCardByCode[rc.card_code] = rc;
   }
+  // Costruisci mappa: prima espansione per ogni nome carta
+  const sorted = [...refCards].sort((a, b) => {
+    const aP = a.set_code.startsWith('ST') ? 0 : 1;
+    const bP = b.set_code.startsWith('ST') ? 0 : 1;
+    if (aP !== bP) return aP - bP;
+    return a.set_code.localeCompare(b.set_code);
+  });
+  nameFirstSet = {};
+  for (const c of sorted) {
+    if (!nameFirstSet[c.card_name]) nameFirstSet[c.card_name] = c.set_code;
+  }
+  // Mappa alt art per card_code
+  cardAltInfo = {};
+  for (const c of refCards) {
+    const first = nameFirstSet[c.card_name] || '';
+    cardAltInfo[c.card_code] = {
+      isAltArt: first !== '' && first !== c.set_code,
+      originalSet: first !== '' && first !== c.set_code ? first : null,
+    };
+  }
 }
 
 async function loadReferenceCards() {
@@ -49,42 +75,58 @@ async function loadReferenceCards() {
 // ============ State ============
 let allCards = [];
 
-// ============ Cards CRUD ============
+// ============ Cards CRUD (fetch diretto) ============
+const SUPABASE_HEADERS = {
+  'apikey': SUPABASE_ANON_KEY,
+  'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+  'Content-Type': 'application/json',
+};
+
 async function loadCards() {
-  if (!_supabase) return [];
-  const { data, error } = await _supabase
-    .from('cards')
-    .select('*')
-    .order('created_at', { ascending: false });
-  if (error) throw error;
-  return data || [];
+  const r = await fetch(SUPABASE_URL + '/rest/v1/cards?select=*&order=created_at.desc', {
+    headers: SUPABASE_HEADERS,
+  });
+  if (!r.ok) throw new Error('GET /cards ' + r.status);
+  return r.json();
 }
 
 async function addCard(card) {
-  const { data, error } = await _supabase
-    .from('cards')
-    .insert([card])
-    .select();
-  if (error) throw error;
+  const r = await fetch(SUPABASE_URL + '/rest/v1/cards', {
+    method: 'POST',
+    headers: { ...SUPABASE_HEADERS, 'Prefer': 'return=representation' },
+    body: JSON.stringify(card),
+  });
+  if (!r.ok) {
+    const text = await r.text();
+    throw new Error('POST /cards ' + r.status + ': ' + text.slice(0, 200));
+  }
+  const data = await r.json();
   return data[0];
 }
 
 async function updateCard(id, updates) {
-  const { data, error } = await _supabase
-    .from('cards')
-    .update(updates)
-    .eq('id', id)
-    .select();
-  if (error) throw error;
+  const r = await fetch(SUPABASE_URL + '/rest/v1/cards?id=eq.' + id, {
+    method: 'PATCH',
+    headers: { ...SUPABASE_HEADERS, 'Prefer': 'return=representation' },
+    body: JSON.stringify(updates),
+  });
+  if (!r.ok) {
+    const text = await r.text();
+    throw new Error('PATCH /cards ' + r.status + ': ' + text.slice(0, 200));
+  }
+  const data = await r.json();
   return data[0];
 }
 
 async function deleteCard(id) {
-  const { error } = await _supabase
-    .from('cards')
-    .delete()
-    .eq('id', id);
-  if (error) throw error;
+  const r = await fetch(SUPABASE_URL + '/rest/v1/cards?id=eq.' + id, {
+    method: 'DELETE',
+    headers: SUPABASE_HEADERS,
+  });
+  if (!r.ok) {
+    const text = await r.text();
+    throw new Error('DELETE /cards ' + r.status + ': ' + text.slice(0, 200));
+  }
 }
 
 // ============ UI Helpers ============
@@ -218,6 +260,10 @@ function renderCompletionCircles() {
       const setName = el.dataset.set;
       document.getElementById('col-set-filter').value = setName;
       document.getElementById('col-search').value = '';
+      // Reset filtri to default (solo Base)
+      for (const k of Object.keys(activeFilters)) activeFilters[k] = k === 'base';
+      document.querySelectorAll('.variant-btn').forEach(b => b.classList.toggle('active', activeFilters[b.dataset.filter]));
+      document.getElementById('variant-filters').classList.remove('hidden');
       // Attiva nav collezione nella sidebar
       document.querySelectorAll('.side-nav').forEach(n => {
         n.className = 'side-nav flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-sm font-semibold text-gundam-muted hover:text-gundam-dark hover:bg-gray-50 transition';
@@ -229,11 +275,39 @@ function renderCompletionCircles() {
   });
 }
 
+// ============ Variant filter state ============
+const activeFilters = { base: true, altart: false, resources: false };
+
+function getSetCodeFromFilter() {
+  const setFilter = document.getElementById('col-set-filter').value;
+  return setFilter.match(/\[(\w+)\]/)?.[1] || '';
+}
+
+function toggleVariantFilter(filterName) {
+  activeFilters[filterName] = !activeFilters[filterName];
+  document.querySelectorAll('.variant-btn').forEach(b => {
+    b.classList.toggle('active', activeFilters[b.dataset.filter]);
+  });
+  renderCollection(filterCollection());
+}
+
+function setAllFilters(val) {
+  for (const k of Object.keys(activeFilters)) activeFilters[k] = val;
+  document.querySelectorAll('.variant-btn').forEach(b => {
+    b.classList.toggle('active', activeFilters[b.dataset.filter]);
+  });
+  renderCollection(filterCollection());
+}
+
 // ============ Collection ============
 function renderCollection(cards) {
   const grid = document.getElementById('collection-grid');
   const empty = document.getElementById('collection-empty');
   const summary = document.getElementById('collection-summary');
+
+  // Mostra/nascondi filtri variant in base alla selezione set
+  const hasSet = !!document.getElementById('col-set-filter').value;
+  document.getElementById('variant-filters').classList.toggle('hidden', !hasSet);
 
   if (!cards.length) {
     grid.innerHTML = '';
@@ -359,10 +433,37 @@ function filterCollection() {
   }
 
   // Filtro set attivo → mostra TUTTE le carte di reference + owned
-  const refs = refCards.filter(rc => rc.set_name === setFilter);
+  const currentSetCode = getSetCodeFromFilter();
+  let refs;
+  if (currentSetCode) {
+    // Carte nel set + carte originarie di questo set ristampate altrove (es. GD01-100_p5 in GD03)
+    refs = refCards.filter(rc =>
+      rc.set_name === setFilter ||
+      (rc.card_code.startsWith(currentSetCode) && rc.set_code !== currentSetCode)
+    );
+  } else {
+    refs = refCards.filter(rc => rc.set_name === setFilter);
+  }
+
+  // Applica variant filter multi-selezione
+  refs = refs.filter(rc => {
+    const isRT = isTokenOrResource(rc.card_code);
+    // Alt Art: _p O ristampa cross-set (card_code prefix ≠ set_code)
+    const isAltArt = !isRT && (rc.card_code.includes('_p') || rc.card_code.split('-')[0] !== rc.set_code);
+    const isBase = !isRT && !isAltArt;
+
+    if (isRT) return activeFilters.resources;
+    if (isAltArt) return activeFilters.altart;
+    if (isBase) return activeFilters.base;
+    return activeFilters.base; // fallback
+  });
+
+  // Ordina per card_code
+  refs.sort((a, b) => a.card_code.localeCompare(b.card_code));
+
   const ownedMap = {};
   for (const c of allCards) {
-    if (c.set_name === setFilter) {
+    if (c.set_name === setFilter || (currentSetCode && c.card_code.startsWith(currentSetCode))) {
       ownedMap[c.card_code] = c;
     }
   }
@@ -389,16 +490,29 @@ function filterCollection() {
 
 // ============ Modal ============
 let editingCardId = null;
+let currentModalCard = null;
 
 function openModal(card) {
   editingCardId = card ? card.id : null;
+  currentModalCard = card;
+
+  const display = document.getElementById('card-info-display');
   document.getElementById('modal-title').textContent = editingCardId ? 'Modifica Carta' : 'Aggiungi Carta';
-  document.getElementById('field-card-name').value = card ? card.card_name : '';
-  document.getElementById('field-card-code').value = card ? card.card_code : '';
-  document.getElementById('field-set-name').value = card ? (card.set_name || '') : '';
-  document.getElementById('field-rarity').value = card ? (card.rarity || '') : '';
-  document.getElementById('field-quantity').value = card ? card.quantity : 1;
-  document.getElementById('field-image-url').value = card ? (card.image_url || '') : '';
+
+  if (card && card.card_name) {
+    display.classList.remove('hidden');
+    document.getElementById('display-card-name').textContent = card.card_name;
+    document.getElementById('display-card-code').textContent = card.card_code;
+    document.getElementById('display-card-set').textContent = card.set_name || '';
+    const img = document.getElementById('display-card-image');
+    img.src = card.image_url || '';
+    img.onerror = () => { img.style.display = 'none'; };
+    img.onload = () => { img.style.display = ''; };
+  } else {
+    display.classList.add('hidden');
+  }
+
+  document.getElementById('field-quantity').value = card ? (card.quantity || 1) : 1;
   document.getElementById('card-modal').classList.remove('hidden');
   document.body.classList.add('modal-open');
 }
@@ -407,6 +521,7 @@ function closeModal() {
   document.getElementById('card-modal').classList.add('hidden');
   document.body.classList.remove('modal-open');
   editingCardId = null;
+  currentModalCard = null;
 }
 
 async function handleCardSubmit(e) {
@@ -414,20 +529,20 @@ async function handleCardSubmit(e) {
   const errEl = document.getElementById('form-error');
   errEl.classList.add('hidden');
 
-  const cardData = {
-    card_name: document.getElementById('field-card-name').value.trim(),
-    card_code: document.getElementById('field-card-code').value.trim(),
-    set_name: document.getElementById('field-set-name').value.trim() || null,
-    rarity: document.getElementById('field-rarity').value || null,
-    quantity: parseInt(document.getElementById('field-quantity').value, 10) || 1,
-    image_url: document.getElementById('field-image-url').value.trim() || null
-  };
-
-  if (!cardData.card_name || !cardData.card_code) {
-    errEl.textContent = 'Nome e Codice sono obbligatori.';
+  if (!currentModalCard || !currentModalCard.card_code) {
+    errEl.textContent = 'Seleziona una carta mancante dalla collezione per aggiungerla.';
     errEl.classList.remove('hidden');
     return;
   }
+
+  const cardData = {
+    card_name: currentModalCard.card_name,
+    card_code: currentModalCard.card_code,
+    set_name: currentModalCard.set_name || null,
+    rarity: currentModalCard.rarity || null,
+    quantity: parseInt(document.getElementById('field-quantity').value, 10) || 1,
+    image_url: currentModalCard.image_url || null
+  };
 
   try {
     if (editingCardId) {
@@ -464,14 +579,9 @@ async function startApp() {
   document.getElementById('start-btn').textContent = 'Connessione...';
 
   try {
-    if (typeof supabase === 'undefined') {
-      throw new Error('CDN Supabase non caricato. Verifica la connessione internet.');
-    }
     if (!SUPABASE_ANON_KEY) {
       throw new Error('Manca la chiave API. Inseriscila in app.js:3.');
     }
-    _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    // Aspetta che il service worker sia attivo per gestire le immagini
     if ('serviceWorker' in navigator && !navigator.serviceWorker.controller) {
       await new Promise(resolve => {
         navigator.serviceWorker.addEventListener('controllerchange', resolve, { once: true });
@@ -546,6 +656,20 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.getElementById('col-set-filter').addEventListener('change', () => {
+    const hasSet = !!document.getElementById('col-set-filter').value;
+    document.getElementById('variant-filters').classList.toggle('hidden', !hasSet);
+    // Reset to default: solo Base
+    for (const k of Object.keys(activeFilters)) activeFilters[k] = k === 'base';
+    document.querySelectorAll('.variant-btn').forEach(b => b.classList.toggle('active', activeFilters[b.dataset.filter]));
     renderCollection(filterCollection());
   });
+
+  // Variant filter buttons (toggle)
+  document.querySelectorAll('.variant-btn').forEach(btn => {
+    btn.addEventListener('click', () => toggleVariantFilter(btn.dataset.filter));
+  });
+
+  // Select All / Deselect All
+  document.getElementById('select-all-btn').addEventListener('click', () => setAllFilters(true));
+  document.getElementById('deselect-all-btn').addEventListener('click', () => setAllFilters(false));
 });

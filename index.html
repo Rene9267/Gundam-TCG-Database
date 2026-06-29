@@ -29,7 +29,6 @@
       }
     }
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 </head>
@@ -129,6 +128,18 @@
         </select>
       </div>
 
+      <!-- Variant filter toggles (solo visibili con set selezionato) -->
+      <div id="variant-filters" class="hidden mb-4">
+        <div class="flex flex-wrap gap-2 items-center">
+          <button class="variant-btn active" data-filter="base">Base</button>
+          <button class="variant-btn" data-filter="altart">Alt Art</button>
+          <button class="variant-btn" data-filter="resources">Risorse/Token</button>
+          <span class="text-gundam-muted text-xs mx-1">|</span>
+          <button id="select-all-btn" class="text-xs text-gundam-blue hover:text-gundam-blue-hover font-medium transition">Seleziona tutti</button>
+          <button id="deselect-all-btn" class="text-xs text-gundam-muted hover:text-gundam-dark font-medium transition">Deseleziona tutti</button>
+        </div>
+      </div>
+
       <div id="collection-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
       <div id="collection-empty" class="hidden text-center py-16">
         <p class="text-gundam-muted text-lg">Nessuna carta trovata</p>
@@ -144,38 +155,20 @@
         <h2 id="modal-title" class="text-xl font-bold text-gundam-dark">Aggiungi Carta</h2>
         <button id="modal-close" class="text-gray-400 hover:text-gundam-dark text-2xl leading-none">&times;</button>
       </div>
+      <div id="card-info-display" class="mb-4 p-3 bg-gray-50 rounded-lg border border-gray-200 hidden">
+        <div class="flex gap-3">
+          <img id="display-card-image" class="w-16 h-[86px] object-cover rounded" src="" alt="">
+          <div class="min-w-0 flex-1">
+            <p id="display-card-name" class="font-semibold text-sm text-gundam-dark"></p>
+            <p id="display-card-code" class="text-xs text-gundam-muted mt-0.5"></p>
+            <p id="display-card-set" class="text-xs text-gundam-muted/60 mt-0.5"></p>
+          </div>
+        </div>
+      </div>
       <form id="card-form">
-        <div class="mb-3">
-          <label class="block text-sm text-gundam-muted mb-1">Nome Carta *</label>
-          <input type="text" id="field-card-name" class="w-full border border-gray-300 rounded px-3 py-2 text-gundam-dark focus:outline-none focus:ring-2 focus:ring-gundam-blue focus:border-transparent" required>
-        </div>
-        <div class="mb-3">
-          <label class="block text-sm text-gundam-muted mb-1">Codice Carta *</label>
-          <input type="text" id="field-card-code" class="w-full border border-gray-300 rounded px-3 py-2 text-gundam-dark focus:outline-none focus:ring-2 focus:ring-gundam-blue focus:border-transparent" required>
-        </div>
-        <div class="mb-3">
-          <label class="block text-sm text-gundam-muted mb-1">Espansione (Set)</label>
-          <input type="text" id="field-set-name" class="w-full border border-gray-300 rounded px-3 py-2 text-gundam-dark focus:outline-none focus:ring-2 focus:ring-gundam-blue focus:border-transparent">
-        </div>
-        <div class="mb-3">
-          <label class="block text-sm text-gundam-muted mb-1">Rarità</label>
-          <select id="field-rarity" class="w-full border border-gray-300 rounded px-3 py-2 text-gundam-dark focus:outline-none focus:ring-2 focus:ring-gundam-blue focus:border-transparent bg-white">
-            <option value="">— Seleziona —</option>
-            <option value="Common">Common</option>
-            <option value="Uncommon">Uncommon</option>
-            <option value="Rare">Rare</option>
-            <option value="Super Rare">Super Rare</option>
-            <option value="Secret Rare">Secret Rare</option>
-            <option value="Promo">Promo</option>
-          </select>
-        </div>
-        <div class="mb-3">
+        <div class="mb-4">
           <label class="block text-sm text-gundam-muted mb-1">Quantità</label>
           <input type="number" id="field-quantity" class="w-full border border-gray-300 rounded px-3 py-2 text-gundam-dark focus:outline-none focus:ring-2 focus:ring-gundam-blue focus:border-transparent" value="1" min="1">
-        </div>
-        <div class="mb-4">
-          <label class="block text-sm text-gundam-muted mb-1">URL Immagine</label>
-          <input type="url" id="field-image-url" class="w-full border border-gray-300 rounded px-3 py-2 text-gundam-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gundam-blue focus:border-transparent" placeholder="https://...">
         </div>
         <p id="form-error" class="text-red-500 text-sm mb-3 hidden"></p>
         <div class="flex gap-3">
