@@ -18,9 +18,7 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('activate', (event) => {
-  // Prende subito il controllo della pagina
   event.waitUntil(clients.claim());
-  // Pulisce cache vecchie
   event.waitUntil(
     caches.keys().then((keys) =>
       Promise.all(keys.filter((k) => k !== CACHE_NAME && k !== IMG_CACHE).map((k) => caches.delete(k)))
@@ -32,6 +30,9 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
   // Proxy for gundam-gcg.com card images
+  // Il CDN non ha header CORS e Chrome blocca le richieste cross-site.
+  // Con mode:'no-cors' otteniamo una risposta opaca che il tag <img> può
+  // comunque renderizzare. credentials:'omit' evita i cookie cross-site.
   if (url.hostname === 'www.gundam-gcg.com' && url.pathname.includes('/images/cards/card/')) {
     event.respondWith(
       caches.open(IMG_CACHE).then((cache) =>
@@ -41,12 +42,13 @@ self.addEventListener('fetch', (event) => {
             mode: 'no-cors',
             credentials: 'omit'
           }).then((res) => {
-            if (res.type === 'opaque' || res.ok) {
-              cache.put(event.request, res.clone());
-            }
+            cache.put(event.request, res.clone()).catch(() => {});
             return res;
           }).catch(() => {
-            return fetch('./icons/icon-192.png');
+            return new Response(
+              '<svg xmlns="http://www.w3.org/2000/svg" width="300" height="400" viewBox="0 0 300 400"><rect width="300" height="400" fill="#f0f0f0"/><text x="150" y="200" text-anchor="middle" fill="#999" font-size="80" font-family="sans-serif">?</text></svg>',
+              { headers: { 'Content-Type': 'image/svg+xml' } }
+            );
           });
         })
       )
