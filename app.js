@@ -471,6 +471,14 @@ async function startApp() {
       throw new Error('Manca la chiave API. Inseriscila in app.js:3.');
     }
     _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    // Aspetta che il service worker sia attivo per gestire le immagini
+    if ('serviceWorker' in navigator && !navigator.serviceWorker.controller) {
+      await new Promise(resolve => {
+        navigator.serviceWorker.addEventListener('controllerchange', resolve, { once: true });
+        // Timeout di sicurezza: se SW non si attiva in 3s, procedi comunque
+        setTimeout(resolve, 3000);
+      });
+    }
     await loadReferenceCards();
     await refreshCards();
     showSection('app-section');
