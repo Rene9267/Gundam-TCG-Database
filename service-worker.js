@@ -18,6 +18,9 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('activate', (event) => {
+  // Prende subito il controllo della pagina
+  event.waitUntil(clients.claim());
+  // Pulisce cache vecchie
   event.waitUntil(
     caches.keys().then((keys) =>
       Promise.all(keys.filter((k) => k !== CACHE_NAME && k !== IMG_CACHE).map((k) => caches.delete(k)))
@@ -28,9 +31,7 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
-  // Proxy for gundam-gcg.com card images — CDN non supporta CORS,
-  // usiamo {mode:'no-cors'} per ottenere una risposta "opaca"
-  // che funziona comunque con i tag <img> della pagina.
+  // Proxy for gundam-gcg.com card images
   if (url.hostname === 'www.gundam-gcg.com' && url.pathname.includes('/images/cards/card/')) {
     event.respondWith(
       caches.open(IMG_CACHE).then((cache) =>
@@ -40,10 +41,11 @@ self.addEventListener('fetch', (event) => {
             mode: 'no-cors',
             credentials: 'omit'
           }).then((res) => {
-            cache.put(event.request, res.clone());
+            if (res.type === 'opaque' || res.ok) {
+              cache.put(event.request, res.clone());
+            }
             return res;
           }).catch(() => {
-            // Se la fetch fallisce, ritorna la placeholder locale
             return fetch('./icons/icon-192.png');
           });
         })
@@ -52,8 +54,8 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Normal cache-first for app assets
+  // App assets: network-first, fallback su cache
   event.respondWith(
-    caches.match(event.request).then((cached) => cached || fetch(event.request))
+    fetch(event.request).catch(() => caches.match(event.request))
   );
 });
