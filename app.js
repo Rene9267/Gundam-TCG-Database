@@ -160,7 +160,7 @@ function renderCompletionCircles() {
   SET_ORDER.forEach(setName => {
     const group = setGroup(setName);
     if (lastGroup && group !== lastGroup) {
-      items.push(`<div class="col-span-full border-t border-gray-300 my-2"></div>`);
+      items.push(`<div class="col-span-full border-t border-gundam-red my-2"></div>`);
     }
     lastGroup = group;
 
@@ -224,26 +224,32 @@ function renderCollection(cards) {
   empty.classList.add('hidden');
   summary.textContent = `Mostrando ${cards.length} carta${cards.length !== 1 ? 'e' : ''}`;
 
-  grid.innerHTML = cards.map(c => `
-    <div class="card-entry rounded-lg overflow-hidden shadow-sm" data-id="${c.id}">
-      ${imageOrFallback(c.image_url, c.card_name)}
+  grid.innerHTML = cards.map(c => {
+    const isPlayset = c.quantity >= 4;
+    return `
+    <div class="card-entry rounded-lg overflow-hidden shadow-sm relative" data-id="${c.id}">
+      <div class="relative">
+        ${imageOrFallback(c.image_url, c.card_name)}
+        ${isPlayset ? '<span class="playset-diamond"></span>' : ''}
+      </div>
       <div class="px-3 pb-3 pt-2">
-        <div class="flex items-center gap-2 mb-1.5">
-          <span class="qty-diamond"></span>
-          <span class="text-sm font-bold text-gundam-dark">${c.quantity}</span>
-        </div>
-        <h3 class="font-semibold text-xs truncate text-gundam-dark" title="${c.card_name}">${c.card_name}</h3>
-        <p class="text-[11px] text-gundam-muted truncate">${c.card_code}</p>
-        <div class="flex items-center justify-between mt-1.5">
-          <span class="text-[10px] font-medium ${rarityColor(c.rarity)}">${c.rarity || '—'}</span>
-          <div class="flex gap-1.5">
-            <button class="col-edit text-[10px] bg-gundam-blue hover:bg-gundam-blue-hover text-white rounded px-1.5 py-0.5 transition" data-id="${c.id}">✎</button>
-            <button class="col-delete text-[10px] bg-gundam-red hover:bg-gundam-red-hover text-white rounded px-1.5 py-0.5 transition" data-id="${c.id}">✕</button>
+        <div class="flex items-start justify-between gap-2">
+          <div class="min-w-0 flex-1">
+            <h3 class="font-semibold text-xs truncate text-gundam-dark" title="${c.card_name}">${c.card_name}</h3>
+            <p class="text-[11px] text-gundam-muted truncate">${c.card_code}</p>
+            <span class="text-[10px] font-medium ${rarityColor(c.rarity)}">${c.rarity || '—'}</span>
+          </div>
+          <div class="qty-quarter shrink-0">
+            <span class="text-xs font-bold text-white leading-none">${c.quantity}</span>
           </div>
         </div>
+        <div class="flex gap-1.5 mt-2 justify-end">
+          <button class="col-edit text-[10px] bg-gundam-blue hover:bg-gundam-blue-hover text-white rounded px-1.5 py-0.5 transition" data-id="${c.id}">✎</button>
+          <button class="col-delete text-[10px] bg-gundam-red hover:bg-gundam-red-hover text-white rounded px-1.5 py-0.5 transition" data-id="${c.id}">✕</button>
+        </div>
       </div>
-    </div>
-  `).join('');
+    </div>`;
+  }).join('');
 
   grid.querySelectorAll('.col-edit').forEach(btn => {
     btn.addEventListener('click', () => {
