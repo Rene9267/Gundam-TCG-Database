@@ -28,18 +28,23 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
-  // Proxy for gundam-gcg.com card images — bypass SameSite cookie block
+  // Proxy for gundam-gcg.com card images — CDN non supporta CORS,
+  // usiamo {mode:'no-cors'} per ottenere una risposta "opaca"
+  // che funziona comunque con i tag <img> della pagina.
   if (url.hostname === 'www.gundam-gcg.com' && url.pathname.includes('/images/cards/card/')) {
     event.respondWith(
       caches.open(IMG_CACHE).then((cache) =>
         cache.match(event.request).then((cached) => {
           if (cached) return cached;
-          return fetch(event.request.url, { credentials: 'omit' }).then((res) => {
-            if (res.ok) {
-              const clone = res.clone();
-              cache.put(event.request, clone);
-            }
+          return fetch(event.request.url, {
+            mode: 'no-cors',
+            credentials: 'omit'
+          }).then((res) => {
+            cache.put(event.request, res.clone());
             return res;
+          }).catch(() => {
+            // Se la fetch fallisce, ritorna la placeholder locale
+            return fetch('./icons/icon-192.png');
           });
         })
       )
