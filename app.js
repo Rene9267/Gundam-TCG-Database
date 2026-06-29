@@ -1,8 +1,8 @@
 // ============ Configurazione Supabase ============
 const SUPABASE_URL = 'https://zhrvhhzcsdadoolxqpro.supabase.co';
-const SUPABASE_ANON_KEY = '';  // ← Inserisci qui la tua anon key
+const SUPABASE_ANON_KEY = 'sb_publishable_yeP5henLm-YdNtkwCFuV0Q_tE1koERf';  // ← Inserisci qui la tua anon key
 
-const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+let _supabase = null;
 
 // ============ Configurazione Set ============
 const SET_TOTALS = {};
@@ -12,6 +12,7 @@ let allCards = [];
 
 // ============ Cards CRUD ============
 async function loadCards() {
+  if (!_supabase) return [];
   const { data, error } = await _supabase
     .from('cards')
     .select('*')
@@ -293,13 +294,24 @@ async function refreshCards() {
 async function startApp() {
   const errEl = document.getElementById('start-error');
   errEl.classList.add('hidden');
+  document.getElementById('start-btn').disabled = true;
+  document.getElementById('start-btn').textContent = 'Connessione...';
 
   try {
+    if (typeof supabase === 'undefined') {
+      throw new Error('CDN Supabase non caricato. Verifica la connessione internet.');
+    }
+    if (!SUPABASE_ANON_KEY) {
+      throw new Error('Manca la chiave API. Inseriscila in app.js:3.');
+    }
+    _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
     await refreshCards();
     showSection('app-section');
   } catch (err) {
-    errEl.textContent = 'Errore di connessione: ' + err.message;
+    errEl.textContent = err.message;
     errEl.classList.remove('hidden');
+    document.getElementById('start-btn').disabled = false;
+    document.getElementById('start-btn').textContent = 'AVVIA';
   }
 }
 
