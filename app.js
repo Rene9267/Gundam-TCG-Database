@@ -1,11 +1,36 @@
 // ============ Configurazione Supabase ============
 const SUPABASE_URL = 'https://zhrvhhzcsdadoolxqpro.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_yeP5henLm-YdNtkwCFuV0Q_tE1koERf';  // ← Inserisci qui la tua anon key
+const SUPABASE_ANON_KEY = 'sb_publishable_yeP5henLm-YdNtkwCFuV0Q_tE1koERf';
 
 let _supabase = null;
 
-// ============ Configurazione Set ============
-const SET_TOTALS = {};
+// ============ Set Gundam TCG (dati ufficiali) ============
+// ST = Starter Deck, GD = Booster Pack
+// Totale carte per set (incluse varianti / alt art)
+const SET_TOTALS = {
+  // ── Starter Deck (ST) ──
+  'ST01 Heroic Beginnings': 35,
+  'ST02 Wings of Advance': 34,
+  'ST03 Zeon\'s Rush': 34,
+  'ST04 SEED Strike': 35,
+  'ST05 Iron Bloom': 32,
+  'ST06 Clan Unity': 32,
+  'ST07 Celestial Drive': 32,
+  'ST08 Flash of Radiance': 32,
+  'ST09 Destiny Ignition': 39,
+  // ── Booster Pack (GD) ──
+  'GD01 Newtype Rising': 179,
+  'GD02 Dual Impact': 187,
+  'GD03 Steel Requiem': 202,
+  'GD04 Phantom Aria': 144,
+  // ── Extra / Altro ──
+  'Beta Edition': 86,
+  'Promo Cards': 109,
+  'Basic Cards': 2,
+};
+
+// Ordine di visualizzazione: ST → GD → Altro
+const SET_ORDER = Object.keys(SET_TOTALS);
 
 // ============ State ============
 let allCards = [];
@@ -57,6 +82,18 @@ function showSection(id) {
 function showView(id) {
   document.querySelectorAll('#view-dashboard, #view-collection').forEach(el => el.classList.add('hidden'));
   document.getElementById(id).classList.remove('hidden');
+  closeSidebar();
+}
+
+// Sidebar
+function openSidebar() {
+  document.getElementById('sidebar').classList.add('open');
+  document.getElementById('sidebar-overlay').classList.remove('hidden');
+}
+
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebar-overlay').classList.add('hidden');
 }
 
 function rarityColor(rarity) {
@@ -76,7 +113,13 @@ function imageOrFallback(url, name) {
   return `<img src="${url}" alt="${name}" class="w-full aspect-[3/4] object-cover" loading="lazy" onerror="this.outerHTML='<div class=\\'card-img-fallback w-full aspect-[3/4]\\'>🃏</div>'">`;
 }
 
-// ============ Dashboard ============
+function setGroup(setName) {
+  if (setName.startsWith('ST')) return 'st';
+  if (setName.startsWith('GD')) return 'gd';
+  return 'other';
+}
+
+// ============ Dashboard — Ultime Aggiunte ============
 function renderLatest() {
   const grid = document.getElementById('latest-grid');
   const empty = document.getElementById('latest-empty');
@@ -101,34 +144,27 @@ function renderLatest() {
   `).join('');
 }
 
+// ============ Dashboard — Cerchi Completamento ============
 function renderCompletionCircles() {
   const container = document.getElementById('completion-circles');
-  const empty = document.getElementById('completion-empty');
 
-  const setMap = {};
+  // Raccogli le carte possedute per set (unique card_code)
+  const ownedMap = {};
   for (const c of allCards) {
     const key = c.set_name || 'Senza set';
-    if (!setMap[key]) setMap[key] = new Set();
-    setMap[key].add(c.card_code);
+    if (!ownedMap[key]) ownedMap[key] = new Set();
+    ownedMap[key].add(c.card_code);
   }
 
-  const entries = Object.entries(setMap);
-  if (!entries.length) {
-    container.innerHTML = '';
-    empty.classList.remove('hidden');
-    return;
-  }
+  const circumference = 2 * Math.PI * 40; // r=40
 
-  empty.classList.add('hidden');
-  container.innerHTML = entries.map(([setName, codes]) => {
-    const count = codes.size;
+  container.innerHTML = SET_ORDER.map(setName => {
     const total = SET_TOTALS[setName];
-    const hasTotal = total != null && total > 0;
-    const pct = hasTotal ? Math.min(Math.round((count / total) * 100), 100) : 100;
-    const circumference = 2 * Math.PI * 40;
+    const owned = ownedMap[setName] ? ownedMap[setName].size : 0;
+    const pct = total > 0 ? Math.min(Math.round((owned / total) * 100), 100) : 0;
     const offset = circumference - (pct / 100) * circumference;
-    const label = hasTotal ? `${pct}%` : `${count}`;
-    const sub = hasTotal ? `${count}/${total}` : `${count} unique`;
+    const group = setGroup(setName);
+    const strokeColor = group === 'st' ? '#eab308' : group === 'gd' ? '#2563eb' : '#94a3b8';
 
     return `
       <div class="flex flex-col items-center gap-1">
@@ -137,13 +173,13 @@ function renderCompletionCircles() {
             <circle cx="50" cy="50" r="40" class="completion-ring-bg"/>
             <circle cx="50" cy="50" r="40" class="completion-ring-fg"
               stroke-dasharray="${circumference}"
-              stroke-dashoffset="${hasTotal ? offset : 0}"
-              stroke="${hasTotal ? '#eab308' : '#2563eb'}"/>
+              stroke-dashoffset="${owned > 0 ? offset : circumference}"
+              stroke="${strokeColor}"/>
           </svg>
-          <span class="text-lg font-bold text-gundam-dark z-10">${label}</span>
+          <span class="text-lg font-bold text-gundam-dark z-10">${pct}%</span>
         </div>
-        <span class="text-xs text-gundam-muted text-center max-w-[100px] truncate" title="${setName}">${setName}</span>
-        <span class="text-[10px] text-gundam-muted/60">${sub}</span>
+        <span class="text-xs text-gundam-muted text-center max-w-[100px] truncate leading-tight" title="${setName}">${setName}</span>
+        <span class="text-[10px] text-gundam-muted/60">${owned}/${total}</span>
       </div>
     `;
   }).join('');
@@ -204,9 +240,16 @@ function renderCollection(cards) {
 
 function populateSetFilter() {
   const sel = document.getElementById('col-set-filter');
-  const sets = [...new Set(allCards.map(c => c.set_name).filter(Boolean))].sort();
+  // Mostra i set nell'ordine definito da SET_ORDER
+  const available = SET_ORDER.filter(s => {
+    // Mostra solo set che hanno match nei dati o tutti
+    return allCards.some(c => c.set_name === s);
+  });
+  // Aggiungi anche eventuali set non in SET_TOTALS ma nei dati
+  const extra = [...new Set(allCards.map(c => c.set_name).filter(Boolean))].filter(s => !SET_TOTALS[s]);
+  const allSets = [...available, ...extra.filter(s => available.indexOf(s) === -1)];
   sel.innerHTML = '<option value="">Tutte le espansioni</option>' +
-    sets.map(s => `<option value="${s}">${s}</option>`).join('');
+    allSets.map(s => `<option value="${s}">${s}</option>`).join('');
 }
 
 function filterCollection() {
@@ -320,22 +363,33 @@ document.addEventListener('DOMContentLoaded', () => {
   // Start button
   document.getElementById('start-btn').addEventListener('click', startApp);
 
-  // Esci button (torna alla splash)
+  // Esci button
   document.getElementById('logout-btn').addEventListener('click', () => {
     allCards = [];
     showSection('splash-section');
   });
 
-  // Navigation
-  document.getElementById('nav-dashboard').addEventListener('click', () => {
-    document.getElementById('nav-dashboard').className = 'nav-tab active px-5 py-3 text-sm font-semibold border-b-2 border-gundam-yellow text-gundam-yellow';
-    document.getElementById('nav-collection').className = 'nav-tab px-5 py-3 text-sm font-semibold border-b-2 border-transparent text-gundam-muted hover:text-gundam-dark';
+  // Sidebar
+  document.getElementById('hamburger-btn').addEventListener('click', openSidebar);
+  document.getElementById('sidebar-close').addEventListener('click', closeSidebar);
+  document.getElementById('sidebar-overlay').addEventListener('click', closeSidebar);
+
+  // Sidebar navigation
+  function activateSideNav(id) {
+    document.querySelectorAll('.side-nav').forEach(el => {
+      el.className = 'side-nav flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-sm font-semibold text-gundam-muted hover:text-gundam-dark hover:bg-gray-50 transition';
+    });
+    const btn = document.getElementById(id);
+    btn.className = 'side-nav active flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-sm font-semibold text-gundam-yellow bg-yellow-50 transition';
+  }
+
+  document.getElementById('side-dashboard').addEventListener('click', () => {
+    activateSideNav('side-dashboard');
     showView('view-dashboard');
   });
 
-  document.getElementById('nav-collection').addEventListener('click', () => {
-    document.getElementById('nav-collection').className = 'nav-tab active px-5 py-3 text-sm font-semibold border-b-2 border-gundam-yellow text-gundam-yellow';
-    document.getElementById('nav-dashboard').className = 'nav-tab px-5 py-3 text-sm font-semibold border-b-2 border-transparent text-gundam-muted hover:text-gundam-dark';
+  document.getElementById('side-collection').addEventListener('click', () => {
+    activateSideNav('side-collection');
     showView('view-collection');
   });
 
