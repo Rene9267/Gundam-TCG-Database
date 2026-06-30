@@ -140,6 +140,17 @@
         </div>
       </div>
 
+      <!-- Tabs: Carte / Statistiche -->
+      <div id="collection-tabs" class="hidden mb-4 border-b border-gray-200 flex gap-0">
+        <button id="tab-cards" class="tab-btn active px-5 py-2.5 text-sm font-semibold border-b-2 transition" data-view="cards">Carte</button>
+        <button id="tab-stats" class="tab-btn px-5 py-2.5 text-sm font-semibold border-b-2 transition text-gundam-muted border-transparent hover:text-gundam-dark" data-view="stats">Statistiche</button>
+      </div>
+
+      <!-- Statistics view -->
+      <div id="collection-stats" class="hidden space-y-3">
+        <div id="stats-content" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+      </div>
+
       <div id="collection-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
       <div id="collection-empty" class="hidden text-center py-16">
         <p class="text-gundam-muted text-lg">Nessuna carta trovata</p>
