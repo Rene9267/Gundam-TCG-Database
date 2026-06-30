@@ -264,6 +264,7 @@ function renderCompletionCircles() {
       for (const k of Object.keys(activeFilters)) activeFilters[k] = k === 'base';
       document.querySelectorAll('.variant-btn').forEach(b => b.classList.toggle('active', activeFilters[b.dataset.filter]));
       document.getElementById('variant-filters').classList.remove('hidden');
+      document.getElementById('collection-tabs').classList.remove('hidden');
       // Attiva nav collezione nella sidebar
       document.querySelectorAll('.side-nav').forEach(n => {
         n.className = 'side-nav flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-sm font-semibold text-gundam-muted hover:text-gundam-dark hover:bg-gray-50 transition';
@@ -288,7 +289,7 @@ function toggleVariantFilter(filterName) {
   document.querySelectorAll('.variant-btn').forEach(b => {
     b.classList.toggle('active', activeFilters[b.dataset.filter]);
   });
-  renderCollection(filterCollection());
+  if (currentColTab !== 'stats') renderCollection(filterCollection());
 }
 
 function setAllFilters(val) {
@@ -296,7 +297,7 @@ function setAllFilters(val) {
   document.querySelectorAll('.variant-btn').forEach(b => {
     b.classList.toggle('active', activeFilters[b.dataset.filter]);
   });
-  renderCollection(filterCollection());
+  if (currentColTab !== 'stats') renderCollection(filterCollection());
 }
 
 // ============ Collection ============
@@ -488,6 +489,120 @@ function filterCollection() {
   });
 }
 
+// ============ Collection Tab State ============
+let currentColTab = 'cards'; // 'cards' | 'stats'
+
+function switchColTab(tab) {
+  currentColTab = tab;
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.view === tab);
+    if (b.dataset.view === tab) {
+      b.className = 'tab-btn active px-5 py-2.5 text-sm font-semibold border-b-2 transition text-gundam-blue border-gundam-blue';
+    } else {
+      b.className = 'tab-btn px-5 py-2.5 text-sm font-semibold border-b-2 transition text-gundam-muted border-transparent hover:text-gundam-dark';
+    }
+  });
+
+  const setFilter = document.getElementById('col-set-filter').value;
+  const statsEl = document.getElementById('collection-stats');
+  const gridEl = document.getElementById('collection-grid');
+  const emptyEl = document.getElementById('collection-empty');
+  const summaryEl = document.getElementById('collection-summary');
+
+  if (tab === 'stats' && setFilter) {
+    renderSetStatistics(setFilter);
+    gridEl.classList.add('hidden');
+    emptyEl.classList.add('hidden');
+    summaryEl.classList.add('hidden');
+    statsEl.classList.remove('hidden');
+  } else {
+    statsEl.classList.add('hidden');
+    gridEl.classList.remove('hidden');
+    summaryEl.classList.remove('hidden');
+    renderCollection(filterCollection());
+  }
+}
+
+// ============ Set Statistics ============
+function renderSetStatistics(setName) {
+  const container = document.getElementById('stats-content');
+  const currentSetCode = setName.match(/\[(\w+)\]/)?.[1] || '';
+
+  // Raccogli reference cards per questo set (stessa logica di filterCollection)
+  const refs = refCards.filter(rc =>
+    rc.set_name === setName ||
+    (rc.card_code.startsWith(currentSetCode) && rc.set_code !== currentSetCode)
+  );
+
+  // Categorizza
+  const baseCards = [];
+  const altCards = [];
+  const resTokens = [];
+
+  for (const rc of refs) {
+    const isRT = isTokenOrResource(rc.card_code);
+    const isAltArt = !isRT && (rc.card_code.includes('_p') || rc.card_code.split('-')[0] !== rc.set_code);
+    if (isRT) resTokens.push(rc);
+    else if (isAltArt) altCards.push(rc);
+    else baseCards.push(rc);
+  }
+
+  // Owned map per questo set
+  const ownedMap = {};
+  for (const c of allCards) {
+    if (c.set_name === setName || (currentSetCode && c.card_code.startsWith(currentSetCode))) {
+      ownedMap[c.card_code] = c;
+    }
+  }
+
+  const totalOwned = Object.keys(ownedMap).reduce((sum, code) => sum + (ownedMap[code]?.quantity || 0), 0);
+  const totalOwnedCards = Object.keys(ownedMap).length;
+
+  function calcStats(cards) {
+    const total = cards.length;
+    const owned = cards.filter(c => ownedMap[c.card_code]).length;
+    const x4 = cards.filter(c => (ownedMap[c.card_code]?.quantity || 0) >= 4).length;
+    const pct = total > 0 ? Math.round((owned / total) * 100) : 0;
+    const pct4 = total > 0 ? Math.round((x4 / total) * 100) : 0;
+    return { total, owned, x4, pct, pct4 };
+  }
+
+  function statCard(label, stats, barColor) {
+    return `
+      <div class="stat-card">
+        <div class="stat-label">${label}</div>
+        <div class="stat-value">${stats.pct}%</div>
+        <div class="stat-sub">${stats.owned}/${stats.total} carte possedute</div>
+        <div class="stat-bar">
+          <div class="stat-bar-fill ${barColor}" style="width:${stats.pct}%"></div>
+        </div>
+        <div class="mt-3 pt-2 border-t border-gray-100">
+          <div class="flex justify-between text-xs">
+            <span class="text-gundam-muted">Play set (x4)</span>
+            <span class="font-semibold text-gundam-dark">${stats.pct4}% <span class="text-gundam-muted font-normal">(${stats.x4}/${stats.total})</span></span>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  const baseStats = calcStats(baseCards);
+  const altStats = calcStats(altCards);
+  const rtStats = calcStats(resTokens);
+
+  container.innerHTML = `
+    <div class="col-span-full">
+      <div class="stat-total-owned">
+        <div class="stat-label">Carte possedute in questo set</div>
+        <div class="stat-big">${totalOwned}</div>
+        <div class="stat-sub">${totalOwnedCards} carte uniche</div>
+      </div>
+    </div>
+    ${baseCards.length ? statCard('Set Base', baseStats, 'stat-bar-yellow') : ''}
+    ${altCards.length ? statCard('Alt Art', altStats, 'stat-bar-blue') : ''}
+    ${resTokens.length ? statCard('Risorse / Token', rtStats, 'stat-bar-green') : ''}
+  `;
+}
+
 // ============ Modal ============
 let editingCardId = null;
 let currentModalCard = null;
@@ -651,18 +766,25 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('col-search').addEventListener('input', () => {
     clearTimeout(searchTimeout);
     searchTimeout = setTimeout(() => {
-      renderCollection(filterCollection());
+      if (currentColTab === 'stats') switchColTab('cards');
+      else renderCollection(filterCollection());
     }, 250);
   });
 
   document.getElementById('col-set-filter').addEventListener('change', () => {
     const hasSet = !!document.getElementById('col-set-filter').value;
     document.getElementById('variant-filters').classList.toggle('hidden', !hasSet);
-    // Reset to default: solo Base
+    document.getElementById('collection-tabs').classList.toggle('hidden', !hasSet);
+    // Reset to default: solo Base + tab Carte
     for (const k of Object.keys(activeFilters)) activeFilters[k] = k === 'base';
     document.querySelectorAll('.variant-btn').forEach(b => b.classList.toggle('active', activeFilters[b.dataset.filter]));
-    renderCollection(filterCollection());
+    if (currentColTab === 'stats') switchColTab('cards');
+    else renderCollection(filterCollection());
   });
+
+  // Tab switching
+  document.getElementById('tab-cards').addEventListener('click', () => switchColTab('cards'));
+  document.getElementById('tab-stats').addEventListener('click', () => switchColTab('stats'));
 
   // Variant filter buttons (toggle)
   document.querySelectorAll('.variant-btn').forEach(btn => {
