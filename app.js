@@ -138,18 +138,14 @@ function showSection(id) {
 function showView(id) {
   document.querySelectorAll('#view-dashboard, #view-collection').forEach(el => el.classList.add('hidden'));
   document.getElementById(id).classList.remove('hidden');
-  closeSidebar();
 }
 
-// Sidebar
-function openSidebar() {
-  document.getElementById('sidebar').classList.add('open');
-  document.getElementById('sidebar-overlay').classList.remove('hidden');
-}
-
-function closeSidebar() {
-  document.getElementById('sidebar').classList.remove('open');
-  document.getElementById('sidebar-overlay').classList.add('hidden');
+function switchTab(tab) {
+  document.querySelectorAll('.bottom-nav-item').forEach(b => b.classList.remove('active'));
+  const btn = document.getElementById('bottom-' + tab);
+  if (btn) btn.classList.add('active');
+  if (tab === 'dashboard') showView('view-dashboard');
+  else showView('view-collection');
 }
 
 function rarityColor(rarity) {
@@ -172,40 +168,55 @@ function imageOrFallback(url, name) {
 function setGroup(setName) {
   const code = setName.match(/\[(\w+)\]/)?.[1] || '';
   if (code.startsWith('ST')) return 'st';
-  if (code.startsWith('GD')) return 'gd';
-  return 'other';
+  return 'gd';
 }
 
-// ============ Dashboard — Ultime Aggiunte ============
-function renderLatest() {
-  const grid = document.getElementById('latest-grid');
+// ============ Dashboard — Stats ============
+function renderDashboardStats() {
+  const uniqueCodes = new Set(allCards.map(c => c.card_code));
+  document.getElementById('stat-total-cards').textContent = allCards.length;
+  document.getElementById('stat-unique-cards').textContent = uniqueCodes.size;
+}
+
+// ============ Dashboard — Ultime Aggiunte (Horizontal Scroll) ============
+function renderLatestHorizontal() {
+  const scroll = document.getElementById('latest-scroll');
   const empty = document.getElementById('latest-empty');
-  const latest = allCards.slice(0, 8);
+  const latest = allCards.slice(0, 10);
 
   if (!latest.length) {
-    grid.innerHTML = '';
     empty.classList.remove('hidden');
     return;
   }
-
   empty.classList.add('hidden');
-  grid.innerHTML = latest.map(c => `
-    <div class="card-entry rounded-lg overflow-hidden shadow-sm">
-      ${imageOrFallback(c.image_url, c.card_name)}
-      <div class="p-3">
-        <h3 class="font-semibold text-sm truncate text-gundam-dark" title="${c.card_name}">${c.card_name}</h3>
-        <p class="text-xs text-gundam-muted truncate">${c.card_code}</p>
-        ${c.set_name ? `<p class="text-xs text-gundam-muted/60 truncate mt-0.5">${c.set_name}</p>` : ''}
+
+  const items = latest.map(c => `
+    <article class="min-w-[130px] w-[130px] snap-start flex-shrink-0 relative cursor-pointer group latest-entry" data-code="${c.card_code}">
+      <div class="aspect-[2.5/3.5] bg-primary-light rounded-lg overflow-hidden border border-secondary-light/50 relative shadow-sm">
+        ${imageOrFallback(c.image_url, c.card_name)}
+        <div class="absolute bottom-0 left-0 right-0 p-1.5 bg-gradient-to-t from-black/60 via-black/20 to-transparent">
+          <p class="text-[9px] font-mono text-white/90 truncate">${c.card_code}</p>
+        </div>
       </div>
-    </div>
+    </article>
   `).join('');
+
+  scroll.innerHTML = items + '<div class="w-3 flex-shrink-0"></div>';
+
+  scroll.querySelectorAll('.latest-entry').forEach(el => {
+    el.addEventListener('click', () => {
+      const code = el.dataset.code;
+      const rc = refCardByCode[code];
+      if (rc) openSheet(rc);
+    });
+  });
 }
 
-// ============ Dashboard — Cerchi Completamento ============
-function renderCompletionCircles() {
-  const container = document.getElementById('completion-circles');
+// ============ Dashboard — Completamento Espansioni (Vertical List) ============
+function renderExpansionsList() {
+  const container = document.getElementById('expansions-list');
+  const empty = document.getElementById('expansions-empty');
 
-  // Raccogli le carte possedute per set (unique card_code)
   const ownedMap = {};
   for (const c of allCards) {
     const key = c.set_name || 'Senza set';
@@ -213,65 +224,64 @@ function renderCompletionCircles() {
     ownedMap[key].add(c.card_code);
   }
 
-  const r = 50;
-  const circumference = 2 * Math.PI * r;
-  let lastGroup = null;
+  const ownedSets = setOrder.filter(s => ownedMap[s] && ownedMap[s].size > 0);
+  const top3 = ownedSets.slice(-3);
 
-  if (!setOrder.length) return;
+  if (!top3.length) {
+    container.innerHTML = '';
+    empty.classList.remove('hidden');
+    return;
+  }
+  empty.classList.add('hidden');
 
-  const items = [];
-  setOrder.forEach(setName => {
-    const group = setGroup(setName);
-    if (lastGroup && group !== lastGroup) {
-      items.push(`<div class="col-span-full border-t border-gundam-red my-2"></div>`);
-    }
-    lastGroup = group;
-
+  const items = top3.map(setName => {
     const total = setTotals[setName] || 0;
     const owned = ownedMap[setName] ? ownedMap[setName].size : 0;
     const pct = total > 0 ? Math.min(Math.round((owned / total) * 100), 100) : 0;
+    const r = 34;
+    const circumference = 2 * Math.PI * r;
     const offset = circumference - (pct / 100) * circumference;
-    const strokeColor = group === 'st' ? '#eab308' : '#2563eb';
+    const setCode = setName.match(/\[(\w+)\]/)?.[1] || '';
+    const cleanName = setName.replace(/\s*\[.*?\]/, '');
 
-    items.push(`
-      <div class="set-circle flex flex-col items-center gap-1 py-2 cursor-pointer rounded-lg hover:bg-gray-50 transition" data-set="${setName}">
-        <div class="relative w-[120px] h-[120px] flex items-center justify-center">
-          <svg width="120" height="120" viewBox="0 0 120 120" class="completion-ring absolute inset-0">
-            <circle cx="60" cy="60" r="${r}" class="completion-ring-bg" stroke-width="7"/>
-            <circle cx="60" cy="60" r="${r}" class="completion-ring-fg"
-              stroke-width="7"
-              stroke-dasharray="${circumference}"
-              stroke-dashoffset="${owned > 0 ? offset : circumference}"
-              stroke="${strokeColor}"/>
-          </svg>
-          <span class="text-xl font-bold text-gundam-dark z-10">${pct}%</span>
+    return `
+      <div class="exp-entry bg-white rounded-xl border border-secondary-light/60 p-3 flex items-center justify-between hover:shadow-sm transition cursor-pointer shadow-sm" data-set="${setName}">
+        <div class="flex items-center gap-3">
+          <div class="relative w-[44px] h-[44px] flex items-center justify-center flex-shrink-0">
+            <svg class="w-full h-full" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" fill="transparent" r="${r}" stroke="#eef0f4" stroke-width="8"></circle>
+              <circle cx="50" cy="50" fill="transparent" r="${r}"
+                stroke="#2c52b3" stroke-width="8" stroke-linecap="round"
+                stroke-dasharray="${circumference}" stroke-dashoffset="${owned > 0 ? offset : circumference}"
+                style="transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset 0.35s"></circle>
+            </svg>
+            <span class="absolute text-[10px] font-bold font-heading text-primary">${pct}%</span>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-primary">${cleanName}</p>
+            <div class="flex gap-2 items-center mt-0.5">
+              <span class="font-mono text-[10px] px-1 border border-secondary-light rounded text-secondary">${setCode}</span>
+              <span class="font-mono text-[10px] text-secondary/60">${owned}/${total}</span>
+            </div>
+          </div>
         </div>
-        <span class="text-sm text-gundam-muted text-center max-w-[120px] truncate leading-tight" title="${setName}">${setName}</span>
-        <span class="text-xs text-gundam-muted/60">${owned}/${total}</span>
+        <span class="material-symbols-outlined text-secondary">chevron_right</span>
       </div>
-    `);
-  });
+    `;
+  }).join('');
 
-  container.innerHTML = items.join('');
+  container.innerHTML = items;
 
-  // Click sui cerchi → vai alla collezione filtrata per quel set
-  container.querySelectorAll('.set-circle').forEach(el => {
+  container.querySelectorAll('.exp-entry').forEach(el => {
     el.addEventListener('click', () => {
       const setName = el.dataset.set;
-      // Reset to Carte tab
       if (currentColTab !== 'cards') switchColTab('cards');
       currentColTab = 'cards';
       document.getElementById('col-set-filter').value = setName;
       document.getElementById('col-search').value = '';
-      // Reset filtri to default (solo Base)
       for (const k of Object.keys(activeFilters)) activeFilters[k] = k === 'base';
       document.querySelectorAll('.variant-btn').forEach(b => b.classList.toggle('active', activeFilters[b.dataset.filter]));
-      // Attiva nav collezione nella sidebar
-      document.querySelectorAll('.side-nav').forEach(n => {
-        n.className = 'side-nav flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-sm font-semibold text-gundam-muted hover:text-gundam-dark hover:bg-gray-50 transition';
-      });
-      document.getElementById('side-collection').className = 'side-nav active flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-sm font-semibold text-gundam-yellow bg-yellow-50 transition';
-      showView('view-collection');
+      switchTab('collection');
       renderCollection(filterCollection());
     });
   });
@@ -454,9 +464,9 @@ function switchColTab(tab) {
   document.querySelectorAll('.tab-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.view === tab);
     if (b.dataset.view === tab) {
-      b.className = 'tab-btn active px-5 py-2.5 text-sm font-semibold border-b-2 transition text-gundam-blue border-gundam-blue';
+      b.className = 'tab-btn active px-4 py-2 text-sm font-semibold border-b-2 transition text-primary border-primary';
     } else {
-      b.className = 'tab-btn px-5 py-2.5 text-sm font-semibold border-b-2 transition text-gundam-muted border-transparent hover:text-gundam-dark';
+      b.className = 'tab-btn px-4 py-2 text-sm font-semibold border-b-2 transition text-secondary border-transparent hover:text-primary';
     }
   });
 
@@ -530,8 +540,8 @@ function renderSetStatistics(setName) {
         </div>
         <div class="mt-3 pt-2 border-t border-gray-100">
           <div class="flex justify-between text-xs">
-            <span class="text-gundam-muted">Play set (x4)</span>
-            <span class="font-semibold text-gundam-dark">${stats.pct4}% <span class="text-gundam-muted font-normal">(${stats.x4}/${stats.total})</span></span>
+            <span class="text-secondary">Play set (x4)</span>
+            <span class="font-semibold text-primary">${stats.pct4}% <span class="text-secondary font-normal">(${stats.x4}/${stats.total})</span></span>
           </div>
         </div>
       </div>`;
@@ -695,8 +705,9 @@ function closeSheet() {
 async function refreshCards() {
   try {
     allCards = await loadCards();
-    renderLatest();
-    renderCompletionCircles();
+    renderDashboardStats();
+    renderLatestHorizontal();
+    renderExpansionsList();
     populateSetFilter();
     renderCollection(filterCollection());
   } catch (err) {
@@ -725,6 +736,8 @@ async function startApp() {
     await loadReferenceCards();
     await refreshCards();
     showSection('app-section');
+    switchTab('dashboard');
+    document.getElementById('bottom-dashboard').classList.add('active');
   } catch (err) {
     errEl.textContent = err.message;
     errEl.classList.remove('hidden');
@@ -738,36 +751,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // Start button
   document.getElementById('start-btn').addEventListener('click', startApp);
 
-  // Esci button
-  document.getElementById('logout-btn').addEventListener('click', () => {
-    allCards = [];
-    showSection('splash-section');
-  });
-
-  // Sidebar
-  document.getElementById('hamburger-btn').addEventListener('click', openSidebar);
-  document.getElementById('sidebar-close').addEventListener('click', closeSidebar);
-  document.getElementById('sidebar-overlay').addEventListener('click', closeSidebar);
-
-  // Sidebar navigation
-  function activateSideNav(id) {
-    document.querySelectorAll('.side-nav').forEach(el => {
-      el.className = 'side-nav flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-sm font-semibold text-gundam-muted hover:text-gundam-dark hover:bg-gray-50 transition';
-    });
-    const btn = document.getElementById(id);
-    btn.className = 'side-nav active flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-sm font-semibold text-gundam-yellow bg-yellow-50 transition';
-  }
-
-  document.getElementById('side-dashboard').addEventListener('click', () => {
-    activateSideNav('side-dashboard');
-    showView('view-dashboard');
-  });
-
-  document.getElementById('side-collection').addEventListener('click', () => {
-    activateSideNav('side-collection');
+  // Bottom navigation
+  document.getElementById('bottom-dashboard').addEventListener('click', () => switchTab('dashboard'));
+  document.getElementById('bottom-collection').addEventListener('click', () => {
     if (currentColTab !== 'cards') switchColTab('cards');
     currentColTab = 'cards';
-    showView('view-collection');
+    switchTab('collection');
+  });
+
+  // "Vedi tutte" on dashboard
+  document.getElementById('latest-view-all').addEventListener('click', () => {
+    if (currentColTab !== 'cards') switchColTab('cards');
+    currentColTab = 'cards';
+    switchTab('collection');
   });
 
   // Bottom Sheet events
