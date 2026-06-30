@@ -25,6 +25,7 @@ const SETS = [
   { packageId: '616102', setCode: 'GD02', setName: 'Dual Impact' },
   { packageId: '616103', setCode: 'GD03', setName: 'Steel Requiem' },
   { packageId: '616104', setCode: 'GD04', setName: 'Phantom Aria' },
+  { packageId: '616201', setCode: 'EB01', setName: 'Eternal Nexus' },
 ];
 
 const IMAGE_BASE = 'https://www.gundam-gcg.com/en/images/cards/card';
@@ -92,7 +93,7 @@ async function main() {
   }
 
   // Salva JSON
-  const outputPath = path.join(__dirname, 'reference_cards.json');
+  const outputPath = path.join(__dirname, '..', '..', 'reference_cards.json');
   fs.writeFileSync(outputPath, JSON.stringify(allCards, null, 2), 'utf-8');
   console.log(`\nDone! ${allCards.length} total cards saved to reference_cards.json`);
 }

@@ -258,13 +258,14 @@ function renderCompletionCircles() {
   container.querySelectorAll('.set-circle').forEach(el => {
     el.addEventListener('click', () => {
       const setName = el.dataset.set;
+      // Reset to Carte tab
+      if (currentColTab !== 'cards') switchColTab('cards');
+      currentColTab = 'cards';
       document.getElementById('col-set-filter').value = setName;
       document.getElementById('col-search').value = '';
       // Reset filtri to default (solo Base)
       for (const k of Object.keys(activeFilters)) activeFilters[k] = k === 'base';
       document.querySelectorAll('.variant-btn').forEach(b => b.classList.toggle('active', activeFilters[b.dataset.filter]));
-      document.getElementById('variant-filters').classList.remove('hidden');
-      document.getElementById('collection-tabs').classList.remove('hidden');
       // Attiva nav collezione nella sidebar
       document.querySelectorAll('.side-nav').forEach(n => {
         n.className = 'side-nav flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-sm font-semibold text-gundam-muted hover:text-gundam-dark hover:bg-gray-50 transition';
@@ -306,10 +307,6 @@ function renderCollection(cards) {
   const empty = document.getElementById('collection-empty');
   const summary = document.getElementById('collection-summary');
 
-  // Mostra/nascondi filtri variant in base alla selezione set
-  const hasSet = !!document.getElementById('col-set-filter').value;
-  document.getElementById('variant-filters').classList.toggle('hidden', !hasSet);
-
   if (!cards.length) {
     grid.innerHTML = '';
     empty.classList.remove('hidden');
@@ -327,97 +324,57 @@ function renderCollection(cards) {
     const isPlayset = c.quantity >= 4;
     const isMissing = c.isMissing;
     return `
-    <div class="card-entry rounded-lg overflow-hidden shadow-sm relative${isMissing ? ' card-missing' : ''}" data-id="${c.id}" data-code="${c.card_code}">
-      <div class="relative">
-        <div class="card-img-wrapper ${isMissing ? 'grayscale' : ''}">
-          ${imageOrFallback(c.image_url, c.card_name)}
-        </div>
-        ${isPlayset ? '<span class="playset-diamond"></span>' : ''}
-        ${isMissing ? '<div class="missing-overlay"><span>+</span></div>' : ''}
+    <div class="card-entry relative cursor-pointer${isMissing ? ' card-missing' : ''}${isPlayset ? ' card-playset' : ''}" data-id="${c.id}" data-code="${c.card_code}">
+      <div class="card-img-wrapper ${isMissing ? 'grayscale' : ''}">
+        ${imageOrFallback(c.image_url, c.card_name)}
       </div>
-      <div class="px-3 pb-3 pt-2">
-        <div class="flex items-start justify-between gap-2">
+      ${isPlayset ? '<span class="playset-diamond"></span>' : ''}
+      ${isMissing ? '<div class="missing-overlay"><span>+</span></div>' : ''}
+      <div class="card-label">
+        <div class="card-label-row">
           <div class="min-w-0 flex-1">
-            <h3 class="font-semibold text-xs truncate text-gundam-dark" title="${c.card_name}">${c.card_name}</h3>
-            <p class="text-[11px] text-gundam-muted truncate">${c.card_code}</p>
-            ${isMissing ? '<span class="text-[10px] text-gundam-red font-medium">non posseduta</span>' :
-              `<span class="text-[10px] font-medium ${rarityColor(c.rarity)}">${c.rarity || '—'}</span>`}
+            <div class="card-label-name">${c.card_name}</div>
+            <div class="card-label-code">${c.card_code}</div>
           </div>
-          ${!isMissing ? `<div class="qty-quarter shrink-0">
-            <span class="text-xs font-bold text-white leading-none">${c.quantity}</span>
-          </div>` : ''}
-        </div>
-        <div class="flex gap-1.5 mt-2 justify-end">
-          ${isMissing
-            ? `<button class="col-add-missing text-[10px] bg-gundam-yellow hover:bg-yellow-500 text-white rounded px-1.5 py-0.5 transition" data-code="${c.card_code}" data-name="${c.card_name}" data-set="${c.set_name}" data-image="${c.image_url}">+ Aggiungi</button>`
-            : `<button class="col-edit text-[10px] bg-gundam-blue hover:bg-gundam-blue-hover text-white rounded px-1.5 py-0.5 transition" data-id="${c.id}">✎</button>
-               <button class="col-delete text-[10px] bg-gundam-red hover:bg-gundam-red-hover text-white rounded px-1.5 py-0.5 transition" data-id="${c.id}">✕</button>`
-          }
+          ${!isMissing ? `<div class="qty-badge">${c.quantity}</div>` : ''}
         </div>
       </div>
     </div>`;
   }).join('');
 
-  grid.querySelectorAll('.col-edit').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const card = allCards.find(c => c.id === btn.dataset.id);
-      if (card) openModal(card);
-    });
-  });
-
-  grid.querySelectorAll('.col-delete').forEach(btn => {
-    btn.addEventListener('click', () => {
-      if (confirm('Eliminare questa carta dalla collezione?')) {
-        deleteCard(btn.dataset.id).then(() => refreshCards());
-      }
-    });
-  });
-
-  // Aggiungi carte mancanti → apre modale pre-compilata
-  grid.querySelectorAll('.col-add-missing').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const card = {
-        card_code: btn.dataset.code,
-        card_name: btn.dataset.name,
-        set_name: btn.dataset.set,
-        image_url: btn.dataset.image,
-        rarity: '',
-        quantity: 1,
-      };
-      openModal(card);
-    });
-  });
-
-  // Click sul "+" overlay o sulla card mancante → apre modale
-  grid.querySelectorAll('.card-missing .missing-overlay, .card-missing .card-img-wrapper').forEach(el => {
+  // Click su qualsiasi carta → apre bottom sheet
+  grid.querySelectorAll('.card-entry').forEach(el => {
     el.addEventListener('click', (e) => {
-      const entry = e.currentTarget.closest('.card-entry');
+      if (e.target.closest('.missing-overlay')) return;
+      const code = el.dataset.code;
+      const rc = refCardByCode[code];
+      if (rc) openSheet(rc);
+    });
+  });
+
+  // Click sul "+" overlay → apre bottom sheet
+  grid.querySelectorAll('.card-missing .missing-overlay').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const entry = el.closest('.card-entry');
       if (!entry) return;
       const code = entry.dataset.code;
       const rc = refCardByCode[code];
-      if (rc) {
-        openModal({
-          card_code: rc.card_code,
-          card_name: rc.card_name,
-          set_name: rc.set_name,
-          image_url: rc.image_url,
-          rarity: '',
-          quantity: 1,
-        });
-      }
+      if (rc) openSheet(rc);
     });
   });
 }
 
 function populateSetFilter() {
   const sel = document.getElementById('col-set-filter');
-  // Usa l'ordine da reference_cards (tutti i set, non solo quelli con carte possedute)
+  const prevValue = sel.value;
   const sets = setOrder.length ? setOrder : [];
-  // Aggiungi eventuali set extra dai dati dell'utente non in reference_cards
   const extra = [...new Set(allCards.map(c => c.set_name).filter(Boolean))].filter(s => sets.indexOf(s) === -1);
   const allSets = [...sets, ...extra];
-  sel.innerHTML = '<option value="">Tutte le espansioni</option>' +
-    allSets.map(s => `<option value="${s}">${s}</option>`).join('');
+  sel.innerHTML = allSets.map(s => `<option value="${s}">${s}</option>`).join('');
+  // Preserve previous selection or auto-select first set
+  if (allSets.includes(prevValue)) sel.value = prevValue;
+  else if (allSets.length) sel.value = allSets[0];
 }
 
 function filterCollection() {
@@ -505,20 +462,15 @@ function switchColTab(tab) {
 
   const setFilter = document.getElementById('col-set-filter').value;
   const statsEl = document.getElementById('collection-stats');
-  const gridEl = document.getElementById('collection-grid');
-  const emptyEl = document.getElementById('collection-empty');
-  const summaryEl = document.getElementById('collection-summary');
+  const cardsContent = document.getElementById('cards-content');
 
-  if (tab === 'stats' && setFilter) {
+  if (tab === 'stats') {
     renderSetStatistics(setFilter);
-    gridEl.classList.add('hidden');
-    emptyEl.classList.add('hidden');
-    summaryEl.classList.add('hidden');
+    cardsContent.classList.add('hidden');
     statsEl.classList.remove('hidden');
   } else {
     statsEl.classList.add('hidden');
-    gridEl.classList.remove('hidden');
-    summaryEl.classList.remove('hidden');
+    cardsContent.classList.remove('hidden');
     renderCollection(filterCollection());
   }
 }
@@ -603,74 +555,140 @@ function renderSetStatistics(setName) {
   `;
 }
 
-// ============ Modal ============
+// ============ Bottom Sheet ============
 let editingCardId = null;
-let currentModalCard = null;
+let currentSheetCard = null;
 
-function openModal(card) {
-  editingCardId = card ? card.id : null;
-  currentModalCard = card;
-
-  const display = document.getElementById('card-info-display');
-  document.getElementById('modal-title').textContent = editingCardId ? 'Modifica Carta' : 'Aggiungi Carta';
-
-  if (card && card.card_name) {
-    display.classList.remove('hidden');
-    document.getElementById('display-card-name').textContent = card.card_name;
-    document.getElementById('display-card-code').textContent = card.card_code;
-    document.getElementById('display-card-set').textContent = card.set_name || '';
-    const img = document.getElementById('display-card-image');
-    img.src = card.image_url || '';
-    img.onerror = () => { img.style.display = 'none'; };
-    img.onload = () => { img.style.display = ''; };
-  } else {
-    display.classList.add('hidden');
-  }
-
-  document.getElementById('field-quantity').value = card ? (card.quantity || 1) : 1;
-  document.getElementById('card-modal').classList.remove('hidden');
-  document.body.classList.add('modal-open');
+function getAltVersions(cardName) {
+  if (!cardName) return [];
+  return refCards.filter(rc => rc.card_name === cardName);
 }
 
-function closeModal() {
-  document.getElementById('card-modal').classList.add('hidden');
-  document.body.classList.remove('modal-open');
-  editingCardId = null;
-  currentModalCard = null;
-}
-
-async function handleCardSubmit(e) {
-  e.preventDefault();
-  const errEl = document.getElementById('form-error');
-  errEl.classList.add('hidden');
-
-  if (!currentModalCard || !currentModalCard.card_code) {
-    errEl.textContent = 'Seleziona una carta mancante dalla collezione per aggiungerla.';
-    errEl.classList.remove('hidden');
+function populateAltVersions(cardName, currentCode) {
+  const container = document.getElementById('sheet-versions');
+  const versions = getAltVersions(cardName);
+  if (versions.length < 2) {
+    container.innerHTML = '';
+    container.classList.add('hidden');
     return;
   }
+  container.classList.remove('hidden');
+  container.innerHTML = versions.map(v => {
+    const isActive = v.card_code === currentCode;
+    const isAlt = v.card_code.includes('_p') || v.card_code.split('-')[0] !== v.set_code;
+    return `<button class="version-dot w-3 h-3 rounded-full transition border border-white shadow-sm${isActive ? ' version-dot-active' : ''}${isAlt ? ' version-dot-alt' : ' version-dot-base'}" data-code="${v.card_code}" title="${v.card_code}${v.set_code !== currentCode?.split('-')[0] ? ' [' + v.set_code + ']' : ''}"></button>`;
+  }).join('');
 
-  const cardData = {
-    card_name: currentModalCard.card_name,
-    card_code: currentModalCard.card_code,
-    set_name: currentModalCard.set_name || null,
-    rarity: currentModalCard.rarity || null,
-    quantity: parseInt(document.getElementById('field-quantity').value, 10) || 1,
-    image_url: currentModalCard.image_url || null
+  // Click su dot → carica quella versione
+  container.querySelectorAll('.version-dot').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const code = btn.dataset.code;
+      const rc = refCardByCode[code];
+      if (rc) loadSheetCard(rc);
+    });
+  });
+}
+
+function loadSheetCard(rc) {
+  // Trova owned data
+  const owned = allCards.find(c => c.card_code === rc.card_code && c.set_name === rc.set_name);
+  const card = {
+    id: owned?.id || null,
+    card_code: rc.card_code,
+    card_name: rc.card_name,
+    set_name: rc.set_name,
+    set_code: rc.set_code,
+    image_url: rc.image_url,
+    quantity: owned?.quantity || 0,
+    rarity: owned?.rarity || null,
   };
+  editingCardId = card.id;
+  currentSheetCard = card;
 
+  const img = document.getElementById('sheet-image');
+  img.src = card.image_url || '';
+  img.style.display = '';
+  img.onerror = () => { img.style.display = 'none'; };
+  img.onload = () => { img.style.display = ''; };
+
+  document.getElementById('sheet-name').textContent = card.card_name;
+  document.getElementById('sheet-code').textContent = card.card_code;
+  document.getElementById('sheet-set').textContent = card.set_name || '';
+
+  document.getElementById('sheet-qty-display').textContent = card.quantity || 0;
+
+  populateAltVersions(card.card_name, card.card_code);
+  updateCardtraderLink(card.card_code);
+}
+
+function updateCardtraderLink(cardCode) {
+  const link = document.getElementById('sheet-cardtrader');
+  const rc = refCardByCode[cardCode];
+  if (rc && rc.cardtrader_slug) {
+    link.href = `https://www.cardtrader.com/it/cards/${rc.cardtrader_slug}`;
+  } else {
+    const query = cardCode.replace(/-/g, '+');
+    link.href = `https://www.cardtrader.com/it/cards?search=${query}`;
+  }
+}
+
+async function saveSheetQuantity(newQty) {
+  const errEl = document.getElementById('sheet-error');
+  errEl.classList.add('hidden');
+  if (!currentSheetCard || !currentSheetCard.card_code) return;
   try {
     if (editingCardId) {
-      await updateCard(editingCardId, cardData);
-    } else {
+      if (newQty <= 0) {
+        await deleteCard(editingCardId);
+      } else {
+        await updateCard(editingCardId, { quantity: newQty });
+      }
+    } else if (newQty > 0) {
+      const cardData = {
+        card_name: currentSheetCard.card_name,
+        card_code: currentSheetCard.card_code,
+        set_name: currentSheetCard.set_name || null,
+        rarity: currentSheetCard.rarity || null,
+        quantity: newQty,
+        image_url: currentSheetCard.image_url || null,
+      };
       await addCard(cardData);
     }
-    closeModal();
     await refreshCards();
+    // Ricarica lo sheet con i nuovi dati
+    const rc = refCardByCode[currentSheetCard.card_code];
+    if (rc) loadSheetCard(rc);
   } catch (err) {
-    errEl.textContent = err.message || 'Errore durante il salvataggio.';
+    errEl.textContent = err.message || 'Errore.';
     errEl.classList.remove('hidden');
   }
+}
+
+function openSheet(card) {
+  if (!card) return;
+  const rc = refCardByCode[card.card_code];
+  if (rc) {
+    const sheet = document.getElementById('card-sheet');
+    const panel = document.getElementById('sheet-panel');
+    sheet.classList.remove('hidden');
+    document.body.classList.add('sheet-open');
+    panel.style.transform = 'translateY(100%)';
+    panel.getBoundingClientRect();
+    panel.style.transform = 'translateY(0)';
+    loadSheetCard(rc);
+  }
+}
+
+function closeSheet() {
+  const panel = document.getElementById('sheet-panel');
+  panel.style.transform = 'translateY(100%)';
+  setTimeout(() => {
+    document.getElementById('card-sheet').classList.add('hidden');
+    document.body.classList.remove('sheet-open');
+    editingCardId = null;
+    currentSheetCard = null;
+  }, 250);
 }
 
 // ============ Refresh ============
@@ -747,19 +765,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('side-collection').addEventListener('click', () => {
     activateSideNav('side-collection');
+    if (currentColTab !== 'cards') switchColTab('cards');
+    currentColTab = 'cards';
     showView('view-collection');
   });
 
-  // FAB add
-  document.getElementById('fab-add').addEventListener('click', () => openModal(null));
+  // Bottom Sheet events
+  document.getElementById('sheet-overlay').addEventListener('click', closeSheet);
 
-  // Modal events
-  document.getElementById('modal-close').addEventListener('click', closeModal);
-  document.getElementById('modal-cancel').addEventListener('click', closeModal);
-  document.getElementById('card-modal').addEventListener('click', (e) => {
-    if (e.target === document.getElementById('card-modal')) closeModal();
+  document.getElementById('sheet-qty-minus').addEventListener('click', () => {
+    const display = document.getElementById('sheet-qty-display');
+    const current = parseInt(display.textContent, 10) || 0;
+    if (current > 0) saveSheetQuantity(current - 1);
   });
-  document.getElementById('card-form').addEventListener('submit', handleCardSubmit);
+
+  document.getElementById('sheet-qty-plus').addEventListener('click', () => {
+    const display = document.getElementById('sheet-qty-display');
+    const current = parseInt(display.textContent, 10) || 0;
+    saveSheetQuantity(current + 1);
+  });
 
   // Collection filters
   let searchTimeout;
@@ -772,10 +796,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.getElementById('col-set-filter').addEventListener('change', () => {
-    const hasSet = !!document.getElementById('col-set-filter').value;
-    document.getElementById('variant-filters').classList.toggle('hidden', !hasSet);
-    document.getElementById('collection-tabs').classList.toggle('hidden', !hasSet);
-    // Reset to default: solo Base + tab Carte
     for (const k of Object.keys(activeFilters)) activeFilters[k] = k === 'base';
     document.querySelectorAll('.variant-btn').forEach(b => b.classList.toggle('active', activeFilters[b.dataset.filter]));
     if (currentColTab === 'stats') switchColTab('cards');
