@@ -57,15 +57,18 @@ body::after {
   box-shadow: 0 2px 12px rgba(37, 99, 235, 0.06);
 }
 
-/* ---- Card hover ---- */
+/* ---- Card (immagine senza bordo bianco) ---- */
 .card-entry {
+  border-radius: 8px;
+  overflow: hidden;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
 }
 .card-entry:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.12);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+.card-entry:active {
+  transform: translateY(-1px);
 }
 
 /* ---- Image fallback ---- */
@@ -93,30 +96,65 @@ body::after {
   transition: stroke-dashoffset 0.6s ease;
 }
 
-/* ---- Quarter circle badge (copie) ---- */
-.qty-quarter {
-  width: 36px;
-  height: 36px;
+/* ---- Quantity badge (cerchio nella striscia in basso a destra) ---- */
+.qty-badge {
+  width: 24px;
+  height: 24px;
   background: #eab308;
-  border-radius: 0 0 100% 0;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  padding: 3px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
   flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25);
 }
 
-/* ---- Playset diamond (sull'immagine) ---- */
+/* ---- Playset diamond (in alto a destra) ---- */
 .playset-diamond {
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   background: #eab308;
   transform: rotate(45deg);
   position: absolute;
-  top: 8px;
-  left: 8px;
-  border: 1.5px solid white;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  top: 10px;
+  right: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+
+/* ---- Card label (bottom strip: nome + codice + badge) ---- */
+.card-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(255,255,255,0.85) 30%, rgba(255,255,255,0.95) 60%);
+  padding: 20px 6px 6px;
+  pointer-events: none;
+}
+.card-label-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card-label-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1e293b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-label-code {
+  font-size: 10px;
+  font-weight: 500;
+  color: #64748b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ---- Diamond quantity badge ---- */
@@ -141,8 +179,8 @@ body::after {
   transition: background 0.15s ease, color 0.15s ease;
 }
 
-/* ---- Prevent body scroll when modal is open ---- */
-body.modal-open {
+/* ---- Prevent body scroll when sheet is open ---- */
+body.sheet-open {
   overflow: hidden;
 }
 
@@ -161,12 +199,10 @@ body.modal-open {
 /* ---- Missing Card (non posseduta) ---- */
 .card-missing {
   opacity: 0.85;
-  border-color: #cbd5e1;
 }
 .card-missing:hover {
   transform: none;
-  box-shadow: 0 2px 8px rgba(234, 179, 8, 0.15);
-  border-color: #eab308;
+  box-shadow: 0 2px 10px rgba(234, 179, 8, 0.25);
   cursor: pointer;
 }
 .card-img-wrapper.grayscale img {
@@ -203,11 +239,6 @@ body.modal-open {
   transform: scale(1.1);
   background: #eab308;
 }
-/* Per le carte mancanti, cliccando si apre la modale */
-.card-missing .card-img-wrapper {
-  cursor: pointer;
-}
-
 /* ---- Variant filter tabs ---- */
 .variant-btn {
   padding: 5px 18px;
@@ -312,4 +343,37 @@ body.modal-open {
   font-size: 13px;
   color: #64748b;
   font-weight: 600;
+}
+
+/* ---- Bottom Sheet ---- */
+#card-sheet {
+  transition: opacity 0.2s ease;
+}
+#sheet-overlay {
+  cursor: pointer;
+}
+#sheet-panel {
+  overscroll-behavior: contain;
+}
+
+/* ---- Version dots ---- */
+.version-dot {
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.version-dot:hover {
+  transform: scale(1.3);
+}
+.version-dot-base {
+  background: #2563eb;
+}
+.version-dot-alt {
+  background: #eab308;
+}
+.version-dot-active {
+  transform: scale(1.4);
+  box-shadow: 0 0 0 2px #2563eb;
+}
+.version-dot-active.version-dot-alt {
+  box-shadow: 0 0 0 2px #eab308;
 }

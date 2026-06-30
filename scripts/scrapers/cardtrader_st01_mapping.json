@@ -1,0 +1,82 @@
+{
+  "Gundam": {
+    "slug": "gundam-lr-st-01-heroic-beginnings",
+    "blueprint_id": 341360,
+    "rarity": "lr"
+  },
+  "Gundam (MA Form)": {
+    "slug": "gundam-ma-form-c-st-01-heroic-beginnings",
+    "blueprint_id": 341362,
+    "rarity": "c"
+  },
+  "Guncannon": {
+    "slug": "guncannon-c-st-01-heroic-beginnings",
+    "blueprint_id": 341364,
+    "rarity": "c"
+  },
+  "Guntank": {
+    "slug": "guntank-c-st-01-heroic-beginnings",
+    "blueprint_id": 341366,
+    "rarity": "c"
+  },
+  "GM": {
+    "slug": "gm-c-st-01-heroic-beginnings",
+    "blueprint_id": 341368,
+    "rarity": "c"
+  },
+  "Gundam Aerial (Permet Score Six)": {
+    "slug": "gundam-aerial-permet-score-six-lr-st-01-heroic-beginnings",
+    "blueprint_id": 341370,
+    "rarity": "lr"
+  },
+  "Gundam Aerial (Bit on Form)": {
+    "slug": "gundam-aerial-bit-on-form-c-st-01-heroic-beginnings",
+    "blueprint_id": 341372,
+    "rarity": "c"
+  },
+  "Demi Trainer": {
+    "slug": "demi-trainer-c-st-01-heroic-beginnings",
+    "blueprint_id": 341374,
+    "rarity": "c"
+  },
+  "Zowort": {
+    "slug": "zowort-c-st-01-heroic-beginnings",
+    "blueprint_id": 341376,
+    "rarity": "c"
+  },
+  "Amuro Ray": {
+    "slug": "amuro-ray-c-st-01-heroic-beginnings",
+    "blueprint_id": 341378,
+    "rarity": "c"
+  },
+  "Suletta Mercury": {
+    "slug": "suletta-mercury-c-st-01-heroic-beginnings",
+    "blueprint_id": 341380,
+    "rarity": "c"
+  },
+  "Thoroughly Damaged": {
+    "slug": "thoroughly-damaged-c-st-01-heroic-beginnings",
+    "blueprint_id": 341382,
+    "rarity": "c"
+  },
+  "Kai's Resolve": {
+    "slug": "kais-resolve-c-st-01-heroic-beginnings",
+    "blueprint_id": 341332,
+    "rarity": "c"
+  },
+  "Unforeseen Incident": {
+    "slug": "unforeseen-incident-c-st-01-heroic-beginnings",
+    "blueprint_id": 341386,
+    "rarity": "c"
+  },
+  "White Base": {
+    "slug": "white-base-c-st-01-heroic-beginnings",
+    "blueprint_id": 341388,
+    "rarity": "c"
+  },
+  "Asticassia School of Technology, Earth House": {
+    "slug": "asticassia-school-of-technology-earth-house-c-st-01-heroic-beginnings",
+    "blueprint_id": 341390,
+    "rarity": "c"
+  }
+}

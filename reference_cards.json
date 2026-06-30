@@ -7712,5 +7712,761 @@
     "set_code": "GD04",
     "set_name": "Phantom Aria [GD04]",
     "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/R-040_p1.webp"
+  },
+  {
+    "card_code": "ST10-006_p2",
+    "card_name": "Phoenix Gundam (Power Unleashed) (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST10-006_p2.webp"
+  },
+  {
+    "card_code": "T-025",
+    "card_name": "Gundam Exia",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/T-025.webp"
+  },
+  {
+    "card_code": "EB01-001",
+    "card_name": "Gundam Astray Red Frame Custom (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-001.webp"
+  },
+  {
+    "card_code": "EB01-001_p1",
+    "card_name": "Gundam Astray Red Frame Custom (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-001_p1.webp"
+  },
+  {
+    "card_code": "EB01-002",
+    "card_name": "Hi-Nu Gundam (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-002.webp"
+  },
+  {
+    "card_code": "EB01-002_p1",
+    "card_name": "Hi-Nu Gundam (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-002_p1.webp"
+  },
+  {
+    "card_code": "EB01-003",
+    "card_name": "Narrative Gundam A-Packs (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-003.webp"
+  },
+  {
+    "card_code": "EB01-003_p1",
+    "card_name": "Narrative Gundam A-Packs (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-003_p1.webp"
+  },
+  {
+    "card_code": "EB01-004",
+    "card_name": "Gundam Barbatos Lupus Rex (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-004.webp"
+  },
+  {
+    "card_code": "EB01-004_p1",
+    "card_name": "Gundam Barbatos Lupus Rex (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-004_p1.webp"
+  },
+  {
+    "card_code": "EB01-005",
+    "card_name": "Zeta Gundam Ⅲ P2 Type",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-005.webp"
+  },
+  {
+    "card_code": "EB01-006",
+    "card_name": "Gundam Astray Gold Frame Amatsu",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-006.webp"
+  },
+  {
+    "card_code": "EB01-006_p1",
+    "card_name": "Gundam Astray Gold Frame Amatsu",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-006_p1.webp"
+  },
+  {
+    "card_code": "EB01-007",
+    "card_name": "Gundam TR-1 &quot;Hazel-Rah&quot;",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-007.webp"
+  },
+  {
+    "card_code": "EB01-008",
+    "card_name": "Gundam Delta Kai",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-008.webp"
+  },
+  {
+    "card_code": "EB01-009",
+    "card_name": "Gundam Full Armor (Thunderbolt) (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-009.webp"
+  },
+  {
+    "card_code": "EB01-009_p1",
+    "card_name": "Gundam Full Armor (Thunderbolt) (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-009_p1.webp"
+  },
+  {
+    "card_code": "EB01-010",
+    "card_name": "Gundam Barbatos 6th Form",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-010.webp"
+  },
+  {
+    "card_code": "EB01-011",
+    "card_name": "Beginning Gundam",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-011.webp"
+  },
+  {
+    "card_code": "EB01-012",
+    "card_name": "Dom Bein Nichts",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-012.webp"
+  },
+  {
+    "card_code": "EB01-013",
+    "card_name": "Red Gundam(0085)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-013.webp"
+  },
+  {
+    "card_code": "EB01-014",
+    "card_name": "Gouf Vijayanta",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-014.webp"
+  },
+  {
+    "card_code": "EB01-015",
+    "card_name": "Prototype Asshimar TR-3 &quot;Kehaar&quot;",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-015.webp"
+  },
+  {
+    "card_code": "EB01-016",
+    "card_name": "Tornado Gundam",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-016.webp"
+  },
+  {
+    "card_code": "EB01-017",
+    "card_name": "Haro",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-017.webp"
+  },
+  {
+    "card_code": "EB01-018",
+    "card_name": "Gundam Astray Blue Frame Second L",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-018.webp"
+  },
+  {
+    "card_code": "EB01-019",
+    "card_name": "Gundam Pixy",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-019.webp"
+  },
+  {
+    "card_code": "EB01-020",
+    "card_name": "Gundam Mk-Ⅲ",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-020.webp"
+  },
+  {
+    "card_code": "EB01-021",
+    "card_name": "Build Strike Gundam (Full Package) (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-021.webp"
+  },
+  {
+    "card_code": "EB01-021_p1",
+    "card_name": "Build Strike Gundam (Full Package) (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-021_p1.webp"
+  },
+  {
+    "card_code": "EB01-022",
+    "card_name": "Gundam Exia (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-022.webp"
+  },
+  {
+    "card_code": "EB01-022_p1",
+    "card_name": "Gundam Exia (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-022_p1.webp"
+  },
+  {
+    "card_code": "EB01-023",
+    "card_name": "Le Cygne (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-023.webp"
+  },
+  {
+    "card_code": "EB01-023_p1",
+    "card_name": "Le Cygne (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-023_p1.webp"
+  },
+  {
+    "card_code": "EB01-024",
+    "card_name": "GQuuuuuuX (Omega Psycommu)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-024.webp"
+  },
+  {
+    "card_code": "EB01-025",
+    "card_name": "Tallgeese Ⅱ",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-025.webp"
+  },
+  {
+    "card_code": "EB01-025_p1",
+    "card_name": "Tallgeese Ⅱ",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-025_p1.webp"
+  },
+  {
+    "card_code": "EB01-026",
+    "card_name": "Gundam Astaroth Origin",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-026.webp"
+  },
+  {
+    "card_code": "EB01-027",
+    "card_name": "Tallgeese",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-027.webp"
+  },
+  {
+    "card_code": "EB01-028",
+    "card_name": "Gundam Plutone",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-028.webp"
+  },
+  {
+    "card_code": "EB01-029",
+    "card_name": "Gundam Astaroth Rinascimento (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-029.webp"
+  },
+  {
+    "card_code": "EB01-030",
+    "card_name": "Big-Rang",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-030.webp"
+  },
+  {
+    "card_code": "EB01-031",
+    "card_name": "Oggo",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-031.webp"
+  },
+  {
+    "card_code": "EB01-032",
+    "card_name": "Gundam Ez8 High Mobility Custom",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-032.webp"
+  },
+  {
+    "card_code": "EB01-033",
+    "card_name": "Taurus (Sanc Kingdom)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-033.webp"
+  },
+  {
+    "card_code": "EB01-034",
+    "card_name": "Gundam Lfrith Ur",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-034.webp"
+  },
+  {
+    "card_code": "EB01-035",
+    "card_name": "Gundam Lfrith Thorn",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-035.webp"
+  },
+  {
+    "card_code": "EB01-036",
+    "card_name": "Darilbalde",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-036.webp"
+  },
+  {
+    "card_code": "EB01-037",
+    "card_name": "Zudah Unit 1",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-037.webp"
+  },
+  {
+    "card_code": "EB01-038",
+    "card_name": "G-Self",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-038.webp"
+  },
+  {
+    "card_code": "EB01-039",
+    "card_name": "Rising Freedom Gundam",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-039.webp"
+  },
+  {
+    "card_code": "EB01-040",
+    "card_name": "Gundam Epyon",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-040.webp"
+  },
+  {
+    "card_code": "EB01-041",
+    "card_name": "Strike Freedom Gundam (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-041.webp"
+  },
+  {
+    "card_code": "EB01-041_p1",
+    "card_name": "Strike Freedom Gundam (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-041_p1.webp"
+  },
+  {
+    "card_code": "EB01-042",
+    "card_name": "Psycho Haro (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-042.webp"
+  },
+  {
+    "card_code": "EB01-042_p1",
+    "card_name": "Psycho Haro (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-042_p1.webp"
+  },
+  {
+    "card_code": "EB01-043",
+    "card_name": "Blue Destiny Unit-1 (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-043.webp"
+  },
+  {
+    "card_code": "EB01-043_p1",
+    "card_name": "Blue Destiny Unit-1 (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-043_p1.webp"
+  },
+  {
+    "card_code": "EB01-044",
+    "card_name": "Justice Gundam (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-044.webp"
+  },
+  {
+    "card_code": "EB01-044_p1",
+    "card_name": "Justice Gundam (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-044_p1.webp"
+  },
+  {
+    "card_code": "EB01-045",
+    "card_name": "Psycho Zaku (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-045.webp"
+  },
+  {
+    "card_code": "EB01-045_p1",
+    "card_name": "Psycho Zaku (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-045_p1.webp"
+  },
+  {
+    "card_code": "EB01-046",
+    "card_name": "Striker Custom (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-046.webp"
+  },
+  {
+    "card_code": "EB01-046_p1",
+    "card_name": "Striker Custom (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-046_p1.webp"
+  },
+  {
+    "card_code": "EB01-047",
+    "card_name": "Casval&#039;s Gundam",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-047.webp"
+  },
+  {
+    "card_code": "EB01-048",
+    "card_name": "S Gundam",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-048.webp"
+  },
+  {
+    "card_code": "EB01-049",
+    "card_name": "Pale Rider (Ground Heavy Equipment Type)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-049.webp"
+  },
+  {
+    "card_code": "EB01-050",
+    "card_name": "Saikoro Gundam",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-050.webp"
+  },
+  {
+    "card_code": "EB01-051",
+    "card_name": "Ze&#039;Gok",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-051.webp"
+  },
+  {
+    "card_code": "EB01-052",
+    "card_name": "Hildolfr",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-052.webp"
+  },
+  {
+    "card_code": "EB01-053",
+    "card_name": "Gundam GP00",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-053.webp"
+  },
+  {
+    "card_code": "EB01-054",
+    "card_name": "Gaplant TR-5 &quot;Hrairoo&quot; Unit 1",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-054.webp"
+  },
+  {
+    "card_code": "EB01-055",
+    "card_name": "Dom Gross Beil",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-055.webp"
+  },
+  {
+    "card_code": "EB01-056",
+    "card_name": "Gundam Geminass 01",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-056.webp"
+  },
+  {
+    "card_code": "EB01-057",
+    "card_name": "Gundam Geminass 02",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-057.webp"
+  },
+  {
+    "card_code": "EB01-058",
+    "card_name": "Extreme Gundam",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-058.webp"
+  },
+  {
+    "card_code": "EB01-059",
+    "card_name": "Psycho Zaku",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-059.webp"
+  },
+  {
+    "card_code": "EB01-060",
+    "card_name": "Gundam Aquarius",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-060.webp"
+  },
+  {
+    "card_code": "EB01-061",
+    "card_name": "Ellis Claude",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-061.webp"
+  },
+  {
+    "card_code": "EB01-062",
+    "card_name": "Jona Basta",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-062.webp"
+  },
+  {
+    "card_code": "EB01-063",
+    "card_name": "Io Fleming",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-063.webp"
+  },
+  {
+    "card_code": "EB01-064",
+    "card_name": "Rondo Gina Sahaku",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-064.webp"
+  },
+  {
+    "card_code": "EB01-065",
+    "card_name": "Meir Siva",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-065.webp"
+  },
+  {
+    "card_code": "EB01-066",
+    "card_name": "Reiji",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-066.webp"
+  },
+  {
+    "card_code": "EB01-067",
+    "card_name": "Asuna Elmarit",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-067.webp"
+  },
+  {
+    "card_code": "EB01-068",
+    "card_name": "Chall Acustica",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-068.webp"
+  },
+  {
+    "card_code": "EB01-069",
+    "card_name": "Beside Pain",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-069.webp"
+  },
+  {
+    "card_code": "EB01-070",
+    "card_name": "Daryl Lorenz",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-070.webp"
+  },
+  {
+    "card_code": "EB01-071",
+    "card_name": "Ittou Tsurugi",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-071.webp"
+  },
+  {
+    "card_code": "EB01-072",
+    "card_name": "Yuu Kajima",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-072.webp"
+  },
+  {
+    "card_code": "EB01-073",
+    "card_name": "Character Requests",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-073.webp"
+  },
+  {
+    "card_code": "EB01-074",
+    "card_name": "Eternal Road",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-074.webp"
+  },
+  {
+    "card_code": "EB01-075",
+    "card_name": "Fierce Enemy Assault",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-075.webp"
+  },
+  {
+    "card_code": "EB01-076",
+    "card_name": "Gerbera Straight",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-076.webp"
+  },
+  {
+    "card_code": "EB01-077",
+    "card_name": "Master League Begins",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-077.webp"
+  },
+  {
+    "card_code": "EB01-078",
+    "card_name": "Premium Unit Assembly",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-078.webp"
+  },
+  {
+    "card_code": "EB01-079",
+    "card_name": "Modification",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-079.webp"
+  },
+  {
+    "card_code": "EB01-080",
+    "card_name": "Sturm Faust",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-080.webp"
+  },
+  {
+    "card_code": "EB01-081",
+    "card_name": "MAP Weapon",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-081.webp"
+  },
+  {
+    "card_code": "EB01-082",
+    "card_name": "Warship Cruise",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-082.webp"
+  },
+  {
+    "card_code": "EB01-083",
+    "card_name": "SP Conversion Chips",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-083.webp"
+  },
+  {
+    "card_code": "EB01-084",
+    "card_name": "30cm Cannon (APFSDS Round)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-084.webp"
+  },
+  {
+    "card_code": "EB01-085",
+    "card_name": "Kudelia Aina Bernstein & Isaribi",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-085.webp"
+  },
+  {
+    "card_code": "EB01-086",
+    "card_name": "Kycilia Zabi & Gwazine",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-086.webp"
+  },
+  {
+    "card_code": "EB01-087",
+    "card_name": "Marina Ismail & Ptolemaios 2",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-087.webp"
+  },
+  {
+    "card_code": "EB01-088",
+    "card_name": "Miorine Rembran & Academy Ship",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-088.webp"
+  },
+  {
+    "card_code": "EB01-089",
+    "card_name": "Lacus Clyne & Eternal",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-089.webp"
+  },
+  {
+    "card_code": "EB01-090",
+    "card_name": "Tiffa Adill & Freeden",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/EB01-090.webp"
   }
 ]
