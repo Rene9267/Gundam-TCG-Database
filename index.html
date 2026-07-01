@@ -37,17 +37,52 @@
 </head>
 <body class="font-body text-primary bg-surface min-h-screen">
 
-  <!-- ============ SPLASH / AVVIA ============ -->
+  <!-- ============ SPLASH / LOGIN ============ -->
   <div id="splash-section" class="min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-blue-50 via-white to-yellow-50">
-    <div class="text-center">
-      <div class="mb-6">
-        <h1 class="text-6xl font-bold tracking-wider text-accent" style="text-shadow: 0 2px 8px rgba(234,179,8,0.3);">GUNDAM</h1>
-        <p class="text-primary text-xl font-semibold -mt-1">CARD COLLECTION</p>
+    <div class="w-full max-w-sm">
+      <div class="text-center mb-8">
+        <h1 class="text-5xl font-bold tracking-wider text-accent" style="text-shadow: 0 2px 8px rgba(234,179,8,0.3);">GUNDAM</h1>
+        <p class="text-primary text-lg font-semibold -mt-1">CARD COLLECTION</p>
       </div>
-      <button id="start-btn" class="bg-primary hover:bg-primary/90 text-white text-lg font-bold px-10 py-4 rounded-full shadow-lg transition hover:scale-105 active:scale-95">
-        AVVIA
-      </button>
-      <p id="start-error" class="text-red-500 text-sm mt-4 hidden"></p>
+
+      <!-- Auth form -->
+      <div id="auth-form" class="bg-white rounded-2xl shadow-lg border border-secondary-light/60 p-6">
+        <div class="flex mb-5 bg-surface rounded-lg p-1">
+          <button id="auth-login-tab" class="auth-tab active flex-1 py-2 text-sm font-semibold rounded-md">Accedi</button>
+          <button id="auth-register-tab" class="auth-tab flex-1 py-2 text-sm font-semibold rounded-md">Registrati</button>
+        </div>
+
+        <div id="auth-fields">
+          <input id="auth-email" type="email" placeholder="Email" autocomplete="email"
+            class="w-full border border-secondary-light rounded-lg px-4 py-3 text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary">
+          <input id="auth-password" type="password" placeholder="Password" autocomplete="current-password"
+            class="w-full border border-secondary-light rounded-lg px-4 py-3 text-sm mb-4 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary">
+        </div>
+
+        <button id="auth-submit" class="w-full bg-primary hover:bg-primary/90 text-white text-base font-bold py-3 rounded-full shadow-sm transition hover:scale-[1.02] active:scale-95">
+          Accedi
+        </button>
+
+        <p id="auth-error" class="text-red-500 text-sm mt-3 text-center hidden"></p>
+        <p id="auth-loading" class="text-secondary text-sm mt-3 text-center hidden">Connessione...</p>
+      </div>
+
+      <!-- Already logged in state -->
+      <div id="auth-authed" class="hidden bg-white rounded-2xl shadow-lg border border-secondary-light/60 p-6 text-center">
+        <div class="w-14 h-14 rounded-full bg-primary-light flex items-center justify-center mx-auto mb-3">
+          <span class="material-symbols-outlined text-primary" style="font-size:32px">account_circle</span>
+        </div>
+        <p id="auth-user-email" class="text-primary font-semibold text-sm mb-1"></p>
+        <p class="text-secondary text-xs mb-4">Sei connesso</p>
+        <button id="auth-start" class="w-full bg-primary hover:bg-primary/90 text-white text-base font-bold py-3 rounded-full shadow-sm transition hover:scale-[1.02] active:scale-95">
+          Entra nella Collezione
+        </button>
+        <button id="auth-logout" class="mt-3 text-sm text-secondary hover:text-primary transition font-medium">
+          Esci
+        </button>
+      </div>
+
+      <p id="splash-error" class="text-red-500 text-sm mt-4 text-center hidden"></p>
     </div>
   </div>
 
@@ -140,6 +175,22 @@
 
       <div id="collection-stats" class="hidden space-y-3">
         <div id="stats-content" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+      </div>
+    </div>
+
+    <!-- ===== PROFILE VIEW ===== -->
+    <div id="view-profile" class="hidden max-w-7xl mx-auto px-4 py-5">
+      <div class="bg-white rounded-2xl border border-secondary-light/60 p-6 text-center shadow-sm">
+        <div class="w-16 h-16 rounded-full bg-primary-light flex items-center justify-center mx-auto mb-3">
+          <span class="material-symbols-outlined text-primary" style="font-size:36px">account_circle</span>
+        </div>
+        <p id="profile-email" class="text-primary font-semibold text-base"></p>
+        <p class="text-secondary text-xs mt-1">Connesso</p>
+      </div>
+      <div class="mt-4">
+        <button id="profile-logout" class="w-full bg-white border border-secondary-light rounded-xl py-3 text-sm font-semibold text-secondary hover:text-danger hover:border-danger transition shadow-sm">
+          Esci
+        </button>
       </div>
     </div>
 

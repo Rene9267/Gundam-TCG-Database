@@ -2,6 +2,88 @@
 const SUPABASE_URL = 'https://zhrvhhzcsdadoolxqpro.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_yeP5henLm-YdNtkwCFuV0Q_tE1koERf';
 
+// ============ Auth State ============
+let currentUser = null;
+let accessToken = null;
+
+function getAuthHeaders() {
+  const headers = {
+    'apikey': SUPABASE_ANON_KEY,
+    'Content-Type': 'application/json',
+  };
+  if (accessToken) {
+    headers['Authorization'] = 'Bearer ' + accessToken;
+  }
+  return headers;
+}
+
+function saveSession(user, token) {
+  currentUser = user;
+  accessToken = token;
+  try {
+    localStorage.setItem('supabase_user', JSON.stringify(user));
+    localStorage.setItem('supabase_token', token);
+  } catch (_) {}
+}
+
+function clearSession() {
+  currentUser = null;
+  accessToken = null;
+  try {
+    localStorage.removeItem('supabase_user');
+    localStorage.removeItem('supabase_token');
+  } catch (_) {}
+}
+
+function loadSession() {
+  try {
+    const u = localStorage.getItem('supabase_user');
+    const t = localStorage.getItem('supabase_token');
+    if (u && t) {
+      currentUser = JSON.parse(u);
+      accessToken = t;
+    }
+  } catch (_) {}
+}
+
+async function authFetch(path, body) {
+  const r = await fetch(SUPABASE_URL + path, {
+    method: 'POST',
+    headers: { 'apikey': SUPABASE_ANON_KEY, 'Content-Type': 'application/json' },
+    body: body ? JSON.stringify(body) : undefined,
+  });
+  const data = await r.json();
+  if (!r.ok) throw new Error(data.msg || data.error_description || data.error || 'Errore');
+  return data;
+}
+
+async function authSignUp(email, password) {
+  const data = await authFetch('/auth/v1/signup', { email, password });
+  // Signup may return user + session if confirm email is disabled
+  if (data.access_token) {
+    saveSession(data.user, data.access_token);
+  }
+  return data;
+}
+
+async function authSignIn(email, password) {
+  const data = await authFetch('/auth/v1/token?grant_type=password', { email, password });
+  saveSession(data.user, data.access_token);
+  return data;
+}
+
+async function authSignOut() {
+  if (accessToken) {
+    try {
+      await fetch(SUPABASE_URL + '/auth/v1/logout', {
+        method: 'POST',
+        headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': 'Bearer ' + accessToken },
+      });
+    } catch (_) {}
+  }
+  clearSession();
+}
+
 
 // ============ Reference Cards (database mastro) ============
 let refCards = [];
@@ -76,25 +158,24 @@ async function loadReferenceCards() {
 let allCards = [];
 
 // ============ Cards CRUD (fetch diretto) ============
-const SUPABASE_HEADERS = {
-  'apikey': SUPABASE_ANON_KEY,
-  'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
-  'Content-Type': 'application/json',
-};
+function userIdFilter() {
+  return currentUser ? '&user_id=eq.' + currentUser.id : '';
+}
 
 async function loadCards() {
-  const r = await fetch(SUPABASE_URL + '/rest/v1/cards?select=*&order=created_at.desc', {
-    headers: SUPABASE_HEADERS,
+  const r = await fetch(SUPABASE_URL + '/rest/v1/cards?select=*&order=created_at.desc' + userIdFilter(), {
+    headers: getAuthHeaders(),
   });
   if (!r.ok) throw new Error('GET /cards ' + r.status);
   return r.json();
 }
 
 async function addCard(card) {
+  const payload = currentUser ? { ...card, user_id: currentUser.id } : card;
   const r = await fetch(SUPABASE_URL + '/rest/v1/cards', {
     method: 'POST',
-    headers: { ...SUPABASE_HEADERS, 'Prefer': 'return=representation' },
-    body: JSON.stringify(card),
+    headers: { ...getAuthHeaders(), 'Prefer': 'return=representation' },
+    body: JSON.stringify(payload),
   });
   if (!r.ok) {
     const text = await r.text();
@@ -107,7 +188,7 @@ async function addCard(card) {
 async function updateCard(id, updates) {
   const r = await fetch(SUPABASE_URL + '/rest/v1/cards?id=eq.' + id, {
     method: 'PATCH',
-    headers: { ...SUPABASE_HEADERS, 'Prefer': 'return=representation' },
+    headers: { ...getAuthHeaders(), 'Prefer': 'return=representation' },
     body: JSON.stringify(updates),
   });
   if (!r.ok) {
@@ -121,7 +202,7 @@ async function updateCard(id, updates) {
 async function deleteCard(id) {
   const r = await fetch(SUPABASE_URL + '/rest/v1/cards?id=eq.' + id, {
     method: 'DELETE',
-    headers: SUPABASE_HEADERS,
+    headers: getAuthHeaders(),
   });
   if (!r.ok) {
     const text = await r.text();
@@ -136,7 +217,7 @@ function showSection(id) {
 }
 
 function showView(id) {
-  document.querySelectorAll('#view-dashboard, #view-collection').forEach(el => el.classList.add('hidden'));
+  document.querySelectorAll('#view-dashboard, #view-collection, #view-profile').forEach(el => el.classList.add('hidden'));
   document.getElementById(id).classList.remove('hidden');
 }
 
@@ -145,6 +226,7 @@ function switchTab(tab) {
   const btn = document.getElementById('bottom-' + tab);
   if (btn) btn.classList.add('active');
   if (tab === 'dashboard') showView('view-dashboard');
+  else if (tab === 'profile') showView('view-profile');
   else showView('view-collection');
 }
 
@@ -722,41 +804,114 @@ async function refreshCards() {
   }
 }
 
-// ============ Start ============
-async function startApp() {
-  const errEl = document.getElementById('start-error');
-  errEl.classList.add('hidden');
-  document.getElementById('start-btn').disabled = true;
-  document.getElementById('start-btn').textContent = 'Connessione...';
+// ============ Auth UI ============
+function renderProfile() {
+  if (currentUser) {
+    document.getElementById('profile-email').textContent = currentUser.email;
+  }
+}
 
+function showAuthForm() {
+  document.getElementById('auth-form').classList.remove('hidden');
+  document.getElementById('auth-authed').classList.add('hidden');
+}
+
+function showAuthed() {
+  document.getElementById('auth-form').classList.add('hidden');
+  document.getElementById('auth-authed').classList.remove('hidden');
+  if (currentUser) {
+    document.getElementById('auth-user-email').textContent = currentUser.email;
+  }
+}
+
+let authMode = 'login'; // 'login' | 'register'
+
+function setAuthMode(mode) {
+  authMode = mode;
+  document.querySelectorAll('.auth-tab').forEach(t => t.classList.toggle('active', t.id === 'auth-' + mode + '-tab'));
+  document.getElementById('auth-submit').textContent = mode === 'login' ? 'Accedi' : 'Registrati';
+}
+
+async function handleAuthSubmit() {
+  const errEl = document.getElementById('auth-error');
+  const loadingEl = document.getElementById('auth-loading');
+  errEl.classList.add('hidden');
+  const email = document.getElementById('auth-email').value.trim();
+  const password = document.getElementById('auth-password').value;
+  if (!email || !password) { errEl.textContent = 'Inserisci email e password.'; errEl.classList.remove('hidden'); return; }
+  if (password.length < 6) { errEl.textContent = 'Password: almeno 6 caratteri.'; errEl.classList.remove('hidden'); return; }
+
+  loadingEl.classList.remove('hidden');
+  document.getElementById('auth-submit').disabled = true;
   try {
-    if (!SUPABASE_ANON_KEY) {
-      throw new Error('Manca la chiave API. Inseriscila in app.js:3.');
+    if (authMode === 'login') {
+      await authSignIn(email, password);
+    } else {
+      await authSignUp(email, password);
     }
+    showAuthed();
+  } catch (err) {
+    errEl.textContent = err.message;
+    errEl.classList.remove('hidden');
+  } finally {
+    loadingEl.classList.add('hidden');
+    document.getElementById('auth-submit').disabled = false;
+  }
+}
+
+async function enterApp() {
+  try {
     if ('serviceWorker' in navigator && !navigator.serviceWorker.controller) {
       await new Promise(resolve => {
         navigator.serviceWorker.addEventListener('controllerchange', resolve, { once: true });
-        // Timeout di sicurezza: se SW non si attiva in 3s, procedi comunque
         setTimeout(resolve, 3000);
       });
     }
     await loadReferenceCards();
     await refreshCards();
     showSection('app-section');
+    renderProfile();
     switchTab('dashboard');
     document.getElementById('bottom-dashboard').classList.add('active');
   } catch (err) {
-    errEl.textContent = err.message;
-    errEl.classList.remove('hidden');
-    document.getElementById('start-btn').disabled = false;
-    document.getElementById('start-btn').textContent = 'AVVIA';
+    document.getElementById('splash-error').textContent = err.message;
+    document.getElementById('splash-error').classList.remove('hidden');
   }
 }
 
 // ============ Init ============
 document.addEventListener('DOMContentLoaded', () => {
-  // Start button
-  document.getElementById('start-btn').addEventListener('click', startApp);
+  loadSession();
+
+  // Auth tabs
+  document.getElementById('auth-login-tab').addEventListener('click', () => setAuthMode('login'));
+  document.getElementById('auth-register-tab').addEventListener('click', () => setAuthMode('register'));
+
+  // Auth submit
+  document.getElementById('auth-submit').addEventListener('click', handleAuthSubmit);
+  document.getElementById('auth-email').addEventListener('keydown', e => { if (e.key === 'Enter') handleAuthSubmit(); });
+  document.getElementById('auth-password').addEventListener('keydown', e => { if (e.key === 'Enter') handleAuthSubmit(); });
+
+  // Auth logout
+  document.getElementById('auth-logout').addEventListener('click', async () => {
+    await authSignOut();
+    showAuthForm();
+  });
+
+  // Enter app (already logged in)
+  document.getElementById('auth-start').addEventListener('click', enterApp);
+
+  // Profile logout (inside app)
+  document.getElementById('profile-logout').addEventListener('click', async () => {
+    await authSignOut();
+    showSection('splash-section');
+    showAuthForm();
+  });
+
+  // Check session on load
+  if (currentUser) {
+    showAuthed();
+  }
 
   // Bottom navigation
   document.getElementById('bottom-dashboard').addEventListener('click', () => switchTab('dashboard'));
@@ -766,19 +921,18 @@ document.addEventListener('DOMContentLoaded', () => {
     switchTab('collection');
   });
 
-  // Decks / Profilo → coming soon
+  // Decks → coming soon
   document.getElementById('bottom-decks').addEventListener('click', () => {
     const btn = document.getElementById('bottom-decks');
     btn.classList.add('active');
     document.querySelectorAll('.bottom-nav-item').forEach(b => { if (b !== btn) b.classList.remove('active'); });
-    showView('view-dashboard');
+    switchTab('dashboard');
   });
 
+  // Profilo → profile view
   document.getElementById('bottom-profile').addEventListener('click', () => {
-    const btn = document.getElementById('bottom-profile');
-    btn.classList.add('active');
-    document.querySelectorAll('.bottom-nav-item').forEach(b => { if (b !== btn) b.classList.remove('active'); });
-    showView('view-dashboard');
+    switchTab('profile');
+    renderProfile();
   });
 
   // "Vedi tutte" on dashboard
