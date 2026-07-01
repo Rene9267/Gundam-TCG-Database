@@ -568,6 +568,7 @@ function renderSetStatistics(setName) {
 // ============ Bottom Sheet ============
 let editingCardId = null;
 let currentSheetCard = null;
+let pendingSheetQty = 0;
 
 function getAltVersions(cardName) {
   if (!cardName) return [];
@@ -589,10 +590,13 @@ function populateAltVersions(cardName, currentCode) {
     return `<button class="version-dot w-3 h-3 rounded-full transition border border-white shadow-sm${isActive ? ' version-dot-active' : ''}${isAlt ? ' version-dot-alt' : ' version-dot-base'}" data-code="${v.card_code}" title="${v.card_code}${v.set_code !== currentCode?.split('-')[0] ? ' [' + v.set_code + ']' : ''}"></button>`;
   }).join('');
 
-  // Click su dot → carica quella versione
+  // Click su dot → salva quantità corrente, carica altra versione
   container.querySelectorAll('.version-dot').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
+      if (currentSheetCard) {
+        saveSheetQuantity(pendingSheetQty).catch(() => {});
+      }
       const code = btn.dataset.code;
       const rc = refCardByCode[code];
       if (rc) loadSheetCard(rc);
@@ -626,7 +630,8 @@ function loadSheetCard(rc) {
   document.getElementById('sheet-code').textContent = card.card_code;
   document.getElementById('sheet-set').textContent = card.set_name || '';
 
-  document.getElementById('sheet-qty-display').textContent = card.quantity || 0;
+  pendingSheetQty = card.quantity || 0;
+  document.getElementById('sheet-qty-display').textContent = pendingSheetQty;
 
   populateAltVersions(card.card_name, card.card_code);
   updateCardtraderLink(card.card_code);
@@ -666,9 +671,6 @@ async function saveSheetQuantity(newQty) {
       await addCard(cardData);
     }
     await refreshCards();
-    // Ricarica lo sheet con i nuovi dati
-    const rc = refCardByCode[currentSheetCard.card_code];
-    if (rc) loadSheetCard(rc);
   } catch (err) {
     errEl.textContent = err.message || 'Errore.';
     errEl.classList.remove('hidden');
@@ -691,6 +693,10 @@ function openSheet(card) {
 }
 
 function closeSheet() {
+  // Salva la quantità prima di chiudere
+  if (currentSheetCard) {
+    saveSheetQuantity(pendingSheetQty).catch(() => {});
+  }
   const panel = document.getElementById('sheet-panel');
   panel.style.transform = 'translateY(100%)';
   setTimeout(() => {
@@ -698,6 +704,7 @@ function closeSheet() {
     document.body.classList.remove('sheet-open');
     editingCardId = null;
     currentSheetCard = null;
+    pendingSheetQty = 0;
   }, 250);
 }
 
@@ -785,15 +792,15 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('sheet-overlay').addEventListener('click', closeSheet);
 
   document.getElementById('sheet-qty-minus').addEventListener('click', () => {
-    const display = document.getElementById('sheet-qty-display');
-    const current = parseInt(display.textContent, 10) || 0;
-    if (current > 0) saveSheetQuantity(current - 1);
+    if (pendingSheetQty > 0) {
+      pendingSheetQty--;
+      document.getElementById('sheet-qty-display').textContent = pendingSheetQty;
+    }
   });
 
   document.getElementById('sheet-qty-plus').addEventListener('click', () => {
-    const display = document.getElementById('sheet-qty-display');
-    const current = parseInt(display.textContent, 10) || 0;
-    saveSheetQuantity(current + 1);
+    pendingSheetQty++;
+    document.getElementById('sheet-qty-display').textContent = pendingSheetQty;
   });
 
   // Collection filters
