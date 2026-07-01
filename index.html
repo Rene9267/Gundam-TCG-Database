@@ -38,15 +38,20 @@
 <body class="font-body text-primary bg-surface min-h-screen">
 
   <!-- ============ SPLASH / LOGIN ============ -->
-  <div id="splash-section" class="min-h-screen flex items-center justify-center px-4 bg-[#5a5b6d]">
+  <div id="splash-section" class="splash-bg min-h-screen flex items-center justify-center px-4">
     <div class="w-full max-w-sm">
       <div class="text-center mb-8">
         <h1 class="text-5xl font-bold tracking-wider text-accent" style="text-shadow: 0 2px 8px rgba(234,179,8,0.3);">GUNDAM</h1>
+        <div class="flex items-center justify-center gap-2 mt-1 mb-1">
+          <span class="w-8 h-[2px] bg-[#fb2f38] rounded-full"></span>
+          <span class="w-3 h-[2px] bg-[#2c52b3] rounded-full"></span>
+          <span class="w-8 h-[2px] bg-[#fb2f38] rounded-full"></span>
+        </div>
         <p class="text-white/80 text-lg font-semibold -mt-1">CARD COLLECTION</p>
       </div>
 
       <!-- Auth form -->
-      <div id="auth-form" class="bg-white rounded-2xl shadow-lg border border-white/10 p-6">
+      <div id="auth-form" class="auth-card bg-white rounded-2xl shadow-lg border border-white/10 p-6">
         <div class="flex mb-5 bg-[#eef0f4] rounded-lg p-1">
           <button id="auth-login-tab" class="auth-tab active flex-1 py-2 text-sm font-semibold rounded-md">Accedi</button>
           <button id="auth-register-tab" class="auth-tab flex-1 py-2 text-sm font-semibold rounded-md">Registrati</button>
@@ -68,7 +73,7 @@
       </div>
 
       <!-- Already logged in state -->
-      <div id="auth-authed" class="hidden bg-white rounded-2xl shadow-lg border border-white/10 p-6 text-center">
+      <div id="auth-authed" class="auth-card hidden bg-white rounded-2xl shadow-lg border border-white/10 p-6 text-center">
         <div class="w-14 h-14 rounded-full bg-[#eef0f4] flex items-center justify-center mx-auto mb-3">
           <span class="material-symbols-outlined text-[#2c52b3]" style="font-size:32px">account_circle</span>
         </div>

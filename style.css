@@ -330,6 +330,40 @@ body.sheet-open {
   line-height: 1;
 }
 
+/* ---- Splash background pattern ---- */
+.splash-bg {
+  background-color: #5a5b6d;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+  position: relative;
+}
+.splash-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(251,47,56,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(44,82,179,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* ---- Login card red accent ---- */
+.auth-card {
+  position: relative;
+  overflow: hidden;
+}
+.auth-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #fb2f38, #fb2f38 40%, #2c52b3 80%, #fff867);
+}
+
 /* ---- Auth tabs ---- */
 .auth-tab {
   cursor: pointer;
