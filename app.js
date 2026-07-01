@@ -827,16 +827,30 @@ function showAuthed() {
 
 let authMode = 'login'; // 'login' | 'register'
 
+function miniShimmer() {
+  const overlay = document.getElementById('transition-overlay');
+  overlay.classList.remove('opacity-0');
+  overlay.classList.add('opacity-100');
+  setTimeout(() => {
+    overlay.classList.add('opacity-0');
+    overlay.classList.remove('opacity-100');
+  }, 250);
+}
+
 function switchToRegister() {
   authMode = 'register';
   document.getElementById('auth-submit-text').textContent = 'Registrati';
   document.getElementById('auth-nickname').classList.remove('hidden');
+  document.getElementById('auth-toggle-link').textContent = 'Accedi';
+  miniShimmer();
 }
 
 function switchToLogin() {
   authMode = 'login';
   document.getElementById('auth-submit-text').textContent = 'Accedi';
   document.getElementById('auth-nickname').classList.add('hidden');
+  document.getElementById('auth-toggle-link').textContent = 'Registrati';
+  miniShimmer();
 }
 
 function showToast(msg, isError = true) {
@@ -950,9 +964,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Auth links
   document.getElementById('auth-forgot').addEventListener('click', handleForgotPassword);
-  document.getElementById('auth-register-link').addEventListener('click', () => {
-    switchToRegister();
-    document.getElementById('auth-submit-text').textContent = 'Registrati';
+  document.getElementById('auth-toggle-link').addEventListener('click', () => {
+    if (authMode === 'login') switchToRegister();
+    else switchToLogin();
   });
 
   // Auth logout
