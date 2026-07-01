@@ -59,9 +59,11 @@
             class="w-full bg-[#f8fafc] border border-[#e2e8f0] rounded-lg px-4 py-3 text-sm mb-4 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-[#94a3b8]">
         </div>
 
-        <button id="auth-submit" class="w-full bg-[#2c52b3] hover:bg-[#1e3a7a] text-white text-base font-bold py-3 rounded-full shadow-sm transition hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-2 disabled:opacity-60 disabled:hover:scale-100">
+        <button id="auth-submit" class="relative w-full bg-[#2c52b3] hover:bg-[#1e3a7a] text-white text-base font-bold py-3 rounded-full shadow-sm transition hover:scale-[1.02] active:scale-95 disabled:opacity-60 disabled:hover:scale-100">
           <span id="auth-submit-text">Accedi</span>
-          <span id="auth-spinner" class="hidden w-5 h-5 border-2 border-[#fff867] border-t-transparent rounded-full animate-spin"></span>
+          <span id="auth-spinner" class="absolute inset-0 flex items-center justify-center invisible">
+            <span class="w-5 h-5 border-2 border-[#fff867] border-t-transparent rounded-full animate-spin"></span>
+          </span>
         </button>
 
         <div class="flex items-center justify-center gap-4 mt-4">
