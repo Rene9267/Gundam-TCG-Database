@@ -251,7 +251,7 @@ function renderExpansionsList() {
             <svg class="w-full h-full" viewBox="0 0 100 100">
               <circle cx="50" cy="50" fill="transparent" r="${r}" stroke="#eef0f4" stroke-width="8"></circle>
               <circle cx="50" cy="50" fill="transparent" r="${r}"
-                stroke="#2c52b3" stroke-width="8" stroke-linecap="round"
+                stroke="#9ca3af" stroke-width="8" stroke-linecap="round"
                 stroke-dasharray="${circumference}" stroke-dashoffset="${owned > 0 ? offset : circumference}"
                 style="transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset 0.35s"></circle>
             </svg>
@@ -757,6 +757,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentColTab !== 'cards') switchColTab('cards');
     currentColTab = 'cards';
     switchTab('collection');
+  });
+
+  // Decks / Profilo → coming soon
+  document.getElementById('bottom-decks').addEventListener('click', () => {
+    const btn = document.getElementById('bottom-decks');
+    btn.classList.add('active');
+    document.querySelectorAll('.bottom-nav-item').forEach(b => { if (b !== btn) b.classList.remove('active'); });
+    showView('view-dashboard');
+  });
+
+  document.getElementById('bottom-profile').addEventListener('click', () => {
+    const btn = document.getElementById('bottom-profile');
+    btn.classList.add('active');
+    document.querySelectorAll('.bottom-nav-item').forEach(b => { if (b !== btn) b.classList.remove('active'); });
+    showView('view-dashboard');
   });
 
   // "Vedi tutte" on dashboard
