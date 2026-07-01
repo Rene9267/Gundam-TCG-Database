@@ -351,43 +351,67 @@
     </header>
 
     <!-- ===== DASHBOARD VIEW ===== -->
-    <div id="view-dashboard" class="max-w-7xl mx-auto px-4 py-5 space-y-6">
-      <!-- Stats Row -->
-      <section id="dashboard-stats" class="grid grid-cols-2 gap-3">
-        <div class="bg-white rounded-xl border border-secondary-light/60 p-4 relative overflow-hidden shadow-sm">
-          <div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
-          <p class="font-mono text-xs text-secondary uppercase tracking-wider mb-1">Totale Carte</p>
-          <p id="stat-total-cards" class="font-heading font-bold text-2xl text-primary">—</p>
-        </div>
-        <div class="bg-white rounded-xl border border-secondary-light/60 p-4 relative overflow-hidden shadow-sm">
-          <div class="absolute top-0 left-0 w-1 h-full bg-accent"></div>
-          <p class="font-mono text-xs text-secondary uppercase tracking-wider mb-1">Carte Uniche</p>
-          <p id="stat-unique-cards" class="font-heading font-bold text-2xl text-primary">—</p>
-        </div>
-      </section>
+    <div id="view-dashboard" class="splash-bg relative overflow-hidden">
+      <div class="grid-dots-overlay" aria-hidden="true">
+        <div class="grid-dot grid-dot-yellow" style="animation-name:float-right;top:8%;left:12%;animation-duration:13.86s;animation-delay:0s"></div>
+        <div class="grid-dot grid-dot-blue" style="animation-name:float-up;top:15%;left:35%;animation-duration:10.89s;animation-delay:2s"></div>
+        <div class="grid-dot grid-dot-red" style="animation-name:float-left;top:10%;left:60%;animation-duration:12.87s;animation-delay:1s"></div>
+        <div class="grid-dot grid-dot-yellow" style="animation-name:float-down;top:18%;left:85%;animation-duration:9.90s;animation-delay:3s"></div>
+        <div class="grid-dot grid-dot-blue" style="animation-name:float-up;top:35%;left:8%;animation-duration:11.88s;animation-delay:0.5s"></div>
+        <div class="grid-dot grid-dot-red" style="animation-name:float-right;top:28%;left:42%;animation-duration:14.85s;animation-delay:2.5s"></div>
+        <div class="grid-dot grid-dot-yellow" style="animation-name:float-left;top:42%;left:68%;animation-duration:8.91s;animation-delay:4s"></div>
+        <div class="grid-dot grid-dot-blue" style="animation-name:float-down;top:32%;left:92%;animation-duration:10.89s;animation-delay:1.5s"></div>
+        <div class="grid-dot grid-dot-red" style="animation-name:float-up;top:55%;left:18%;animation-duration:13.86s;animation-delay:3.5s"></div>
+        <div class="grid-dot grid-dot-yellow" style="animation-name:float-right;top:62%;left:40%;animation-duration:9.90s;animation-delay:2s"></div>
+        <div class="grid-dot grid-dot-blue" style="animation-name:float-left;top:50%;left:75%;animation-duration:11.88s;animation-delay:0s"></div>
+        <div class="grid-dot grid-dot-red" style="animation-name:float-down;top:58%;left:90%;animation-duration:12.87s;animation-delay:1s"></div>
+        <div class="grid-dot grid-dot-blue" style="animation-name:float-up;top:75%;left:10%;animation-duration:11.88s;animation-delay:3s"></div>
+        <div class="grid-dot grid-dot-yellow" style="animation-name:float-right;top:85%;left:32%;animation-duration:9.90s;animation-delay:0s"></div>
+        <div class="grid-dot grid-dot-red" style="animation-name:float-left;top:78%;left:55%;animation-duration:14.85s;animation-delay:2s"></div>
+        <div class="grid-dot grid-dot-blue" style="animation-name:float-down;top:88%;left:82%;animation-duration:10.89s;animation-delay:1s"></div>
+        <div class="grid-dot grid-dot-yellow" style="animation-name:float-up;top:92%;left:15%;animation-duration:13.86s;animation-delay:3s"></div>
+        <div class="grid-dot grid-dot-red" style="animation-name:float-right;top:70%;left:95%;animation-duration:8.91s;animation-delay:0.5s"></div>
+        <div class="grid-dot grid-dot-blue" style="animation-name:float-left;top:95%;left:65%;animation-duration:12.87s;animation-delay:2.5s"></div>
+        <div class="grid-dot grid-dot-yellow" style="animation-name:float-down;top:5%;left:48%;animation-duration:10.89s;animation-delay:1.5s"></div>
+      </div>
+      <div class="max-w-7xl mx-auto px-4 py-5 space-y-6 relative" style="z-index:2">
+        <!-- Stats Row -->
+        <section id="dashboard-stats" class="grid grid-cols-2 gap-3">
+          <div class="bg-white/95 backdrop-blur-sm rounded-xl border border-white/20 p-4 relative overflow-hidden shadow-sm">
+            <div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+            <p class="font-mono text-xs text-secondary uppercase tracking-wider mb-1">Totale Carte</p>
+            <p id="stat-total-cards" class="font-heading font-bold text-2xl text-primary">—</p>
+          </div>
+          <div class="bg-white/95 backdrop-blur-sm rounded-xl border border-white/20 p-4 relative overflow-hidden shadow-sm">
+            <div class="absolute top-0 left-0 w-1 h-full bg-accent"></div>
+            <p class="font-mono text-xs text-secondary uppercase tracking-wider mb-1">Carte Uniche</p>
+            <p id="stat-unique-cards" class="font-heading font-bold text-2xl text-primary">—</p>
+          </div>
+        </section>
 
-      <!-- Ultime Aggiunte (horizontal scroll) -->
-      <section>
-        <div class="flex items-center justify-between mb-3">
-          <h2 class="font-heading font-semibold text-sm uppercase tracking-wider text-secondary border-l-4 border-primary pl-3">Ultime Aggiunte</h2>
-          <button id="latest-view-all" class="font-mono text-xs text-primary hover:text-accent transition flex items-center">
-            Vedi tutte <span class="material-symbols-outlined text-sm ml-0.5">chevron_right</span>
-          </button>
-        </div>
-        <div id="latest-scroll" class="flex overflow-x-auto gap-3 pb-2 hide-scrollbar snap-x snap-mandatory -mx-4 px-4">
-          <div id="latest-empty" class="hidden w-full text-center py-8 text-secondary text-sm">Nessuna carta ancora.</div>
-        </div>
-      </section>
+        <!-- Ultime Aggiunte (horizontal scroll) -->
+        <section>
+          <div class="flex items-center justify-between mb-3">
+            <h2 class="font-heading font-semibold text-sm uppercase tracking-wider text-white/80 border-l-4 border-primary pl-3">Ultime Aggiunte</h2>
+            <button id="latest-view-all" class="font-mono text-xs text-white/70 hover:text-accent transition flex items-center">
+              Vedi tutte <span class="material-symbols-outlined text-sm ml-0.5">chevron_right</span>
+            </button>
+          </div>
+          <div id="latest-scroll" class="flex overflow-x-auto gap-3 pb-2 hide-scrollbar snap-x snap-mandatory -mx-4 px-4">
+            <div id="latest-empty" class="hidden w-full text-center py-8 text-white/60 text-sm">Nessuna carta ancora.</div>
+          </div>
+        </section>
 
-      <!-- Completamento Espansioni (vertical list) -->
-      <section>
-        <div class="flex items-center mb-3">
-          <h2 class="font-heading font-semibold text-sm uppercase tracking-wider text-secondary border-l-4 border-primary pl-3">Completamento Espansioni</h2>
-        </div>
-        <div id="expansions-list" class="space-y-2">
-          <div id="expansions-empty" class="hidden w-full text-center py-8 text-secondary text-sm">Nessuna espansione ancora.</div>
-        </div>
-      </section>
+        <!-- Completamento Espansioni (vertical list) -->
+        <section>
+          <div class="flex items-center mb-3">
+            <h2 class="font-heading font-semibold text-sm uppercase tracking-wider text-white/80 border-l-4 border-primary pl-3">Completamento Espansioni</h2>
+          </div>
+          <div id="expansions-list" class="space-y-2">
+            <div id="expansions-empty" class="hidden w-full text-center py-8 text-white/60 text-sm">Nessuna espansione ancora.</div>
+          </div>
+        </section>
+      </div>
     </div>
 
     <!-- ===== COLLECTION VIEW ===== -->
@@ -561,7 +585,18 @@
     </div>
   </div>
 
-  <script src="app.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/reference.js"></script>
+  <script src="js/cards.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/collection.js"></script>
+  <script src="js/sheet.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/app.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js');

@@ -384,7 +384,10 @@ body.sheet-open {
 }
 
 /* ---- Bottom nav spacing ---- */
-#view-dashboard,
+#view-dashboard {
+  min-height: calc(100vh - 3.5rem);
+  padding-bottom: 5.5rem;
+}
 #view-collection,
 #view-profile {
   padding-bottom: 5.5rem;
