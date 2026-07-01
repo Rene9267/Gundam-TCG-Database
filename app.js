@@ -828,61 +828,67 @@ let authMode = 'login'; // 'login' | 'register'
 
 function switchToRegister() {
   authMode = 'register';
-  document.getElementById('auth-submit').textContent = 'Registrati';
-  document.getElementById('auth-error').classList.add('hidden');
+  document.getElementById('auth-submit-text').textContent = 'Registrati';
+}
+
+function showToast(msg, isError = true) {
+  const el = document.getElementById('auth-toast');
+  el.textContent = msg;
+  el.style.background = isError ? '#fb2f38' : '#22c55e';
+  el.classList.remove('hidden', 'opacity-0', 'translate-y-[-10px]');
+  el.classList.add('opacity-100', 'translate-y-0');
+  clearTimeout(el._hide);
+  el._hide = setTimeout(() => {
+    el.classList.add('opacity-0', 'translate-y-[-10px]');
+    el.classList.remove('opacity-100', 'translate-y-0');
+  }, 3000);
+}
+
+function setLoading(v) {
+  const btn = document.getElementById('auth-submit');
+  const spinner = document.getElementById('auth-spinner');
+  const text = document.getElementById('auth-submit-text');
+  btn.disabled = v;
+  spinner.classList.toggle('hidden', !v);
+  text.classList.toggle('hidden', v);
 }
 
 function switchToLogin() {
   authMode = 'login';
-  document.getElementById('auth-submit').textContent = 'Accedi';
-  document.getElementById('auth-error').classList.add('hidden');
+  document.getElementById('auth-submit-text').textContent = 'Accedi';
 }
 
 async function handleAuthSubmit() {
-  const errEl = document.getElementById('auth-error');
-  const loadingEl = document.getElementById('auth-loading');
-  errEl.classList.add('hidden');
   const email = document.getElementById('auth-email').value.trim();
   const password = document.getElementById('auth-password').value;
-  if (!email || !password) { errEl.textContent = 'Inserisci email e password.'; errEl.classList.remove('hidden'); return; }
-  if (password.length < 6) { errEl.textContent = 'Password: almeno 6 caratteri.'; errEl.classList.remove('hidden'); return; }
+  if (!email || !password) { showToast('Inserisci email e password.'); return; }
+  if (password.length < 6) { showToast('Password: almeno 6 caratteri.'); return; }
 
-  loadingEl.classList.remove('hidden');
-  document.getElementById('auth-submit').disabled = true;
+  setLoading(true);
   try {
     if (authMode === 'login') {
       await authSignIn(email, password);
       showAuthed();
     } else {
       await authSignUp(email, password);
-      errEl.textContent = 'Registrazione completata! Controlla la tua email per confermare.';
-      errEl.className = 'text-green-500 text-sm mt-3 text-center';
-      errEl.classList.remove('hidden');
+      showToast('Registrazione completata! Controlla la tua email.', false);
       switchToLogin();
     }
   } catch (err) {
-    errEl.className = 'text-[#fb2f38] text-sm mt-3 text-center';
-    errEl.textContent = err.message;
-    errEl.classList.remove('hidden');
+    showToast(err.message === 'Invalid login credentials' ? 'Email o password errata.' : err.message);
   } finally {
-    loadingEl.classList.add('hidden');
-    document.getElementById('auth-submit').disabled = false;
+    setLoading(false);
   }
 }
 
 async function handleForgotPassword() {
-  const errEl = document.getElementById('auth-error');
   const email = document.getElementById('auth-email').value.trim();
-  if (!email) { errEl.textContent = 'Inserisci la tua email per il recupero.'; errEl.className = 'text-[#fb2f38] text-sm mt-3 text-center'; errEl.classList.remove('hidden'); return; }
+  if (!email) { showToast('Inserisci la tua email per il recupero.'); return; }
   try {
     await authFetch('/auth/v1/recover', { email });
-    errEl.textContent = 'Email di recupero inviata! Controlla la tua casella.';
-    errEl.className = 'text-green-500 text-sm mt-3 text-center';
-    errEl.classList.remove('hidden');
+    showToast('Email di recupero inviata! Controlla la tua casella.', false);
   } catch (err) {
-    errEl.textContent = err.message;
-    errEl.className = 'text-[#fb2f38] text-sm mt-3 text-center';
-    errEl.classList.remove('hidden');
+    showToast(err.message);
   }
 }
 
@@ -919,8 +925,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('auth-forgot').addEventListener('click', handleForgotPassword);
   document.getElementById('auth-register-link').addEventListener('click', () => {
     switchToRegister();
-    document.getElementById('auth-error').className = 'text-[#fb2f38] text-sm mt-3 text-center';
-    document.getElementById('auth-error').classList.add('hidden');
+    document.getElementById('auth-submit-text').textContent = 'Registrati';
   });
 
   // Auth logout
