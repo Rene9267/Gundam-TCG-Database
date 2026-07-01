@@ -92,8 +92,23 @@ async function main() {
     }
   }
 
-  // Salva JSON
+  // Preserva campi extra da file esistente (es. cardtrader_slug, cardtrader_id)
   const outputPath = path.join(__dirname, '..', '..', 'reference_cards.json');
+  let existing = {};
+  try {
+    existing = JSON.parse(fs.readFileSync(outputPath, 'utf-8')).reduce((m, c) => {
+      m[c.card_code + '|' + c.set_code] = c;
+      return m;
+    }, {});
+  } catch (_) {}
+  for (const card of allCards) {
+    const key = card.card_code + '|' + card.set_code;
+    const prev = existing[key];
+    if (prev) {
+      card.cardtrader_slug = prev.cardtrader_slug || card.cardtrader_slug;
+      card.cardtrader_id = prev.cardtrader_id || card.cardtrader_id;
+    }
+  }
   fs.writeFileSync(outputPath, JSON.stringify(allCards, null, 2), 'utf-8');
   console.log(`\nDone! ${allCards.length} total cards saved to reference_cards.json`);
 }
