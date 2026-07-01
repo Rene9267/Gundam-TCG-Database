@@ -4,245 +4,315 @@
     "card_name": "Gundam",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-001.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-001.webp",
+    "cardtrader_slug": "gundam-lr-st-01-heroic-beginnings",
+    "cardtrader_id": 341360
   },
   {
     "card_code": "ST01-001_p1",
     "card_name": "Gundam",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-001_p1.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-001_p1.webp",
+    "cardtrader_slug": "gundam-lr-st-01-heroic-beginnings",
+    "cardtrader_id": 341360
   },
   {
     "card_code": "ST01-002",
     "card_name": "Gundam (MA Form)",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-002.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-002.webp",
+    "cardtrader_slug": "gundam-ma-form-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341362
   },
   {
     "card_code": "ST01-002_p1",
     "card_name": "Gundam (MA Form)",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-002_p1.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-002_p1.webp",
+    "cardtrader_slug": "gundam-ma-form-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341362
   },
   {
     "card_code": "ST01-003",
     "card_name": "Guncannon",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-003.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-003.webp",
+    "cardtrader_slug": "guncannon-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341364
   },
   {
     "card_code": "ST01-003_p1",
     "card_name": "Guncannon",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-003_p1.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-003_p1.webp",
+    "cardtrader_slug": "guncannon-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341364
   },
   {
     "card_code": "ST01-004",
     "card_name": "Guntank",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-004.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-004.webp",
+    "cardtrader_slug": "guntank-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341366
   },
   {
     "card_code": "ST01-004_p1",
     "card_name": "Guntank",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-004_p1.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-004_p1.webp",
+    "cardtrader_slug": "guntank-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341366
   },
   {
     "card_code": "ST01-005",
     "card_name": "GM",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-005.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-005.webp",
+    "cardtrader_slug": "gm-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341368
   },
   {
     "card_code": "ST01-005_p1",
     "card_name": "GM",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-005_p1.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-005_p1.webp",
+    "cardtrader_slug": "gm-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341368
   },
   {
     "card_code": "ST01-006",
     "card_name": "Gundam Aerial (Permet Score Six)",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-006.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-006.webp",
+    "cardtrader_slug": "gundam-aerial-permet-score-six-lr-st-01-heroic-beginnings",
+    "cardtrader_id": 341370
   },
   {
     "card_code": "ST01-006_p1",
     "card_name": "Gundam Aerial (Permet Score Six)",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-006_p1.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-006_p1.webp",
+    "cardtrader_slug": "gundam-aerial-permet-score-six-lr-st-01-heroic-beginnings",
+    "cardtrader_id": 341370
   },
   {
     "card_code": "ST01-007",
     "card_name": "Gundam Aerial (Bit on Form)",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-007.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-007.webp",
+    "cardtrader_slug": "gundam-aerial-bit-on-form-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341372
   },
   {
     "card_code": "ST01-007_p1",
     "card_name": "Gundam Aerial (Bit on Form)",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-007_p1.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-007_p1.webp",
+    "cardtrader_slug": "gundam-aerial-bit-on-form-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341372
   },
   {
     "card_code": "ST01-008",
     "card_name": "Demi Trainer",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-008.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-008.webp",
+    "cardtrader_slug": "demi-trainer-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341374
   },
   {
     "card_code": "ST01-008_p1",
     "card_name": "Demi Trainer",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-008_p1.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-008_p1.webp",
+    "cardtrader_slug": "demi-trainer-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341374
   },
   {
     "card_code": "ST01-009",
     "card_name": "Zowort",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-009.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-009.webp",
+    "cardtrader_slug": "zowort-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341376
   },
   {
     "card_code": "ST01-009_p1",
     "card_name": "Zowort",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-009_p1.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-009_p1.webp",
+    "cardtrader_slug": "zowort-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341376
   },
   {
     "card_code": "ST01-010",
     "card_name": "Amuro Ray",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-010.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-010.webp",
+    "cardtrader_slug": "amuro-ray-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341378
   },
   {
     "card_code": "ST01-010_p1",
     "card_name": "Amuro Ray",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-010_p1.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-010_p1.webp",
+    "cardtrader_slug": "amuro-ray-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341378
   },
   {
     "card_code": "ST01-011",
     "card_name": "Suletta Mercury",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-011.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-011.webp",
+    "cardtrader_slug": "suletta-mercury-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341380
   },
   {
     "card_code": "ST01-011_p1",
     "card_name": "Suletta Mercury",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-011_p1.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-011_p1.webp",
+    "cardtrader_slug": "suletta-mercury-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341380
   },
   {
     "card_code": "ST01-012",
     "card_name": "Thoroughly Damaged",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-012.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-012.webp",
+    "cardtrader_slug": "thoroughly-damaged-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341382
   },
   {
     "card_code": "ST01-012_p1",
     "card_name": "Thoroughly Damaged",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-012_p1.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-012_p1.webp",
+    "cardtrader_slug": "thoroughly-damaged-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341382
   },
   {
     "card_code": "ST01-013",
     "card_name": "Kai's Resolve",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-013.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-013.webp",
+    "cardtrader_slug": "kais-resolve-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341332
   },
   {
     "card_code": "ST01-013_p1",
     "card_name": "Kai's Resolve",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-013_p1.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-013_p1.webp",
+    "cardtrader_slug": "kais-resolve-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341332
   },
   {
     "card_code": "ST01-014",
     "card_name": "Unforeseen Incident",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-014.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-014.webp",
+    "cardtrader_slug": "unforeseen-incident-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341386
   },
   {
     "card_code": "ST01-014_p1",
     "card_name": "Unforeseen Incident",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-014_p1.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-014_p1.webp",
+    "cardtrader_slug": "unforeseen-incident-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341386
   },
   {
     "card_code": "ST01-015",
     "card_name": "White Base",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-015.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-015.webp",
+    "cardtrader_slug": "white-base-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341388
   },
   {
     "card_code": "ST01-015_p1",
     "card_name": "White Base",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-015_p1.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-015_p1.webp",
+    "cardtrader_slug": "white-base-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341388
   },
   {
     "card_code": "ST01-016",
     "card_name": "Asticassia School of Technology, Earth House",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-016.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-016.webp",
+    "cardtrader_slug": "asticassia-school-of-technology-earth-house-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341390
   },
   {
     "card_code": "ST01-016_p1",
     "card_name": "Asticassia School of Technology, Earth House",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-016_p1.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/ST01-016_p1.webp",
+    "cardtrader_slug": "asticassia-school-of-technology-earth-house-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341390
   },
   {
     "card_code": "T-001",
     "card_name": "Gundam",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/T-001.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/T-001.webp",
+    "cardtrader_slug": "gundam-lr-st-01-heroic-beginnings",
+    "cardtrader_id": 341360
   },
   {
     "card_code": "T-002",
     "card_name": "Guncannon",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/T-002.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/T-002.webp",
+    "cardtrader_slug": "guncannon-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341364
   },
   {
     "card_code": "T-003",
     "card_name": "Guntank",
     "set_code": "ST01",
     "set_name": "Heroic Beginnings [ST01]",
-    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/T-003.webp"
+    "image_url": "https://pub-f106953afafa4b379122130a0f038335.r2.dev/T-003.webp",
+    "cardtrader_slug": "guntank-c-st-01-heroic-beginnings",
+    "cardtrader_id": 341366
   },
   {
     "card_code": "ST02-001",
