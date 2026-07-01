@@ -52,11 +52,6 @@
 
       <!-- Auth form -->
       <div id="auth-form" class="auth-card bg-white rounded-2xl shadow-lg border border-white/10 p-6">
-        <div class="flex mb-5 bg-[#eef0f4] rounded-lg p-1">
-          <button id="auth-login-tab" class="auth-tab active flex-1 py-2 text-sm font-semibold rounded-md">Accedi</button>
-          <button id="auth-register-tab" class="auth-tab flex-1 py-2 text-sm font-semibold rounded-md">Registrati</button>
-        </div>
-
         <div id="auth-fields">
           <input id="auth-email" type="email" placeholder="Email" autocomplete="email"
             class="w-full bg-[#f8fafc] border border-[#e2e8f0] rounded-lg px-4 py-3 text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-[#94a3b8]">
@@ -67,6 +62,12 @@
         <button id="auth-submit" class="w-full bg-[#2c52b3] hover:bg-[#1e3a7a] text-white text-base font-bold py-3 rounded-full shadow-sm transition hover:scale-[1.02] active:scale-95">
           Accedi
         </button>
+
+        <div class="flex items-center justify-center gap-4 mt-4">
+          <button id="auth-forgot" class="text-xs text-[#5a5b6d] hover:text-[#2c52b3] transition font-medium">Password dimenticata?</button>
+          <span class="text-[#d1d5db] text-xs">|</span>
+          <button id="auth-register-link" class="text-xs text-[#5a5b6d] hover:text-[#2c52b3] transition font-medium">Registrati</button>
+        </div>
 
         <p id="auth-error" class="text-[#fb2f38] text-sm mt-3 text-center hidden"></p>
         <p id="auth-loading" class="text-[#5a5b6d] text-sm mt-3 text-center hidden">Connessione...</p>
