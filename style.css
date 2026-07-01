@@ -364,6 +364,25 @@ body.sheet-open {
   background: #fb2f38;
 }
 
+/* ---- Transition overlay ---- */
+.marker-dot {
+  animation: pulse-marker 2s ease-in-out infinite;
+  box-shadow: 0 0 6px rgba(255,255,255,0.2);
+}
+.marker-dot:nth-child(1) { animation-delay: 0s; }
+.marker-dot:nth-child(2) { animation-delay: 0.3s; }
+.marker-dot:nth-child(3) { animation-delay: 0.6s; }
+.marker-dot:nth-child(4) { animation-delay: 0.9s; }
+.marker-dot:nth-child(5) { animation-delay: 0.15s; }
+.marker-dot:nth-child(6) { animation-delay: 0.45s; }
+.marker-dot:nth-child(7) { animation-delay: 0.75s; }
+.marker-dot:nth-child(8) { animation-delay: 1.05s; }
+
+@keyframes pulse-marker {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.8); opacity: 1; }
+}
+
 /* ---- Bottom nav spacing ---- */
 #view-dashboard,
 #view-collection,
