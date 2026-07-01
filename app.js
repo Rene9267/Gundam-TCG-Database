@@ -2,6 +2,19 @@
 const SUPABASE_URL = 'https://zhrvhhzcsdadoolxqpro.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_yeP5henLm-YdNtkwCFuV0Q_tE1koERf';
 
+// ============ Eye Toggle ============
+function toggleEye(inputId, eyeId) {
+  const input = document.getElementById(inputId);
+  const btn = document.getElementById(eyeId);
+  if (input.type === 'password') {
+    input.type = 'text';
+    btn.classList.add('eye-active');
+  } else {
+    input.type = 'password';
+    btn.classList.remove('eye-active');
+  }
+}
+
 // ============ Auth State ============
 let currentUser = null;
 let accessToken = null;
@@ -17,12 +30,18 @@ function getAuthHeaders() {
   return headers;
 }
 
-function saveSession(user, token) {
+function saveSession(user, token, remember = true) {
   currentUser = user;
   accessToken = token;
   try {
-    localStorage.setItem('supabase_user', JSON.stringify(user));
-    localStorage.setItem('supabase_token', token);
+    const store = remember ? localStorage : sessionStorage;
+    store.setItem('supabase_user', JSON.stringify(user));
+    store.setItem('supabase_token', token);
+    // Se remember è false, pulisci localStorage (evita residui)
+    if (!remember) {
+      localStorage.removeItem('supabase_user');
+      localStorage.removeItem('supabase_token');
+    }
   } catch (_) {}
 }
 
@@ -32,13 +51,21 @@ function clearSession() {
   try {
     localStorage.removeItem('supabase_user');
     localStorage.removeItem('supabase_token');
+    sessionStorage.removeItem('supabase_user');
+    sessionStorage.removeItem('supabase_token');
   } catch (_) {}
 }
 
 function loadSession() {
   try {
-    const u = localStorage.getItem('supabase_user');
-    const t = localStorage.getItem('supabase_token');
+    let u, t;
+    // Prima prova localStorage (remember), poi sessionStorage
+    u = localStorage.getItem('supabase_user');
+    t = localStorage.getItem('supabase_token');
+    if (!u || !t) {
+      u = sessionStorage.getItem('supabase_user');
+      t = sessionStorage.getItem('supabase_token');
+    }
     if (u && t) {
       currentUser = JSON.parse(u);
       accessToken = t;
@@ -63,13 +90,23 @@ async function authSignUp(email, password, nickname) {
   const data = await authFetch('/auth/v1/signup', body);
   if (data.access_token) {
     saveSession(data.user, data.access_token);
+    // Aggiorna user_metadata con il nickname (se profiles non esiste)
+    if (nickname) {
+      try {
+        await fetch(SUPABASE_URL + '/auth/v1/user', {
+          method: 'PUT',
+          headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': 'Bearer ' + data.access_token, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ data: { nickname } }),
+        });
+      } catch (_) {}
+    }
   }
   return data;
 }
 
-async function authSignIn(email, password) {
+async function authSignIn(email, password, remember = true) {
   const data = await authFetch('/auth/v1/token?grant_type=password', { email, password });
-  saveSession(data.user, data.access_token);
+  saveSession(data.user, data.access_token, remember);
   return data;
 }
 
@@ -213,7 +250,7 @@ async function deleteCard(id) {
 
 // ============ UI Helpers ============
 function showSection(id) {
-  document.querySelectorAll('#splash-section, #app-section').forEach(el => el.classList.add('hidden'));
+  document.querySelectorAll('#splash-section, #app-section, #reset-section').forEach(el => el.classList.add('hidden'));
   document.getElementById(id).classList.remove('hidden');
 }
 
@@ -223,12 +260,10 @@ function showView(id) {
 }
 
 function switchTab(tab) {
-  document.querySelectorAll('.bottom-nav-item').forEach(b => b.classList.remove('active'));
-  const btn = document.getElementById('bottom-' + tab);
-  if (btn) btn.classList.add('active');
   if (tab === 'dashboard') showView('view-dashboard');
-  else if (tab === 'profile') showView('view-profile');
+  else if (tab === 'profile') { showView('view-profile'); renderProfile(); }
   else showView('view-collection');
+  closeMenu();
 }
 
 function rarityColor(rarity) {
@@ -244,8 +279,8 @@ function rarityColor(rarity) {
 }
 
 function imageOrFallback(url, name) {
-  if (!url) return `<div class="card-img-fallback w-full aspect-[3/4]">🃏</div>`;
-  return `<img src="${url}" alt="${name}" class="w-full aspect-[3/4] object-cover" loading="lazy" onerror="this.outerHTML='<div class=\\'card-img-fallback w-full aspect-[3/4]\\'>🃏</div>'">`;
+  if (!url) return `<div class="card-img-fallback w-full h-full text-2xl">🃏</div>`;
+  return `<img src="${url}" alt="${name}" class="w-full h-full object-cover" loading="lazy" onerror="this.outerHTML='<div class=\\'card-img-fallback w-full h-full text-2xl\\'>🃏</div>'">`;
 }
 
 function setGroup(setName) {
@@ -274,11 +309,11 @@ function renderLatestHorizontal() {
   empty.classList.add('hidden');
 
   const items = latest.map(c => `
-    <article class="min-w-[130px] w-[130px] snap-start flex-shrink-0 relative cursor-pointer group latest-entry" data-code="${c.card_code}">
-      <div class="aspect-[2.5/3.5] bg-primary-light rounded-lg overflow-hidden border border-secondary-light/50 relative shadow-sm">
+    <article class="min-w-[110px] w-[110px] snap-start flex-shrink-0 relative cursor-pointer group latest-entry" data-code="${c.card_code}">
+      <div class="aspect-[2.5/9.1] rounded-lg overflow-hidden border relative shadow-sm" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.15)">
         ${imageOrFallback(c.image_url, c.card_name)}
-        <div class="absolute bottom-0 left-0 right-0 p-1.5 bg-gradient-to-t from-black/60 via-black/20 to-transparent">
-          <p class="text-[9px] font-mono text-white/90 truncate">${c.card_code}</p>
+        <div class="absolute bottom-0 left-0 right-0 p-1.5 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+          <p class="text-[9px] font-mono text-white/80 truncate">${c.card_code}</p>
         </div>
       </div>
     </article>
@@ -307,17 +342,12 @@ function renderExpansionsList() {
     ownedMap[key].add(c.card_code);
   }
 
-  const ownedSets = setOrder.filter(s => ownedMap[s] && ownedMap[s].size > 0);
-  const top3 = ownedSets.slice(-3);
+  // Mostra sempre le ultime 4 espansioni (anche a 0%)
+  const last4 = setOrder.slice(-4);
 
-  if (!top3.length) {
-    container.innerHTML = '';
-    empty.classList.remove('hidden');
-    return;
-  }
   empty.classList.add('hidden');
 
-  const items = top3.map(setName => {
+  const items = last4.map(setName => {
     const total = setTotals[setName] || 0;
     const owned = ownedMap[setName] ? ownedMap[setName].size : 0;
     const pct = total > 0 ? Math.min(Math.round((owned / total) * 100), 100) : 0;
@@ -328,27 +358,27 @@ function renderExpansionsList() {
     const cleanName = setName.replace(/\s*\[.*?\]/, '');
 
     return `
-      <div class="exp-entry bg-white rounded-xl border border-secondary-light/60 p-3 flex items-center justify-between hover:shadow-sm transition cursor-pointer shadow-sm" data-set="${setName}">
+      <div class="exp-entry rounded-xl border p-3 flex items-center justify-between hover:shadow-sm transition cursor-pointer shadow-sm" data-set="${setName}" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.12);">
         <div class="flex items-center gap-3">
           <div class="relative w-[44px] h-[44px] flex items-center justify-center flex-shrink-0">
             <svg class="w-full h-full" viewBox="0 0 100 100">
-              <circle cx="50" cy="50" fill="transparent" r="${r}" stroke="#eef0f4" stroke-width="8"></circle>
+              <circle cx="50" cy="50" fill="transparent" r="${r}" stroke="rgba(255,255,255,0.1)" stroke-width="8"></circle>
               <circle cx="50" cy="50" fill="transparent" r="${r}"
-                stroke="#9ca3af" stroke-width="8" stroke-linecap="round"
-                stroke-dasharray="${circumference}" stroke-dashoffset="${owned > 0 ? offset : circumference}"
+                stroke="#fb2f38" stroke-width="8" stroke-linecap="round"
+                stroke-dasharray="${circumference}" stroke-dashoffset="${pct > 0 ? offset : circumference}"
                 style="transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset 0.35s"></circle>
             </svg>
-            <span class="absolute text-[10px] font-bold font-heading text-primary">${pct}%</span>
+            <span class="absolute text-[10px] font-bold font-heading" style="color:rgba(255,255,255,0.9)">${pct}%</span>
           </div>
           <div>
-            <p class="text-sm font-semibold text-primary">${cleanName}</p>
+            <p class="text-sm font-semibold" style="color:#fff">${cleanName}</p>
             <div class="flex gap-2 items-center mt-0.5">
-              <span class="font-mono text-[10px] px-1 border border-secondary-light rounded text-secondary">${setCode}</span>
-              <span class="font-mono text-[10px] text-secondary/60">${owned}/${total}</span>
+              <span class="font-mono text-[10px] px-1 border rounded" style="border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.6)">${setCode}</span>
+              <span class="font-mono text-[10px]" style="color:rgba(255,255,255,0.5)">${owned}/${total}</span>
             </div>
           </div>
         </div>
-        <span class="material-symbols-outlined text-secondary">chevron_right</span>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,0.3)"><path d="M9.29 6.71a.996.996 0 000 1.41L13.17 12l-3.88 3.88a.996.996 0 101.41 1.41l4.59-4.59a.996.996 0 000-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"/></svg>
       </div>
     `;
   }).join('');
@@ -394,6 +424,30 @@ function setAllFilters(val) {
   if (currentColTab !== 'stats') renderCollection(filterCollection());
 }
 
+function openFirstRefCard() {
+  const setFilter = document.getElementById('col-set-filter').value;
+  if (setFilter) {
+    const ref = refCards.find(rc => rc.set_name === setFilter);
+    if (ref) openSheet(ref);
+  }
+}
+
+// ============ Side Menu ============
+function openMenu() {
+  const modal = document.getElementById('menu-modal');
+  const panel = document.getElementById('menu-panel');
+  modal.style.display = 'block';
+  setTimeout(() => {
+    panel.style.transform = 'translateX(0)';
+  }, 10);
+}
+function closeMenu() {
+  const modal = document.getElementById('menu-modal');
+  const panel = document.getElementById('menu-panel');
+  panel.style.transform = 'translateX(-100%)';
+  setTimeout(() => { modal.style.display = 'none'; }, 250);
+}
+
 // ============ Collection ============
 function renderCollection(cards) {
   const grid = document.getElementById('collection-grid');
@@ -401,9 +455,18 @@ function renderCollection(cards) {
   const summary = document.getElementById('collection-summary');
 
   if (!cards.length) {
-    grid.innerHTML = '';
-    empty.classList.remove('hidden');
+    // Show placeholder boxes with + button
+    empty.classList.add('hidden');
     summary.textContent = '';
+    grid.innerHTML = Array.from({length:6}, (_,i) => `
+      <div class="card-placeholder" data-idx="${i}">
+        <div class="plus-icon">+</div>
+        <div class="plus-label">Premi qui per<br>aggiungere la tua carta</div>
+      </div>
+    `).join('');
+    grid.querySelectorAll('.card-placeholder').forEach(el => {
+      el.addEventListener('click', () => openFirstRefCard());
+    });
     return;
   }
 
@@ -418,6 +481,7 @@ function renderCollection(cards) {
     const isMissing = c.isMissing;
     return `
     <div class="card-entry relative cursor-pointer${isMissing ? ' card-missing' : ''}${isPlayset ? ' card-playset' : ''}" data-id="${c.id}" data-code="${c.card_code}">
+      ${!isMissing ? '<div class="absolute top-0 left-0 right-0 h-[3px] bg-[#fb2f38] z-10 rounded-t-lg"></div>' : ''}
       <div class="card-img-wrapper ${isMissing ? 'grayscale' : ''}">
         ${imageOrFallback(c.image_url, c.card_name)}
       </div>
@@ -806,9 +870,43 @@ async function refreshCards() {
 }
 
 // ============ Auth UI ============
-function renderProfile() {
-  if (currentUser) {
-    document.getElementById('profile-email').textContent = currentUser.email;
+async function renderProfile() {
+  if (!currentUser) return;
+  const emailEl = document.getElementById('profile-email');
+  const nicknameEl = document.getElementById('profile-nickname');
+  const setNicknameBtn = document.getElementById('profile-set-nickname');
+  const nicknameInput = document.getElementById('profile-nickname-input');
+  const nicknameSaveBtn = document.getElementById('profile-nickname-save');
+
+  let nickname = (currentUser.user_metadata || {}).nickname;
+  if (nickname) {
+    nicknameEl.textContent = nickname;
+    nicknameEl.classList.remove('hidden');
+    setNicknameBtn.classList.add('hidden');
+    nicknameInput.classList.add('hidden');
+    nicknameSaveBtn.classList.add('hidden');
+  } else {
+    nicknameEl.classList.add('hidden');
+    setNicknameBtn.classList.remove('hidden');
+    nicknameInput.classList.add('hidden');
+    nicknameSaveBtn.classList.add('hidden');
+  }
+  emailEl.textContent = currentUser.email;
+}
+
+async function saveNickname(nickname) {
+  if (!currentUser || !accessToken) return;
+  try {
+    const res = await fetch(SUPABASE_URL + '/auth/v1/user', {
+      method: 'PUT',
+      headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': 'Bearer ' + accessToken, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ data: { nickname } }),
+    });
+    if (!res.ok) throw new Error('save failed');
+    if (currentUser.user_metadata) currentUser.user_metadata.nickname = nickname;
+    renderProfile();
+  } catch (_) {
+    showToast('Errore nel salvataggio del nickname.');
   }
 }
 
@@ -837,18 +935,29 @@ function miniShimmer() {
   }, 250);
 }
 
+function clearAuthFields() {
+  ['auth-email','auth-password','auth-confirm','auth-nickname','recover-email','recover-new-password','recover-confirm']
+    .forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+}
+
 function switchToRegister() {
+  clearAuthFields();
   authMode = 'register';
   document.getElementById('auth-submit-text').textContent = 'Registrati';
+  document.getElementById('auth-email').placeholder = 'Email';
   document.getElementById('auth-nickname').classList.remove('hidden');
+  document.getElementById('auth-confirm-group').classList.remove('hidden');
   document.getElementById('auth-toggle-link').textContent = 'Accedi';
   miniShimmer();
 }
 
 function switchToLogin() {
+  clearAuthFields();
   authMode = 'login';
   document.getElementById('auth-submit-text').textContent = 'Accedi';
+  document.getElementById('auth-email').placeholder = 'Email o Username';
   document.getElementById('auth-nickname').classList.add('hidden');
+  document.getElementById('auth-confirm-group').classList.add('hidden');
   document.getElementById('auth-toggle-link').textContent = 'Registrati';
   miniShimmer();
 }
@@ -879,14 +988,21 @@ async function handleAuthSubmit() {
   if (!email || !password) { showToast('Inserisci email e password.'); return; }
   if (password.length < 6) { showToast('Password: almeno 6 caratteri.'); return; }
 
+  if (authMode === 'register') {
+    const confirm = document.getElementById('auth-confirm').value;
+    if (password !== confirm) { showToast('Le password non coincidono.'); return; }
+    const nickname = document.getElementById('auth-nickname').value.trim();
+    if (!nickname) { showToast('Inserisci un nickname.'); return; }
+  }
+
   setLoading(true);
   try {
     if (authMode === 'login') {
-      await authSignIn(email, password);
+      const remember = document.getElementById('auth-remember').checked;
+      await authSignIn(email, password, remember);
       showAuthed();
     } else {
       const nickname = document.getElementById('auth-nickname').value.trim();
-      if (!nickname) { showToast('Inserisci un nickname.'); setLoading(false); return; }
       await authSignUp(email, password, nickname);
       showToast('Registrazione completata! Controlla la tua email.', false);
       switchToLogin();
@@ -898,14 +1014,123 @@ async function handleAuthSubmit() {
   }
 }
 
-async function handleForgotPassword() {
-  const email = document.getElementById('auth-email').value.trim();
-  if (!email) { showToast('Inserisci la tua email per il recupero.'); return; }
+function showRecoverForm() {
+  miniShimmer();
+  document.getElementById('auth-form').classList.add('hidden');
+  document.getElementById('recover-form').classList.remove('hidden');
+  document.getElementById('recover-email').value = document.getElementById('auth-email').value;
+  document.getElementById('recover-new-password').value = '';
+  document.getElementById('recover-confirm').value = '';
+}
+
+function showAuthFormFromRecover() {
+  miniShimmer();
+  document.getElementById('recover-form').classList.add('hidden');
+  document.getElementById('recover-success').classList.add('hidden');
+  document.getElementById('auth-form').classList.remove('hidden');
+}
+
+async function handleRecoverSubmit() {
+  const email = document.getElementById('recover-email').value.trim();
+  const pwd = document.getElementById('recover-new-password').value;
+  const confirm = document.getElementById('recover-confirm').value;
+  if (!email) { showToast('Inserisci la tua email.'); return; }
+  if (!pwd || pwd.length < 6) { showToast('Password: almeno 6 caratteri.'); return; }
+  if (pwd !== confirm) { showToast('Le password non coincidono.'); return; }
+
+  const btn = document.getElementById('recover-submit');
+  btn.disabled = true;
+  document.getElementById('recover-submit-text').classList.add('invisible');
+  document.getElementById('recover-spinner').classList.remove('invisible');
+
   try {
+    // Verifica se l'email esiste tentando un signup
+    const checkRes = await fetch(SUPABASE_URL + '/auth/v1/signup', {
+      method: 'POST',
+      headers: { 'apikey': SUPABASE_ANON_KEY, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password: '__chk_' + Date.now() + Math.random().toString(36).slice(2,6) }),
+    });
+    if (checkRes.ok) {
+      // Email non trovata — è stato creato un account non voluto, proviamo a cancellarlo
+      const chkData = await checkRes.json();
+      if (chkData.access_token) {
+        fetch(SUPABASE_URL + '/auth/v1/user', {
+          method: 'DELETE',
+          headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': 'Bearer ' + chkData.access_token },
+        }).catch(() => {});
+      }
+      showToast('Email non trovata. Verifica l\'indirizzo o registrati.');
+      btn.disabled = false;
+      document.getElementById('recover-submit-text').classList.remove('invisible');
+      document.getElementById('recover-spinner').classList.add('invisible');
+      return;
+    }
+
+    const checkData = await checkRes.json();
+    // Controlla messaggi di errore che indicano utente già registrato
+    const alreadyRegistered = checkData.msg === 'User already registered'
+      || (checkData.error_description || '').includes('already registered')
+      || (checkData.error || '').includes('already registered');
+
+    if (!alreadyRegistered) {
+      showToast('Email non trovata. Verifica l\'indirizzo o registrati.');
+      btn.disabled = false;
+      document.getElementById('recover-submit-text').classList.remove('invisible');
+      document.getElementById('recover-spinner').classList.add('invisible');
+      return;
+    }
+
+    // Email esiste — salva pending e invia recover
+    try { localStorage.setItem('pending_recovery', JSON.stringify({ email, password: pwd })); } catch (_) {}
+
     await authFetch('/auth/v1/recover', { email });
-    showToast('Email di recupero inviata! Controlla la tua casella.', false);
+    miniShimmer();
+    document.getElementById('recover-form').classList.add('hidden');
+    document.getElementById('recover-success').classList.remove('hidden');
   } catch (err) {
-    showToast(err.message);
+    showToast(err.message || 'Errore durante la verifica.');
+  } finally {
+    btn.disabled = false;
+    document.getElementById('recover-submit-text').classList.remove('invisible');
+    document.getElementById('recover-spinner').classList.add('invisible');
+  }
+}
+
+// ============ Password Reset (dopo link email) ============
+async function handleResetSubmit() {
+  const pwd = document.getElementById('reset-password').value;
+  const confirm = document.getElementById('reset-confirm').value;
+  if (!pwd || pwd.length < 6) { showToast('Password: almeno 6 caratteri.'); return; }
+  if (pwd !== confirm) { showToast('Le password non coincidono.'); return; }
+
+  const btn = document.getElementById('reset-submit');
+  btn.disabled = true;
+  document.getElementById('reset-submit-text').classList.add('invisible');
+  document.getElementById('reset-spinner').classList.remove('invisible');
+  try {
+    const res = await fetch(SUPABASE_URL + '/auth/v1/user', {
+      method: 'PUT',
+      headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': 'Bearer ' + accessToken, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: pwd }),
+    });
+    if (!res.ok) {
+      const errData = await res.json().catch(() => ({}));
+      throw new Error(errData.msg || errData.error_description || errData.error || 'Richiesta fallita (' + res.status + ')');
+    }
+    showToast('Password aggiornata! Ora accedi.', false);
+    showSection('splash-section');
+    showAuthForm();
+  } catch (err) {
+    const msg = err.message || 'riprova';
+    if (msg.includes('401') || msg.includes('unauthorized') || msg.includes('expired')) {
+      showToast('Link scaduto. Richiedi un nuovo reset.', true);
+    } else {
+      showToast('Errore: ' + msg);
+    }
+  } finally {
+    btn.disabled = false;
+    document.getElementById('reset-submit-text').classList.remove('invisible');
+    document.getElementById('reset-spinner').classList.add('invisible');
   }
 }
 
@@ -963,11 +1188,32 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('auth-password').addEventListener('keydown', e => { if (e.key === 'Enter') handleAuthSubmit(); });
 
   // Auth links
-  document.getElementById('auth-forgot').addEventListener('click', handleForgotPassword);
+  document.getElementById('auth-forgot').addEventListener('click', showRecoverForm);
   document.getElementById('auth-toggle-link').addEventListener('click', () => {
     if (authMode === 'login') switchToRegister();
     else switchToLogin();
   });
+
+  // Recover
+  document.getElementById('recover-back').addEventListener('click', showAuthFormFromRecover);
+  document.getElementById('recover-submit').addEventListener('click', handleRecoverSubmit);
+  document.getElementById('recover-done').addEventListener('click', () => { showAuthFormFromRecover(); });
+  document.getElementById('recover-email').addEventListener('keydown', e => { if (e.key === 'Enter') handleRecoverSubmit(); });
+  document.getElementById('recover-new-password').addEventListener('keydown', e => { if (e.key === 'Enter') handleRecoverSubmit(); });
+  document.getElementById('recover-confirm').addEventListener('keydown', e => { if (e.key === 'Enter') handleRecoverSubmit(); });
+
+  // Reset
+  document.getElementById('reset-submit').addEventListener('click', handleResetSubmit);
+  document.getElementById('reset-password').addEventListener('keydown', e => { if (e.key === 'Enter') handleResetSubmit(); });
+  document.getElementById('reset-confirm').addEventListener('keydown', e => { if (e.key === 'Enter') handleResetSubmit(); });
+
+  // Eye toggles
+  document.getElementById('eye-password').addEventListener('click', () => toggleEye('auth-password', 'eye-password'));
+  document.getElementById('eye-confirm').addEventListener('click', () => toggleEye('auth-confirm', 'eye-confirm'));
+  document.getElementById('eye-recover').addEventListener('click', () => toggleEye('recover-new-password', 'eye-recover'));
+  document.getElementById('eye-recover-confirm').addEventListener('click', () => toggleEye('recover-confirm', 'eye-recover-confirm'));
+  document.getElementById('eye-reset').addEventListener('click', () => toggleEye('reset-password', 'eye-reset'));
+  document.getElementById('eye-reset-confirm').addEventListener('click', () => toggleEye('reset-confirm', 'eye-reset-confirm'));
 
   // Auth logout
   document.getElementById('auth-logout').addEventListener('click', async () => {
@@ -985,31 +1231,43 @@ document.addEventListener('DOMContentLoaded', () => {
     showAuthForm();
   });
 
+  document.getElementById('profile-set-nickname').addEventListener('click', () => {
+    document.getElementById('profile-nickname-input').classList.remove('hidden');
+    document.getElementById('profile-set-nickname').classList.add('hidden');
+    document.getElementById('profile-nickname-field').focus();
+  });
+
+  document.getElementById('profile-nickname-save').addEventListener('click', async () => {
+    const val = document.getElementById('profile-nickname-field').value.trim();
+    if (val) await saveNickname(val);
+  });
+
   // Check session on load
   if (currentUser) {
     showAuthed();
   }
 
-  // Bottom navigation
-  document.getElementById('bottom-dashboard').addEventListener('click', () => switchTab('dashboard'));
-  document.getElementById('bottom-collection').addEventListener('click', () => {
+  // Menu modal
+  document.getElementById('header-menu').addEventListener('click', openMenu);
+  document.getElementById('menu-backdrop').addEventListener('click', closeMenu);
+  document.getElementById('menu-close').addEventListener('click', closeMenu);
+  document.getElementById('menu-dashboard').addEventListener('click', () => switchTab('dashboard'));
+  document.getElementById('menu-collection').addEventListener('click', () => {
     if (currentColTab !== 'cards') switchColTab('cards');
     currentColTab = 'cards';
     switchTab('collection');
   });
-
-  // Decks → coming soon
-  document.getElementById('bottom-decks').addEventListener('click', () => {
-    const btn = document.getElementById('bottom-decks');
-    btn.classList.add('active');
-    document.querySelectorAll('.bottom-nav-item').forEach(b => { if (b !== btn) b.classList.remove('active'); });
+  document.getElementById('menu-decks').addEventListener('click', () => {
     switchTab('dashboard');
   });
-
-  // Profilo → profile view
-  document.getElementById('bottom-profile').addEventListener('click', () => {
+  document.getElementById('menu-profile').addEventListener('click', () => {
     switchTab('profile');
-    renderProfile();
+  });
+  document.getElementById('menu-logout').addEventListener('click', async () => {
+    closeMenu();
+    await authSignOut();
+    showSection('splash-section');
+    showAuthForm();
   });
 
   // "Vedi tutte" on dashboard
@@ -1063,4 +1321,38 @@ document.addEventListener('DOMContentLoaded', () => {
   // Select All / Deselect All
   document.getElementById('select-all-btn').addEventListener('click', () => setAllFilters(true));
   document.getElementById('deselect-all-btn').addEventListener('click', () => setAllFilters(false));
+
+  // ============ Recovery token detection ============
+  const hash = window.location.hash;
+  if (hash && hash.includes('type=recovery')) {
+    const params = new URLSearchParams(hash.replace('#', ''));
+    const recoveryToken = params.get('access_token');
+    if (recoveryToken) {
+      accessToken = recoveryToken;
+      const saved = (() => { try { return JSON.parse(localStorage.getItem('pending_recovery')); } catch(_) { return null; } })();
+      if (saved && saved.password) {
+        // Auto-apply: use the saved password directly
+        (async () => {
+          try {
+            const res = await fetch(SUPABASE_URL + '/auth/v1/user', {
+              method: 'PUT',
+              headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': 'Bearer ' + accessToken, 'Content-Type': 'application/json' },
+              body: JSON.stringify({ password: saved.password }),
+            });
+            if (!res.ok) throw new Error('API error');
+            try { localStorage.removeItem('pending_recovery'); } catch(_) {}
+            window.location.hash = '';
+            showToast('Password aggiornata! Ora accedi.', false);
+          } catch (_) {
+            // Fallback: show manual reset form
+            document.getElementById('splash-section').classList.add('hidden');
+            document.getElementById('reset-section').classList.remove('hidden');
+          }
+        })();
+      } else {
+        document.getElementById('splash-section').classList.add('hidden');
+        document.getElementById('reset-section').classList.remove('hidden');
+      }
+    }
+  }
 });
