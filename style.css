@@ -330,14 +330,30 @@ body.sheet-open {
   line-height: 1;
 }
 
+/* ---- Auth tabs ---- */
+.auth-tab {
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: none;
+  background: none;
+  color: #5a5b6d;
+}
+.auth-tab.active {
+  background: white;
+  color: #2c52b3;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
 /* ---- Bottom nav spacing ---- */
 #view-dashboard,
-#view-collection {
+#view-collection,
+#view-profile {
   padding-bottom: 5.5rem;
 }
 @media (min-width: 768px) {
   #view-dashboard,
-  #view-collection {
+  #view-collection,
+  #view-profile {
     padding-bottom: 2rem;
   }
 }
