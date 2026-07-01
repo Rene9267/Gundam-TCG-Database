@@ -826,10 +826,16 @@ function showAuthed() {
 
 let authMode = 'login'; // 'login' | 'register'
 
-function setAuthMode(mode) {
-  authMode = mode;
-  document.querySelectorAll('.auth-tab').forEach(t => t.classList.toggle('active', t.id === 'auth-' + mode + '-tab'));
-  document.getElementById('auth-submit').textContent = mode === 'login' ? 'Accedi' : 'Registrati';
+function switchToRegister() {
+  authMode = 'register';
+  document.getElementById('auth-submit').textContent = 'Registrati';
+  document.getElementById('auth-error').classList.add('hidden');
+}
+
+function switchToLogin() {
+  authMode = 'login';
+  document.getElementById('auth-submit').textContent = 'Accedi';
+  document.getElementById('auth-error').classList.add('hidden');
 }
 
 async function handleAuthSubmit() {
@@ -846,16 +852,37 @@ async function handleAuthSubmit() {
   try {
     if (authMode === 'login') {
       await authSignIn(email, password);
+      showAuthed();
     } else {
       await authSignUp(email, password);
+      errEl.textContent = 'Registrazione completata! Controlla la tua email per confermare.';
+      errEl.className = 'text-green-500 text-sm mt-3 text-center';
+      errEl.classList.remove('hidden');
+      switchToLogin();
     }
-    showAuthed();
   } catch (err) {
+    errEl.className = 'text-[#fb2f38] text-sm mt-3 text-center';
     errEl.textContent = err.message;
     errEl.classList.remove('hidden');
   } finally {
     loadingEl.classList.add('hidden');
     document.getElementById('auth-submit').disabled = false;
+  }
+}
+
+async function handleForgotPassword() {
+  const errEl = document.getElementById('auth-error');
+  const email = document.getElementById('auth-email').value.trim();
+  if (!email) { errEl.textContent = 'Inserisci la tua email per il recupero.'; errEl.className = 'text-[#fb2f38] text-sm mt-3 text-center'; errEl.classList.remove('hidden'); return; }
+  try {
+    await authFetch('/auth/v1/recover', { email });
+    errEl.textContent = 'Email di recupero inviata! Controlla la tua casella.';
+    errEl.className = 'text-green-500 text-sm mt-3 text-center';
+    errEl.classList.remove('hidden');
+  } catch (err) {
+    errEl.textContent = err.message;
+    errEl.className = 'text-[#fb2f38] text-sm mt-3 text-center';
+    errEl.classList.remove('hidden');
   }
 }
 
@@ -883,14 +910,18 @@ async function enterApp() {
 document.addEventListener('DOMContentLoaded', () => {
   loadSession();
 
-  // Auth tabs
-  document.getElementById('auth-login-tab').addEventListener('click', () => setAuthMode('login'));
-  document.getElementById('auth-register-tab').addEventListener('click', () => setAuthMode('register'));
-
   // Auth submit
   document.getElementById('auth-submit').addEventListener('click', handleAuthSubmit);
   document.getElementById('auth-email').addEventListener('keydown', e => { if (e.key === 'Enter') handleAuthSubmit(); });
   document.getElementById('auth-password').addEventListener('keydown', e => { if (e.key === 'Enter') handleAuthSubmit(); });
+
+  // Auth links
+  document.getElementById('auth-forgot').addEventListener('click', handleForgotPassword);
+  document.getElementById('auth-register-link').addEventListener('click', () => {
+    switchToRegister();
+    document.getElementById('auth-error').className = 'text-[#fb2f38] text-sm mt-3 text-center';
+    document.getElementById('auth-error').classList.add('hidden');
+  });
 
   // Auth logout
   document.getElementById('auth-logout').addEventListener('click', async () => {

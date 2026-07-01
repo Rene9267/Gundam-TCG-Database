@@ -361,21 +361,7 @@ body.sheet-open {
   left: 0;
   right: 0;
   height: 4px;
-  background: #fff867;
-}
-
-/* ---- Auth tabs ---- */
-.auth-tab {
-  cursor: pointer;
-  transition: all 0.15s ease;
-  border: none;
-  background: none;
-  color: #5a5b6d;
-}
-.auth-tab.active {
-  background: white;
-  color: #2c52b3;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  background: #fb2f38;
 }
 
 /* ---- Bottom nav spacing ---- */
