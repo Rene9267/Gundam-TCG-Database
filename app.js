@@ -846,11 +846,9 @@ function showToast(msg, isError = true) {
 
 function setLoading(v) {
   const btn = document.getElementById('auth-submit');
-  const spinner = document.getElementById('auth-spinner');
-  const text = document.getElementById('auth-submit-text');
   btn.disabled = v;
-  spinner.classList.toggle('hidden', !v);
-  text.classList.toggle('hidden', v);
+  document.getElementById('auth-submit-text').classList.toggle('invisible', v);
+  document.getElementById('auth-spinner').classList.toggle('invisible', !v);
 }
 
 function switchToLogin() {
