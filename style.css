@@ -403,34 +403,44 @@ body.sheet-open {
   inset: 0;
   overflow: hidden;
   pointer-events: none;
+  z-index: 1;
 }
 .grid-dot {
   position: absolute;
-  width: 8px;
-  height: 8px;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
-  opacity: 0.5;
-  animation: float-dot linear infinite;
+  opacity: 0.6;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
-.grid-dot-yellow { background: #fff867; box-shadow: 0 0 8px rgba(255,248,103,0.4); }
-.grid-dot-blue { background: #2c52b3; box-shadow: 0 0 8px rgba(44,82,179,0.4); }
-.grid-dot-red { background: #fb2f38; box-shadow: 0 0 8px rgba(251,47,56,0.4); }
-@keyframes float-dot {
-  0%, 100% { transform: translateY(0) scale(1); }
-  25% { transform: translateY(-20px) scale(1.1); }
-  50% { transform: translateY(0) scale(0.9); }
-  75% { transform: translateY(15px) scale(1.05); }
+.grid-dot-yellow { background: #fff867; box-shadow: 0 0 10px 2px rgba(255,248,103,0.5); }
+.grid-dot-blue { background: #2c52b3; box-shadow: 0 0 10px 2px rgba(44,82,179,0.5); }
+.grid-dot-red { background: #fb2f38; box-shadow: 0 0 10px 2px rgba(251,47,56,0.5); }
+@keyframes float-up {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-28px); }
+}
+@keyframes float-down {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(28px); }
+}
+@keyframes float-left {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-28px); }
+}
+@keyframes float-right {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(28px); }
 }
 
-/* ---- Zaku eye slide animation ---- */
+/* ---- Zaku eye slide ---- */
 .zaku-eye-slide {
-  animation: eye-slide 4s ease-in-out infinite;
+  transition: transform 0.3s ease;
+  transform: translateX(11px);
 }
-@keyframes eye-slide {
-  0%, 100% { transform: translateX(0); }
-  30% { transform: translateX(4px); }
-  60% { transform: translateX(-2px); }
-  80% { transform: translateX(1px); }
+.eye-active .zaku-eye-slide {
+  transform: translateX(0);
 }
 
 /* ---- Eye toggle active ---- */
