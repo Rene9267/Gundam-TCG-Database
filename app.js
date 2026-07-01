@@ -57,9 +57,10 @@ async function authFetch(path, body) {
   return data;
 }
 
-async function authSignUp(email, password) {
-  const data = await authFetch('/auth/v1/signup', { email, password });
-  // Signup may return user + session if confirm email is disabled
+async function authSignUp(email, password, nickname) {
+  const body = { email, password };
+  if (nickname) body.data = { nickname };
+  const data = await authFetch('/auth/v1/signup', body);
   if (data.access_token) {
     saveSession(data.user, data.access_token);
   }
@@ -829,6 +830,13 @@ let authMode = 'login'; // 'login' | 'register'
 function switchToRegister() {
   authMode = 'register';
   document.getElementById('auth-submit-text').textContent = 'Registrati';
+  document.getElementById('auth-nickname').classList.remove('hidden');
+}
+
+function switchToLogin() {
+  authMode = 'login';
+  document.getElementById('auth-submit-text').textContent = 'Accedi';
+  document.getElementById('auth-nickname').classList.add('hidden');
 }
 
 function showToast(msg, isError = true) {
@@ -851,11 +859,6 @@ function setLoading(v) {
   document.getElementById('auth-spinner').classList.toggle('invisible', !v);
 }
 
-function switchToLogin() {
-  authMode = 'login';
-  document.getElementById('auth-submit-text').textContent = 'Accedi';
-}
-
 async function handleAuthSubmit() {
   const email = document.getElementById('auth-email').value.trim();
   const password = document.getElementById('auth-password').value;
@@ -868,7 +871,9 @@ async function handleAuthSubmit() {
       await authSignIn(email, password);
       showAuthed();
     } else {
-      await authSignUp(email, password);
+      const nickname = document.getElementById('auth-nickname').value.trim();
+      if (!nickname) { showToast('Inserisci un nickname.'); setLoading(false); return; }
+      await authSignUp(email, password, nickname);
       showToast('Registrazione completata! Controlla la tua email.', false);
       switchToLogin();
     }
@@ -890,6 +895,28 @@ async function handleForgotPassword() {
   }
 }
 
+function playTransition() {
+  return new Promise(resolve => {
+    const overlay = document.getElementById('transition-overlay');
+    const flash = document.getElementById('flash-green');
+    overlay.classList.remove('opacity-0');
+    overlay.classList.add('opacity-100');
+    // Green flash dopo 1.2s
+    setTimeout(() => {
+      flash.classList.remove('opacity-0');
+      flash.classList.add('opacity-100');
+    }, 1200);
+    // Via tutto dopo 1.8s
+    setTimeout(() => {
+      flash.classList.add('opacity-0');
+      flash.classList.remove('opacity-100');
+      overlay.classList.add('opacity-0');
+      overlay.classList.remove('opacity-100');
+      resolve();
+    }, 1800);
+  });
+}
+
 async function enterApp() {
   try {
     if ('serviceWorker' in navigator && !navigator.serviceWorker.controller) {
@@ -900,6 +927,8 @@ async function enterApp() {
     }
     await loadReferenceCards();
     await refreshCards();
+    // Transizione
+    await playTransition();
     showSection('app-section');
     renderProfile();
     switchTab('dashboard');
