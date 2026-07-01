@@ -361,7 +361,7 @@ body.sheet-open {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #fb2f38, #fb2f38 40%, #2c52b3 80%, #fff867);
+  background: #fff867;
 }
 
 /* ---- Auth tabs ---- */
