@@ -341,12 +341,13 @@
             <rect x="14" y="14" width="7" height="7" rx="1"/>
           </svg>
         </button>
-        <div class="flex flex-col items-center leading-tight">
-          <span class="font-heading font-bold text-xl tracking-wider text-primary">GUNDAM</span>
-          <span class="text-[10px] font-semibold tracking-widest text-secondary -mt-1 uppercase">Card Collection</span>
-          <span class="block w-12 h-[3px] bg-[#fff867] rounded-full mx-auto mt-0.5"></span>
+        <div class="flex items-center gap-2">
+          <span class="font-heading font-bold text-lg tracking-wider text-primary">GUNDAM</span>
+          <span class="text-[11px] font-semibold tracking-widest text-secondary uppercase">Card Collection</span>
         </div>
-        <div class="w-10 flex items-center justify-center"><!-- spacer --></div>
+        <div class="w-10"><!-- spacer --></div>
+        <!-- header bottom bar -->
+        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-primary"></div>
       </div>
     </header>
 
@@ -384,13 +385,13 @@
           </div>
           <div class="bg-white/95 backdrop-blur-sm rounded-xl border border-white/20 p-4 relative overflow-hidden shadow-sm">
             <div class="absolute top-0 left-0 w-1 h-full bg-accent"></div>
-            <p class="font-mono text-xs text-secondary uppercase tracking-wider mb-1">Carte Uniche</p>
-            <p id="stat-unique-cards" class="font-heading font-bold text-2xl text-primary">—</p>
+            <p class="font-mono text-xs text-secondary uppercase tracking-wider mb-1">Decks</p>
+            <p id="stat-decks" class="font-heading font-bold text-2xl text-primary">0</p>
           </div>
         </section>
 
         <!-- Ultime Aggiunte (horizontal scroll) -->
-        <section>
+        <section class="bg-black/10 backdrop-blur-sm rounded-xl p-4 border border-white/5">
           <div class="flex items-center justify-between mb-3">
             <h2 class="font-heading font-semibold text-sm uppercase tracking-wider text-white/80 border-l-4 border-primary pl-3">Ultime Aggiunte</h2>
             <button id="latest-view-all" class="font-mono text-xs text-white/70 hover:text-accent transition flex items-center">
@@ -403,7 +404,7 @@
         </section>
 
         <!-- Completamento Espansioni (vertical list) -->
-        <section>
+        <section class="bg-black/10 backdrop-blur-sm rounded-xl p-4 border border-white/5">
           <div class="flex items-center mb-3">
             <h2 class="font-heading font-semibold text-sm uppercase tracking-wider text-white/80 border-l-4 border-primary pl-3">Completamento Espansioni</h2>
           </div>
@@ -415,39 +416,63 @@
     </div>
 
     <!-- ===== COLLECTION VIEW ===== -->
-    <div id="view-collection" class="hidden max-w-7xl mx-auto px-4 py-5">
-      <div class="flex items-center gap-3 mb-5">
-        <div class="flex gap-0">
-          <button id="tab-cards" class="tab-btn active px-4 py-2 text-sm font-semibold border-b-2 transition text-primary border-primary" data-view="cards">Carte</button>
-          <button id="tab-stats" class="tab-btn px-4 py-2 text-sm font-semibold border-b-2 transition text-secondary border-transparent hover:text-primary" data-view="stats">Statistiche</button>
-        </div>
-        <div class="flex-1"></div>
-        <select id="col-set-filter" class="border border-secondary-light rounded-lg px-3 py-2 text-sm text-primary focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary min-w-[160px] bg-white"></select>
+    <div id="view-collection" class="hidden splash-bg relative overflow-hidden">
+      <div class="grid-dots-overlay" aria-hidden="true">
+        <div class="grid-dot grid-dot-yellow" style="animation-name:float-right;top:8%;left:12%;animation-duration:13.86s;animation-delay:0s"></div>
+        <div class="grid-dot grid-dot-blue" style="animation-name:float-up;top:15%;left:35%;animation-duration:10.89s;animation-delay:2s"></div>
+        <div class="grid-dot grid-dot-red" style="animation-name:float-left;top:10%;left:60%;animation-duration:12.87s;animation-delay:1s"></div>
+        <div class="grid-dot grid-dot-yellow" style="animation-name:float-down;top:18%;left:85%;animation-duration:9.90s;animation-delay:3s"></div>
+        <div class="grid-dot grid-dot-blue" style="animation-name:float-up;top:35%;left:8%;animation-duration:11.88s;animation-delay:0.5s"></div>
+        <div class="grid-dot grid-dot-red" style="animation-name:float-right;top:28%;left:42%;animation-duration:14.85s;animation-delay:2.5s"></div>
+        <div class="grid-dot grid-dot-yellow" style="animation-name:float-left;top:42%;left:68%;animation-duration:8.91s;animation-delay:4s"></div>
+        <div class="grid-dot grid-dot-blue" style="animation-name:float-down;top:32%;left:92%;animation-duration:10.89s;animation-delay:1.5s"></div>
+        <div class="grid-dot grid-dot-red" style="animation-name:float-up;top:55%;left:18%;animation-duration:13.86s;animation-delay:3.5s"></div>
+        <div class="grid-dot grid-dot-yellow" style="animation-name:float-right;top:62%;left:40%;animation-duration:9.90s;animation-delay:2s"></div>
+        <div class="grid-dot grid-dot-blue" style="animation-name:float-left;top:50%;left:75%;animation-duration:11.88s;animation-delay:0s"></div>
+        <div class="grid-dot grid-dot-red" style="animation-name:float-down;top:58%;left:90%;animation-duration:12.87s;animation-delay:1s"></div>
+        <div class="grid-dot grid-dot-blue" style="animation-name:float-up;top:75%;left:10%;animation-duration:11.88s;animation-delay:3s"></div>
+        <div class="grid-dot grid-dot-yellow" style="animation-name:float-right;top:85%;left:32%;animation-duration:9.90s;animation-delay:0s"></div>
+        <div class="grid-dot grid-dot-red" style="animation-name:float-left;top:78%;left:55%;animation-duration:14.85s;animation-delay:2s"></div>
+        <div class="grid-dot grid-dot-blue" style="animation-name:float-down;top:88%;left:82%;animation-duration:10.89s;animation-delay:1s"></div>
+        <div class="grid-dot grid-dot-yellow" style="animation-name:float-up;top:92%;left:15%;animation-duration:13.86s;animation-delay:3s"></div>
+        <div class="grid-dot grid-dot-red" style="animation-name:float-right;top:70%;left:95%;animation-duration:8.91s;animation-delay:0.5s"></div>
+        <div class="grid-dot grid-dot-blue" style="animation-name:float-left;top:95%;left:65%;animation-duration:12.87s;animation-delay:2.5s"></div>
+        <div class="grid-dot grid-dot-yellow" style="animation-name:float-down;top:5%;left:48%;animation-duration:10.89s;animation-delay:1.5s"></div>
       </div>
-
-      <div id="cards-content">
-        <div class="mb-3">
-          <input type="text" id="col-search" class="w-full border border-secondary-light rounded-lg px-4 py-2.5 text-sm text-primary placeholder-secondary/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary bg-white" placeholder="Cerca per nome o codice...">
-        </div>
-        <div id="variant-filters" class="mb-4">
-          <div class="flex flex-wrap gap-2 items-center">
-            <button class="variant-btn active" data-filter="base">Base</button>
-            <button class="variant-btn" data-filter="altart">Alt Art</button>
-            <button class="variant-btn" data-filter="resources">Risorse/Token</button>
-            <span class="text-secondary text-xs mx-1">|</span>
-            <button id="select-all-btn" class="text-xs text-primary hover:text-accent font-medium transition">Seleziona tutti</button>
-            <button id="deselect-all-btn" class="text-xs text-secondary hover:text-primary font-medium transition">Deseleziona tutti</button>
+      <div class="max-w-7xl mx-auto px-4 py-5 relative" style="z-index:2">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="flex gap-0">
+            <button id="tab-cards" class="tab-btn active px-4 py-2 text-sm font-semibold border-b-2 transition text-white border-b-white" data-view="cards">Carte</button>
+            <button id="tab-stats" class="tab-btn px-4 py-2 text-sm font-semibold border-b-2 transition text-white/60 border-transparent hover:text-white" data-view="stats">Statistiche</button>
           </div>
+          <div class="flex-1"></div>
+          <select id="col-set-filter" class="border border-white/20 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary min-w-[160px] bg-white/10 backdrop-blur-sm"></select>
         </div>
-        <div id="collection-grid" class="grid grid-cols-2 md:grid-cols-4 gap-3"></div>
-        <div id="collection-empty" class="hidden text-center py-16">
-          <p class="text-secondary text-lg">Nessuna carta trovata</p>
-        </div>
-        <div id="collection-summary" class="mt-5 text-center text-secondary text-sm"></div>
-      </div>
 
-      <div id="collection-stats" class="hidden space-y-3">
-        <div id="stats-content" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+        <div id="cards-content">
+          <div class="mb-3">
+            <input type="text" id="col-search" class="w-full border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary bg-white/10 backdrop-blur-sm" placeholder="Cerca per nome o codice...">
+          </div>
+          <div id="variant-filters" class="mb-4">
+            <div class="flex flex-wrap gap-2 items-center">
+              <button class="variant-btn active" data-filter="base">Base</button>
+              <button class="variant-btn" data-filter="altart">Alt Art</button>
+              <button class="variant-btn" data-filter="resources">Risorse/Token</button>
+              <span class="text-white/40 text-xs mx-1">|</span>
+              <button id="select-all-btn" class="text-xs text-white/70 hover:text-accent font-medium transition">Seleziona tutti</button>
+              <button id="deselect-all-btn" class="text-xs text-white/50 hover:text-white/80 font-medium transition">Deseleziona tutti</button>
+            </div>
+          </div>
+          <div id="collection-grid" class="grid grid-cols-2 md:grid-cols-4 gap-3"></div>
+          <div id="collection-empty" class="hidden text-center py-16">
+            <p class="text-white/60 text-lg">Nessuna carta trovata</p>
+          </div>
+          <div id="collection-summary" class="mt-5 text-center text-white/60 text-sm"></div>
+        </div>
+
+        <div id="collection-stats" class="hidden space-y-3">
+          <div id="stats-content" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+        </div>
       </div>
     </div>
 
@@ -514,28 +539,6 @@
         </div>
       </div>
     </div>
-
-    <!-- ===== Bottom Navigation ===== -->
-    <nav id="bottom-nav" class="fixed bottom-0 w-full z-50 bg-white/95 backdrop-blur-xl border-t border-secondary-light shadow-[0_-2px_12px_rgba(0,0,0,0.06)]">
-      <div class="flex justify-around items-center h-16 max-w-lg mx-auto">
-        <button id="bottom-dashboard" class="bottom-nav-item active flex flex-col items-center justify-center flex-1 h-full">
-          <span class="material-symbols-outlined mb-0.5" style="font-variation-settings:'FILL' 1">speed</span>
-          <span class="font-mono text-[10px] uppercase tracking-wider">Dashboard</span>
-        </button>
-        <button id="bottom-collection" class="bottom-nav-item flex flex-col items-center justify-center flex-1 h-full">
-          <span class="material-symbols-outlined mb-0.5">database</span>
-          <span class="font-mono text-[10px] uppercase tracking-wider">Collezioni</span>
-        </button>
-        <button id="bottom-decks" class="bottom-nav-item flex flex-col items-center justify-center flex-1 h-full">
-          <span class="material-symbols-outlined mb-0.5">style</span>
-          <span class="font-mono text-[10px] uppercase tracking-wider">Decks</span>
-        </button>
-        <button id="bottom-profile" class="bottom-nav-item flex flex-col items-center justify-center flex-1 h-full">
-          <span class="material-symbols-outlined mb-0.5">account_circle</span>
-          <span class="font-mono text-[10px] uppercase tracking-wider">Profilo</span>
-        </button>
-      </div>
-    </nav>
   </div>
 
   <!-- ============ BOTTOM SHEET ============ -->

@@ -34,26 +34,6 @@ body {
   font-size: 2.5rem;
 }
 
-/* ---- Bottom nav ---- */
-#bottom-nav {
-  padding-bottom: env(safe-area-inset-bottom, 0);
-}
-.bottom-nav-item {
-  color: #5a5b6d;
-  transition: color 0.15s ease;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-.bottom-nav-item.active {
-  color: #2c52b3;
-  border-top: 2px solid #2c52b3;
-  margin-top: -1px;
-}
-.bottom-nav-item:not(.active):hover {
-  color: #2c52b3;
-}
-
 /* ---- Latest horizontal entry ---- */
 .latest-entry img,
 .latest-entry .card-img-fallback {
@@ -383,21 +363,9 @@ body.sheet-open {
   50% { transform: scale(1.8); opacity: 1; }
 }
 
-/* ---- Bottom nav spacing ---- */
-#view-dashboard {
+#view-dashboard,
+#view-collection {
   min-height: calc(100vh - 3.5rem);
-  padding-bottom: 5.5rem;
-}
-#view-collection,
-#view-profile {
-  padding-bottom: 5.5rem;
-}
-@media (min-width: 768px) {
-  #view-dashboard,
-  #view-collection,
-  #view-profile {
-    padding-bottom: 2rem;
-  }
 }
 
 /* ---- Grid dots overlay (splash) ---- */

@@ -45,7 +45,7 @@ async function enterApp() {
     showSection('app-section');
     renderProfile();
     switchTab('dashboard');
-    document.getElementById('bottom-dashboard').classList.add('active');
+
   } catch (err) {
     document.getElementById('splash-error').textContent = err.message;
     document.getElementById('splash-error').classList.remove('hidden');
