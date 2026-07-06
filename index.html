@@ -77,15 +77,15 @@
       </div>
 
       <!-- Auth form (login / register) -->
-      <div id="auth-form" class="auth-card bg-white rounded-2xl shadow-lg border border-white/10 p-6">
+      <div id="auth-form" class="auth-card bg-black/40 backdrop-blur-sm rounded-2xl shadow-lg border border-white/10 p-6">
         <div id="auth-fields">
           <input id="auth-nickname" type="text" placeholder="Nickname" autocomplete="nickname"
-            class="hidden w-full bg-[#f8fafc] border border-[#e2e8f0] rounded-lg px-4 py-3 text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-[#94a3b8]">
+            class="hidden w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
           <input id="auth-email" type="text" placeholder="Email o Username" autocomplete="email"
-            class="w-full bg-[#f8fafc] border border-[#e2e8f0] rounded-lg px-4 py-3 text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-[#94a3b8]">
+            class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
           <div class="relative mb-3">
             <input id="auth-password" type="password" placeholder="Password" autocomplete="current-password"
-              class="w-full bg-[#f8fafc] border border-[#e2e8f0] rounded-lg px-4 py-3 text-sm pr-10 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-[#94a3b8]">
+              class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm pr-10 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
             <button id="eye-password" type="button" class="eye-btn absolute right-3 top-1/2 -translate-y-1/2 text-[#94a3b8] hover:text-[#5a5b6d] transition" tabindex="-1">
               <svg viewBox="0 0 24 24" width="20" height="20" class="block">
                 <path d="M5 11C3 13 2.5 16 3 18" stroke="#6b7280" stroke-width="2.5" fill="none" stroke-linecap="round"/>
@@ -108,7 +108,7 @@
           </div>
           <div id="auth-confirm-group" class="relative mb-4 hidden">
             <input id="auth-confirm" type="password" placeholder="Conferma Password"
-              class="w-full bg-[#f8fafc] border border-[#e2e8f0] rounded-lg px-4 py-3 text-sm pr-10 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-[#94a3b8]">
+              class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm pr-10 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
             <button id="eye-confirm" type="button" class="eye-btn absolute right-3 top-1/2 -translate-y-1/2 text-[#94a3b8] hover:text-[#5a5b6d] transition" tabindex="-1">
               <svg viewBox="0 0 24 24" width="20" height="20" class="block">
                 <path d="M5 11C3 13 2.5 16 3 18" stroke="#6b7280" stroke-width="2.5" fill="none" stroke-linecap="round"/>
@@ -133,8 +133,8 @@
 
         <label class="flex items-center gap-2 mb-4 cursor-pointer select-none">
           <input id="auth-remember" type="checkbox" checked
-            class="w-4 h-4 rounded border-[#d1d5db] text-[#2c52b3] focus:ring-[#2c52b3]/30 cursor-pointer">
-          <span class="text-xs text-[#5a5b6d] font-medium">Ricordami</span>
+            class="w-4 h-4 rounded border-white/30 text-primary focus:ring-primary/30 cursor-pointer bg-white/10">
+          <span class="text-xs text-white/70 font-medium">Ricordami</span>
         </label>
 
         <button id="auth-submit" class="relative w-full bg-[#2c52b3] hover:bg-[#1e3a7a] text-white text-base font-bold py-3 rounded-full shadow-sm transition hover:scale-[1.02] active:scale-95 disabled:opacity-60 disabled:hover:scale-100">
@@ -145,21 +145,21 @@
         </button>
 
         <div class="flex items-center justify-center gap-4 mt-4">
-          <button id="auth-forgot" class="text-xs text-[#5a5b6d] hover:text-[#2c52b3] transition font-medium">Password dimenticata?</button>
-          <span class="text-[#d1d5db] text-xs">|</span>
-          <button id="auth-toggle-link" class="text-xs text-[#5a5b6d] hover:text-[#2c52b3] transition font-medium">Registrati</button>
+          <button id="auth-forgot" class="text-xs text-white/60 hover:text-primary transition font-medium">Password dimenticata?</button>
+          <span class="text-white/20 text-xs">|</span>
+          <button id="auth-toggle-link" class="text-xs text-white/60 hover:text-primary transition font-medium">Registrati</button>
         </div>
       </div>
 
       <!-- Password recovery: Email + Nuova Password + Conferma -->
-      <div id="recover-form" class="auth-card hidden bg-white rounded-2xl shadow-lg border border-white/10 p-6">
-        <p class="text-sm text-[#5a5b6d] mb-4 text-center font-medium">Recupera Password</p>
+      <div id="recover-form" class="auth-card hidden bg-black/40 backdrop-blur-sm rounded-2xl shadow-lg border border-white/10 p-6">
+        <p class="text-sm text-white/70 mb-4 text-center font-medium">Recupera Password</p>
         <input id="recover-email" type="email" placeholder="La tua Email" autocomplete="email"
-          class="w-full bg-[#f8fafc] border border-[#e2e8f0] rounded-lg px-4 py-3 text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-[#94a3b8]">
+          class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
         <div class="relative mb-3">
           <input id="recover-new-password" type="password" placeholder="Nuova Password" autocomplete="new-password"
-            class="w-full bg-[#f8fafc] border border-[#e2e8f0] rounded-lg px-4 py-3 text-sm pr-10 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-[#94a3b8]">
-          <button id="eye-recover" type="button" class="eye-btn absolute right-3 top-1/2 -translate-y-1/2 text-[#94a3b8] hover:text-[#5a5b6d] transition" tabindex="-1">
+            class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm pr-10 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
+          <button id="eye-recover" type="button" class="eye-btn absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white/70 transition" tabindex="-1">
             <svg viewBox="0 0 24 24" width="20" height="20" class="block">
               <path d="M5 11C3 13 2.5 16 3 18" stroke="#6b7280" stroke-width="2.5" fill="none" stroke-linecap="round"/>
               <path d="M19 11C21 13 21.5 16 21 18" stroke="#6b7280" stroke-width="2.5" fill="none" stroke-linecap="round"/>
@@ -181,8 +181,8 @@
         </div>
         <div class="relative mb-4">
           <input id="recover-confirm" type="password" placeholder="Conferma Password"
-            class="w-full bg-[#f8fafc] border border-[#e2e8f0] rounded-lg px-4 py-3 text-sm pr-10 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-[#94a3b8]">
-          <button id="eye-recover-confirm" type="button" class="eye-btn absolute right-3 top-1/2 -translate-y-1/2 text-[#94a3b8] hover:text-[#5a5b6d] transition" tabindex="-1">
+            class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm pr-10 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
+          <button id="eye-recover-confirm" type="button" class="eye-btn absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white/70 transition" tabindex="-1">
             <svg viewBox="0 0 24 24" width="20" height="20" class="block">
               <path d="M5 11C3 13 2.5 16 3 18" stroke="#6b7280" stroke-width="2.5" fill="none" stroke-linecap="round"/>
               <path d="M19 11C21 13 21.5 16 21 18" stroke="#6b7280" stroke-width="2.5" fill="none" stroke-linecap="round"/>
@@ -208,32 +208,32 @@
             <span class="w-5 h-5 border-2 border-[#fff867] border-t-transparent rounded-full animate-spin"></span>
           </span>
         </button>
-        <button id="recover-back" class="mt-4 w-full text-xs text-[#5a5b6d] hover:text-[#2c52b3] transition font-medium text-center">Torna a Accedi</button>
+        <button id="recover-back" class="mt-4 w-full text-xs text-white/60 hover:text-primary transition font-medium text-center">Torna a Accedi</button>
       </div>
 
       <!-- Password recovery success -->
-      <div id="recover-success" class="auth-card hidden bg-white rounded-2xl shadow-lg border border-white/10 p-6 text-center">
-        <div class="w-14 h-14 rounded-full bg-[#eef0f4] flex items-center justify-center mx-auto mb-3">
-          <span class="material-symbols-outlined text-[#22c55e]" style="font-size:32px">mail</span>
+      <div id="recover-success" class="auth-card hidden bg-black/40 backdrop-blur-sm rounded-2xl shadow-lg border border-white/10 p-6 text-center">
+        <div class="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-3">
+          <span class="material-symbols-outlined text-green-400" style="font-size:32px">mail</span>
         </div>
-        <p class="text-sm text-[#5a5b6d] font-medium mb-1">Email inviata!</p>
-        <p class="text-xs text-[#94a3b8] mb-4">Controlla la posta e clicca il link.<br>La password verrà aggiornata automaticamente.</p>
+        <p class="text-sm text-white/80 font-medium mb-1">Email inviata!</p>
+        <p class="text-xs text-white/50 mb-4">Controlla la posta e clicca il link.<br>La password verrà aggiornata automaticamente.</p>
         <button id="recover-done" class="w-full bg-[#2c52b3] hover:bg-[#1e3a7a] text-white text-base font-bold py-3 rounded-full shadow-sm transition hover:scale-[1.02] active:scale-95">
           OK
         </button>
       </div>
 
       <!-- Already logged in state -->
-      <div id="auth-authed" class="auth-card hidden bg-white rounded-2xl shadow-lg border border-white/10 p-6 text-center">
-        <div class="w-14 h-14 rounded-full bg-[#eef0f4] flex items-center justify-center mx-auto mb-3">
-          <span class="material-symbols-outlined text-[#2c52b3]" style="font-size:32px">account_circle</span>
+      <div id="auth-authed" class="auth-card hidden bg-black/40 backdrop-blur-sm rounded-2xl shadow-lg border border-white/10 p-6 text-center">
+        <div class="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-3">
+          <span class="material-symbols-outlined text-primary" style="font-size:32px">account_circle</span>
         </div>
-        <p id="auth-user-email" class="text-[#2c52b3] font-semibold text-sm mb-1"></p>
-        <p class="text-[#5a5b6d] text-xs mb-4">Sei connesso</p>
+        <p id="auth-user-email" class="text-primary font-semibold text-sm mb-1"></p>
+        <p class="text-white/60 text-xs mb-4">Sei connesso</p>
         <button id="auth-start" class="w-full bg-[#2c52b3] hover:bg-[#1e3a7a] text-white text-base font-bold py-3 rounded-full shadow-sm transition hover:scale-[1.02] active:scale-95">
           Entra nella Collezione
         </button>
-        <button id="auth-logout" class="mt-3 text-sm text-[#5a5b6d] hover:text-[#2c52b3] transition font-medium">
+        <button id="auth-logout" class="mt-3 text-sm text-white/60 hover:text-primary transition font-medium">
           Esci
         </button>
       </div>
@@ -251,12 +251,12 @@
         <h1 class="text-5xl font-bold tracking-wider text-accent" style="text-shadow: 0 2px 8px rgba(234,179,8,0.3);">GUNDAM</h1>
         <p class="text-white/80 text-lg font-semibold -mt-1">CARD COLLECTION</p>
       </div>
-      <div id="reset-form" class="auth-card bg-white rounded-2xl shadow-lg border border-white/10 p-6">
-        <p class="text-sm text-[#5a5b6d] mb-4 text-center font-medium">Nuova Password</p>
+      <div id="reset-form" class="auth-card bg-black/40 backdrop-blur-sm rounded-2xl shadow-lg border border-white/10 p-6">
+        <p class="text-sm text-white/70 mb-4 text-center font-medium">Nuova Password</p>
         <div class="relative mb-3">
           <input id="reset-password" type="password" placeholder="Nuova Password"
-            class="w-full bg-[#f8fafc] border border-[#e2e8f0] rounded-lg px-4 py-3 text-sm pr-10 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-[#94a3b8]">
-          <button id="eye-reset" type="button" class="eye-btn absolute right-3 top-1/2 -translate-y-1/2 text-[#94a3b8] hover:text-[#5a5b6d] transition" tabindex="-1">
+            class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm pr-10 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
+          <button id="eye-reset" type="button" class="eye-btn absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white/70 transition" tabindex="-1">
             <svg viewBox="0 0 24 24" width="20" height="20" class="block">
               <path d="M5 11C3 13 2.5 16 3 18" stroke="#6b7280" stroke-width="2.5" fill="none" stroke-linecap="round"/>
               <path d="M19 11C21 13 21.5 16 21 18" stroke="#6b7280" stroke-width="2.5" fill="none" stroke-linecap="round"/>
@@ -278,8 +278,8 @@
         </div>
         <div class="relative mb-4">
           <input id="reset-confirm" type="password" placeholder="Conferma Password"
-            class="w-full bg-[#f8fafc] border border-[#e2e8f0] rounded-lg px-4 py-3 text-sm pr-10 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-[#94a3b8]">
-          <button id="eye-reset-confirm" type="button" class="eye-btn absolute right-3 top-1/2 -translate-y-1/2 text-[#94a3b8] hover:text-[#5a5b6d] transition" tabindex="-1">
+            class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm pr-10 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
+          <button id="eye-reset-confirm" type="button" class="eye-btn absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white/70 transition" tabindex="-1">
             <svg viewBox="0 0 24 24" width="20" height="20" class="block">
               <path d="M5 11C3 13 2.5 16 3 18" stroke="#6b7280" stroke-width="2.5" fill="none" stroke-linecap="round"/>
               <path d="M19 11C21 13 21.5 16 21 18" stroke="#6b7280" stroke-width="2.5" fill="none" stroke-linecap="round"/>
@@ -331,9 +331,9 @@
   <!-- ============ APP SECTION ============ -->
   <div id="app-section" class="hidden">
     <!-- Header -->
-    <header class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm relative">
+    <header class="sticky top-0 z-50 bg-black/30 backdrop-blur-sm border-b border-white/10 relative">
       <div class="flex items-center justify-between px-4 h-14 max-w-7xl mx-auto">
-        <button id="header-menu" class="flex items-center justify-center w-10 h-10 rounded-lg hover:bg-[#eef0f4] transition text-[#5a5b6d]">
+        <button id="header-menu" class="flex items-center justify-center w-10 h-10 rounded-lg hover:bg-white/10 transition text-white/70">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="3" width="7" height="7" rx="1"/>
             <rect x="14" y="3" width="7" height="7" rx="1"/>
@@ -378,20 +378,20 @@
       <div class="max-w-7xl mx-auto px-4 py-5 space-y-6 relative" style="z-index:2">
         <!-- Stats Row -->
         <section id="dashboard-stats" class="grid grid-cols-2 gap-3">
-          <div class="bg-white/95 backdrop-blur-sm rounded-xl border border-white/20 p-4 relative overflow-hidden shadow-sm">
+          <div class="bg-black/30 backdrop-blur-sm rounded-xl border border-white/10 p-4 relative overflow-hidden">
             <div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
-            <p class="font-mono text-xs text-secondary uppercase tracking-wider mb-1">Totale Carte</p>
-            <p id="stat-total-cards" class="font-heading font-bold text-2xl text-primary">—</p>
+            <p class="font-mono text-xs text-white/60 uppercase tracking-wider mb-1">Totale Carte</p>
+            <p id="stat-total-cards" class="font-heading font-bold text-2xl text-white">—</p>
           </div>
-          <div class="bg-white/95 backdrop-blur-sm rounded-xl border border-white/20 p-4 relative overflow-hidden shadow-sm">
+          <div class="bg-black/30 backdrop-blur-sm rounded-xl border border-white/10 p-4 relative overflow-hidden">
             <div class="absolute top-0 left-0 w-1 h-full bg-accent"></div>
-            <p class="font-mono text-xs text-secondary uppercase tracking-wider mb-1">Decks</p>
-            <p id="stat-decks" class="font-heading font-bold text-2xl text-primary">0</p>
+            <p class="font-mono text-xs text-white/60 uppercase tracking-wider mb-1">Decks</p>
+            <p id="stat-decks" class="font-heading font-bold text-2xl text-white">0</p>
           </div>
         </section>
 
         <!-- Ultime Aggiunte (horizontal scroll) -->
-        <section class="bg-black/10 backdrop-blur-sm rounded-xl p-4 border border-white/5">
+        <section class="bg-black/30 backdrop-blur-sm rounded-xl p-4 border border-white/5">
           <div class="flex items-center justify-between mb-3">
             <h2 class="font-heading font-semibold text-sm uppercase tracking-wider text-white/80 border-l-4 border-primary pl-3">Ultime Aggiunte</h2>
             <button id="latest-view-all" class="font-mono text-xs text-white/70 hover:text-accent transition flex items-center">
@@ -404,7 +404,7 @@
         </section>
 
         <!-- Completamento Espansioni (vertical list) -->
-        <section class="bg-black/10 backdrop-blur-sm rounded-xl p-4 border border-white/5">
+        <section class="bg-black/30 backdrop-blur-sm rounded-xl p-4 border border-white/5">
           <div class="flex items-center mb-3">
             <h2 class="font-heading font-semibold text-sm uppercase tracking-wider text-white/80 border-l-4 border-primary pl-3">Completamento Espansioni</h2>
           </div>
@@ -440,64 +440,175 @@
         <div class="grid-dot grid-dot-yellow" style="animation-name:float-down;top:5%;left:48%;animation-duration:10.89s;animation-delay:1.5s"></div>
       </div>
       <div class="max-w-7xl mx-auto px-4 py-5 relative" style="z-index:2">
-        <div class="flex items-center gap-3 mb-5">
-          <div class="flex gap-0">
-            <button id="tab-cards" class="tab-btn active px-4 py-2 text-sm font-semibold border-b-2 transition text-white border-b-white" data-view="cards">Carte</button>
-            <button id="tab-stats" class="tab-btn px-4 py-2 text-sm font-semibold border-b-2 transition text-white/60 border-transparent hover:text-white" data-view="stats">Statistiche</button>
-          </div>
-          <div class="flex-1"></div>
-          <select id="col-set-filter" class="border border-white/20 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary min-w-[160px] bg-white/10 backdrop-blur-sm"></select>
-        </div>
 
-        <div id="cards-content">
-          <div class="mb-3">
-            <input type="text" id="col-search" class="w-full border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary bg-white/10 backdrop-blur-sm" placeholder="Cerca per nome o codice...">
-          </div>
-          <div id="variant-filters" class="mb-4">
-            <div class="flex flex-wrap gap-2 items-center">
-              <button class="variant-btn active" data-filter="base">Base</button>
-              <button class="variant-btn" data-filter="altart">Alt Art</button>
-              <button class="variant-btn" data-filter="resources">Risorse/Token</button>
-              <span class="text-white/40 text-xs mx-1">|</span>
-              <button id="select-all-btn" class="text-xs text-white/70 hover:text-accent font-medium transition">Seleziona tutti</button>
-              <button id="deselect-all-btn" class="text-xs text-white/50 hover:text-white/80 font-medium transition">Deseleziona tutti</button>
+        <!-- COLLECTION OVERVIEW (default) -->
+        <div id="collection-overview">
+          <section class="bg-black/20 rounded-xl p-4 border border-white/5">
+            <div class="col-section-header">
+              <h2 class="col-section-title">Deck</h2>
+              <button class="col-toggle-btn" data-target="decks-list">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+              </button>
             </div>
-          </div>
-          <div id="collection-grid" class="grid grid-cols-2 md:grid-cols-4 gap-3"></div>
-          <div id="collection-empty" class="hidden text-center py-16">
-            <p class="text-white/60 text-lg">Nessuna carta trovata</p>
-          </div>
-          <div id="collection-summary" class="mt-5 text-center text-white/60 text-sm"></div>
+            <div id="decks-list" class="grid grid-cols-2 gap-3"></div>
+            <div id="decks-empty" class="hidden w-full text-center py-8 text-white/50 text-sm">Nessun deck disponibile.</div>
+          </section>
+          <section class="mt-6">
+            <div class="col-section-header">
+              <h2 class="col-section-title">Espansioni</h2>
+              <button class="col-toggle-btn" data-target="expansions-grid">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+              </button>
+            </div>
+            <div id="expansions-grid" class="grid grid-cols-2 gap-3"></div>
+            <div id="expansions-empty-overview" class="hidden w-full text-center py-8 text-white/50 text-sm">Nessuna espansione disponibile.</div>
+          </section>
         </div>
 
-        <div id="collection-stats" class="hidden space-y-3">
-          <div id="stats-content" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+        <!-- COLLECTION DETAIL (hidden) -->
+        <div id="collection-detail" class="hidden">
+          <button id="col-back-btn" class="col-back-btn">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            Torna alla collezione
+          </button>
+
+          <div class="flex items-center gap-3 mb-4 mt-3">
+            <div class="flex gap-0">
+              <button id="tab-cards" class="tab-btn active px-4 py-2 text-sm font-semibold border-b-2 transition text-white border-b-white" data-view="cards">Carte</button>
+              <button id="tab-stats" class="tab-btn px-4 py-2 text-sm font-semibold border-b-2 transition text-white/60 border-transparent hover:text-white" data-view="stats">Statistiche</button>
+            </div>
+            <div class="flex-1"></div>
+            <select id="col-set-filter" class="border border-white/20 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary min-w-[160px] bg-white/10 backdrop-blur-sm" style="color-scheme:dark"></select>
+          </div>
+
+          <div id="cards-content">
+            <div class="mb-3 flex gap-2 items-center">
+              <input type="text" id="col-search" class="flex-1 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary bg-white/10 backdrop-blur-sm" placeholder="Cerca per nome o codice...">
+              <button id="filter-toggle-btn" class="w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center transition shrink-0">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="4" y1="6" x2="20" y2="6"/>
+                  <line x1="8" y1="12" x2="20" y2="12"/>
+                  <line x1="12" y1="18" x2="20" y2="18"/>
+                  <circle cx="6" cy="6" r="1.5" fill="white"/>
+                  <circle cx="10" cy="12" r="1.5" fill="white"/>
+                  <circle cx="14" cy="18" r="1.5" fill="white"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Filter Side Drawer -->
+            <div id="filter-drawer" class="fixed inset-0 z-[55] hidden">
+              <div id="filter-drawer-backdrop" class="absolute inset-0 bg-black/40"></div>
+              <div id="filter-drawer-panel" class="absolute right-0 top-0 bottom-0 w-80 bg-[#2d2d3a]/95 backdrop-blur-sm shadow-2xl border-l border-white/10 translate-x-full transition-transform duration-200 ease-out overflow-y-auto">
+                <div class="flex items-center justify-between px-5 h-14 border-b border-white/10">
+                  <span class="font-heading font-bold text-sm tracking-wider text-white">Filtri</span>
+                  <button id="filter-drawer-close" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/10 transition text-white/60">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+                  </button>
+                </div>
+                <div class="p-5 space-y-6">
+
+                  <!-- Variant -->
+                  <div>
+                    <p class="text-xs font-semibold text-white/60 uppercase tracking-wider mb-3">Variante</p>
+                    <div class="flex flex-wrap gap-2">
+                      <button class="variant-btn active" data-filter="base">Base</button>
+                      <button class="variant-btn" data-filter="altart">Alt Art</button>
+                      <button class="variant-btn" data-filter="resources">Token</button>
+                    </div>
+                  </div>
+
+                  <!-- Card Type -->
+                  <div>
+                    <p class="text-xs font-semibold text-white/60 uppercase tracking-wider mb-3">Tipo Carta</p>
+                    <div class="flex flex-wrap gap-2">
+                      <button class="filter-chip active" data-ctype="unit">Unit</button>
+                      <button class="filter-chip active" data-ctype="command">Command</button>
+                      <button class="filter-chip active" data-ctype="pilot">Pilot</button>
+                      <button class="filter-chip active" data-ctype="base">Base</button>
+                    </div>
+                  </div>
+
+                  <!-- Color -->
+                  <div>
+                    <p class="text-xs font-semibold text-white/60 uppercase tracking-wider mb-3">Colore</p>
+                    <div class="flex flex-wrap gap-2">
+                      <button class="color-chip active" data-color="blue"><span class="w-3 h-3 rounded-full" style="background:#2c52b3"></span> Blue</button>
+                      <button class="color-chip active" data-color="white"><span class="w-3 h-3 rounded-full" style="background:#e8e8e8"></span> White</button>
+                      <button class="color-chip active" data-color="red"><span class="w-3 h-3 rounded-full" style="background:#fb2f38"></span> Red</button>
+                      <button class="color-chip active" data-color="green"><span class="w-3 h-3 rounded-full" style="background:#22c55e"></span> Green</button>
+                      <button class="color-chip active" data-color="purple"><span class="w-3 h-3 rounded-full" style="background:#a855f7"></span> Purple</button>
+                    </div>
+                  </div>
+
+                  <!-- Level -->
+                  <div>
+                    <p class="text-xs font-semibold text-white/60 uppercase tracking-wider mb-3">Livello</p>
+                    <div class="flex items-center gap-3">
+                      <input type="range" id="filter-level-min" min="0" max="10" value="0" class="flex-1 accent-primary">
+                      <input type="range" id="filter-level-max" min="0" max="10" value="10" class="flex-1 accent-primary">
+                    </div>
+                    <div class="flex justify-between text-xs text-white/40 mt-1">
+                      <span id="filter-level-min-val">0</span>
+                      <span id="filter-level-max-val">10</span>
+                    </div>
+                  </div>
+
+                  <!-- Cost -->
+                  <div>
+                    <p class="text-xs font-semibold text-white/60 uppercase tracking-wider mb-3">Costo</p>
+                    <div class="flex items-center gap-3">
+                      <input type="range" id="filter-cost-min" min="0" max="20" value="0" class="flex-1 accent-primary">
+                      <input type="range" id="filter-cost-max" min="0" max="20" value="20" class="flex-1 accent-primary">
+                    </div>
+                    <div class="flex justify-between text-xs text-white/40 mt-1">
+                      <span id="filter-cost-min-val">0</span>
+                      <span id="filter-cost-max-val">20</span>
+                    </div>
+                  </div>
+
+                  <button id="filter-apply" class="w-full bg-primary hover:bg-[#1e3a7a] text-white text-sm font-bold py-2.5 rounded-lg transition">Applica Filtri</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="collection-grid" class="grid grid-cols-2 md:grid-cols-4 gap-3"></div>
+            <div id="collection-empty" class="hidden text-center py-16">
+              <p class="text-white/60 text-lg">Nessuna carta trovata</p>
+            </div>
+            <div id="collection-summary" class="mt-5 text-center text-white/60 text-sm"></div>
+          </div>
+
+          <div id="collection-stats" class="hidden space-y-3">
+            <div id="stats-content" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+          </div>
         </div>
+
       </div>
     </div>
 
     <!-- ===== PROFILE VIEW ===== -->
     <div id="view-profile" class="hidden max-w-7xl mx-auto px-4 py-5">
-      <div class="bg-white rounded-2xl border border-[#e2e8f0] p-6 text-center shadow-sm">
-        <div class="w-16 h-16 rounded-full bg-[#eef0f4] flex items-center justify-center mx-auto mb-3">
-          <span class="material-symbols-outlined text-[#2c52b3]" style="font-size:36px">account_circle</span>
+      <div class="bg-black/40 backdrop-blur-sm rounded-2xl border border-white/10 p-6 text-center">
+        <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-3">
+          <span class="material-symbols-outlined text-primary" style="font-size:36px">account_circle</span>
         </div>
-        <p id="profile-nickname" class="text-[#2c52b3] font-bold text-lg hidden"></p>
-        <p id="profile-email" class="text-[#5a5b6d] text-sm mt-1"></p>
-        <p class="text-[#5a5b6d] text-xs mt-1">Connesso</p>
+        <p id="profile-nickname" class="text-primary font-bold text-lg hidden"></p>
+        <p id="profile-email" class="text-white/60 text-sm mt-1"></p>
+        <p class="text-white/40 text-xs mt-1">Connesso</p>
         <div id="profile-nickname-input" class="hidden mt-4">
           <input id="profile-nickname-field" type="text" placeholder="Inserisci nickname" maxlength="30"
-            class="w-full bg-[#f8fafc] border border-[#e2e8f0] rounded-lg px-4 py-2.5 text-sm text-center focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary mb-2">
+            class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-center focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary mb-2 text-white placeholder-white/40">
           <button id="profile-nickname-save" class="w-full bg-[#2c52b3] hover:bg-[#1e3a7a] text-white text-sm font-bold py-2 rounded-full transition hover:scale-[1.02] active:scale-95">
             Salva
           </button>
         </div>
-        <button id="profile-set-nickname" class="hidden mt-3 text-sm text-[#2c52b3] hover:text-accent transition font-medium">
+        <button id="profile-set-nickname" class="hidden mt-3 text-sm text-primary hover:text-accent transition font-medium">
           Imposta nickname
         </button>
       </div>
       <div class="mt-4">
-        <button id="profile-logout" class="w-full bg-white border border-[#e2e8f0] rounded-xl py-3 text-sm font-semibold text-[#5a5b6d] hover:text-[#fb2f38] hover:border-[#fb2f38] transition shadow-sm">
+        <button id="profile-logout" class="w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl py-3 text-sm font-semibold text-white/60 hover:text-danger hover:border-danger transition">
           Esci
         </button>
       </div>
@@ -506,33 +617,33 @@
     <!-- ===== Menu Modal ===== -->
     <div id="menu-modal" class="fixed inset-0 z-[60] hidden">
       <div id="menu-backdrop" class="absolute inset-0 bg-black/40"></div>
-      <div id="menu-panel" class="absolute left-0 top-0 bottom-0 w-72 bg-white shadow-2xl border-r border-gray-200 -translate-x-full transition-transform duration-200 ease-out">
-        <div class="flex items-center justify-between px-5 h-14 border-b border-secondary-light/30">
-          <span class="font-heading font-bold text-sm tracking-wider text-primary">MENU</span>
-          <button id="menu-close" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-primary-light transition text-secondary">
+      <div id="menu-panel" class="absolute left-0 top-0 bottom-0 w-72 bg-[#2d2d3a]/95 backdrop-blur-sm shadow-2xl border-r border-white/10 -translate-x-full transition-transform duration-200 ease-out">
+        <div class="flex items-center justify-between px-5 h-14 border-b border-white/10">
+          <span class="font-heading font-bold text-sm tracking-wider text-white">MENU</span>
+          <button id="menu-close" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/10 transition text-white/60">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
           </button>
         </div>
         <div class="py-3">
-          <button id="menu-dashboard" class="menu-item w-full flex items-center gap-4 px-5 py-3.5 text-sm font-semibold text-primary hover:bg-primary-light transition border-l-4 border-accent">
+          <button id="menu-dashboard" class="menu-item w-full flex items-center gap-4 px-5 py-3.5 text-sm font-semibold text-white hover:bg-white/10 transition border-l-4 border-accent">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
             Dashboard
           </button>
-          <button id="menu-collection" class="menu-item w-full flex items-center gap-4 px-5 py-3.5 text-sm font-semibold text-secondary hover:bg-primary-light hover:text-primary transition border-l-4 border-transparent hover:border-primary">
+          <button id="menu-collection" class="menu-item w-full flex items-center gap-4 px-5 py-3.5 text-sm font-semibold text-white/60 hover:bg-white/10 hover:text-white transition border-l-4 border-transparent hover:border-primary">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
             Collezione
           </button>
-          <button id="menu-decks" class="menu-item w-full flex items-center gap-4 px-5 py-3.5 text-sm font-semibold text-secondary hover:bg-primary-light hover:text-primary transition border-l-4 border-transparent hover:border-primary">
+          <button id="menu-decks" class="menu-item w-full flex items-center gap-4 px-5 py-3.5 text-sm font-semibold text-white/60 hover:bg-white/10 hover:text-white transition border-l-4 border-transparent hover:border-primary">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             Decks
           </button>
-          <button id="menu-profile" class="menu-item w-full flex items-center gap-4 px-5 py-3.5 text-sm font-semibold text-secondary hover:bg-primary-light hover:text-primary transition border-l-4 border-transparent hover:border-primary">
+          <button id="menu-profile" class="menu-item w-full flex items-center gap-4 px-5 py-3.5 text-sm font-semibold text-white/60 hover:bg-white/10 hover:text-white transition border-l-4 border-transparent hover:border-primary">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             Profilo
           </button>
         </div>
-        <div class="border-t border-secondary-light/30 py-3 px-5 absolute bottom-0 left-0 right-0">
-          <button id="menu-logout" class="flex items-center gap-3 w-full py-2.5 text-sm font-medium text-[#fb2f38] hover:bg-red-50 rounded-lg transition px-2">
+        <div class="border-t border-white/10 py-3 px-5 absolute bottom-0 left-0 right-0">
+          <button id="menu-logout" class="flex items-center gap-3 w-full py-2.5 text-sm font-medium text-danger hover:bg-white/10 rounded-lg transition px-2">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
             Esci
           </button>
@@ -544,46 +655,44 @@
   <!-- ============ BOTTOM SHEET ============ -->
   <div id="card-sheet" class="fixed inset-0 z-50 hidden" style="transition: opacity 0.2s ease;">
     <div class="absolute inset-0 bg-black/50" id="sheet-overlay"></div>
-    <div id="sheet-panel" class="absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-xl max-h-[95vh] overflow-y-auto translate-y-full" style="transition: transform 0.3s ease;">
+    <div id="sheet-panel" class="absolute bottom-0 left-0 right-0 bg-[#2d2d3a]/95 backdrop-blur-sm rounded-t-2xl shadow-xl max-h-[95vh] overflow-y-auto translate-y-full" style="transition: transform 0.3s ease;">
       <!-- Handle visivo per trascinamento -->
-      <div class="flex justify-center pt-2 pb-1 sticky top-0 bg-white z-10">
-        <span class="w-10 h-1 bg-gray-300 rounded-full"></span>
+      <div class="flex justify-center pt-2 pb-1 sticky top-0 bg-[#2d2d3a]/95 backdrop-blur-sm z-10">
+        <span class="w-10 h-1 bg-white/20 rounded-full"></span>
       </div>
 
-      <!-- Immagine grande -->
-      <div class="flex justify-center -mt-1">
-        <div class="w-44 aspect-[3/4] rounded-xl shadow-lg border-[3px] border-white overflow-hidden bg-gray-100">
+      <!-- IMG (sinistra) + INFO / CARDTRADER (destra) -->
+      <div class="flex gap-4 px-4 pt-2">
+        <div class="w-32 shrink-0 aspect-[3/4] rounded-xl shadow-lg border-[2px] border-white/20 overflow-hidden bg-black/30">
           <img id="sheet-image" class="w-full h-full object-contain" src="">
         </div>
-      </div>
-
-      <!-- Nome + Codice + Set -->
-      <div class="px-5 pt-3 text-center">
-        <h2 id="sheet-name" class="text-lg font-bold text-primary"></h2>
-        <p id="sheet-code" class="text-sm text-secondary"></p>
-        <p id="sheet-set" class="text-xs text-secondary/60"></p>
-      </div>
-
-      <!-- Versioni alternative (dots) -->
-      <div id="sheet-versions" class="flex justify-center items-center gap-2 mt-3"></div>
-
-      <!-- CardTrader (bottone piccolo) -->
-      <div class="px-5 mt-4 flex justify-center">
-        <a id="sheet-cardtrader" href="#" target="_blank" rel="noopener"
-           class="inline-flex items-center gap-1.5 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg px-3 py-1.5 text-xs font-semibold text-primary transition">
-          <span>🛒</span> CardTrader
-        </a>
-      </div>
-
-      <!-- Quantità con - / + -->
-      <div class="px-5 mt-5 pb-8">
-        <label class="block text-sm font-medium text-primary mb-3 text-center">Quantità</label>
-        <div class="flex items-center justify-center gap-6">
-          <button id="sheet-qty-minus" class="w-11 h-11 rounded-full bg-gray-100 hover:bg-gray-200 text-primary text-2xl font-bold flex items-center justify-center transition active:scale-90 select-none">−</button>
-          <span id="sheet-qty-display" class="text-3xl font-bold text-primary w-10 text-center select-none">0</span>
-          <button id="sheet-qty-plus" class="w-11 h-11 rounded-full bg-gray-100 hover:bg-gray-200 text-primary text-2xl font-bold flex items-center justify-center transition active:scale-90 select-none">+</button>
+        <div class="flex-1 min-w-0 flex flex-col justify-between">
+          <div>
+            <h2 id="sheet-name" class="text-base font-bold text-white"></h2>
+            <p id="sheet-code" class="text-xs text-white/60 mt-0.5"></p>
+            <p id="sheet-set" class="text-xs text-white/40 mt-0.5"></p>
+          </div>
+          <div class="mt-3">
+            <a id="sheet-cardtrader" href="#" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg px-3 py-2 text-xs font-semibold text-white/80 transition">
+              <span>🛒</span> CardTrader
+            </a>
+          </div>
         </div>
-        <p id="sheet-error" class="text-red-500 text-xs mt-3 text-center hidden"></p>
+      </div>
+
+      <!-- Versioni alternative (cerchi grandi con testo) -->
+      <div id="sheet-versions" class="flex justify-center items-center gap-3 mt-4 px-4 flex-wrap"></div>
+
+      <!-- Contatore quantità in box -->
+      <div class="mx-4 mt-4 mb-6 bg-black/30 rounded-xl border border-white/10 p-4">
+        <label class="block text-xs font-semibold text-white/60 uppercase tracking-wider mb-3 text-center">Quantità</label>
+        <div class="flex items-center justify-center gap-4">
+          <button id="sheet-qty-minus" class="w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xl font-bold flex items-center justify-center transition active:scale-90 select-none border border-white/10">−</button>
+          <span id="sheet-qty-display" class="text-2xl font-bold text-white w-8 text-center select-none">0</span>
+          <button id="sheet-qty-plus" class="w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xl font-bold flex items-center justify-center transition active:scale-90 select-none border border-white/10">+</button>
+        </div>
+        <p id="sheet-error" class="text-red-400 text-xs mt-3 text-center hidden"></p>
       </div>
     </div>
   </div>

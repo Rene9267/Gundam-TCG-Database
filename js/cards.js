@@ -6,6 +6,13 @@ async function loadCards() {
   const r = await fetch(SUPABASE_URL + '/rest/v1/cards?select=*&order=created_at.desc' + userIdFilter(), {
     headers: getAuthHeaders(),
   });
+  if (r.status === 401) {
+    showToast('Sessione scaduta. Effettua di nuovo il login.', true);
+    clearSession();
+    showSection('splash-section');
+    showAuthForm();
+    return [];
+  }
   if (!r.ok) throw new Error('GET /cards ' + r.status);
   return r.json();
 }

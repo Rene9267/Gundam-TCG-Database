@@ -1,11 +1,18 @@
-function getAltVersions(cardName) {
-  if (!cardName) return [];
-  return refCards.filter(rc => rc.card_name === cardName);
+const variantOverrides = {
+};
+
+function getAltVersions(cardCode) {
+  if (!cardCode) return [];
+  const baseId = cardCode.replace(/_[a-z0-9]+$/, '');
+  return refCards.filter(rc => {
+    const rcBaseId = rc.card_code.replace(/_[a-z0-9]+$/, '');
+    return rcBaseId === baseId;
+  });
 }
 
-function populateAltVersions(cardName, currentCode) {
+function populateAltVersions(cardCode) {
   const container = document.getElementById('sheet-versions');
-  const versions = getAltVersions(cardName);
+  const versions = getAltVersions(cardCode);
   if (versions.length < 2) {
     container.innerHTML = '';
     container.classList.add('hidden');
@@ -13,9 +20,27 @@ function populateAltVersions(cardName, currentCode) {
   }
   container.classList.remove('hidden');
   container.innerHTML = versions.map(v => {
-    const isActive = v.card_code === currentCode;
-    const isAlt = v.card_code.includes('_p') || v.card_code.split('-')[0] !== v.set_code;
-    return `<button class="version-dot w-3 h-3 rounded-full transition border border-white shadow-sm${isActive ? ' version-dot-active' : ''}${isAlt ? ' version-dot-alt' : ' version-dot-base'}" data-code="${v.card_code}" title="${v.card_code}${v.set_code !== currentCode?.split('-')[0] ? ' [' + v.set_code + ']' : ''}"></button>`;
+    const isActive = v.card_code === cardCode;
+    const override = variantOverrides[v.card_code];
+    if (override) {
+      const cls = override === 'Base' ? 'version-dot-base' : 'version-dot-alt';
+      return `<button class="version-dot${isActive ? ' version-dot-active' : ''} ${cls}" data-code="${v.card_code}" title="${v.card_code}">${override}</button>`;
+    }
+    const suffix = v.card_code.match(/_p(\d+)$/);
+    const isBase = !suffix && v.card_code.split('-')[0] === v.set_code;
+    let cls = 'version-dot-base';
+    let label = 'Base';
+
+    if (!isBase) {
+      cls = 'version-dot-alt';
+      if (suffix || v.rarity && v.rarity.includes('+')) {
+        label = 'Plus';
+      } else {
+        label = 'Alt Art';
+      }
+    }
+
+    return `<button class="version-dot${isActive ? ' version-dot-active' : ''} ${cls}" data-code="${v.card_code}" title="${v.card_code}">${label}</button>`;
   }).join('');
 
   container.querySelectorAll('.version-dot').forEach(btn => {
@@ -59,7 +84,7 @@ function loadSheetCard(rc) {
   pendingSheetQty = card.quantity || 0;
   document.getElementById('sheet-qty-display').textContent = pendingSheetQty;
 
-  populateAltVersions(card.card_name, card.card_code);
+  populateAltVersions(card.card_code);
   updateCardtraderLink(card.card_code);
 }
 

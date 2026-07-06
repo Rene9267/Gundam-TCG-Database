@@ -1,24 +1,246 @@
+// ============ Collection Overview ============
+
+function renderCollectionOverview() {
+  const decksContainer = document.getElementById('decks-list');
+  const expansionsContainer = document.getElementById('expansions-grid');
+  const decksEmpty = document.getElementById('decks-empty');
+  const expansionsEmpty = document.getElementById('expansions-empty-overview');
+
+  const ownedMap = {};
+  for (const c of allCards) {
+    const key = c.set_name || 'Senza set';
+    if (!ownedMap[key]) ownedMap[key] = new Set();
+    ownedMap[key].add(c.card_code);
+  }
+
+  const stSets = [];
+  const gdEbSets = [];
+
+  for (const setName of setOrder) {
+    const setCode = setName.match(/\[(\w+)\]/)?.[1] || '';
+    if (setCode.startsWith('ST')) {
+      stSets.push(setName);
+    } else {
+      gdEbSets.push(setName);
+    }
+  }
+
+  if (stSets.length) {
+    decksEmpty.classList.add('hidden');
+    decksContainer.innerHTML = stSets.map(setName => buildOverviewItem(setName, ownedMap)).join('');
+    attachOverviewClick(decksContainer);
+  } else {
+    decksEmpty.classList.remove('hidden');
+    decksContainer.innerHTML = '';
+  }
+
+  if (gdEbSets.length) {
+    expansionsEmpty.classList.add('hidden');
+    expansionsContainer.innerHTML = gdEbSets.map(setName => buildOverviewItem(setName, ownedMap)).join('');
+    attachOverviewClick(expansionsContainer);
+  } else {
+    expansionsEmpty.classList.remove('hidden');
+    expansionsContainer.innerHTML = '';
+  }
+
+  document.querySelectorAll('.col-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const targetId = btn.dataset.target;
+      const target = document.getElementById(targetId);
+      const emptyId = targetId === 'decks-list' ? 'decks-empty' : 'expansions-empty-overview';
+      const emptyEl = document.getElementById(emptyId);
+      const isCollapsed = btn.classList.toggle('collapsed');
+      if (isCollapsed) {
+        target.classList.add('hidden');
+        if (emptyEl) emptyEl.classList.add('hidden');
+      } else {
+        const hasItems = target.children.length > 0;
+        if (hasItems) {
+          target.classList.remove('hidden');
+        } else if (emptyEl) {
+          emptyEl.classList.remove('hidden');
+        }
+      }
+    });
+  });
+}
+
+function buildOverviewItem(setName, ownedMap) {
+  const total = setTotals[setName] || 0;
+  const owned = ownedMap[setName] ? ownedMap[setName].size : 0;
+  const pct = total > 0 ? Math.min(Math.round((owned / total) * 100), 100) : 0;
+  const setCode = setName.match(/\[(\w+)\]/)?.[1] || '';
+  const cleanName = setName.replace(/\s*\[.*?\]/, '');
+  const r = 34;
+  const circumference = 2 * Math.PI * r;
+  const offset = circumference - (pct / 100) * circumference;
+
+  return `
+    <div class="col-set-entry rounded-xl border p-3" data-set="${setName}" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.12);">
+      <div class="flex items-center gap-3">
+        <div class="relative w-[44px] h-[44px] flex items-center justify-center flex-shrink-0">
+          <svg class="w-full h-full" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" fill="transparent" r="${r}" stroke="rgba(255,255,255,0.1)" stroke-width="8"></circle>
+            <circle cx="50" cy="50" fill="transparent" r="${r}"
+              stroke="#fb2f38" stroke-width="8" stroke-linecap="round"
+              stroke-dasharray="${circumference}" stroke-dashoffset="${pct > 0 ? offset : circumference}"
+              style="transform:rotate(-90deg);transform-origin:50% 50%"></circle>
+          </svg>
+          <span class="absolute text-[10px] font-bold font-heading" style="color:rgba(255,255,255,0.9)">${pct}%</span>
+        </div>
+        <div class="min-w-0 flex-1">
+          <p class="text-sm font-semibold truncate" style="color:#fff">${cleanName}</p>
+          <div class="flex gap-2 items-center mt-0.5">
+            <span class="font-mono text-[10px] px-1 border rounded" style="border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.6)">${setCode}</span>
+            <span class="font-mono text-[10px]" style="color:rgba(255,255,255,0.5)">${owned}/${total}</span>
+          </div>
+        </div>
+      </div>
+    </div>`;
+}
+
+function attachOverviewClick(container) {
+  container.querySelectorAll('.col-set-entry').forEach(el => {
+    el.addEventListener('click', () => {
+      const setName = el.dataset.set;
+      showCollectionDetail(setName);
+    });
+  });
+}
+
+function showCollectionDetail(setName) {
+  document.getElementById('collection-overview').classList.add('hidden');
+  document.getElementById('collection-detail').classList.remove('hidden');
+
+  document.getElementById('col-set-filter').value = setName;
+  document.getElementById('col-search').value = '';
+  for (const k of Object.keys(activeFilters)) activeFilters[k] = k === 'base';
+  activeFilters.resources = false;
+  syncFilterUI();
+
+  currentColTab = 'cards';
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    const tab = b.dataset.view;
+    if (tab === 'cards') {
+      b.className = 'tab-btn active px-4 py-2 text-sm font-semibold border-b-2 transition text-white border-b-white';
+    } else {
+      b.className = 'tab-btn px-4 py-2 text-sm font-semibold border-b-2 transition text-white/60 border-transparent hover:text-white';
+    }
+  });
+
+  document.getElementById('collection-stats').classList.add('hidden');
+  document.getElementById('cards-content').classList.remove('hidden');
+  renderCollection(filterCollection());
+}
+
+function showCollectionOverview() {
+  document.getElementById('collection-detail').classList.add('hidden');
+  document.getElementById('collection-overview').classList.remove('hidden');
+  renderCollectionOverview();
+}
+
 const activeFilters = { base: true, altart: false, resources: false };
+
+// Nuovi filtri (card type, color, level, cost) — pronti per espansione dati
+const cardTypeFilters = { unit: true, command: true, pilot: true, base: true };
+const colorFilters = { blue: true, white: true, red: true, green: true, purple: true };
+let levelRange = { min: 0, max: 10 };
+let costRange = { min: 0, max: 20 };
 
 function getSetCodeFromFilter() {
   const setFilter = document.getElementById('col-set-filter').value;
   return setFilter.match(/\[(\w+)\]/)?.[1] || '';
 }
 
-function toggleVariantFilter(filterName) {
-  activeFilters[filterName] = !activeFilters[filterName];
-  document.querySelectorAll('.variant-btn').forEach(b => {
+function enforceFilterFallback() {
+  if (!activeFilters.base && !activeFilters.altart && !activeFilters.resources) {
+    activeFilters.base = true;
+  }
+}
+
+function syncFilterUI() {
+  document.querySelectorAll('#filter-drawer .variant-btn').forEach(b => {
     b.classList.toggle('active', activeFilters[b.dataset.filter]);
   });
+}
+
+function toggleVariantFilter(filterName) {
+  if (filterName === 'resources') {
+    if (activeFilters.resources) {
+      activeFilters.resources = false;
+      activeFilters.altart = false;
+    } else {
+      activeFilters.base = false;
+      activeFilters.altart = false;
+      activeFilters.resources = true;
+    }
+  } else if (filterName === 'altart') {
+    activeFilters.altart = !activeFilters.altart;
+    activeFilters.resources = false;
+  } else if (filterName === 'base') {
+    if (activeFilters.base) {
+      if (!activeFilters.altart && !activeFilters.resources) {
+        syncFilterUI();
+        return;
+      }
+      activeFilters.base = false;
+    } else {
+      activeFilters.base = true;
+    }
+  }
+
+  enforceFilterFallback();
+  syncFilterUI();
   if (currentColTab !== 'stats') renderCollection(filterCollection());
 }
 
-function setAllFilters(val) {
-  for (const k of Object.keys(activeFilters)) activeFilters[k] = val;
-  document.querySelectorAll('.variant-btn').forEach(b => {
-    b.classList.toggle('active', activeFilters[b.dataset.filter]);
+function openFilterDrawer() {
+  const panel = document.getElementById('filter-drawer-panel');
+  const drawer = document.getElementById('filter-drawer');
+  drawer.classList.remove('hidden');
+  drawer.getBoundingClientRect();
+  panel.style.transform = 'translateX(0)';
+}
+
+function closeFilterDrawer() {
+  const panel = document.getElementById('filter-drawer-panel');
+  panel.style.transform = 'translateX(100%)';
+  setTimeout(() => {
+    document.getElementById('filter-drawer').classList.add('hidden');
+  }, 200);
+}
+
+function toggleFilterChips(selector, stateObj) {
+  document.querySelectorAll(selector).forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.ctype || btn.dataset.color;
+      stateObj[key] = !stateObj[key];
+      btn.classList.toggle('active', stateObj[key]);
+    });
   });
-  if (currentColTab !== 'stats') renderCollection(filterCollection());
+}
+
+function initFilterDrawer() {
+  toggleFilterChips('#filter-drawer .filter-chip', cardTypeFilters);
+  toggleFilterChips('#filter-drawer .color-chip', colorFilters);
+
+  const levelMin = document.getElementById('filter-level-min');
+  const levelMax = document.getElementById('filter-level-max');
+  const costMin = document.getElementById('filter-cost-min');
+  const costMax = document.getElementById('filter-cost-max');
+
+  function syncRange(el, displayId, target) {
+    el.addEventListener('input', () => {
+      document.getElementById(displayId).textContent = el.value;
+      target[el.id.includes('min') ? 'min' : 'max'] = parseInt(el.value);
+    });
+  }
+
+  syncRange(levelMin, 'filter-level-min-val', levelRange);
+  syncRange(levelMax, 'filter-level-max-val', levelRange);
+  syncRange(costMin, 'filter-cost-min-val', costRange);
+  syncRange(costMax, 'filter-cost-max-val', costRange);
 }
 
 function openFirstRefCard() {
@@ -139,9 +361,23 @@ function filterCollection() {
     const isBase = !isRT && !isAltArt;
 
     if (isRT) return activeFilters.resources;
-    if (isAltArt) return activeFilters.altart;
+    if (isAltArt) {
+      if (!activeFilters.altart) return false;
+      if (currentSetCode) return rc.card_code.startsWith(currentSetCode);
+      return true;
+    }
     if (isBase) return activeFilters.base;
     return activeFilters.base;
+  });
+
+  // Nuovi filtri: card_type, color, level, cost
+  refs = refs.filter(rc => {
+    const ct = rc.card_type?.toLowerCase();
+    if (ct && !cardTypeFilters[ct]) return false;
+    if (rc.color && !colorFilters[rc.color.toLowerCase()]) return false;
+    if (rc.level != null && (rc.level < levelRange.min || rc.level > levelRange.max)) return false;
+    if (rc.cost != null && (rc.cost < costRange.min || rc.cost > costRange.max)) return false;
+    return true;
   });
 
   refs.sort((a, b) => a.card_code.localeCompare(b.card_code));
@@ -164,6 +400,10 @@ function filterCollection() {
       image_url: rc.image_url,
       quantity: owned?.quantity || 0,
       rarity: owned?.rarity || null,
+      card_type: rc.card_type || null,
+      color: rc.color || null,
+      level: rc.level != null ? rc.level : null,
+      cost: rc.cost != null ? rc.cost : null,
       isMissing: !owned,
     };
   }).filter(c => {
@@ -178,9 +418,9 @@ function switchColTab(tab) {
   document.querySelectorAll('.tab-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.view === tab);
     if (b.dataset.view === tab) {
-      b.className = 'tab-btn active px-4 py-2 text-sm font-semibold border-b-2 transition text-primary border-primary';
+      b.className = 'tab-btn active px-4 py-2 text-sm font-semibold border-b-2 transition text-white border-b-white';
     } else {
-      b.className = 'tab-btn px-4 py-2 text-sm font-semibold border-b-2 transition text-secondary border-transparent hover:text-primary';
+      b.className = 'tab-btn px-4 py-2 text-sm font-semibold border-b-2 transition text-white/60 border-transparent hover:text-white';
     }
   });
 

@@ -9,8 +9,8 @@ function computeSetData() {
     const bCode = b.match(/\[(\w+)\]/)?.[1] || '';
     const aNum = parseInt(aCode.replace(/\D/g, ''), 10) || 0;
     const bNum = parseInt(bCode.replace(/\D/g, ''), 10) || 0;
-    const aPref = aCode.startsWith('ST') ? 0 : 1;
-    const bPref = bCode.startsWith('ST') ? 0 : 1;
+    const aPref = aCode.startsWith('ST') ? 0 : aCode.startsWith('GD') ? 1 : aCode.startsWith('EB') ? 2 : 1;
+    const bPref = bCode.startsWith('ST') ? 0 : bCode.startsWith('GD') ? 1 : bCode.startsWith('EB') ? 2 : 1;
     return aPref !== bPref ? aPref - bPref : aNum - bNum;
   });
   setTotals = groups;

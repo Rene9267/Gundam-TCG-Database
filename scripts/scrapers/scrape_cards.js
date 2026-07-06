@@ -3,6 +3,10 @@
 // e produce un file JSON (reference_cards.json) pronto per
 // essere importato in Supabase (tabelle reference_cards).
 //
+// Supporta campi: card_code, card_name, set_code, set_name,
+// image_url, cardtrader_slug, cardtrader_id, rarity,
+// card_type, color, level, cost
+//
 // Uso: node scrape_cards.js
 // ============================================================
 const https = require('https');
@@ -48,9 +52,6 @@ function fetch(url) {
 function extractCards(html, setCode, setName) {
   const cards = [];
 
-  // Pattern: <a ... data-src="detail.php?detailSearch=CODE" ... >
-  //          <img ... data-src="../images/cards/card/CODE.webp... " alt="NAME">
-  // Usiamo regex per estrarre le coppie (card_code, card_name)
   const itemRegex = /<a[^>]*?data-src\s*=\s*"detail\.php\?detailSearch=([^"]+)"[^>]*>[\s\S]*?<img[^>]*?alt\s*=\s*"((?:[^"\\]|\\.)*)"/gi;
 
   let match;
@@ -71,6 +72,83 @@ function extractCards(html, setCode, setName) {
   return cards;
 }
 
+function parseDetailField(html, label) {
+  const regex = new RegExp(label + '\\s*<[^>]*>([^<]+)', 'i');
+  const m = html.match(regex);
+  return m ? m[1].trim() : null;
+}
+
+function parseDetailTable(html) {
+  // Formats seen:
+  //   Lv.\n4\nCOST\n3\nCOLOR\nBlue\nTYPE\nUNIT
+  //   <td>Lv.</td><td>4</td> etc.
+  // Try inline text pattern first
+  const result = { color: null, card_type: null, level: null, cost: null, rarity: null };
+
+  // Rarity: appears after card code line, before the availability number
+  // Pattern: "ST01-001</td>\n<td>LR +</td>"
+  const rarityRegex = /<\/td>\s*<td>([A-Z]+(?:\s*\+\s*)?)<\/td>/;
+  const rm = html.match(rarityRegex);
+  if (rm) result.rarity = rm[1].trim();
+
+  // Level
+  const lvMatch = html.match(/Lv\.?\s*<\/[^>]*>\s*<[^>]*>\s*(\d+)/i);
+  if (lvMatch) result.level = parseInt(lvMatch[1]);
+
+  // Cost
+  const costMatch = html.match(/COST\s*<\/[^>]*>\s*<[^>]*>\s*(\d+)/i);
+  if (costMatch) result.cost = parseInt(costMatch[1]);
+
+  // Color
+  const colorMatch = html.match(/COLOR\s*<\/[^>]*>\s*<[^>]*>\s*(\w+)/i);
+  if (colorMatch) result.color = colorMatch[1];
+
+  // Type
+  const typeMatch = html.match(/TYPE\s*<\/[^>]*>\s*<[^>]*>\s*(\w+(?:\s+\w+)?)/i);
+  if (typeMatch) result.card_type = typeMatch[1].toUpperCase();
+
+  return result;
+}
+
+async function fetchCardDetail(cardCode) {
+  const url = `https://www.gundam-gcg.com/en/cards/detail.php?detailSearch=${cardCode}`;
+  try {
+    const html = await fetch(url);
+    return parseDetailTable(html);
+  } catch (err) {
+    console.error(`    Detail fetch failed for ${cardCode}: ${err.message}`);
+    return {};
+  }
+}
+
+function isVariantCode(code) {
+  return /_[a-z0-9]+$/i.test(code);
+}
+
+function baseCodeOf(code) {
+  return code.replace(/_[a-z0-9]+$/i, '');
+}
+
+function normalizeType(raw) {
+  const map = {
+    'UNIT': 'Unit',
+    'PILOT': 'Pilot',
+    'COMMAND': 'Command',
+    'BASE': 'Base',
+    'RESOURCE': 'Resource',
+    'EX BASE': 'ExBase',
+    'EX RESOURCE': 'ExResource',
+    'UNIT TOKEN': 'Token',
+  };
+  return map[raw] || raw;
+}
+
+function normalizeColor(raw) {
+  if (!raw) return null;
+  const c = raw.charAt(0).toUpperCase() + raw.slice(1).toLowerCase();
+  return c;
+}
+
 // === Main ===
 async function main() {
   const allCards = [];
@@ -85,14 +163,13 @@ async function main() {
       console.log(`  → Found ${cards.length} cards`);
       allCards.push(...cards);
 
-      // Rispetta il server — pausa tra le richieste
       await new Promise((r) => setTimeout(r, 1000));
     } catch (err) {
       console.error(`  → ERROR: ${err.message}`);
     }
   }
 
-  // Preserva campi extra da file esistente (es. cardtrader_slug, cardtrader_id)
+  // Preserva campi extra da file esistente
   const outputPath = path.join(__dirname, '..', '..', 'reference_cards.json');
   let existing = {};
   try {
@@ -101,14 +178,45 @@ async function main() {
       return m;
     }, {});
   } catch (_) {}
+
+  // Fetch card details for ST01 (per evitare saturazione)
+  console.log('\nFetching card details for ST01...');
+  const st01Cards = allCards.filter(c => c.set_code === 'ST01');
+  const detailCache = {};
+
+  for (const card of st01Cards) {
+    const baseCode = baseCodeOf(card.card_code);
+    if (detailCache[baseCode]) continue;
+
+    console.log(`  Detail: ${baseCode}`);
+    const detail = await fetchCardDetail(baseCode);
+    detailCache[baseCode] = detail;
+    await new Promise((r) => setTimeout(r, 500));
+  }
+
+  // Propaga dettagli alle varianti
   for (const card of allCards) {
     const key = card.card_code + '|' + card.set_code;
     const prev = existing[key];
+
+    // Mantieni campi esistenti
     if (prev) {
       card.cardtrader_slug = prev.cardtrader_slug || card.cardtrader_slug;
       card.cardtrader_id = prev.cardtrader_id || card.cardtrader_id;
     }
+
+    // Applica dettagli dalla cache (ST01)
+    const baseCode = baseCodeOf(card.card_code);
+    const detail = detailCache[baseCode];
+    if (detail) {
+      card.rarity = detail.rarity || card.rarity;
+      card.color = normalizeColor(detail.color) || card.color;
+      card.card_type = normalizeType(detail.card_type) || card.card_type;
+      card.level = detail.level != null ? detail.level : card.level;
+      card.cost = detail.cost != null ? detail.cost : card.cost;
+    }
   }
+
   fs.writeFileSync(outputPath, JSON.stringify(allCards, null, 2), 'utf-8');
   console.log(`\nDone! ${allCards.length} total cards saved to reference_cards.json`);
 }

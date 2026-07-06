@@ -20,10 +20,19 @@ function showView(id) {
   document.getElementById(id).classList.remove('hidden');
 }
 
-function switchTab(tab) {
+function switchTab(tab, setName) {
   if (tab === 'dashboard') showView('view-dashboard');
   else if (tab === 'profile') { showView('view-profile'); renderProfile(); }
   else showView('view-collection');
+
+  if (tab === 'collection') {
+    if (setName) {
+      showCollectionDetail(setName);
+    } else {
+      showCollectionOverview();
+    }
+  }
+
   closeMenu();
 }
 

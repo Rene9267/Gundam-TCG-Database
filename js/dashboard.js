@@ -1,10 +1,12 @@
 function renderDashboardStats() {
-  document.getElementById('stat-total-cards').textContent = allCards.length;
+  const el = document.getElementById('stat-total-cards');
+  if (el) el.textContent = allCards.length;
 }
 
 function renderLatestHorizontal() {
   const scroll = document.getElementById('latest-scroll');
   const empty = document.getElementById('latest-empty');
+  if (!scroll || !empty) return;
   const latest = allCards.slice(0, 10);
 
   if (!latest.length) {
@@ -38,6 +40,7 @@ function renderLatestHorizontal() {
 function renderExpansionsList() {
   const container = document.getElementById('expansions-list');
   const empty = document.getElementById('expansions-empty');
+  if (!container || !empty) return;
 
   const ownedMap = {};
   for (const c of allCards) {
@@ -91,14 +94,7 @@ function renderExpansionsList() {
   container.querySelectorAll('.exp-entry').forEach(el => {
     el.addEventListener('click', () => {
       const setName = el.dataset.set;
-      if (currentColTab !== 'cards') switchColTab('cards');
-      currentColTab = 'cards';
-      document.getElementById('col-set-filter').value = setName;
-      document.getElementById('col-search').value = '';
-      for (const k of Object.keys(activeFilters)) activeFilters[k] = k === 'base';
-      document.querySelectorAll('.variant-btn').forEach(b => b.classList.toggle('active', activeFilters[b.dataset.filter]));
-      switchTab('collection');
-      renderCollection(filterCollection());
+      switchTab('collection', setName);
     });
   });
 }

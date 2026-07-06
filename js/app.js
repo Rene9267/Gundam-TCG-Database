@@ -5,7 +5,9 @@ async function refreshCards() {
     renderLatestHorizontal();
     renderExpansionsList();
     populateSetFilter();
-    renderCollection(filterCollection());
+    if (!document.getElementById('collection-detail').classList.contains('hidden')) {
+      renderCollection(filterCollection());
+    }
   } catch (err) {
     console.error('Errore caricamento carte:', err);
   }
@@ -54,6 +56,8 @@ async function enterApp() {
 
 document.addEventListener('DOMContentLoaded', () => {
   loadSession();
+
+  initFilterDrawer();
 
   document.getElementById('auth-submit').addEventListener('click', handleAuthSubmit);
   document.getElementById('auth-email').addEventListener('keydown', e => { if (e.key === 'Enter') handleAuthSubmit(); });
@@ -116,8 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('menu-close').addEventListener('click', closeMenu);
   document.getElementById('menu-dashboard').addEventListener('click', () => switchTab('dashboard'));
   document.getElementById('menu-collection').addEventListener('click', () => {
-    if (currentColTab !== 'cards') switchColTab('cards');
-    currentColTab = 'cards';
     switchTab('collection');
   });
   document.getElementById('menu-decks').addEventListener('click', () => {
@@ -134,10 +136,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.getElementById('latest-view-all').addEventListener('click', () => {
-    if (currentColTab !== 'cards') switchColTab('cards');
-    currentColTab = 'cards';
     switchTab('collection');
   });
+
+  document.getElementById('col-back-btn').addEventListener('click', showCollectionOverview);
 
   document.getElementById('sheet-overlay').addEventListener('click', closeSheet);
 
@@ -164,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('col-set-filter').addEventListener('change', () => {
     for (const k of Object.keys(activeFilters)) activeFilters[k] = k === 'base';
-    document.querySelectorAll('.variant-btn').forEach(b => b.classList.toggle('active', activeFilters[b.dataset.filter]));
+    document.querySelectorAll('#filter-drawer .variant-btn').forEach(b => b.classList.toggle('active', activeFilters[b.dataset.filter]));
     if (currentColTab === 'stats') switchColTab('cards');
     else renderCollection(filterCollection());
   });
@@ -172,12 +174,18 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('tab-cards').addEventListener('click', () => switchColTab('cards'));
   document.getElementById('tab-stats').addEventListener('click', () => switchColTab('stats'));
 
-  document.querySelectorAll('.variant-btn').forEach(btn => {
+  document.getElementById('filter-toggle-btn').addEventListener('click', openFilterDrawer);
+  document.getElementById('filter-drawer-close').addEventListener('click', closeFilterDrawer);
+  document.getElementById('filter-drawer-backdrop').addEventListener('click', closeFilterDrawer);
+
+  document.querySelectorAll('#filter-drawer .variant-btn').forEach(btn => {
     btn.addEventListener('click', () => toggleVariantFilter(btn.dataset.filter));
   });
 
-  document.getElementById('select-all-btn').addEventListener('click', () => setAllFilters(true));
-  document.getElementById('deselect-all-btn').addEventListener('click', () => setAllFilters(false));
+  document.getElementById('filter-apply').addEventListener('click', () => {
+    closeFilterDrawer();
+    if (currentColTab !== 'stats') renderCollection(filterCollection());
+  });
 
   const hash = window.location.hash;
   if (hash && hash.includes('type=recovery')) {
