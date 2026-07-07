@@ -7,7 +7,9 @@ async function fetchCardtraderPrices(blueprintId) {
   const cached = _ctCache[key];
   if (cached && Date.now() - cached.ts < 120_000) return cached.data;
   try {
-    const res = await fetch(`${CT_PROXY_URL}?blueprint_id=${blueprintId}`);
+    const res = await fetch(`${CT_PROXY_URL}?blueprint_id=${blueprintId}`, {
+      headers: { Authorization: `Bearer ${SUPABASE_ANON_KEY}` },
+    });
     if (!res.ok) return null;
     const json = await res.json();
     const products = json[key];

@@ -41,11 +41,12 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
-  // Network-first per tutto il resto e reference_cards.json
+  // Network-first: images cached only if CORS-enabled
   event.respondWith(
     caches.open(CACHE_NAME).then((cache) =>
       fetch(event.request).then((res) => {
-        cache.put(event.request, res.clone());
+        if (res.type === 'opaque') return res;
+        cache.put(event.request, res.clone()).catch(() => {});
         return res;
       }).catch(() => caches.match(event.request))
     )
