@@ -106,7 +106,6 @@ async function loadCardtraderPrices(rc) {
   const avgEl = document.getElementById('sheet-price-avg');
   ctr.classList.add('hidden');
   if (!rc.cardtrader_id) return;
-  if (!CARDTRADER_API_KEY) return;
   const prices = await fetchCardtraderPrices(rc.cardtrader_id);
   if (prices) {
     const sym = prices.currency === 'EUR' ? '€' : prices.currency === 'USD' ? '$' : prices.currency + ' ';

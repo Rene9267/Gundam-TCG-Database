@@ -1,4 +1,4 @@
-const CT_API_BASE = 'https://api.cardtrader.com/api/v2';
+const CT_PROXY_URL = SUPABASE_URL.replace(/\/+$/, '') + '/functions/v1/cardtrader-proxy';
 const _ctCache = {};
 
 async function fetchCardtraderPrices(blueprintId) {
@@ -6,15 +6,9 @@ async function fetchCardtraderPrices(blueprintId) {
   const key = String(blueprintId);
   const cached = _ctCache[key];
   if (cached && Date.now() - cached.ts < 120_000) return cached.data;
-  if (!CARDTRADER_API_KEY) return null;
   try {
-    const res = await fetch(`${CT_API_BASE}/marketplace/products?blueprint_id=${blueprintId}`, {
-      headers: { Authorization: `Bearer ${CARDTRADER_API_KEY}` },
-    });
-    if (!res.ok) {
-      if (res.status === 429) console.warn('[cardtrader] rate limited');
-      return null;
-    }
+    const res = await fetch(`${CT_PROXY_URL}?blueprint_id=${blueprintId}`);
+    if (!res.ok) return null;
     const json = await res.json();
     const products = json[key];
     if (!products || !products.length) {
