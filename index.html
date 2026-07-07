@@ -441,13 +441,56 @@
                 </div>
                 <div class="p-5 space-y-6">
 
-                  <!-- Variant (unico filtro attivo: i dati di reference non hanno ancora tipo/colore/livello/costo) -->
+                  <!-- Variante -->
                   <div>
                     <p class="text-xs font-semibold text-white/60 uppercase tracking-wider mb-3">Variante</p>
                     <div class="flex flex-wrap gap-2">
                       <button class="variant-btn active" data-filter="base">Base</button>
                       <button class="variant-btn" data-filter="altart">Alt Art</button>
                       <button class="variant-btn" data-filter="resources">Token</button>
+                    </div>
+                  </div>
+
+                  <!-- Tipo Carta -->
+                  <div>
+                    <p class="text-xs font-semibold text-white/60 uppercase tracking-wider mb-3">Tipo Carta</p>
+                    <div class="flex flex-wrap gap-2">
+                      <button class="variant-btn" data-ctype="unit">Unità</button>
+                      <button class="variant-btn" data-ctype="pilot">Pilota</button>
+                      <button class="variant-btn" data-ctype="command">Command</button>
+                      <button class="variant-btn" data-ctype="base">Base</button>
+                    </div>
+                  </div>
+
+                  <!-- Colore -->
+                  <div>
+                    <p class="text-xs font-semibold text-white/60 uppercase tracking-wider mb-3">Colore</p>
+                    <div class="flex flex-wrap gap-2">
+                      <button class="color-chip" data-color="white">Bianco</button>
+                      <button class="color-chip" data-color="blue">Blu</button>
+                      <button class="color-chip" data-color="green">Verde</button>
+                      <button class="color-chip" data-color="red">Rosso</button>
+                      <button class="color-chip" data-color="purple">Viola</button>
+                    </div>
+                  </div>
+
+                  <!-- Livello -->
+                  <div>
+                    <p class="text-xs font-semibold text-white/60 uppercase tracking-wider mb-3">Livello</p>
+                    <div class="flex items-center gap-2">
+                      <input type="number" id="level-min" min="1" max="10" placeholder="Min" class="w-full border border-white/20 rounded-lg px-3 py-2 text-sm text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary bg-white/10 backdrop-blur-sm">
+                      <span class="text-white/40 text-xs">-</span>
+                      <input type="number" id="level-max" min="1" max="10" placeholder="Max" class="w-full border border-white/20 rounded-lg px-3 py-2 text-sm text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary bg-white/10 backdrop-blur-sm">
+                    </div>
+                  </div>
+
+                  <!-- Costo -->
+                  <div>
+                    <p class="text-xs font-semibold text-white/60 uppercase tracking-wider mb-3">Costo</p>
+                    <div class="flex items-center gap-2">
+                      <input type="number" id="cost-min" min="0" max="10" placeholder="Min" class="w-full border border-white/20 rounded-lg px-3 py-2 text-sm text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary bg-white/10 backdrop-blur-sm">
+                      <span class="text-white/40 text-xs">-</span>
+                      <input type="number" id="cost-max" min="0" max="10" placeholder="Max" class="w-full border border-white/20 rounded-lg px-3 py-2 text-sm text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary bg-white/10 backdrop-blur-sm">
                     </div>
                   </div>
 

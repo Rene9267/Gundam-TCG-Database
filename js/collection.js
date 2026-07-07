@@ -141,8 +141,10 @@ function showCollectionOverview() {
 }
 
 const activeFilters = { base: true, altart: false, resources: false };
+const cardTypeFilters = { unit: false, pilot: false, command: false, base: false };
+const colorFilters = { white: false, blue: false, green: false, red: false, purple: false };
 
-// Filtri tipo/colore/livello/costo rimossi: reference_cards.json non contiene ancora quei campi
+// Filtri tipo/colore/livello/costo ripristinati nel drawer
 
 function getSetCodeFromFilter() {
   const setFilter = document.getElementById('col-set-filter').value;
@@ -157,7 +159,15 @@ function enforceFilterFallback() {
 
 function syncFilterUI() {
   document.querySelectorAll('#filter-drawer .variant-btn').forEach(b => {
-    b.classList.toggle('active', activeFilters[b.dataset.filter]);
+    if (b.dataset.filter) {
+      b.classList.toggle('active', activeFilters[b.dataset.filter]);
+    }
+    if (b.dataset.ctype) {
+      b.classList.toggle('active', cardTypeFilters[b.dataset.ctype]);
+    }
+  });
+  document.querySelectorAll('#filter-drawer .color-chip').forEach(b => {
+    b.classList.toggle('active', colorFilters[b.dataset.color]);
   });
 }
 
@@ -195,12 +205,24 @@ function resetFilters() {
   activeFilters.base = true;
   activeFilters.altart = false;
   activeFilters.resources = false;
+  Object.keys(cardTypeFilters).forEach(k => cardTypeFilters[k] = false);
+  Object.keys(colorFilters).forEach(k => colorFilters[k] = false);
   document.querySelectorAll('#filter-drawer .variant-btn').forEach(b => {
-    b.classList.toggle('active', activeFilters[b.dataset.filter]);
+    if (b.dataset.filter) b.classList.toggle('active', activeFilters[b.dataset.filter]);
+    if (b.dataset.ctype) b.classList.toggle('active', cardTypeFilters[b.dataset.ctype]);
+  });
+  document.querySelectorAll('#filter-drawer .color-chip').forEach(b => {
+    b.classList.toggle('active', colorFilters[b.dataset.color]);
   });
 
-
   closeFilterDrawer();
+  if (currentColTab !== 'stats') renderCollection(filterCollection());
+}
+
+function toggleCategoryFilter(value, category) {
+  const filters = category === 'type' ? cardTypeFilters : colorFilters;
+  filters[value] = !filters[value];
+  syncFilterUI();
   if (currentColTab !== 'stats') renderCollection(filterCollection());
 }
 
@@ -221,8 +243,13 @@ function closeFilterDrawer() {
 }
 
 function initFilterDrawer() {
-  // Nessun altro setup: i filtri tipo/colore/livello/costo sono stati rimossi
-  // perché reference_cards.json non contiene ancora quei campi.
+  document.querySelectorAll('#filter-drawer [data-ctype]').forEach(btn => {
+    btn.addEventListener('click', () => toggleCategoryFilter(btn.dataset.ctype, 'type'));
+  });
+  document.querySelectorAll('#filter-drawer [data-color]').forEach(btn => {
+    btn.addEventListener('click', () => toggleCategoryFilter(btn.dataset.color, 'color'));
+  });
+  // I filtri variant-btn sono gestiti in app.js
 }
 
 function openFirstRefCard() {
@@ -351,6 +378,16 @@ function filterCollection() {
     if (isBase) return activeFilters.base;
     return activeFilters.base;
   });
+
+  const anyTypeActive = Object.values(cardTypeFilters).some(Boolean);
+  if (anyTypeActive) {
+    refs = refs.filter(rc => cardTypeFilters[rc.card_type?.toLowerCase()]);
+  }
+
+  const anyColorActive = Object.values(colorFilters).some(Boolean);
+  if (anyColorActive) {
+    refs = refs.filter(rc => colorFilters[rc.color?.toLowerCase()]);
+  }
 
   refs.sort((a, b) => a.card_code.localeCompare(b.card_code));
 
