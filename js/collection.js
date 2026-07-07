@@ -225,6 +225,19 @@ function initFilterDrawer() {
   toggleFilterChips('#filter-drawer .filter-chip', cardTypeFilters);
   toggleFilterChips('#filter-drawer .color-chip', colorFilters);
 
+  // Validate data schema — warn if reference data lacks filter fields
+  if (refCards.length) {
+    const hasType = refCards.some(c => c.card_type);
+    const hasColor = refCards.some(c => c.color);
+    const hasLevel = refCards.some(c => c.level != null);
+    const hasCost = refCards.some(c => c.cost != null);
+    if (!hasType || !hasColor) {
+      console.warn('[filter] reference_cards.json missing card_type / color fields. Type/color filters will have no effect until data is enriched.');
+    }
+    if (!hasLevel) console.warn('[filter] reference_cards.json missing level field.');
+    if (!hasCost) console.warn('[filter] reference_cards.json missing cost field.');
+  }
+
   const levelMin = document.getElementById('filter-level-min');
   const levelMax = document.getElementById('filter-level-max');
   const costMin = document.getElementById('filter-cost-min');
@@ -336,12 +349,24 @@ function filterCollection() {
   const query = document.getElementById('col-search').value.toLowerCase();
   const setFilter = document.getElementById('col-set-filter').value;
 
+  const applyNewFilters = (cards) => {
+    return cards.filter(c => {
+      const ct = c.card_type?.toLowerCase();
+      const col = c.color?.toLowerCase();
+      if (ct && !cardTypeFilters[ct]) return false;
+      if (col && !colorFilters[col]) return false;
+      if (c.level != null && (c.level < levelRange.min || c.level > levelRange.max)) return false;
+      if (c.cost != null && (c.cost < costRange.min || c.cost > costRange.max)) return false;
+      return true;
+    });
+  };
+
   if (!setFilter) {
-    return allCards.filter(c => {
+    return applyNewFilters(allCards.filter(c => {
       return !query ||
         c.card_name.toLowerCase().includes(query) ||
         c.card_code.toLowerCase().includes(query);
-    });
+    }));
   }
 
   const currentSetCode = getSetCodeFromFilter();
@@ -371,14 +396,7 @@ function filterCollection() {
   });
 
   // Nuovi filtri: card_type, color, level, cost
-  refs = refs.filter(rc => {
-    const ct = rc.card_type?.toLowerCase();
-    if (ct && !cardTypeFilters[ct]) return false;
-    if (rc.color && !colorFilters[rc.color.toLowerCase()]) return false;
-    if (rc.level != null && (rc.level < levelRange.min || rc.level > levelRange.max)) return false;
-    if (rc.cost != null && (rc.cost < costRange.min || rc.cost > costRange.max)) return false;
-    return true;
-  });
+  refs = applyNewFilters(refs);
 
   refs.sort((a, b) => a.card_code.localeCompare(b.card_code));
 
