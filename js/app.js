@@ -43,6 +43,7 @@ async function enterApp() {
     }
     await loadReferenceCards();
     await refreshCards();
+    if (!currentUser) return;
     await playTransition();
     showSection('app-section');
     renderProfile();

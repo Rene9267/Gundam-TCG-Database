@@ -44,6 +44,7 @@ function showAuthForm() {
 }
 
 function showAuthed() {
+  window._sessionExpiring = false;
   document.getElementById('auth-form').classList.add('hidden');
   document.getElementById('auth-authed').classList.remove('hidden');
   if (currentUser) {

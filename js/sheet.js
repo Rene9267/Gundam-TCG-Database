@@ -143,8 +143,8 @@ function openSheet(card) {
   }
 }
 
-function closeSheet() {
-  if (currentSheetCard) {
+function closeSheet(skipSave) {
+  if (currentSheetCard && !skipSave) {
     saveSheetQuantity(pendingSheetQty).catch(() => {});
   }
   const panel = document.getElementById('sheet-panel');

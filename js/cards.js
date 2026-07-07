@@ -2,17 +2,21 @@ function userIdFilter() {
   return currentUser ? '&user_id=eq.' + currentUser.id : '';
 }
 
+function handle401() {
+  if (window._sessionExpiring) return;
+  window._sessionExpiring = true;
+  showToast('Sessione scaduta. Effettua di nuovo il login.', true);
+  clearSession();
+  closeSheet(true);
+  showSection('splash-section');
+  showAuthForm();
+}
+
 async function loadCards() {
   const r = await fetch(SUPABASE_URL + '/rest/v1/cards?select=*&order=created_at.desc' + userIdFilter(), {
     headers: getAuthHeaders(),
   });
-  if (r.status === 401) {
-    showToast('Sessione scaduta. Effettua di nuovo il login.', true);
-    clearSession();
-    showSection('splash-section');
-    showAuthForm();
-    return [];
-  }
+  if (r.status === 401) { handle401(); return []; }
   if (!r.ok) throw new Error('GET /cards ' + r.status);
   return r.json();
 }
@@ -24,6 +28,7 @@ async function addCard(card) {
     headers: { ...getAuthHeaders(), 'Prefer': 'return=representation' },
     body: JSON.stringify(payload),
   });
+  if (r.status === 401) { handle401(); return null; }
   if (!r.ok) {
     const text = await r.text();
     throw new Error('POST /cards ' + r.status + ': ' + text.slice(0, 200));
@@ -38,6 +43,7 @@ async function updateCard(id, updates) {
     headers: { ...getAuthHeaders(), 'Prefer': 'return=representation' },
     body: JSON.stringify(updates),
   });
+  if (r.status === 401) { handle401(); return null; }
   if (!r.ok) {
     const text = await r.text();
     throw new Error('PATCH /cards ' + r.status + ': ' + text.slice(0, 200));
@@ -51,6 +57,7 @@ async function deleteCard(id) {
     method: 'DELETE',
     headers: getAuthHeaders(),
   });
+  if (r.status === 401) { handle401(); return; }
   if (!r.ok) {
     const text = await r.text();
     throw new Error('DELETE /cards ' + r.status + ': ' + text.slice(0, 200));
