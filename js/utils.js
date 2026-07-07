@@ -33,6 +33,7 @@ function _applyView(tab, setName) {
     }
   }
 
+  syncMenuActive(tab);
   closeMenu();
 }
 

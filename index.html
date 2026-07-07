@@ -391,14 +391,14 @@
         </section>
 
         <!-- Ultime Aggiunte (horizontal scroll) -->
-        <section class="bg-black/30 backdrop-blur-sm rounded-xl p-4 border border-white/5">
+        <section class="bg-black/30 backdrop-blur-sm rounded-xl p-4 border border-white/5 overflow-hidden">
           <div class="flex items-center justify-between mb-3">
             <h2 class="font-heading font-semibold text-sm uppercase tracking-wider text-white/80 border-l-4 border-primary pl-3">Ultime Aggiunte</h2>
             <button id="latest-view-all" class="font-mono text-xs text-white/70 hover:text-accent transition flex items-center">
               Vedi tutte <span class="material-symbols-outlined text-sm ml-0.5">chevron_right</span>
             </button>
           </div>
-          <div id="latest-scroll" class="flex overflow-x-auto gap-3 pb-2 hide-scrollbar snap-x snap-mandatory -mx-4 px-4">
+          <div id="latest-scroll" class="flex overflow-x-auto gap-3 pb-2 hide-scrollbar snap-x snap-mandatory">
             <div id="latest-empty" class="hidden w-full text-center py-8 text-white/60 text-sm">Nessuna carta ancora.</div>
           </div>
         </section>
@@ -625,7 +625,7 @@
           </button>
         </div>
         <div class="py-3">
-          <button id="menu-dashboard" class="menu-item w-full flex items-center gap-4 px-5 py-3.5 text-sm font-semibold text-white hover:bg-white/10 transition border-l-4 border-accent">
+          <button id="menu-dashboard" class="menu-item w-full flex items-center gap-4 px-5 py-3.5 text-sm font-semibold text-white/60 hover:bg-white/10 hover:text-white transition border-l-4 border-transparent hover:border-primary">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
             Dashboard
           </button>
