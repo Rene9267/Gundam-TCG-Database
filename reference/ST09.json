@@ -1,0 +1,413 @@
+[
+  {
+    "card_code": "ST01-014_p6",
+    "card_name": "Unforeseen Incident",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "White",
+    "card_type": "Command",
+    "level": 3,
+    "cost": 1,
+    "rarity": "C"
+  },
+  {
+    "card_code": "ST04-002_p4",
+    "card_name": "Strike Gundam",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "White",
+    "card_type": "Unit",
+    "level": 4,
+    "cost": 2,
+    "rarity": "C"
+  },
+  {
+    "card_code": "ST04-007_p2",
+    "card_name": "Aegis Gundam (MA Mode)",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Red",
+    "card_type": "Unit",
+    "level": 4,
+    "cost": 3,
+    "rarity": "C"
+  },
+  {
+    "card_code": "ST04-010_p5",
+    "card_name": "Kira Yamato",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "White",
+    "card_type": "Pilot",
+    "level": 4,
+    "cost": 1,
+    "rarity": "C"
+  },
+  {
+    "card_code": "ST04-011_p4",
+    "card_name": "Athrun Zala",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Red",
+    "card_type": "Pilot",
+    "level": 4,
+    "cost": 1,
+    "rarity": "C"
+  },
+  {
+    "card_code": "ST04-015_p3",
+    "card_name": "Archangel",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "White",
+    "card_type": "Base",
+    "level": 3,
+    "cost": 1,
+    "rarity": "C"
+  },
+  {
+    "card_code": "ST04-016_p2",
+    "card_name": "Vesalius",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Red",
+    "card_type": "Base",
+    "level": 3,
+    "cost": 1,
+    "rarity": "C"
+  },
+  {
+    "card_code": "ST09-001",
+    "card_name": "Impulse Gundam",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Purple",
+    "card_type": "Unit",
+    "level": 3,
+    "cost": 2,
+    "rarity": "LR"
+  },
+  {
+    "card_code": "ST09-001_p1",
+    "card_name": "Impulse Gundam",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Purple",
+    "card_type": "Unit",
+    "level": 3,
+    "cost": 2,
+    "rarity": "LR"
+  },
+  {
+    "card_code": "ST09-002",
+    "card_name": "Force Impulse Gundam",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Purple",
+    "card_type": "Unit",
+    "level": 5,
+    "cost": 4,
+    "rarity": "LR"
+  },
+  {
+    "card_code": "ST09-002_p1",
+    "card_name": "Force Impulse Gundam",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Purple",
+    "card_type": "Unit",
+    "level": 5,
+    "cost": 4,
+    "rarity": "LR"
+  },
+  {
+    "card_code": "ST09-003",
+    "card_name": "Saviour Gundam",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Red",
+    "card_type": "Unit",
+    "level": 6,
+    "cost": 5,
+    "rarity": "LR"
+  },
+  {
+    "card_code": "ST09-003_p1",
+    "card_name": "Saviour Gundam",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Red",
+    "card_type": "Unit",
+    "level": 6,
+    "cost": 5,
+    "rarity": "LR"
+  },
+  {
+    "card_code": "ST09-004",
+    "card_name": "Freedom Gundam",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "White",
+    "card_type": "Unit",
+    "level": 6,
+    "cost": 5,
+    "rarity": "LR"
+  },
+  {
+    "card_code": "ST09-004_p1",
+    "card_name": "Freedom Gundam",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "White",
+    "card_type": "Unit",
+    "level": 6,
+    "cost": 5,
+    "rarity": "LR"
+  },
+  {
+    "card_code": "ST09-005",
+    "card_name": "Zaku Warrior",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Purple",
+    "card_type": "Unit",
+    "level": 2,
+    "cost": 1,
+    "rarity": "C"
+  },
+  {
+    "card_code": "ST09-005_p1",
+    "card_name": "Zaku Warrior",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Purple",
+    "card_type": "Unit",
+    "level": 2,
+    "cost": 1,
+    "rarity": "C"
+  },
+  {
+    "card_code": "ST09-006",
+    "card_name": "Sword Impulse Gundam",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Purple",
+    "card_type": "Unit",
+    "level": 4,
+    "cost": 2,
+    "rarity": "C"
+  },
+  {
+    "card_code": "ST09-006_p1",
+    "card_name": "Sword Impulse Gundam",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Purple",
+    "card_type": "Unit",
+    "level": 4,
+    "cost": 2,
+    "rarity": "C"
+  },
+  {
+    "card_code": "ST09-007",
+    "card_name": "Blast Impulse Gundam",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Purple",
+    "card_type": "Unit",
+    "level": 5,
+    "cost": 3,
+    "rarity": "C"
+  },
+  {
+    "card_code": "ST09-007_p1",
+    "card_name": "Blast Impulse Gundam",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Purple",
+    "card_type": "Unit",
+    "level": 5,
+    "cost": 3,
+    "rarity": "C"
+  },
+  {
+    "card_code": "ST09-008",
+    "card_name": "Shinn Asuka",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Purple",
+    "card_type": "Pilot",
+    "level": 4,
+    "cost": 1,
+    "rarity": "C"
+  },
+  {
+    "card_code": "ST09-008_p1",
+    "card_name": "Shinn Asuka",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Purple",
+    "card_type": "Pilot",
+    "level": 4,
+    "cost": 1,
+    "rarity": "C"
+  },
+  {
+    "card_code": "ST09-009",
+    "card_name": "Giant Killing",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Purple",
+    "card_type": "Command",
+    "level": 4,
+    "cost": 3,
+    "rarity": "C"
+  },
+  {
+    "card_code": "ST09-009_p1",
+    "card_name": "Giant Killing",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Purple",
+    "card_type": "Command",
+    "level": 4,
+    "cost": 3,
+    "rarity": "C"
+  },
+  {
+    "card_code": "ST09-010",
+    "card_name": "Minerva",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Purple",
+    "card_type": "Base",
+    "level": 2,
+    "cost": 1,
+    "rarity": "C"
+  },
+  {
+    "card_code": "ST09-010_p1",
+    "card_name": "Minerva",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Purple",
+    "card_type": "Base",
+    "level": 2,
+    "cost": 1,
+    "rarity": "C"
+  },
+  {
+    "card_code": "GD01-049_p1",
+    "card_name": "Blitz Gundam",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Red",
+    "card_type": "Unit",
+    "level": 4,
+    "cost": 3,
+    "rarity": "R"
+  },
+  {
+    "card_code": "GD01-054_p1",
+    "card_name": "Duel Gundam",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Red",
+    "card_type": "Unit",
+    "level": 3,
+    "cost": 2,
+    "rarity": "R"
+  },
+  {
+    "card_code": "GD01-111_p3",
+    "card_name": "Battle of Aces",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Red",
+    "card_type": "Command",
+    "level": 3,
+    "cost": 2,
+    "rarity": "R"
+  },
+  {
+    "card_code": "GD01-118_p6",
+    "card_name": "Overflowing Affection",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "White",
+    "card_type": "Command",
+    "level": 2,
+    "cost": 1,
+    "rarity": "U"
+  },
+  {
+    "card_code": "GD02-076_p1",
+    "card_name": "Buster Gundam",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "White",
+    "card_type": "Unit",
+    "level": 4,
+    "cost": 3,
+    "rarity": "U"
+  },
+  {
+    "card_code": "GD02-110_p2",
+    "card_name": "Awakened Power",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "color": "Purple",
+    "card_type": "Command",
+    "level": 6,
+    "cost": 2,
+    "rarity": "R"
+  },
+  {
+    "card_code": "R-030",
+    "card_name": "Resource",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "card_type": "Resource",
+    "rarity": "C"
+  },
+  {
+    "card_code": "R-030_p1",
+    "card_name": "Resource",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "card_type": "Resource",
+    "rarity": "C"
+  },
+  {
+    "card_code": "EXB-002",
+    "card_name": "EX Base",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "card_type": "ExBase",
+    "rarity": "C"
+  },
+  {
+    "card_code": "EXB-002_p1",
+    "card_name": "EX Base",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "card_type": "ExBase",
+    "rarity": "C"
+  },
+  {
+    "card_code": "EXR-002",
+    "card_name": "EX Resource",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "card_type": "ExResource",
+    "rarity": "C"
+  },
+  {
+    "card_code": "EXR-002_p1",
+    "card_name": "EX Resource",
+    "set_code": "ST09",
+    "set_name": "Destiny Ignition [ST09]",
+    "card_type": "ExResource",
+    "rarity": "C"
+  }
+]
