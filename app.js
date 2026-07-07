@@ -280,7 +280,8 @@ function rarityColor(rarity) {
 
 function imageOrFallback(url, name) {
   if (!url) return `<div class="card-img-fallback w-full h-full text-2xl">🃏</div>`;
-  return `<img src="${url}" alt="${name}" class="w-full h-full object-cover" loading="lazy" onerror="this.outerHTML='<div class=\\'card-img-fallback w-full h-full text-2xl\\'>🃏</div>'">`;
+  const src = (function(u){try{var p=new URL(u);return p.origin===location.origin?u:SUPABASE_URL.replace(/\/+$/,'')+'/functions/v1/image-proxy?url='+encodeURIComponent(u)}catch(e){return u}})(url);
+  return `<img src="${src}" alt="${name}" class="w-full h-full object-cover" loading="lazy" onerror="this.outerHTML='<div class=\\'card-img-fallback w-full h-full text-2xl\\'>🃏</div>'">`;
 }
 
 function setGroup(setName) {
@@ -768,7 +769,7 @@ function loadSheetCard(rc) {
   currentSheetCard = card;
 
   const img = document.getElementById('sheet-image');
-  img.src = card.image_url || '';
+  try { img.src = card.image_url ? (new URL(card.image_url).origin === location.origin ? card.image_url : SUPABASE_URL.replace(/\/+$/, '') + '/functions/v1/image-proxy?url=' + encodeURIComponent(card.image_url)) : ''; } catch(e) { img.src = card.image_url || ''; }
   img.style.display = '';
   img.onerror = () => { img.style.display = 'none'; };
   img.onload = () => { img.style.display = ''; };
