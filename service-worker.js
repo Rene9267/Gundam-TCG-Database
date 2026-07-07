@@ -11,6 +11,7 @@ const PRECACHE_URLS = [
   './js/state.js',
   './js/supabase.js',
   './js/utils.js',
+  './js/cardtrader.js',
   './js/reference.js',
   './js/cards.js',
   './js/auth.js',

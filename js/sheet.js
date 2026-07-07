@@ -86,6 +86,7 @@ function loadSheetCard(rc) {
 
   populateAltVersions(card.card_code);
   updateCardtraderLink(card.card_code);
+  loadCardtraderPrices(rc);
 }
 
 function updateCardtraderLink(cardCode) {
@@ -96,6 +97,23 @@ function updateCardtraderLink(cardCode) {
   } else {
     const query = cardCode.replace(/-/g, '+');
     link.href = `https://www.cardtrader.com/it/cards?search=${query}`;
+  }
+}
+
+async function loadCardtraderPrices(rc) {
+  const ctr = document.getElementById('sheet-pricing-ctr');
+  const minEl = document.getElementById('sheet-price-min');
+  const avgEl = document.getElementById('sheet-price-avg');
+  ctr.classList.add('hidden');
+  if (!rc.cardtrader_id) return;
+  if (!CARDTRADER_API_KEY) return;
+  const prices = await fetchCardtraderPrices(rc.cardtrader_id);
+  if (prices) {
+    const sym = prices.currency === 'EUR' ? '€' : prices.currency === 'USD' ? '$' : prices.currency + ' ';
+    const fmt = (v) => sym + v.toFixed(2);
+    minEl.textContent = `Min ${fmt(prices.minPrice)}`;
+    avgEl.textContent = `Media ${fmt(prices.avgPrice)}`;
+    ctr.classList.remove('hidden');
   }
 }
 
