@@ -221,23 +221,24 @@ function toggleFilterChips(selector, stateObj) {
   });
 }
 
+function validateFilterSchema() {
+  if (!refCards.length) return;
+  const hasType = refCards.some(c => c.card_type);
+  const hasColor = refCards.some(c => c.color);
+  const hasLevel = refCards.some(c => c.level != null);
+  const hasCost = refCards.some(c => c.cost != null);
+  if (!hasType || !hasColor) {
+    console.warn('[filter] reference_cards.json missing card_type / color fields. Type/color filters will have no effect until data is enriched.');
+  }
+  if (!hasLevel) console.warn('[filter] reference_cards.json missing level field.');
+  if (!hasCost) console.warn('[filter] reference_cards.json missing cost field.');
+}
+
 function initFilterDrawer() {
   toggleFilterChips('#filter-drawer .filter-chip', cardTypeFilters);
   toggleFilterChips('#filter-drawer .color-chip', colorFilters);
 
-  // Validate data schema — warn if reference data lacks filter fields
-  if (refCards.length) {
-    const hasType = refCards.some(c => c.card_type);
-    const hasColor = refCards.some(c => c.color);
-    const hasLevel = refCards.some(c => c.level != null);
-    const hasCost = refCards.some(c => c.cost != null);
-    if (!hasType || !hasColor) {
-      console.warn('[filter] reference_cards.json missing card_type / color fields. Type/color filters will have no effect until data is enriched.');
-    }
-    if (!hasLevel) console.warn('[filter] reference_cards.json missing level field.');
-    if (!hasCost) console.warn('[filter] reference_cards.json missing cost field.');
-  }
-
+  validateFilterSchema();
   const levelMin = document.getElementById('filter-level-min');
   const levelMax = document.getElementById('filter-level-max');
   const costMin = document.getElementById('filter-cost-min');

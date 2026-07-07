@@ -42,6 +42,7 @@ async function enterApp() {
       });
     }
     await loadReferenceCards();
+    validateFilterSchema();
     await refreshCards();
     if (!currentUser) return;
     await playTransition();
