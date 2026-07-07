@@ -111,8 +111,6 @@ function showRecoverForm() {
   document.getElementById('auth-form').classList.add('hidden');
   document.getElementById('recover-form').classList.remove('hidden');
   document.getElementById('recover-email').value = document.getElementById('auth-email').value;
-  document.getElementById('recover-new-password').value = '';
-  document.getElementById('recover-confirm').value = '';
 }
 
 function showAuthFormFromRecover() {
@@ -124,11 +122,7 @@ function showAuthFormFromRecover() {
 
 async function handleRecoverSubmit() {
   const email = document.getElementById('recover-email').value.trim();
-  const pwd = document.getElementById('recover-new-password').value;
-  const confirm = document.getElementById('recover-confirm').value;
   if (!email) { showToast('Inserisci la tua email.'); return; }
-  if (!pwd || pwd.length < 6) { showToast('Password: almeno 6 caratteri.'); return; }
-  if (pwd !== confirm) { showToast('Le password non coincidono.'); return; }
 
   const btn = document.getElementById('recover-submit');
   btn.disabled = true;
@@ -136,47 +130,14 @@ async function handleRecoverSubmit() {
   document.getElementById('recover-spinner').classList.remove('invisible');
 
   try {
-    const checkRes = await fetch(SUPABASE_URL + '/auth/v1/signup', {
-      method: 'POST',
-      headers: { 'apikey': SUPABASE_ANON_KEY, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password: '__chk_' + Date.now() + Math.random().toString(36).slice(2,6) }),
-    });
-    if (checkRes.ok) {
-      const chkData = await checkRes.json();
-      if (chkData.access_token) {
-        fetch(SUPABASE_URL + '/auth/v1/user', {
-          method: 'DELETE',
-          headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': 'Bearer ' + chkData.access_token },
-        }).catch(() => {});
-      }
-      showToast('Email non trovata. Verifica l\'indirizzo o registrati.');
-      btn.disabled = false;
-      document.getElementById('recover-submit-text').classList.remove('invisible');
-      document.getElementById('recover-spinner').classList.add('invisible');
-      return;
-    }
-
-    const checkData = await checkRes.json();
-    const alreadyRegistered = checkData.msg === 'User already registered'
-      || (checkData.error_description || '').includes('already registered')
-      || (checkData.error || '').includes('already registered');
-
-    if (!alreadyRegistered) {
-      showToast('Email non trovata. Verifica l\'indirizzo o registrati.');
-      btn.disabled = false;
-      document.getElementById('recover-submit-text').classList.remove('invisible');
-      document.getElementById('recover-spinner').classList.add('invisible');
-      return;
-    }
-
-    try { localStorage.setItem('pending_recovery', JSON.stringify({ email, password: pwd })); } catch (_) {}
-
+    // Flusso standard Supabase: invia l'email di reset. Supabase non rivela
+    // se l'email esiste (niente account enumeration) e non crea account spurii.
     await authFetch('/auth/v1/recover', { email });
     miniShimmer();
     document.getElementById('recover-form').classList.add('hidden');
     document.getElementById('recover-success').classList.remove('hidden');
   } catch (err) {
-    showToast(err.message || 'Errore durante la verifica.');
+    showToast(err.message || 'Errore durante l\'invio della richiesta.');
   } finally {
     btn.disabled = false;
     document.getElementById('recover-submit-text').classList.remove('invisible');

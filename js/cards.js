@@ -1,7 +1,3 @@
-function userIdFilter() {
-  return currentUser ? '&user_id=eq.' + currentUser.id : '';
-}
-
 function handle401() {
   if (window._sessionExpiring) return;
   window._sessionExpiring = true;
@@ -13,7 +9,8 @@ function handle401() {
 }
 
 async function loadCards() {
-  const r = await fetch(SUPABASE_URL + '/rest/v1/cards?select=*&order=created_at.desc' + userIdFilter(), {
+  // RLS su Supabase filtra automaticamente per auth.uid(): nessun filtro lato client necessario
+  const r = await fetch(SUPABASE_URL + '/rest/v1/cards?select=*&order=created_at.desc', {
     headers: getAuthHeaders(),
   });
   if (r.status === 401) { handle401(); return []; }
@@ -22,11 +19,11 @@ async function loadCards() {
 }
 
 async function addCard(card) {
-  const payload = currentUser ? { ...card, user_id: currentUser.id } : card;
+  // user_id NON viene più inviato dal client: lo imposta Supabase tramite la sessione (DEFAULT auth.uid())
   const r = await fetch(SUPABASE_URL + '/rest/v1/cards', {
     method: 'POST',
     headers: { ...getAuthHeaders(), 'Prefer': 'return=representation' },
-    body: JSON.stringify(payload),
+    body: JSON.stringify(card),
   });
   if (r.status === 401) { handle401(); return null; }
   if (!r.ok) {

@@ -151,57 +151,12 @@
         </div>
       </div>
 
-      <!-- Password recovery: Email + Nuova Password + Conferma -->
+      <!-- Password recovery: solo Email -->
       <div id="recover-form" class="auth-card hidden bg-black/40 backdrop-blur-sm rounded-2xl shadow-lg border border-white/10 p-6">
         <p class="text-sm text-white/70 mb-4 text-center font-medium">Recupera Password</p>
         <input id="recover-email" type="email" placeholder="La tua Email" autocomplete="email"
           class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
-        <div class="relative mb-3">
-          <input id="recover-new-password" type="password" placeholder="Nuova Password" autocomplete="new-password"
-            class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm pr-10 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
-          <button id="eye-recover" type="button" class="eye-btn absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white/70 transition" tabindex="-1">
-            <svg viewBox="0 0 24 24" width="20" height="20" class="block">
-              <path d="M5 11C3 13 2.5 16 3 18" stroke="#6b7280" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-              <path d="M19 11C21 13 21.5 16 21 18" stroke="#6b7280" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-              <path d="M5 4Q5 2 7 2h10q2 0 2 2v10q0 2-2 2H7q-2 0-2-2V4z" fill="#4a6741"/>
-              <path d="M7.5 2l-1-2h11l-1 2" fill="#3d5a35"/>
-              <rect x="8" y="1" width="8" height="1.5" fill="#3d5a35"/>
-              <rect x="4.5" y="7" width="1" height="3" rx=".5" fill="#3d5a35"/>
-              <rect x="18.5" y="7" width="1" height="3" rx=".5" fill="#3d5a35"/>
-              <rect x="5" y="8" width="14" height="4" rx="2" fill="#0f172a"/>
-              <line x1="6.5" y1="9" x2="17.5" y2="9" stroke="#1e293b" stroke-width=".6" opacity=".4"/>
-              <g class="zaku-eye-slide">
-                <circle cx="7" cy="10" r="1.8" fill="#ef4444"/>
-                <circle cx="6.5" cy="9.5" r=".6" fill="#fca5a5" opacity=".7"/>
-              </g>
-              <rect x="10" y="15" width="4" height="1.5" rx=".5" fill="#3d5a35"/>
-              <line x1="11" y1="15.75" x2="13" y2="15.75" stroke="#2e4a28" stroke-width=".5"/>
-            </svg>
-          </button>
-        </div>
-        <div class="relative mb-4">
-          <input id="recover-confirm" type="password" placeholder="Conferma Password"
-            class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm pr-10 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
-          <button id="eye-recover-confirm" type="button" class="eye-btn absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white/70 transition" tabindex="-1">
-            <svg viewBox="0 0 24 24" width="20" height="20" class="block">
-              <path d="M5 11C3 13 2.5 16 3 18" stroke="#6b7280" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-              <path d="M19 11C21 13 21.5 16 21 18" stroke="#6b7280" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-              <path d="M5 4Q5 2 7 2h10q2 0 2 2v10q0 2-2 2H7q-2 0-2-2V4z" fill="#4a6741"/>
-              <path d="M7.5 2l-1-2h11l-1 2" fill="#3d5a35"/>
-              <rect x="8" y="1" width="8" height="1.5" fill="#3d5a35"/>
-              <rect x="4.5" y="7" width="1" height="3" rx=".5" fill="#3d5a35"/>
-              <rect x="18.5" y="7" width="1" height="3" rx=".5" fill="#3d5a35"/>
-              <rect x="5" y="8" width="14" height="4" rx="2" fill="#0f172a"/>
-              <line x1="6.5" y1="9" x2="17.5" y2="9" stroke="#1e293b" stroke-width=".6" opacity=".4"/>
-              <g class="zaku-eye-slide">
-                <circle cx="7" cy="10" r="1.8" fill="#ef4444"/>
-                <circle cx="6.5" cy="9.5" r=".6" fill="#fca5a5" opacity=".7"/>
-              </g>
-              <rect x="10" y="15" width="4" height="1.5" rx=".5" fill="#3d5a35"/>
-              <line x1="11" y1="15.75" x2="13" y2="15.75" stroke="#2e4a28" stroke-width=".5"/>
-            </svg>
-          </button>
-        </div>
+
         <button id="recover-submit" class="relative w-full bg-[#2c52b3] hover:bg-[#1e3a7a] text-white text-base font-bold py-3 rounded-full shadow-sm transition hover:scale-[1.02] active:scale-95 disabled:opacity-60 disabled:hover:scale-100">
           <span id="recover-submit-text">Avanti</span>
           <span id="recover-spinner" class="absolute inset-0 flex items-center justify-center invisible">
@@ -217,7 +172,7 @@
           <span class="material-symbols-outlined text-green-400" style="font-size:32px">mail</span>
         </div>
         <p class="text-sm text-white/80 font-medium mb-1">Email inviata!</p>
-        <p class="text-xs text-white/50 mb-4">Controlla la posta e clicca il link.<br>La password verrà aggiornata automaticamente.</p>
+        <p class="text-xs text-white/50 mb-4">Abbiamo inviato un'email di reset all'indirizzo indicato.<br>Clicca il link ricevuto per reimpostare la password.</p>
         <button id="recover-done" class="w-full bg-[#2c52b3] hover:bg-[#1e3a7a] text-white text-base font-bold py-3 rounded-full shadow-sm transition hover:scale-[1.02] active:scale-95">
           OK
         </button>

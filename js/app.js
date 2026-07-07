@@ -84,8 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('recover-submit').addEventListener('click', handleRecoverSubmit);
   document.getElementById('recover-done').addEventListener('click', () => { showAuthFormFromRecover(); });
   document.getElementById('recover-email').addEventListener('keydown', e => { if (e.key === 'Enter') handleRecoverSubmit(); });
-  document.getElementById('recover-new-password').addEventListener('keydown', e => { if (e.key === 'Enter') handleRecoverSubmit(); });
-  document.getElementById('recover-confirm').addEventListener('keydown', e => { if (e.key === 'Enter') handleRecoverSubmit(); });
 
   document.getElementById('reset-submit').addEventListener('click', handleResetSubmit);
   document.getElementById('reset-password').addEventListener('keydown', e => { if (e.key === 'Enter') handleResetSubmit(); });
@@ -93,8 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('eye-password').addEventListener('click', () => toggleEye('auth-password', 'eye-password'));
   document.getElementById('eye-confirm').addEventListener('click', () => toggleEye('auth-confirm', 'eye-confirm'));
-  document.getElementById('eye-recover').addEventListener('click', () => toggleEye('recover-new-password', 'eye-recover'));
-  document.getElementById('eye-recover-confirm').addEventListener('click', () => toggleEye('recover-confirm', 'eye-recover-confirm'));
   document.getElementById('eye-reset').addEventListener('click', () => toggleEye('reset-password', 'eye-reset'));
   document.getElementById('eye-reset-confirm').addEventListener('click', () => toggleEye('reset-confirm', 'eye-reset-confirm'));
 
@@ -212,29 +208,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(hash.replace('#', ''));
     const recoveryToken = params.get('access_token');
     if (recoveryToken) {
+      // Nessuna password salvata in localStorage: basta il token di recovery.
+      // L'utente imposterà la nuova password nella pagina di reset.
       accessToken = recoveryToken;
-      const saved = (() => { try { return JSON.parse(localStorage.getItem('pending_recovery')); } catch(_) { return null; } })();
-      if (saved && saved.password) {
-        (async () => {
-          try {
-            const res = await fetch(SUPABASE_URL + '/auth/v1/user', {
-              method: 'PUT',
-              headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': 'Bearer ' + accessToken, 'Content-Type': 'application/json' },
-              body: JSON.stringify({ password: saved.password }),
-            });
-            if (!res.ok) throw new Error('API error');
-            try { localStorage.removeItem('pending_recovery'); } catch(_) {}
-            window.location.hash = '';
-            showToast('Password aggiornata! Ora accedi.', false);
-          } catch (_) {
-            document.getElementById('splash-section').classList.add('hidden');
-            document.getElementById('reset-section').classList.remove('hidden');
-          }
-        })();
-      } else {
-        document.getElementById('splash-section').classList.add('hidden');
-        document.getElementById('reset-section').classList.remove('hidden');
-      }
+      document.getElementById('splash-section').classList.add('hidden');
+      document.getElementById('reset-section').classList.remove('hidden');
+      history.replaceState(null, '', location.pathname + location.search);
     }
   }
 });

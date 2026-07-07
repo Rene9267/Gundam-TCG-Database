@@ -16,11 +16,11 @@ function renderLatestHorizontal() {
   empty.classList.add('hidden');
 
   const items = latest.map(c => `
-    <article class="min-w-[225px] w-[225px] snap-start flex-shrink-0 relative cursor-pointer group latest-entry" data-code="${c.card_code}">
+    <article class="min-w-[225px] w-[225px] snap-start flex-shrink-0 relative cursor-pointer group latest-entry" data-code="${escapeHtml(c.card_code)}">
       <div class="aspect-[5/7] rounded-lg overflow-hidden border relative shadow-sm" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.15)">
         ${imageOrFallback(getCardImageUrl(c.card_code), c.card_name)}
         <div class="absolute bottom-0 left-0 right-0 p-1.5 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
-          <p class="text-[9px] font-mono text-white/80 truncate">${c.card_code}</p>
+          <p class="text-[9px] font-mono text-white/80 truncate">${escapeHtml(c.card_code)}</p>
         </div>
       </div>
     </article>
@@ -64,7 +64,7 @@ function renderExpansionsList() {
     const cleanName = setName.replace(/\s*\[.*?\]/, '');
 
     return `
-      <div class="exp-entry rounded-xl border p-3 flex items-center justify-between hover:shadow-sm transition cursor-pointer shadow-sm" data-set="${setName}" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.12);">
+      <div class="exp-entry rounded-xl border p-3 flex items-center justify-between hover:shadow-sm transition cursor-pointer shadow-sm" data-set="${escapeHtml(setName)}" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.12);">
         <div class="flex items-center gap-3">
           <div class="relative w-[44px] h-[44px] flex items-center justify-center flex-shrink-0">
             <svg class="w-full h-full" viewBox="0 0 100 100">
@@ -77,9 +77,9 @@ function renderExpansionsList() {
             <span class="absolute text-[10px] font-bold font-heading" style="color:rgba(255,255,255,0.9)">${pct}%</span>
           </div>
           <div>
-            <p class="text-sm font-semibold" style="color:#fff">${cleanName}</p>
+            <p class="text-sm font-semibold" style="color:#fff">${escapeHtml(cleanName)}</p>
             <div class="flex gap-2 items-center mt-0.5">
-              <span class="font-mono text-[10px] px-1 border rounded" style="border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.6)">${setCode}</span>
+              <span class="font-mono text-[10px] px-1 border rounded" style="border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.6)">${escapeHtml(setCode)}</span>
               <span class="font-mono text-[10px]" style="color:rgba(255,255,255,0.5)">${owned}/${total}</span>
             </div>
           </div>

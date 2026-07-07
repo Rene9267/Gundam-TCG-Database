@@ -77,7 +77,7 @@ function buildOverviewItem(setName, ownedMap) {
   const offset = circumference - (pct / 100) * circumference;
 
   return `
-    <div class="col-set-entry rounded-xl border p-3" data-set="${setName}" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.12);">
+    <div class="col-set-entry rounded-xl border p-3" data-set="${escapeHtml(setName)}" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.12);">
       <div class="flex items-center gap-3">
         <div class="relative w-[44px] h-[44px] flex items-center justify-center flex-shrink-0">
           <svg class="w-full h-full" viewBox="0 0 100 100">
@@ -90,9 +90,9 @@ function buildOverviewItem(setName, ownedMap) {
           <span class="absolute text-[10px] font-bold font-heading" style="color:rgba(255,255,255,0.9)">${pct}%</span>
         </div>
         <div class="min-w-0 flex-1">
-          <p class="text-sm font-semibold truncate" style="color:#fff">${cleanName}</p>
+          <p class="text-sm font-semibold truncate" style="color:#fff">${escapeHtml(cleanName)}</p>
           <div class="flex gap-2 items-center mt-0.5">
-            <span class="font-mono text-[10px] px-1 border rounded" style="border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.6)">${setCode}</span>
+            <span class="font-mono text-[10px] px-1 border rounded" style="border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.6)">${escapeHtml(setCode)}</span>
             <span class="font-mono text-[10px]" style="color:rgba(255,255,255,0.5)">${owned}/${total}</span>
           </div>
         </div>
@@ -333,7 +333,7 @@ function renderCollection(cards) {
     const isPlayset = c.quantity >= 4;
     const isMissing = c.isMissing;
     return `
-    <div class="card-entry relative cursor-pointer${isMissing ? ' card-missing' : ''}${isPlayset ? ' card-playset' : ''}" data-id="${c.id}" data-code="${c.card_code}">
+    <div class="card-entry relative cursor-pointer${isMissing ? ' card-missing' : ''}${isPlayset ? ' card-playset' : ''}" data-id="${escapeHtml(c.id)}" data-code="${escapeHtml(c.card_code)}">
       ${!isMissing ? '<div class="absolute top-0 left-0 right-0 h-[3px] bg-[#fb2f38] z-10 rounded-t-lg"></div>' : ''}
       <div class="card-img-wrapper ${isMissing ? 'grayscale' : ''}">
         ${imageOrFallback(getCardImageUrl(c.card_code), c.card_name)}
@@ -343,10 +343,10 @@ function renderCollection(cards) {
       <div class="card-label">
         <div class="card-label-row">
           <div class="min-w-0 flex-1">
-            <div class="card-label-name">${c.card_name}</div>
-            <div class="card-label-code">${c.card_code}</div>
+            <div class="card-label-name">${escapeHtml(c.card_name)}</div>
+            <div class="card-label-code">${escapeHtml(c.card_code)}</div>
           </div>
-          ${!isMissing ? `<div class="qty-badge">${c.quantity}</div>` : ''}
+          ${!isMissing ? `<div class="qty-badge">${escapeHtml(c.quantity)}</div>` : ''}
         </div>
       </div>
     </div>`;

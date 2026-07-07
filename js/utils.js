@@ -68,9 +68,19 @@ function rarityColor(rarity) {
   return map[rarity] || 'text-gray-500';
 }
 
+function escapeHtml(str) {
+  if (str == null) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 function imageOrFallback(url, name) {
   if (!url) return `<div class="card-img-fallback w-full h-full text-2xl">🃏</div>`;
-  return `<img src="${url}" alt="${name}" class="w-full h-full object-cover" loading="lazy" onerror="this.outerHTML='<div class=\\'card-img-fallback w-full h-full text-2xl\\'>🃏</div>'">`;
+  return `<img src="${escapeHtml(url)}" alt="${escapeHtml(name)}" class="w-full h-full object-cover" loading="lazy" onerror="this.outerHTML='<div class=\\'card-img-fallback w-full h-full text-2xl\\'>🃏</div>'">`;
 }
 
 function setGroup(setName) {
