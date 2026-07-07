@@ -18,7 +18,7 @@ function renderLatestHorizontal() {
   const items = latest.map(c => `
     <article class="min-w-[225px] w-[225px] snap-start flex-shrink-0 relative cursor-pointer group latest-entry" data-code="${c.card_code}">
       <div class="aspect-[5/7] rounded-lg overflow-hidden border relative shadow-sm" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.15)">
-        ${imageOrFallback(c.image_url, c.card_name)}
+        ${imageOrFallback(getCardImageUrl(c.card_code), c.card_name)}
         <div class="absolute bottom-0 left-0 right-0 p-1.5 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
           <p class="text-[9px] font-mono text-white/80 truncate">${c.card_code}</p>
         </div>

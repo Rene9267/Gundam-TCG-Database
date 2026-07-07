@@ -195,6 +195,44 @@ function toggleVariantFilter(filterName) {
   if (currentColTab !== 'stats') renderCollection(filterCollection());
 }
 
+function resetFilters() {
+  activeFilters.base = true;
+  activeFilters.altart = false;
+  activeFilters.resources = false;
+  document.querySelectorAll('#filter-drawer .variant-btn').forEach(b => {
+    b.classList.toggle('active', activeFilters[b.dataset.filter]);
+  });
+
+  for (const k of Object.keys(cardTypeFilters)) cardTypeFilters[k] = true;
+  for (const k of Object.keys(colorFilters)) colorFilters[k] = true;
+  document.querySelectorAll('#filter-drawer .filter-chip').forEach(b => b.classList.add('active'));
+  document.querySelectorAll('#filter-drawer .color-chip').forEach(b => b.classList.add('active'));
+
+  levelRange.min = 0;
+  levelRange.max = 10;
+  costRange.min = 0;
+  costRange.max = 20;
+  const levelMin = document.getElementById('filter-level-min');
+  const levelMax = document.getElementById('filter-level-max');
+  const costMin = document.getElementById('filter-cost-min');
+  const costMax = document.getElementById('filter-cost-max');
+  if (levelMin) { levelMin.value = 0; }
+  if (levelMax) { levelMax.value = 10; }
+  if (costMin) { costMin.value = 0; }
+  if (costMax) { costMax.value = 20; }
+  const lmin = document.getElementById('filter-level-min-val');
+  const lmax = document.getElementById('filter-level-max-val');
+  const cmin = document.getElementById('filter-cost-min-val');
+  const cmax = document.getElementById('filter-cost-max-val');
+  if (lmin) lmin.textContent = '0';
+  if (lmax) lmax.textContent = '10';
+  if (cmin) cmin.textContent = '0';
+  if (cmax) cmax.textContent = '20';
+
+  closeFilterDrawer();
+  if (currentColTab !== 'stats') renderCollection(filterCollection());
+}
+
 function openFilterDrawer() {
   const panel = document.getElementById('filter-drawer-panel');
   const drawer = document.getElementById('filter-drawer');
@@ -298,7 +336,7 @@ function renderCollection(cards) {
     <div class="card-entry relative cursor-pointer${isMissing ? ' card-missing' : ''}${isPlayset ? ' card-playset' : ''}" data-id="${c.id}" data-code="${c.card_code}">
       ${!isMissing ? '<div class="absolute top-0 left-0 right-0 h-[3px] bg-[#fb2f38] z-10 rounded-t-lg"></div>' : ''}
       <div class="card-img-wrapper ${isMissing ? 'grayscale' : ''}">
-        ${imageOrFallback(c.image_url, c.card_name)}
+        ${imageOrFallback(getCardImageUrl(c.card_code), c.card_name)}
       </div>
       ${isPlayset ? '<span class="playset-diamond"></span>' : ''}
       ${isMissing ? '<div class="missing-overlay"><span>+</span></div>' : ''}
@@ -416,7 +454,6 @@ function filterCollection() {
       card_name: rc.card_name,
       set_name: rc.set_name,
       set_code: rc.set_code,
-      image_url: rc.image_url,
       quantity: owned?.quantity || 0,
       rarity: owned?.rarity || null,
       card_type: rc.card_type || null,

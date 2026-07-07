@@ -5,28 +5,6 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const ST01_SLUG = 'st-01-heroic-beginnings';
-
-// Correct rarities per card name for ST01
-const CARD_RARITIES = {
-  'Gundam': 'lr',
-  'Gundam (MA Form)': 'c',
-  'Guncannon': 'c',
-  'Guntank': 'c',
-  'GM': 'c',
-  'Gundam Aerial (Permet Score Six)': 'lr',
-  'Gundam Aerial (Bit on Form)': 'c',
-  'Demi Trainer': 'c',
-  'Zowort': 'c',
-  'Amuro Ray': 'c',
-  'Suletta Mercury': 'c',
-  'Thoroughly Damaged': 'c',
-  "Kai's Resolve": 'c',
-  'Unforeseen Incident': 'c',
-  'White Base': 'c',
-  'Asticassia School of Technology, Earth House': 'c',
-};
-
 function slugify(name) {
   return name
     .toLowerCase()
@@ -36,8 +14,15 @@ function slugify(name) {
     .replace(/^-|-$/g, '');
 }
 
-function buildSlug(name, rarity) {
-  return `${slugify(name)}-${rarity}-${ST01_SLUG}`;
+function isVariantCode(code) {
+  return /_p\d+$/.test(code);
+}
+
+function computeSetSlug(setCode, setName) {
+  const codeSlug = setCode.toLowerCase().slice(0, 2) + '-' + setCode.toLowerCase().slice(2);
+  const namePart = setName.replace(/\[.*?\]$/, '').trim();
+  const nameSlug = slugify(namePart);
+  return `${codeSlug}-${nameSlug}`;
 }
 
 function fetchFollowRedirect(url, redirects = 0) {
@@ -80,55 +65,93 @@ function extractTitle(html) {
 }
 
 async function main() {
-  const refPath = path.join(__dirname, 'reference_cards.json');
+  const refPath = path.join(__dirname, '..', '..', 'reference_cards.json');
   const refCards = JSON.parse(fs.readFileSync(refPath, 'utf-8'));
 
-  const st01Cards = refCards.filter(c => c.set_code === 'ST01');
-  const uniqueNames = [...new Set(st01Cards.map(c => c.card_name))];
-
-  console.log(`Mapping ${uniqueNames.length} unique ST01 cards with correct rarities...\n`);
-
-  const results = {};
-  for (const name of uniqueNames) {
-    const rarity = CARD_RARITIES[name];
-    if (!rarity) {
-      console.log(`  ✗ No rarity defined for: ${name}`);
-      continue;
+  // Group all unique set codes with their set name
+  const setMap = {};
+  for (const card of refCards) {
+    if (!setMap[card.set_code]) {
+      setMap[card.set_code] = card.set_name;
     }
-    const slug = buildSlug(name, rarity);
-    const url = `https://www.cardtrader.com/en/cards/${slug}`;
-    const html = await fetchFollowRedirect(url);
-    if (html) {
-      const id = extractBlueprintId(html);
-      const title = extractTitle(html);
-      if (id) {
-        console.log(`  ✓ ${name.padEnd(50)} → id=${id}, rarity=${rarity}`);
-        results[name] = { slug, blueprint_id: id, rarity };
-      } else {
-        console.log(`  ✗ ${name} → page loaded but no ID found`);
-      }
-    } else {
-      console.log(`  ✗ ${name} → NOT FOUND (slug: ${slug})`);
-    }
-    await new Promise(r => setTimeout(r, 1500));
   }
 
-  const outPath = path.join(__dirname, 'cardtrader_st01_mapping.json');
-  fs.writeFileSync(outPath, JSON.stringify(results, null, 2), 'utf-8');
-  console.log(`\nDone! Mapped: ${Object.keys(results).length}/${uniqueNames.length}`);
-  
-  // Now update reference_cards.json
-  let updated = 0;
-  for (const card of refCards) {
-    if (card.set_code === 'ST01' && results[card.card_name]) {
-      card.cardtrader_slug = results[card.card_name].slug;
-      card.cardtrader_id = results[card.card_name].blueprint_id;
+  const setEntries = Object.entries(setMap).sort((a, b) => a[0].localeCompare(b[0]));
+
+  for (const [setCode, setName] of setEntries) {
+    const setSlug = computeSetSlug(setCode, setName);
+    const setCards = refCards.filter(c => c.set_code === setCode);
+
+    // Group by (card_name, rarity) — each unique combo gets up to 2 lookups
+    const groups = {};
+    for (const card of setCards) {
+      const key = `${card.card_name}||${(card.rarity || '').toLowerCase()}`;
+      if (!groups[key]) {
+        groups[key] = { name: card.card_name, rarity: (card.rarity || '').toLowerCase(), slug: setSlug };
+      }
+    }
+
+    console.log(`\n=== ${setCode} (${setCards.length} cards, ${Object.keys(groups).length} unique name+rarity combos) ===\n`);
+
+    const results = {};
+    for (const [key, group] of Object.entries(groups)) {
+      const { name, rarity } = group;
+      const baseSlug = `${slugify(name)}-${setSlug}`;
+      const variantSlug = rarity ? `${slugify(name)}-${rarity}-${setSlug}` : baseSlug;
+
+      let baseId = null;
+      let variantId = null;
+
+      const baseUrl = `https://www.cardtrader.com/en/cards/${baseSlug}`;
+      const variantUrl = `https://www.cardtrader.com/en/cards/${variantSlug}`;
+
+      // Try base slug (no rarity)
+      if (baseSlug !== variantSlug) {
+        const html = await fetchFollowRedirect(baseUrl);
+        if (html) {
+          baseId = extractBlueprintId(html);
+        }
+        await new Promise(r => setTimeout(r, 1000));
+      }
+
+      // Try variant slug (with rarity)
+      const html = await fetchFollowRedirect(variantUrl);
+      if (html) {
+        variantId = extractBlueprintId(html);
+      }
+      await new Promise(r => setTimeout(r, 1000));
+
+      const baseLabel = baseId ? `id=${baseId}` : 'NOT FOUND';
+      const variantLabel = variantId ? `id=${variantId}` : 'NOT FOUND';
+      console.log(`  ${name.padEnd(50)} base→${baseLabel}  variant→${variantLabel}`);
+
+      results[key] = { baseSlug, baseId, variantSlug, variantId };
+    }
+
+    // Apply results to cards
+    let updated = 0;
+    for (const card of setCards) {
+      const key = `${card.card_name}||${(card.rarity || '').toLowerCase()}`;
+      const result = results[key];
+      if (!result) continue;
+
+      const isVariant = isVariantCode(card.card_code);
+
+      if (isVariant) {
+        card.cardtrader_slug = result.variantSlug;
+        card.cardtrader_id = result.variantId || result.baseId;
+      } else {
+        card.cardtrader_slug = result.baseId ? result.baseSlug : result.variantSlug;
+        card.cardtrader_id = result.baseId || result.variantId;
+      }
       updated++;
     }
+
+    console.log(`  → Updated ${updated}/${setCards.length} cards in set ${setCode}`);
   }
-  
+
   fs.writeFileSync(refPath, JSON.stringify(refCards, null, 2), 'utf-8');
-  console.log(`Updated ${updated} cards in reference_cards.json with CardTrader IDs`);
+  console.log('\nDone! reference_cards.json updated with corrected CardTrader IDs.');
 }
 
 main().catch(console.error);

@@ -202,6 +202,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentColTab !== 'stats') renderCollection(filterCollection());
   });
 
+  document.getElementById('filter-reset').addEventListener('click', (e) => {
+    e.preventDefault();
+    resetFilters();
+  });
+
   const hash = window.location.hash;
   if (hash && hash.includes('type=recovery')) {
     const params = new URLSearchParams(hash.replace('#', ''));

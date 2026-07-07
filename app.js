@@ -1,6 +1,7 @@
 // ============ Configurazione Supabase ============
 const SUPABASE_URL = 'https://zhrvhhzcsdadoolxqpro.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_yeP5henLm-YdNtkwCFuV0Q_tE1koERf';
+const CARD_IMAGE_BASE = 'https://pub-f106953afafa4b379122130a0f038335.r2.dev';
 
 // ============ Eye Toggle ============
 function toggleEye(inputId, eyeId) {
@@ -135,6 +136,7 @@ let nameFirstSet = {};
 let cardAltInfo = {};
 // Set di card_code che sono T-* o R-*
 const isTokenOrResource = (code) => code.startsWith('T-') || code.startsWith('R-');
+const getCardImageUrl = (code) => `${CARD_IMAGE_BASE}/${code}.webp`;
 
 function computeSetData() {
   // Raggruppa per set_name (es. "Heroic Beginnings [ST01]")
@@ -311,7 +313,7 @@ function renderLatestHorizontal() {
   const items = latest.map(c => `
     <article class="min-w-[110px] w-[110px] snap-start flex-shrink-0 relative cursor-pointer group latest-entry" data-code="${c.card_code}">
       <div class="aspect-[2.5/9.1] rounded-lg overflow-hidden border relative shadow-sm" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.15)">
-        ${imageOrFallback(c.image_url, c.card_name)}
+        ${imageOrFallback(getCardImageUrl(c.card_code), c.card_name)}
         <div class="absolute bottom-0 left-0 right-0 p-1.5 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
           <p class="text-[9px] font-mono text-white/80 truncate">${c.card_code}</p>
         </div>
@@ -483,7 +485,7 @@ function renderCollection(cards) {
     <div class="card-entry relative cursor-pointer${isMissing ? ' card-missing' : ''}${isPlayset ? ' card-playset' : ''}" data-id="${c.id}" data-code="${c.card_code}">
       ${!isMissing ? '<div class="absolute top-0 left-0 right-0 h-[3px] bg-[#fb2f38] z-10 rounded-t-lg"></div>' : ''}
       <div class="card-img-wrapper ${isMissing ? 'grayscale' : ''}">
-        ${imageOrFallback(c.image_url, c.card_name)}
+        ${imageOrFallback(getCardImageUrl(c.card_code), c.card_name)}
       </div>
       ${isPlayset ? '<span class="playset-diamond"></span>' : ''}
       ${isMissing ? '<div class="missing-overlay"><span>+</span></div>' : ''}
@@ -551,7 +553,6 @@ function filterCollection() {
   const currentSetCode = getSetCodeFromFilter();
   let refs;
   if (currentSetCode) {
-    // Carte nel set + carte originarie di questo set ristampate altrove (es. GD01-100_p5 in GD03)
     refs = refCards.filter(rc =>
       rc.set_name === setFilter ||
       (rc.card_code.startsWith(currentSetCode) && rc.set_code !== currentSetCode)
@@ -563,17 +564,15 @@ function filterCollection() {
   // Applica variant filter multi-selezione
   refs = refs.filter(rc => {
     const isRT = isTokenOrResource(rc.card_code);
-    // Alt Art: _p O ristampa cross-set (card_code prefix ≠ set_code)
     const isAltArt = !isRT && (rc.card_code.includes('_p') || rc.card_code.split('-')[0] !== rc.set_code);
     const isBase = !isRT && !isAltArt;
 
     if (isRT) return activeFilters.resources;
     if (isAltArt) return activeFilters.altart;
     if (isBase) return activeFilters.base;
-    return activeFilters.base; // fallback
+    return activeFilters.base;
   });
 
-  // Ordina per card_code
   refs.sort((a, b) => a.card_code.localeCompare(b.card_code));
 
   const ownedMap = {};
@@ -591,7 +590,6 @@ function filterCollection() {
       card_name: rc.card_name,
       set_name: rc.set_name,
       set_code: rc.set_code,
-      image_url: rc.image_url,
       quantity: owned?.quantity || 0,
       rarity: owned?.rarity || null,
       isMissing: !owned,
@@ -760,7 +758,6 @@ function loadSheetCard(rc) {
     card_name: rc.card_name,
     set_name: rc.set_name,
     set_code: rc.set_code,
-    image_url: rc.image_url,
     quantity: owned?.quantity || 0,
     rarity: owned?.rarity || null,
   };
@@ -768,7 +765,7 @@ function loadSheetCard(rc) {
   currentSheetCard = card;
 
   const img = document.getElementById('sheet-image');
-  img.src = card.image_url || '';
+  img.src = getCardImageUrl(card.card_code) || '';
   img.style.display = '';
   img.onerror = () => { img.style.display = 'none'; };
   img.onload = () => { img.style.display = ''; };
@@ -823,7 +820,6 @@ async function saveSheetQuantity(newQty) {
         set_name: currentSheetCard.set_name || null,
         rarity: currentSheetCard.rarity || null,
         quantity: newQty,
-        image_url: currentSheetCard.image_url || null,
       };
       await addCard(cardData);
     }

@@ -65,7 +65,6 @@ function extractCards(html, setCode, setName) {
       card_name: cardName,
       set_code: setCode,
       set_name: `${setName} [${setCode}]`,
-      image_url: imageUrl,
     });
   }
 

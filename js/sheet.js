@@ -64,7 +64,6 @@ function loadSheetCard(rc) {
     card_name: rc.card_name,
     set_name: rc.set_name,
     set_code: rc.set_code,
-    image_url: rc.image_url,
     quantity: owned?.quantity || 0,
     rarity: owned?.rarity || null,
   };
@@ -72,7 +71,7 @@ function loadSheetCard(rc) {
   currentSheetCard = card;
 
   const img = document.getElementById('sheet-image');
-  img.src = card.image_url || '';
+  img.src = getCardImageUrl(card.card_code) || '';
   img.style.display = '';
   img.onerror = () => { img.style.display = 'none'; };
   img.onload = () => { img.style.display = ''; };
@@ -145,7 +144,6 @@ async function saveSheetQuantity(newQty) {
         set_name: currentSheetCard.set_name || null,
         rarity: currentSheetCard.rarity || null,
         quantity: newQty,
-        image_url: currentSheetCard.image_url || null,
       };
       await addCard(cardData);
     }

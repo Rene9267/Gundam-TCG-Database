@@ -115,3 +115,4 @@ function clearAuthFields() {
 }
 
 const isTokenOrResource = (code) => code.startsWith('T-') || code.startsWith('R-');
+const getCardImageUrl = (code) => `${CARD_IMAGE_BASE}/${code}.webp`;
