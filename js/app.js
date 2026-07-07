@@ -5,8 +5,12 @@ async function refreshCards() {
     renderLatestHorizontal();
     renderExpansionsList();
     populateSetFilter();
-    if (!document.getElementById('collection-detail').classList.contains('hidden')) {
+    const detail = document.getElementById('collection-detail');
+    const overview = document.getElementById('collection-overview');
+    if (!detail.classList.contains('hidden')) {
       renderCollection(filterCollection());
+    } else if (!overview.classList.contains('hidden')) {
+      renderCollectionOverview();
     }
   } catch (err) {
     console.error('Errore caricamento carte:', err);
@@ -42,7 +46,6 @@ async function enterApp() {
       });
     }
     await loadReferenceCards();
-    validateFilterSchema();
     await refreshCards();
     if (!currentUser) return;
     await playTransition();
@@ -132,9 +135,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('menu-collection').addEventListener('click', () => {
     switchTab('collection');
   });
-  document.getElementById('menu-decks').addEventListener('click', () => {
-    switchTab('dashboard');
-  });
+  // "Decks" non ancora implementata: voce nascosta in attesa di sviluppo
+  // document.getElementById('menu-decks').addEventListener('click', () => {
+  //   switchTab('dashboard');
+  // });
   document.getElementById('menu-profile').addEventListener('click', () => {
     switchTab('profile');
   });

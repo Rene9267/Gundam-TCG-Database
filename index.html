@@ -338,11 +338,11 @@
             <p class="font-mono text-xs text-white/60 uppercase tracking-wider mb-1">Totale Carte</p>
             <p id="stat-total-cards" class="font-heading font-bold text-2xl text-white">—</p>
           </div>
-          <div class="bg-black/30 backdrop-blur-sm rounded-xl border border-white/10 p-4 relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-1 h-full bg-accent"></div>
-            <p class="font-mono text-xs text-white/60 uppercase tracking-wider mb-1">Decks</p>
-            <p id="stat-decks" class="font-heading font-bold text-2xl text-white">0</p>
-          </div>
+        <div class="hidden bg-black/30 backdrop-blur-sm rounded-xl border border-white/10 p-4 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-1 h-full bg-accent"></div>
+          <p class="font-mono text-xs text-white/60 uppercase tracking-wider mb-1">Decks</p>
+          <p id="stat-decks" class="font-heading font-bold text-2xl text-white">0</p>
+        </div>
         </section>
 
         <!-- Ultime Aggiunte (horizontal scroll) -->
@@ -441,62 +441,13 @@
                 </div>
                 <div class="p-5 space-y-6">
 
-                  <!-- Variant -->
+                  <!-- Variant (unico filtro attivo: i dati di reference non hanno ancora tipo/colore/livello/costo) -->
                   <div>
                     <p class="text-xs font-semibold text-white/60 uppercase tracking-wider mb-3">Variante</p>
                     <div class="flex flex-wrap gap-2">
                       <button class="variant-btn active" data-filter="base">Base</button>
                       <button class="variant-btn" data-filter="altart">Alt Art</button>
                       <button class="variant-btn" data-filter="resources">Token</button>
-                    </div>
-                  </div>
-
-                  <!-- Card Type -->
-                  <div>
-                    <p class="text-xs font-semibold text-white/60 uppercase tracking-wider mb-3">Tipo Carta</p>
-                    <div class="flex flex-wrap gap-2">
-                      <button class="filter-chip active" data-ctype="unit">Unit</button>
-                      <button class="filter-chip active" data-ctype="command">Command</button>
-                      <button class="filter-chip active" data-ctype="pilot">Pilot</button>
-                      <button class="filter-chip active" data-ctype="base">Base</button>
-                    </div>
-                  </div>
-
-                  <!-- Color -->
-                  <div>
-                    <p class="text-xs font-semibold text-white/60 uppercase tracking-wider mb-3">Colore</p>
-                    <div class="flex flex-wrap gap-2">
-                      <button class="color-chip active" data-color="blue"><span class="w-3 h-3 rounded-full" style="background:#2c52b3"></span> Blue</button>
-                      <button class="color-chip active" data-color="white"><span class="w-3 h-3 rounded-full" style="background:#e8e8e8"></span> White</button>
-                      <button class="color-chip active" data-color="red"><span class="w-3 h-3 rounded-full" style="background:#fb2f38"></span> Red</button>
-                      <button class="color-chip active" data-color="green"><span class="w-3 h-3 rounded-full" style="background:#22c55e"></span> Green</button>
-                      <button class="color-chip active" data-color="purple"><span class="w-3 h-3 rounded-full" style="background:#a855f7"></span> Purple</button>
-                    </div>
-                  </div>
-
-                  <!-- Level -->
-                  <div>
-                    <p class="text-xs font-semibold text-white/60 uppercase tracking-wider mb-3">Livello</p>
-                    <div class="flex items-center gap-3">
-                      <input type="range" id="filter-level-min" min="0" max="10" value="0" class="flex-1 accent-primary">
-                      <input type="range" id="filter-level-max" min="0" max="10" value="10" class="flex-1 accent-primary">
-                    </div>
-                    <div class="flex justify-between text-xs text-white/40 mt-1">
-                      <span id="filter-level-min-val">0</span>
-                      <span id="filter-level-max-val">10</span>
-                    </div>
-                  </div>
-
-                  <!-- Cost -->
-                  <div>
-                    <p class="text-xs font-semibold text-white/60 uppercase tracking-wider mb-3">Costo</p>
-                    <div class="flex items-center gap-3">
-                      <input type="range" id="filter-cost-min" min="0" max="20" value="0" class="flex-1 accent-primary">
-                      <input type="range" id="filter-cost-max" min="0" max="20" value="20" class="flex-1 accent-primary">
-                    </div>
-                    <div class="flex justify-between text-xs text-white/40 mt-1">
-                      <span id="filter-cost-min-val">0</span>
-                      <span id="filter-cost-max-val">20</span>
                     </div>
                   </div>
 
@@ -569,7 +520,7 @@
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
             Collezione
           </button>
-          <button id="menu-decks" class="menu-item w-full flex items-center gap-4 px-5 py-3.5 text-sm font-semibold text-white/60 hover:bg-white/10 hover:text-white transition border-l-4 border-transparent hover:border-primary">
+          <button id="menu-decks" class="hidden menu-item w-full flex items-center gap-4 px-5 py-3.5 text-sm font-semibold text-white/60 hover:bg-white/10 hover:text-white transition border-l-4 border-transparent hover:border-primary">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             Decks
           </button>

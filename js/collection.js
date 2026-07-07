@@ -142,11 +142,7 @@ function showCollectionOverview() {
 
 const activeFilters = { base: true, altart: false, resources: false };
 
-// Nuovi filtri (card type, color, level, cost) — pronti per espansione dati
-const cardTypeFilters = { unit: true, command: true, pilot: true, base: true };
-const colorFilters = { blue: true, white: true, red: true, green: true, purple: true };
-let levelRange = { min: 0, max: 10 };
-let costRange = { min: 0, max: 20 };
+// Filtri tipo/colore/livello/costo rimossi: reference_cards.json non contiene ancora quei campi
 
 function getSetCodeFromFilter() {
   const setFilter = document.getElementById('col-set-filter').value;
@@ -203,31 +199,6 @@ function resetFilters() {
     b.classList.toggle('active', activeFilters[b.dataset.filter]);
   });
 
-  for (const k of Object.keys(cardTypeFilters)) cardTypeFilters[k] = true;
-  for (const k of Object.keys(colorFilters)) colorFilters[k] = true;
-  document.querySelectorAll('#filter-drawer .filter-chip').forEach(b => b.classList.add('active'));
-  document.querySelectorAll('#filter-drawer .color-chip').forEach(b => b.classList.add('active'));
-
-  levelRange.min = 0;
-  levelRange.max = 10;
-  costRange.min = 0;
-  costRange.max = 20;
-  const levelMin = document.getElementById('filter-level-min');
-  const levelMax = document.getElementById('filter-level-max');
-  const costMin = document.getElementById('filter-cost-min');
-  const costMax = document.getElementById('filter-cost-max');
-  if (levelMin) { levelMin.value = 0; }
-  if (levelMax) { levelMax.value = 10; }
-  if (costMin) { costMin.value = 0; }
-  if (costMax) { costMax.value = 20; }
-  const lmin = document.getElementById('filter-level-min-val');
-  const lmax = document.getElementById('filter-level-max-val');
-  const cmin = document.getElementById('filter-cost-min-val');
-  const cmax = document.getElementById('filter-cost-max-val');
-  if (lmin) lmin.textContent = '0';
-  if (lmax) lmax.textContent = '10';
-  if (cmin) cmin.textContent = '0';
-  if (cmax) cmax.textContent = '20';
 
   closeFilterDrawer();
   if (currentColTab !== 'stats') renderCollection(filterCollection());
@@ -249,50 +220,9 @@ function closeFilterDrawer() {
   }, 200);
 }
 
-function toggleFilterChips(selector, stateObj) {
-  document.querySelectorAll(selector).forEach(btn => {
-    btn.addEventListener('click', () => {
-      const key = btn.dataset.ctype || btn.dataset.color;
-      stateObj[key] = !stateObj[key];
-      btn.classList.toggle('active', stateObj[key]);
-    });
-  });
-}
-
-function validateFilterSchema() {
-  if (!refCards.length) return;
-  const hasType = refCards.some(c => c.card_type);
-  const hasColor = refCards.some(c => c.color);
-  const hasLevel = refCards.some(c => c.level != null);
-  const hasCost = refCards.some(c => c.cost != null);
-  if (!hasType || !hasColor) {
-    console.warn('[filter] reference_cards.json missing card_type / color fields. Type/color filters will have no effect until data is enriched.');
-  }
-  if (!hasLevel) console.warn('[filter] reference_cards.json missing level field.');
-  if (!hasCost) console.warn('[filter] reference_cards.json missing cost field.');
-}
-
 function initFilterDrawer() {
-  toggleFilterChips('#filter-drawer .filter-chip', cardTypeFilters);
-  toggleFilterChips('#filter-drawer .color-chip', colorFilters);
-
-  validateFilterSchema();
-  const levelMin = document.getElementById('filter-level-min');
-  const levelMax = document.getElementById('filter-level-max');
-  const costMin = document.getElementById('filter-cost-min');
-  const costMax = document.getElementById('filter-cost-max');
-
-  function syncRange(el, displayId, target) {
-    el.addEventListener('input', () => {
-      document.getElementById(displayId).textContent = el.value;
-      target[el.id.includes('min') ? 'min' : 'max'] = parseInt(el.value);
-    });
-  }
-
-  syncRange(levelMin, 'filter-level-min-val', levelRange);
-  syncRange(levelMax, 'filter-level-max-val', levelRange);
-  syncRange(costMin, 'filter-cost-min-val', costRange);
-  syncRange(costMax, 'filter-cost-max-val', costRange);
+  // Nessun altro setup: i filtri tipo/colore/livello/costo sono stati rimossi
+  // perché reference_cards.json non contiene ancora quei campi.
 }
 
 function openFirstRefCard() {
@@ -388,24 +318,12 @@ function filterCollection() {
   const query = document.getElementById('col-search').value.toLowerCase();
   const setFilter = document.getElementById('col-set-filter').value;
 
-  const applyNewFilters = (cards) => {
-    return cards.filter(c => {
-      const ct = c.card_type?.toLowerCase();
-      const col = c.color?.toLowerCase();
-      if (ct && !cardTypeFilters[ct]) return false;
-      if (col && !colorFilters[col]) return false;
-      if (c.level != null && (c.level < levelRange.min || c.level > levelRange.max)) return false;
-      if (c.cost != null && (c.cost < costRange.min || c.cost > costRange.max)) return false;
-      return true;
-    });
-  };
-
   if (!setFilter) {
-    return applyNewFilters(allCards.filter(c => {
+    return allCards.filter(c => {
       return !query ||
         c.card_name.toLowerCase().includes(query) ||
         c.card_code.toLowerCase().includes(query);
-    }));
+    });
   }
 
   const currentSetCode = getSetCodeFromFilter();
@@ -433,9 +351,6 @@ function filterCollection() {
     if (isBase) return activeFilters.base;
     return activeFilters.base;
   });
-
-  // Nuovi filtri: card_type, color, level, cost
-  refs = applyNewFilters(refs);
 
   refs.sort((a, b) => a.card_code.localeCompare(b.card_code));
 
