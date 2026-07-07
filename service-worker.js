@@ -41,12 +41,7 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
-  // Non intercettare immagini cross-origin (CDN) — gestite dal browser
-  if (url.origin !== self.location.origin && /\.(webp|png|jpg|jpeg|gif|svg|avif|ico)(\?|$)/i.test(url.pathname)) {
-    return;
-  }
-
-  // Network-first per JS/HTML/JSON e assets stessi
+  // Network-first: salta cache per risposte opache
   event.respondWith(
     caches.open(CACHE_NAME).then((cache) =>
       fetch(event.request).then((res) => {

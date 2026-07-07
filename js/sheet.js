@@ -72,7 +72,7 @@ function loadSheetCard(rc) {
   currentSheetCard = card;
 
   const img = document.getElementById('sheet-image');
-  img.src = card.image_url ? proxyImageUrl(card.image_url) : '';
+  img.src = card.image_url || '';
   img.style.display = '';
   img.onerror = () => { img.style.display = 'none'; };
   img.onload = () => { img.style.display = ''; };

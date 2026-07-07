@@ -68,18 +68,9 @@ function rarityColor(rarity) {
   return map[rarity] || 'text-gray-500';
 }
 
-function proxyImageUrl(url) {
-  try {
-    const u = new URL(url);
-    return u.origin === location.origin ? url : SUPABASE_URL.replace(/\/+$/, '') + `/functions/v1/image-proxy?url=${encodeURIComponent(url)}`;
-  } catch {
-    return url;
-  }
-}
-
 function imageOrFallback(url, name) {
   if (!url) return `<div class="card-img-fallback w-full h-full text-2xl">🃏</div>`;
-  return `<img src="${proxyImageUrl(url)}" alt="${name}" class="w-full h-full object-cover" loading="lazy" onerror="this.outerHTML='<div class=\\'card-img-fallback w-full h-full text-2xl\\'>🃏</div>'">`;
+  return `<img src="${url}" alt="${name}" class="w-full h-full object-cover" loading="lazy" onerror="this.outerHTML='<div class=\\'card-img-fallback w-full h-full text-2xl\\'>🃏</div>'">`;
 }
 
 function setGroup(setName) {
