@@ -784,9 +784,19 @@ function loadSheetCard(rc) {
   updateCardtraderLink(card.card_code);
 }
 
+function resolveCardtraderCard(rc) {
+  if (rc.cardtrader_id) return rc;
+  const base = rc.card_code.replace(/_[a-z0-9]+$/i, '');
+  if (base !== rc.card_code) {
+    const baseRc = refCardByCode[base];
+    if (baseRc && baseRc.cardtrader_id) return baseRc;
+  }
+  return rc;
+}
+
 function updateCardtraderLink(cardCode) {
   const link = document.getElementById('sheet-cardtrader');
-  const rc = refCardByCode[cardCode];
+  const rc = resolveCardtraderCard(refCardByCode[cardCode]);
   if (rc && rc.cardtrader_slug) {
     link.href = `https://www.cardtrader.com/it/cards/${rc.cardtrader_slug}`;
   } else {

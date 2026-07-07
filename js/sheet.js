@@ -89,9 +89,19 @@ function loadSheetCard(rc) {
   loadCardtraderPrices(rc);
 }
 
+function resolveCardtraderCard(rc) {
+  if (rc.cardtrader_id) return rc;
+  const base = rc.card_code.replace(/_[a-z0-9]+$/i, '');
+  if (base !== rc.card_code) {
+    const baseRc = refCardByCode[base];
+    if (baseRc && baseRc.cardtrader_id) return baseRc;
+  }
+  return rc;
+}
+
 function updateCardtraderLink(cardCode) {
   const link = document.getElementById('sheet-cardtrader');
-  const rc = refCardByCode[cardCode];
+  const rc = resolveCardtraderCard(refCardByCode[cardCode]);
   if (rc && rc.cardtrader_slug) {
     link.href = `https://www.cardtrader.com/it/cards/${rc.cardtrader_slug}`;
   } else {
@@ -105,8 +115,9 @@ async function loadCardtraderPrices(rc) {
   const minEl = document.getElementById('sheet-price-min');
   const avgEl = document.getElementById('sheet-price-avg');
   ctr.classList.add('hidden');
-  if (!rc.cardtrader_id) return;
-  const prices = await fetchCardtraderPrices(rc.cardtrader_id);
+  const card = resolveCardtraderCard(rc);
+  if (!card.cardtrader_id) return;
+  const prices = await fetchCardtraderPrices(card.cardtrader_id);
   if (prices) {
     const sym = prices.currency === 'EUR' ? '€' : prices.currency === 'USD' ? '$' : prices.currency + ' ';
     const fmt = (v) => sym + v.toFixed(2);

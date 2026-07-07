@@ -209,6 +209,19 @@ async function main() {
       card.cardtrader_id = prev.cardtrader_id || card.cardtrader_id;
     }
 
+    // Fallback: eredità cardtrader dati dalla carta base se la variante non li ha
+    if (!card.cardtrader_id && !card.cardtrader_slug) {
+      const base = baseCodeOf(card.card_code);
+      if (base !== card.card_code) {
+        const baseKey = base + '|' + card.set_code;
+        const basePrev = existing[baseKey] || Object.values(existing).find(e => e.card_code === base);
+        if (basePrev) {
+          if (!card.cardtrader_slug) card.cardtrader_slug = basePrev.cardtrader_slug;
+          if (!card.cardtrader_id) card.cardtrader_id = basePrev.cardtrader_id;
+        }
+      }
+    }
+
     // Applica dettagli dalla cache (ST01)
     const baseCode = baseCodeOf(card.card_code);
     const detail = detailCache[baseCode];
