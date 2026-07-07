@@ -79,32 +79,26 @@ function parseDetailField(html, label) {
 }
 
 function parseDetailTable(html) {
-  // Formats seen:
-  //   Lv.\n4\nCOST\n3\nCOLOR\nBlue\nTYPE\nUNIT
-  //   <td>Lv.</td><td>4</td> etc.
-  // Try inline text pattern first
   const result = { color: null, card_type: null, level: null, cost: null, rarity: null };
 
-  // Rarity: appears after card code line, before the availability number
-  // Pattern: "ST01-001</td>\n<td>LR +</td>"
-  const rarityRegex = /<\/td>\s*<td>([A-Z]+(?:\s*\+\s*)?)<\/td>/;
-  const rm = html.match(rarityRegex);
-  if (rm) result.rarity = rm[1].trim();
+  // Rarity: <div class="rarity">\r\n                LR                              </div>
+  const rarityMatch = html.match(/<div\s+class="rarity">\s*[\r\n]*\s*([\w\s+\-]+?)\s*[\r\n]*\s*<\/div>/);
+  if (rarityMatch) result.rarity = rarityMatch[1].trim();
 
-  // Level
-  const lvMatch = html.match(/Lv\.?\s*<\/[^>]*>\s*<[^>]*>\s*(\d+)/i);
+  // Level: <dt class="dataTit">Lv.</dt>\n<dd class="dataTxt">(\d+)</dd>
+  const lvMatch = html.match(/<dt[^>]*>Lv\.?\s*<\/dt>\s*<dd[^>]*>\s*(\d+)\s*<\/dd>/i);
   if (lvMatch) result.level = parseInt(lvMatch[1]);
 
-  // Cost
-  const costMatch = html.match(/COST\s*<\/[^>]*>\s*<[^>]*>\s*(\d+)/i);
+  // Cost: <dt class="dataTit">COST</dt>\n<dd class="dataTxt">(\d+)</dd>
+  const costMatch = html.match(/<dt[^>]*>COST\s*<\/dt>\s*<dd[^>]*>\s*(\d+)\s*<\/dd>/i);
   if (costMatch) result.cost = parseInt(costMatch[1]);
 
-  // Color
-  const colorMatch = html.match(/COLOR\s*<\/[^>]*>\s*<[^>]*>\s*(\w+)/i);
+  // Color: <dt class="dataTit">COLOR</dt>\n<dd class="dataTxt">(\w+)</dd>
+  const colorMatch = html.match(/<dt[^>]*>COLOR\s*<\/dt>\s*<dd[^>]*>\s*(\w+)\s*<\/dd>/i);
   if (colorMatch) result.color = colorMatch[1];
 
-  // Type
-  const typeMatch = html.match(/TYPE\s*<\/[^>]*>\s*<[^>]*>\s*(\w+(?:\s+\w+)?)/i);
+  // Type: <dt class="dataTit">TYPE</dt>\n<dd class="dataTxt">(\w+)</dd>
+  const typeMatch = html.match(/<dt[^>]*>TYPE\s*<\/dt>\s*<dd[^>]*>\s*(\w+(?:\s+\w+)?)\s*<\/dd>/i);
   if (typeMatch) result.card_type = typeMatch[1].toUpperCase();
 
   return result;
@@ -179,20 +173,30 @@ async function main() {
     }, {});
   } catch (_) {}
 
-  // Fetch card details for ST01 (per evitare saturazione)
-  console.log('\nFetching card details for ST01...');
-  const st01Cards = allCards.filter(c => c.set_code === 'ST01');
+  // Fetch card details for ALL sets
+  console.log('\nFetching card details for all sets...');
   const detailCache = {};
+  const baseCodes = [...new Set(allCards.map(c => baseCodeOf(c.card_code)))];
 
-  for (const card of st01Cards) {
-    const baseCode = baseCodeOf(card.card_code);
-    if (detailCache[baseCode]) continue;
+  const MAX_CONCURRENT = 3;
+  let idx = 0;
 
-    console.log(`  Detail: ${baseCode}`);
-    const detail = await fetchCardDetail(baseCode);
-    detailCache[baseCode] = detail;
-    await new Promise((r) => setTimeout(r, 500));
+  async function fetchNext() {
+    while (idx < baseCodes.length) {
+      const code = baseCodes[idx++];
+      if (detailCache[code]) continue;
+      try {
+        process.stdout.write(`  Detail ${idx}/${baseCodes.length}: ${code}\r`);
+        const detail = await fetchCardDetail(code);
+        detailCache[code] = detail;
+      } catch (err) {
+        console.error(`\n  Failed ${code}: ${err.message}`);
+      }
+    }
   }
+
+  await Promise.all(Array.from({ length: MAX_CONCURRENT }, () => fetchNext()));
+  console.log(`\n  Fetched details for ${Object.keys(detailCache).length} base cards`);
 
   // Propaga dettagli alle varianti
   for (const card of allCards) {
