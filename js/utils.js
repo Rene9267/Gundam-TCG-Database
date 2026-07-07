@@ -20,7 +20,7 @@ function showView(id) {
   document.getElementById(id).classList.remove('hidden');
 }
 
-function switchTab(tab, setName) {
+function _applyView(tab, setName) {
   if (tab === 'dashboard') showView('view-dashboard');
   else if (tab === 'profile') { showView('view-profile'); renderProfile(); }
   else showView('view-collection');
@@ -35,6 +35,25 @@ function switchTab(tab, setName) {
 
   closeMenu();
 }
+
+function switchTab(tab, setName) {
+  _applyView(tab, setName);
+  const url = new URL(location);
+  url.searchParams.set('view', tab);
+  if (setName) url.searchParams.set('set', setName);
+  else url.searchParams.delete('set');
+  history.pushState({ view: tab, set: setName || null }, '', url);
+}
+
+window.addEventListener('popstate', e => {
+  const state = e.state;
+  if (!state || !state.view || !currentUser) {
+    showSection('splash-section');
+    if (!currentUser) showAuthForm();
+    return;
+  }
+  _applyView(state.view, state.set || undefined);
+});
 
 function rarityColor(rarity) {
   const map = {

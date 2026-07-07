@@ -47,7 +47,16 @@ async function enterApp() {
     await playTransition();
     showSection('app-section');
     renderProfile();
-    switchTab('dashboard');
+    const params = new URLSearchParams(location.search);
+    const view = params.get('view');
+    if (view === 'collection' || view === 'profile') {
+      const set = params.get('set');
+      history.replaceState({ view, set }, '', location.href);
+      _applyView(view, set);
+    } else {
+      history.replaceState({ view: 'dashboard', set: null }, '', location.href);
+      _applyView('dashboard');
+    }
 
   } catch (err) {
     document.getElementById('splash-error').textContent = err.message;
@@ -90,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('auth-logout').addEventListener('click', async () => {
     await authSignOut();
+    history.replaceState(null, '', location.pathname);
     showAuthForm();
   });
 
@@ -97,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('profile-logout').addEventListener('click', async () => {
     await authSignOut();
+    history.replaceState(null, '', location.pathname);
     showSection('splash-section');
     showAuthForm();
   });
@@ -114,6 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (currentUser) {
     showAuthed();
+    enterApp();
   }
 
   document.getElementById('header-menu').addEventListener('click', openMenu);
@@ -132,6 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('menu-logout').addEventListener('click', async () => {
     closeMenu();
     await authSignOut();
+    history.replaceState(null, '', location.pathname);
     showSection('splash-section');
     showAuthForm();
   });
@@ -140,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
     switchTab('collection');
   });
 
-  document.getElementById('col-back-btn').addEventListener('click', showCollectionOverview);
+  document.getElementById('col-back-btn').addEventListener('click', () => switchTab('collection'));
 
   document.getElementById('sheet-overlay').addEventListener('click', closeSheet);
 
