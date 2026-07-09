@@ -430,10 +430,61 @@ body.sheet-open {
   line-height: 1;
 }
 
-/* ---- Select option text fix ---- */
+/* ---- Range slider (filter drawer) ---- */
+.filter-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.15);
+  outline: none;
+  cursor: pointer;
+}
+.filter-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  background: #2c52b3;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+.filter-range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  background: #2c52b3;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+.filter-range::-moz-range-track {
+  height: 6px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.15);
+}
+.filter-range:focus {
+  box-shadow: 0 0 0 2px rgba(44, 82, 179, 0.4);
+}
+
+/* ---- Set filter dropdown containment (right-aligned, mobile) ---- */
+#col-set-filter {
+  max-width: 55%;
+  flex-shrink: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---- Set filter dropdown option contrast (popup popup list) ---- */
+#col-set-filter {
+  color-scheme: dark;
+}
 #col-set-filter option {
-  color: #111;
-  background: #fff;
+  color: #ffffff;
+  background: #2d2d3a;
 }
 
 /* ---- Splash background pattern ---- */
@@ -597,19 +648,25 @@ body.sheet-open {
   50% { transform: translateX(28px); }
 }
 
-/* ---- Zaku eye slide ---- */
-.zaku-eye-slide {
-  transition: transform 0.3s ease;
-  transform: translateX(11px);
-}
-.eye-active .zaku-eye-slide {
-  transform: translateX(0);
+/* ---- Eye button base ---- */
+.eye-btn {
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-focus-ring-color: transparent;
+  user-select: none;
 }
 
 /* ---- Eye toggle active ---- */
 .eye-active {
-  background: rgba(44,82,179,0.15);
   border-color: #2c52b3;
+}
+.eye-btn .eye-dot {
+  transition: transform 0.25s ease-in-out;
+}
+.eye-btn.eye-active .eye-dot {
+  transform: translateX(-4px) scaleX(0.55);
 }
 
 /* ---- Card placeholder (empty collection) ---- */

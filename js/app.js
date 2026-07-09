@@ -151,6 +151,13 @@ document.addEventListener('DOMContentLoaded', () => {
     showAuthForm();
   });
 
+  document.getElementById('menu-info').addEventListener('click', () => {
+    closeMenu();
+    setTimeout(() => openLegal(), 250);
+  });
+  document.getElementById('legal-close').addEventListener('click', closeLegal);
+  document.getElementById('legal-backdrop').addEventListener('click', closeLegal);
+
   document.getElementById('latest-view-all').addEventListener('click', () => {
     switchTab('collection');
   });
@@ -196,11 +203,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('#filter-drawer .variant-btn').forEach(btn => {
     btn.addEventListener('click', () => toggleVariantFilter(btn.dataset.filter));
-  });
-
-  document.getElementById('filter-apply').addEventListener('click', () => {
-    closeFilterDrawer();
-    if (currentColTab !== 'stats') renderCollection(filterCollection());
   });
 
   document.getElementById('filter-reset').addEventListener('click', (e) => {

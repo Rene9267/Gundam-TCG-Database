@@ -166,9 +166,28 @@ function syncFilterUI() {
     }
   });
   document.querySelectorAll('#filter-drawer .color-chip').forEach(b => {
-    b.classList.toggle('active', colorFilters[b.dataset.color]);
+    const active = !!colorFilters[b.dataset.color];
+    b.classList.toggle('active', active);
+    const cfg = chipFill[b.dataset.color];
+    if (active && cfg) {
+      b.style.background = cfg.bg;
+      b.style.color = cfg.text;
+      b.style.borderColor = cfg.border;
+    } else {
+      b.style.background = '';
+      b.style.color = '';
+      b.style.borderColor = '';
+    }
   });
 }
+
+const chipFill = {
+  white:  { bg: '#e5e7eb', text: '#111827', border: '#e5e7eb' },
+  blue:   { bg: '#2563eb', text: '#ffffff', border: '#2563eb' },
+  green:  { bg: '#16a34a', text: '#ffffff', border: '#16a34a' },
+  red:    { bg: '#dc2626', text: '#ffffff', border: '#dc2626' },
+  purple: { bg: '#9333ea', text: '#ffffff', border: '#9333ea' },
+};
 
 function toggleVariantFilter(filterName) {
   if (filterName === 'resources') {
@@ -258,8 +277,10 @@ function initFilterDrawer() {
   ['level-min', 'level-max', 'cost-min', 'cost-max'].forEach(id => {
     const el = document.getElementById(id);
     if (!el) return;
-    // Stop touch events from bubbling to the drawer's swipe-to-dismiss handler
-    // so dragging a slider thumb never triggers a parent gesture or scroll.
+    // Stop pointer/touch events from bubbling to the drawer's swipe-to-dismiss
+    // handler so dragging a slider thumb never triggers a parent gesture or scroll.
+    el.addEventListener('mousedown', e => e.stopPropagation());
+    el.addEventListener('mousemove', e => e.stopPropagation());
     el.addEventListener('touchstart', e => e.stopPropagation(), { passive: true });
     el.addEventListener('touchmove', e => e.stopPropagation(), { passive: true });
     el.addEventListener('touchend', e => e.stopPropagation(), { passive: true });
@@ -271,6 +292,7 @@ function initFilterDrawer() {
   });
 
   initFilterDrawerTouch();
+  updateRangeLabels();
 }
 
 function updateRangeLabels() {
@@ -432,12 +454,12 @@ function renderCollection(cards) {
 function updateSetHeader() {
   const sel = document.getElementById('col-set-filter');
   const titleEl = document.getElementById('col-current-title');
-  const labelEl = document.getElementById('col-set-label');
-  if (!sel || !titleEl || !labelEl) return;
+  const codeEl = document.getElementById('col-set-code');
+  if (!sel || !titleEl) return;
   const full = sel.value || '';
   const code = full.match(/\[(\w+)\]/)?.[1] || '';
   titleEl.textContent = full;
-  labelEl.textContent = code;
+  if (codeEl) codeEl.textContent = code;
 }
 
 function populateSetFilter() {
@@ -446,7 +468,7 @@ function populateSetFilter() {
   const sets = setOrder.length ? setOrder : [];
   const extra = [...new Set(allCards.map(c => c.set_name).filter(Boolean))].filter(s => sets.indexOf(s) === -1);
   const allSets = [...sets, ...extra];
-  sel.innerHTML = allSets.map(s => `<option value="${s}">${s}</option>`).join('');
+  sel.innerHTML = allSets.map(s => `<option value="${s}" title="${s}">${s}</option>`).join('');
   if (allSets.includes(prevValue)) sel.value = prevValue;
   else if (allSets.length) sel.value = allSets[0];
   updateSetHeader();
