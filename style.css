@@ -522,23 +522,6 @@ body.sheet-open {
 }
 
 /* ---- Transition overlay ---- */
-.marker-dot {
-  animation: pulse-marker 2s ease-in-out infinite;
-  box-shadow: 0 0 6px rgba(255,255,255,0.2);
-}
-.marker-dot:nth-child(1) { animation-delay: 0s; }
-.marker-dot:nth-child(2) { animation-delay: 0.3s; }
-.marker-dot:nth-child(3) { animation-delay: 0.6s; }
-.marker-dot:nth-child(4) { animation-delay: 0.9s; }
-.marker-dot:nth-child(5) { animation-delay: 0.15s; }
-.marker-dot:nth-child(6) { animation-delay: 0.45s; }
-.marker-dot:nth-child(7) { animation-delay: 0.75s; }
-.marker-dot:nth-child(8) { animation-delay: 1.05s; }
-
-@keyframes pulse-marker {
-  0%, 100% { transform: scale(1); opacity: 0.6; }
-  50% { transform: scale(1.8); opacity: 1; }
-}
 
 #view-dashboard,
 #view-collection {
@@ -575,9 +558,6 @@ body.sheet-open {
 .col-toggle-btn svg {
   transition: transform 0.2s ease;
 }
-.col-toggle-btn.collapsed svg {
-  transform: rotate(-90deg);
-}
 .col-set-entry {
   transition: all 0.15s ease;
   cursor: pointer;
@@ -613,8 +593,10 @@ body.sheet-open {
 
 /* ---- Grid dots overlay (splash) ---- */
 .grid-dots-overlay {
-  position: absolute;
+  position: fixed;
   inset: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   pointer-events: none;
   z-index: 1;

@@ -1048,22 +1048,14 @@ async function handleResetSubmit() {
 function playTransition() {
   return new Promise(resolve => {
     const overlay = document.getElementById('transition-overlay');
-    const flash = document.getElementById('flash-green');
     overlay.classList.remove('opacity-0');
     overlay.classList.add('opacity-100');
-    // Green flash dopo 1.2s
     setTimeout(() => {
-      flash.classList.remove('opacity-0');
-      flash.classList.add('opacity-100');
-    }, 1200);
-    // Via tutto dopo 1.8s
-    setTimeout(() => {
-      flash.classList.add('opacity-0');
-      flash.classList.remove('opacity-100');
       overlay.classList.add('opacity-0');
       overlay.classList.remove('opacity-100');
       resolve();
     }, 1800);
+  });
   });
 }
 

@@ -20,16 +20,9 @@ async function refreshCards() {
 function playTransition() {
   return new Promise(resolve => {
     const overlay = document.getElementById('transition-overlay');
-    const flash = document.getElementById('flash-green');
     overlay.classList.remove('opacity-0');
     overlay.classList.add('opacity-100');
     setTimeout(() => {
-      flash.classList.remove('opacity-0');
-      flash.classList.add('opacity-100');
-    }, 1200);
-    setTimeout(() => {
-      flash.classList.add('opacity-0');
-      flash.classList.remove('opacity-100');
       overlay.classList.add('opacity-0');
       overlay.classList.remove('opacity-100');
       resolve();

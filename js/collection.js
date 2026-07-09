@@ -44,23 +44,21 @@ function renderCollectionOverview() {
   }
 
   document.querySelectorAll('.col-toggle-btn').forEach(btn => {
+    const svg = btn.querySelector('svg');
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
-      const targetId = btn.dataset.target;
+      const targetId = e.currentTarget.dataset.target;
       const target = document.getElementById(targetId);
       const emptyId = targetId === 'decks-list' ? 'decks-empty' : 'expansions-empty-overview';
       const emptyEl = document.getElementById(emptyId);
-      const isCollapsed = btn.classList.toggle('collapsed');
+      const isCollapsed = target.classList.contains('hidden');
       if (isCollapsed) {
-        target.classList.add('hidden');
-        if (emptyEl) emptyEl.classList.add('hidden');
+        target.classList.remove('hidden');
+        emptyEl?.classList.add('hidden');
+        svg?.classList.remove('rotate-180');
       } else {
-        const hasItems = target.children.length > 0;
-        if (hasItems) {
-          target.classList.remove('hidden');
-        } else if (emptyEl) {
-          emptyEl.classList.remove('hidden');
-        }
+        target.classList.add('hidden');
+        svg?.classList.add('rotate-180');
       }
     });
   });
