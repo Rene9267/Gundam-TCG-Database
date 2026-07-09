@@ -15,7 +15,7 @@ async function handle401() {
 async function loadCards() {
   await ensureValidSession();
   // RLS su Supabase filtra automaticamente per auth.uid(): nessun filtro lato client necessario
-  const r = await fetch(SUPABASE_URL + '/rest/v1/cards?select=*&order=created_at.desc', {
+  const r = await fetch(SUPABASE_URL + '/rest/v1/cards?select=*&order=updated_at.desc', {
     headers: getAuthHeaders(),
   });
   if (r.status === 401) { handle401(); return []; }
@@ -29,7 +29,7 @@ async function addCard(card) {
   const r = await fetch(SUPABASE_URL + '/rest/v1/cards', {
     method: 'POST',
     headers: { ...getAuthHeaders(), 'Prefer': 'return=representation' },
-    body: JSON.stringify(card),
+    body: JSON.stringify({ ...card, updated_at: new Date().toISOString() }),
   });
   if (r.status === 401) { handle401(); return null; }
   if (!r.ok) {
@@ -45,7 +45,7 @@ async function updateCard(id, updates) {
   const r = await fetch(SUPABASE_URL + '/rest/v1/cards?id=eq.' + id, {
     method: 'PATCH',
     headers: { ...getAuthHeaders(), 'Prefer': 'return=representation' },
-    body: JSON.stringify(updates),
+    body: JSON.stringify({ ...updates, updated_at: new Date().toISOString() }),
   });
   if (r.status === 401) { handle401(); return null; }
   if (!r.ok) {

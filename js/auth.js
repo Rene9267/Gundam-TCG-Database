@@ -92,6 +92,7 @@ async function handleAuthSubmit() {
     if (authMode === 'login') {
       const remember = document.getElementById('auth-remember').checked;
       await authSignIn(email, password, remember);
+      sanitizeUrl();
       showAuthed();
     } else {
       const nickname = document.getElementById('auth-nickname').value.trim();
@@ -165,6 +166,7 @@ async function handleResetSubmit() {
       const errData = await res.json().catch(() => ({}));
       throw new Error(errData.msg || errData.error_description || errData.error || 'Richiesta fallita (' + res.status + ')');
     }
+    sanitizeUrl();
     showToast('Password aggiornata! Ora accedi.', false);
     showSection('splash-section');
     showAuthForm();

@@ -228,7 +228,7 @@ body.sheet-open {
   padding: 4px 12px;
   font-size: 12px;
   font-weight: 600;
-  border-radius: 9999px;
+  border-radius: 10px;
   border: 1.5px solid rgba(255,255,255,0.2);
   background: rgba(255,255,255,0.08);
   color: rgba(255,255,255,0.6);
@@ -245,10 +245,10 @@ body.sheet-open {
   color: white;
 }
 .variant-btn {
-  padding: 5px 18px;
+  padding: 6px 16px;
   font-size: 13px;
   font-weight: 600;
-  border-radius: 9999px;
+  border-radius: 10px;
   border: 1.5px solid rgba(255,255,255,0.2);
   background: rgba(255,255,255,0.08);
   color: rgba(255,255,255,0.7);
@@ -267,14 +267,36 @@ body.sheet-open {
 }
 
 /* ---- Tab buttons (Carte / Statistiche) ---- */
+/* ---- Material-style tabs (collection) ---- */
 .tab-btn {
-  border-bottom-color: transparent;
-  color: rgba(255,255,255,0.6);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px !important;
+  margin: 0 !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.04em !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,0.55) !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 2px solid transparent !important;
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  transition: color .2s ease, background-color .2s ease, border-color .2s ease !important;
+  -webkit-tap-highlight-color: transparent;
 }
-.tab-btn:hover { color: #2c52b3; }
+.tab-btn:hover {
+  color: #ffffff !important;
+  background-color: rgba(255,255,255,0.08) !important;
+}
 .tab-btn.active {
-  color: #2c52b3;
-  border-bottom-color: #2c52b3;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  border-bottom-color: #2c52b3 !important;
+  background-color: rgba(44,82,179,0.12) !important;
 }
 
 /* ---- Stats cards (collection) ---- */
@@ -295,7 +317,7 @@ body.sheet-open {
 .stat-card .stat-value {
   font-size: 26px;
   font-weight: 700;
-  color: rgba(255,255,255,0.9);
+  color: #ffffff;
   margin-top: 4px;
 }
 .stat-card .stat-sub {
@@ -309,6 +331,14 @@ body.sheet-open {
   background: rgba(255,255,255,0.1);
   border-radius: 3px;
   margin-top: 10px;
+  overflow: hidden;
+}
+.stat-card .stat-bar-secondary {
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+  margin-top: 6px;
   overflow: hidden;
 }
 .stat-card .stat-bar-fill {
@@ -334,7 +364,7 @@ body.sheet-open {
 .stat-total-owned .stat-big {
   font-size: 42px;
   font-weight: 800;
-  color: #2c52b3;
+  color: #fb2f38;
 }
 .stat-total-owned .stat-label {
   font-size: 13px;
@@ -342,10 +372,17 @@ body.sheet-open {
   font-weight: 600;
 }
 
+/* ---- Filter drawer (mobile swipe-to-close) ---- */
+#filter-drawer-panel { touch-action: pan-y; }
+
+#filter-drawer-panel input[type="range"] {
+  touch-action: none;
+}
+
 /* ---- Bottom Sheet ---- */
 #card-sheet { transition: opacity 0.2s ease; }
 #sheet-overlay { cursor: pointer; }
-#sheet-panel { overscroll-behavior: contain; }
+#sheet-panel { overscroll-behavior: contain; touch-action: pan-y; }
 
 /* ---- Version dots (large with text labels) ---- */
 .version-dot {
@@ -503,15 +540,24 @@ body.sheet-open {
 .col-back-btn {
   display: inline-flex;
   align-items: center;
-  font-size: 12px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.6);
-  transition: color 0.15s ease;
-  padding: 4px 0;
-  margin-bottom: 4px;
+  gap: 0;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em;
+  color: rgba(255,255,255,0.7);
+  padding: 6px 10px !important;
+  margin: 0 0 4px !important;
+  border: 0 !important;
+  border-radius: 8px;
+  background: transparent;
+  transition: color .15s ease, background-color .15s ease;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
+.col-back-btn svg { margin-right: 4px !important; }
 .col-back-btn:hover {
   color: #fff;
+  background-color: rgba(255,255,255,0.08);
 }
 
 /* ---- Grid dots overlay (splash) ---- */

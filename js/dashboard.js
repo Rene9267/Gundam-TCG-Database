@@ -43,17 +43,33 @@ function renderExpansionsList() {
   if (!container || !empty) return;
 
   const ownedMap = {};
+  const setLastModified = {};
   for (const c of allCards) {
     const key = c.set_name || 'Senza set';
     if (!ownedMap[key]) ownedMap[key] = new Set();
     ownedMap[key].add(c.card_code);
+    const ts = c.updated_at || c.created_at;
+    if (ts && (!setLastModified[key] || ts > setLastModified[key])) {
+      setLastModified[key] = ts;
+    }
   }
 
-  const last4 = setOrder.slice(-4);
+  const active = setOrder.filter(s => ownedMap[s] && ownedMap[s].size > 0);
+  active.sort((a, b) => {
+    const ta = setLastModified[a] || '';
+    const tb = setLastModified[b] || '';
+    return tb.localeCompare(ta);
+  });
+  const top = active.slice(0, 4);
 
+  if (!top.length) {
+    empty.classList.remove('hidden');
+    container.innerHTML = '';
+    return;
+  }
   empty.classList.add('hidden');
 
-  const items = last4.map(setName => {
+  const items = top.map(setName => {
     const total = setTotals[setName] || 0;
     const owned = ownedMap[setName] ? ownedMap[setName].size : 0;
     const pct = total > 0 ? Math.min(Math.round((owned / total) * 100), 100) : 0;

@@ -124,5 +124,16 @@ function clearAuthFields() {
     .forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
 }
 
+function sanitizeUrl() {
+  const url = new URL(location);
+  const allowed = ['view', 'set'];
+  for (const key of url.searchParams.keys()) {
+    if (!allowed.includes(key)) {
+      url.searchParams.delete(key);
+    }
+  }
+  history.replaceState(null, '', url.pathname + (url.search || ''));
+}
+
 const isTokenOrResource = (code) => code.startsWith('T-') || code.startsWith('R-');
 const getCardImageUrl = (code) => `${CARD_IMAGE_BASE}/${code}.webp`;

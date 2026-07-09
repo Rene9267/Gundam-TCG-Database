@@ -344,8 +344,25 @@ function renderExpansionsList() {
     ownedMap[key].add(c.card_code);
   }
 
-  // Mostra sempre le ultime 4 espansioni (anche a 0%)
-  const last4 = setOrder.slice(-4);
+  // Mostra le 4 espansioni più recentemente modificate (decrescente per timestamp)
+  const lastModBySet = {};
+  for (const c of allCards) {
+    const set = c.set_name || 'Senza set';
+    const ts = c.updated_at || c.created_at;
+    if (ts && (!lastModBySet[set] || ts > lastModBySet[set])) {
+      lastModBySet[set] = ts;
+    }
+  }
+  const last4 = setOrder
+    .map(setName => ({ setName, ts: lastModBySet[setName] || null }))
+    .sort((a, b) => {
+      if (a.ts && b.ts) return a.ts < b.ts ? 1 : a.ts > b.ts ? -1 : 0;
+      if (a.ts) return -1;
+      if (b.ts) return 1;
+      return 0;
+    })
+    .slice(0, 4)
+    .map(x => x.setName);
 
   empty.classList.add('hidden');
 

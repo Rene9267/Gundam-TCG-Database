@@ -53,6 +53,7 @@ async function enterApp() {
     renderProfile();
     const params = new URLSearchParams(location.search);
     const view = params.get('view');
+    sanitizeUrl();
     if (view === 'collection' || view === 'profile') {
       const set = params.get('set');
       history.replaceState({ view, set }, '', location.href);
@@ -156,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('col-back-btn').addEventListener('click', () => switchTab('collection'));
 
-  document.getElementById('sheet-overlay').addEventListener('click', closeSheet);
+  document.getElementById('sheet-overlay').addEventListener('click', () => closeSheet());
 
   document.getElementById('sheet-qty-minus').addEventListener('click', () => {
     if (pendingSheetQty > 0) {
@@ -180,8 +181,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.getElementById('col-set-filter').addEventListener('change', () => {
-    for (const k of Object.keys(activeFilters)) activeFilters[k] = k === 'base';
-    document.querySelectorAll('#filter-drawer .variant-btn').forEach(b => b.classList.toggle('active', activeFilters[b.dataset.filter]));
+    updateSetHeader();
+    resetCollectionFilters();
     if (currentColTab === 'stats') switchColTab('cards');
     else renderCollection(filterCollection());
   });
@@ -190,8 +191,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('tab-stats').addEventListener('click', () => switchColTab('stats'));
 
   document.getElementById('filter-toggle-btn').addEventListener('click', openFilterDrawer);
-  document.getElementById('filter-drawer-close').addEventListener('click', closeFilterDrawer);
   document.getElementById('filter-drawer-backdrop').addEventListener('click', closeFilterDrawer);
+  document.getElementById('filter-drawer-arrow').addEventListener('click', closeFilterDrawer);
 
   document.querySelectorAll('#filter-drawer .variant-btn').forEach(btn => {
     btn.addEventListener('click', () => toggleVariantFilter(btn.dataset.filter));
@@ -215,9 +216,9 @@ document.addEventListener('DOMContentLoaded', () => {
       // Nessuna password salvata in localStorage: basta il token di recovery.
       // L'utente imposterà la nuova password nella pagina di reset.
       accessToken = recoveryToken;
+      sanitizeUrl();
       document.getElementById('splash-section').classList.add('hidden');
       document.getElementById('reset-section').classList.remove('hidden');
-      history.replaceState(null, '', location.pathname + location.search);
     }
   }
 });

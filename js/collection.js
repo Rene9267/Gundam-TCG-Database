@@ -114,10 +114,8 @@ function showCollectionDetail(setName) {
   document.getElementById('collection-detail').classList.remove('hidden');
 
   document.getElementById('col-set-filter').value = setName;
-  document.getElementById('col-search').value = '';
-  for (const k of Object.keys(activeFilters)) activeFilters[k] = k === 'base';
-  activeFilters.resources = false;
-  syncFilterUI();
+  updateSetHeader();
+  resetCollectionFilters();
 
   currentColTab = 'cards';
   document.querySelectorAll('.tab-btn').forEach(b => {
@@ -137,6 +135,7 @@ function showCollectionDetail(setName) {
 function showCollectionOverview() {
   document.getElementById('collection-detail').classList.add('hidden');
   document.getElementById('collection-overview').classList.remove('hidden');
+  resetCollectionFilters();
   renderCollectionOverview();
 }
 
@@ -201,21 +200,26 @@ function toggleVariantFilter(filterName) {
   if (currentColTab !== 'stats') renderCollection(filterCollection());
 }
 
-function resetFilters() {
+function resetCollectionFilters() {
+  const search = document.getElementById('col-search');
+  if (search) search.value = '';
   activeFilters.base = true;
   activeFilters.altart = false;
   activeFilters.resources = false;
   Object.keys(cardTypeFilters).forEach(k => cardTypeFilters[k] = false);
   Object.keys(colorFilters).forEach(k => colorFilters[k] = false);
-  document.querySelectorAll('#filter-drawer .variant-btn').forEach(b => {
-    if (b.dataset.filter) b.classList.toggle('active', activeFilters[b.dataset.filter]);
-    if (b.dataset.ctype) b.classList.toggle('active', cardTypeFilters[b.dataset.ctype]);
+  const sliderDefaults = { 'level-min': 1, 'level-max': 10, 'cost-min': 0, 'cost-max': 10 };
+  Object.keys(sliderDefaults).forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = sliderDefaults[id];
   });
-  document.querySelectorAll('#filter-drawer .color-chip').forEach(b => {
-    b.classList.toggle('active', colorFilters[b.dataset.color]);
-  });
-
+  updateRangeLabels();
   closeFilterDrawer();
+  syncFilterUI();
+}
+
+function resetFilters() {
+  resetCollectionFilters();
   if (currentColTab !== 'stats') renderCollection(filterCollection());
 }
 
@@ -250,6 +254,85 @@ function initFilterDrawer() {
     btn.addEventListener('click', () => toggleCategoryFilter(btn.dataset.color, 'color'));
   });
   // I filtri variant-btn sono gestiti in app.js
+
+  ['level-min', 'level-max', 'cost-min', 'cost-max'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    // Stop touch events from bubbling to the drawer's swipe-to-dismiss handler
+    // so dragging a slider thumb never triggers a parent gesture or scroll.
+    el.addEventListener('touchstart', e => e.stopPropagation(), { passive: true });
+    el.addEventListener('touchmove', e => e.stopPropagation(), { passive: true });
+    el.addEventListener('touchend', e => e.stopPropagation(), { passive: true });
+    el.addEventListener('touchcancel', e => e.stopPropagation(), { passive: true });
+    el.addEventListener('input', () => {
+      updateRangeLabels();
+      if (currentColTab !== 'stats') renderCollection(filterCollection());
+    });
+  });
+
+  initFilterDrawerTouch();
+}
+
+function updateRangeLabels() {
+  const lm = document.getElementById('level-min');
+  const lx = document.getElementById('level-max');
+  const cm = document.getElementById('cost-min');
+  const cx = document.getElementById('cost-max');
+  const ll = document.getElementById('level-range-label');
+  const cl = document.getElementById('cost-range-label');
+  if (ll && lm && lx) ll.textContent = `${lm.value} - ${lx.value}`;
+  if (cl && cm && cx) cl.textContent = `${cm.value} - ${cx.value}`;
+}
+
+function initFilterDrawerTouch() {
+  const drawer = document.getElementById('filter-drawer');
+  const panel = document.getElementById('filter-drawer-panel');
+  if (!drawer || !panel) return;
+
+  // Primary dismissal axis is horizontal (X): the drawer enters from the right,
+  // so a rightward fling (dx > 0) slides it off-screen to close.
+  const SWIPE_THRESHOLD = 50;
+  let startX = 0;
+  let startY = 0;
+  let dragging = false;
+
+  drawer.addEventListener('touchstart', (e) => {
+    if (e.touches.length !== 1) { dragging = false; return; }
+    dragging = true;
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+  }, { passive: true });
+
+  drawer.addEventListener('touchmove', (e) => {
+    if (!dragging) return;
+    const dx = e.touches[0].clientX - startX;
+    const dy = e.touches[0].clientY - startY;
+    // Only hijack the gesture when it is predominantly horizontal, so vertical
+    // scrolling inside the drawer still works.
+    if (Math.abs(dx) > Math.abs(dy)) {
+      e.preventDefault();
+      panel.style.transition = 'none';
+      panel.style.transform = `translateX(${Math.max(0, dx)}px)`;
+    }
+  }, { passive: false });
+
+  const endDrag = (e) => {
+    if (!dragging) return;
+    dragging = false;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - startX;
+    const dy = t.clientY - startY;
+    panel.style.transition = '';
+    if (dx > SWIPE_THRESHOLD && Math.abs(dx) > Math.abs(dy)) {
+      closeFilterDrawer();
+    } else {
+      panel.style.transform = 'translateX(0)';
+    }
+    startX = 0;
+    startY = 0;
+  };
+  drawer.addEventListener('touchend', endDrag, { passive: true });
+  drawer.addEventListener('touchcancel', endDrag, { passive: true });
 }
 
 function openFirstRefCard() {
@@ -265,9 +348,25 @@ function renderCollection(cards) {
   const empty = document.getElementById('collection-empty');
   const summary = document.getElementById('collection-summary');
 
+  const levelMin = Number(document.getElementById('level-min')?.value) || 1;
+  const levelMax = Number(document.getElementById('level-max')?.value) || 10;
+  const costMin = Number(document.getElementById('cost-min')?.value) || 0;
+  const costMax = Number(document.getElementById('cost-max')?.value) || 10;
+
+  const filtersActive =
+    (document.getElementById('col-search')?.value || '').trim() !== '' ||
+    !activeFilters.base || activeFilters.altart || activeFilters.resources ||
+    Object.values(cardTypeFilters).some(Boolean) ||
+    Object.values(colorFilters).some(Boolean) ||
+    levelMin > 1 || levelMax < 10 || costMin > 0 || costMax < 10;
+
   if (!cards.length) {
     empty.classList.add('hidden');
     summary.textContent = '';
+    if (filtersActive) {
+      grid.innerHTML = `<div class="col-span-2 md:col-span-4 text-center py-10 text-white/60 text-sm">Nessuna carta corrisponde ai filtri</div>`;
+      return;
+    }
     grid.innerHTML = Array.from({length:6}, (_,i) => `
       <div class="card-placeholder" data-idx="${i}">
         <div class="plus-icon">+</div>
@@ -330,6 +429,17 @@ function renderCollection(cards) {
   });
 }
 
+function updateSetHeader() {
+  const sel = document.getElementById('col-set-filter');
+  const titleEl = document.getElementById('col-current-title');
+  const labelEl = document.getElementById('col-set-label');
+  if (!sel || !titleEl || !labelEl) return;
+  const full = sel.value || '';
+  const code = full.match(/\[(\w+)\]/)?.[1] || '';
+  titleEl.textContent = full;
+  labelEl.textContent = code;
+}
+
 function populateSetFilter() {
   const sel = document.getElementById('col-set-filter');
   const prevValue = sel.value;
@@ -339,6 +449,7 @@ function populateSetFilter() {
   sel.innerHTML = allSets.map(s => `<option value="${s}">${s}</option>`).join('');
   if (allSets.includes(prevValue)) sel.value = prevValue;
   else if (allSets.length) sel.value = allSets[0];
+  updateSetHeader();
 }
 
 function filterCollection() {
@@ -387,6 +498,20 @@ function filterCollection() {
   const anyColorActive = Object.values(colorFilters).some(Boolean);
   if (anyColorActive) {
     refs = refs.filter(rc => colorFilters[rc.color?.toLowerCase()]);
+  }
+
+  const levelMin = Number(document.getElementById('level-min')?.value) || 1;
+  const levelMax = Number(document.getElementById('level-max')?.value) || 10;
+  const costMin = Number(document.getElementById('cost-min')?.value) || 0;
+  const costMax = Number(document.getElementById('cost-max')?.value) || 10;
+  if (levelMin > 1 || levelMax < 10 || costMin > 0 || costMax < 10) {
+    refs = refs.filter(rc => {
+      const lvl = rc.level != null ? rc.level : 0;
+      const cst = rc.cost != null ? rc.cost : 0;
+      if (lvl < levelMin || lvl > levelMax) return false;
+      if (cst < costMin || cst > costMax) return false;
+      return true;
+    });
   }
 
   refs.sort((a, b) => a.card_code.localeCompare(b.card_code));
@@ -476,7 +601,6 @@ function renderSetStatistics(setName) {
   }
 
   const totalOwned = Object.keys(ownedMap).reduce((sum, code) => sum + (ownedMap[code]?.quantity || 0), 0);
-  const totalOwnedCards = Object.keys(ownedMap).length;
 
   function calcStats(cards) {
     const total = cards.length;
@@ -496,6 +620,9 @@ function renderSetStatistics(setName) {
         <div class="stat-bar">
           <div class="stat-bar-fill ${barColor}" style="width:${stats.pct}%"></div>
         </div>
+        <div class="stat-bar-secondary">
+          <div class="stat-bar-fill stat-bar-red" style="width:${stats.pct4}%"></div>
+        </div>
         <div class="mt-3 pt-2 border-t border-gray-100">
           <div class="flex justify-between text-xs">
             <span class="text-secondary">Play set (x4)</span>
@@ -509,16 +636,23 @@ function renderSetStatistics(setName) {
   const altStats = calcStats(altCards);
   const rtStats = calcStats(resTokens);
 
+  const subsets = [
+    { label: 'Set Base', stats: baseStats, color: 'stat-bar-yellow' },
+    { label: 'Alt Art', stats: altStats, color: 'stat-bar-blue' },
+    { label: 'Risorse / Token', stats: rtStats, color: 'stat-bar-green' },
+  ];
+  const subsetCards = subsets
+    .filter(s => s.stats.total > 0)
+    .map(s => statCard(s.label, s.stats, s.color))
+    .join('');
+
   container.innerHTML = `
     <div class="col-span-full">
       <div class="stat-total-owned">
         <div class="stat-label">Carte possedute in questo set</div>
         <div class="stat-big">${totalOwned}</div>
-        <div class="stat-sub">${totalOwnedCards} carte uniche</div>
       </div>
     </div>
-    ${baseCards.length ? statCard('Set Base', baseStats, 'stat-bar-yellow') : ''}
-    ${altCards.length ? statCard('Alt Art', altStats, 'stat-bar-blue') : ''}
-    ${resTokens.length ? statCard('Risorse / Token', rtStats, 'stat-bar-green') : ''}
+    ${subsetCards}
   `;
 }

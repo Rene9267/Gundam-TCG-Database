@@ -128,13 +128,26 @@ async function loadCardtraderPrices(rc) {
 
 async function saveSheetQuantity(newQty) {
   const errEl = document.getElementById('sheet-error');
-  errEl.classList.add('hidden');
+  if (errEl) errEl.classList.add('hidden');
   if (!currentSheetCard || !currentSheetCard.card_code) return;
+
+  const snapshot = JSON.parse(JSON.stringify(allCards));
   try {
+    const now = new Date().toISOString();
+
     if (editingCardId) {
+      const idx = allCards.findIndex(c => c.id === editingCardId);
       if (newQty <= 0) {
+        if (idx !== -1) {
+          allCards.splice(idx, 1);
+          renderExpansionsList();
+        }
         await deleteCard(editingCardId);
       } else {
+        if (idx !== -1) {
+          allCards[idx] = { ...allCards[idx], quantity: newQty, updated_at: now };
+          renderExpansionsList();
+        }
         await updateCard(editingCardId, { quantity: newQty });
       }
     } else if (newQty > 0) {
@@ -145,12 +158,26 @@ async function saveSheetQuantity(newQty) {
         rarity: currentSheetCard.rarity || null,
         quantity: newQty,
       };
+      allCards.push({
+        id: 'optimistic-' + Date.now(),
+        ...cardData,
+        created_at: now,
+        updated_at: now,
+      });
+      renderExpansionsList();
       await addCard(cardData);
     }
+
     await refreshCards();
   } catch (err) {
-    errEl.textContent = err.message || 'Errore.';
-    errEl.classList.remove('hidden');
+    allCards = JSON.parse(JSON.stringify(snapshot));
+    renderExpansionsList();
+    console.error('Salvataggio carta fallito, rollback dello stato:', err);
+    if (typeof showToast === 'function') showToast('Salvataggio fallito. Modifica annullata.', true);
+    if (errEl) {
+      errEl.textContent = err.message || 'Errore di rete. Modifica annullata.';
+      errEl.classList.remove('hidden');
+    }
   }
 }
 
@@ -158,6 +185,7 @@ function openSheet(card) {
   if (!card) return;
   const rc = refCardByCode[card.card_code];
   if (rc) {
+    initSheetSwipe();
     const sheet = document.getElementById('card-sheet');
     const panel = document.getElementById('sheet-panel');
     sheet.classList.remove('hidden');
@@ -169,8 +197,65 @@ function openSheet(card) {
   }
 }
 
+let sheetSwipeReady = false;
+function initSheetSwipe() {
+  if (sheetSwipeReady) return;
+  const sheet = document.getElementById('card-sheet');
+  const panel = document.getElementById('sheet-panel');
+  if (!sheet || !panel) return;
+  sheetSwipeReady = true;
+
+  // The sheet slides up from the bottom, so the primary swipe-to-dismiss axis
+  // is vertical (Y): dragging downward past the threshold closes it.
+  const SWIPE_THRESHOLD = 60;
+  let startX = 0;
+  let startY = 0;
+  let startScroll = 0;
+  let dragging = false;
+
+  sheet.addEventListener('touchstart', (e) => {
+    if (e.touches.length !== 1) { dragging = false; return; }
+    dragging = true;
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    startScroll = panel.scrollTop;
+  }, { passive: true });
+
+  sheet.addEventListener('touchmove', (e) => {
+    if (!dragging) return;
+    const dx = e.touches[0].clientX - startX;
+    const dy = e.touches[0].clientY - startY;
+    if (Math.abs(dy) > Math.abs(dx) && dy > 0 && startScroll <= 0) {
+      // Intercept downward swipes only when scrolled to the top, so internal
+      // content scrolling still works; preventDefault stops viewport bounce.
+      e.preventDefault();
+      panel.style.transition = 'none';
+      panel.style.transform = `translateY(${Math.max(0, dy)}px)`;
+    }
+  }, { passive: false });
+
+  const endDrag = (e) => {
+    if (!dragging) return;
+    dragging = false;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - startX;
+    const dy = t.clientY - startY;
+    panel.style.transition = '';
+    if (dy > SWIPE_THRESHOLD && Math.abs(dy) > Math.abs(dx) && startScroll <= 0) {
+      closeSheet();
+    } else {
+      panel.style.transform = 'translateY(0)';
+    }
+    startX = 0;
+    startY = 0;
+    startScroll = 0;
+  };
+  sheet.addEventListener('touchend', endDrag, { passive: true });
+  sheet.addEventListener('touchcancel', endDrag, { passive: true });
+}
+
 function closeSheet(skipSave) {
-  if (currentSheetCard && !skipSave) {
+  if (currentSheetCard && skipSave !== true) {
     saveSheetQuantity(pendingSheetQty).catch(() => {});
   }
   const panel = document.getElementById('sheet-panel');
