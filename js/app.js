@@ -124,9 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (val) await saveNickname(val);
   });
 
+  // Richiedi login esplicito — non mostrare automaticamente l'email su caricamento pagina
   if (currentUser) {
-    showAuthed();
-    enterApp();
+    showAuthForm();
   }
 
   document.getElementById('header-menu').addEventListener('click', openMenu);

@@ -991,8 +991,8 @@ async function handleRecoverSubmit() {
       return;
     }
 
-    // Email esiste — salva pending e invia recover
-    try { localStorage.setItem('pending_recovery', JSON.stringify({ email, password: pwd })); } catch (_) {}
+    // Email esiste — imposta flag pending
+    try { localStorage.setItem('pending_recovery', '1'); } catch (_) {}
 
     await authFetch('/auth/v1/recover', { email });
     miniShimmer();
@@ -1153,9 +1153,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (val) await saveNickname(val);
   });
 
-  // Check session on load
+  // Richiedi login esplicito — non mostrare automaticamente l'email su caricamento pagina
   if (currentUser) {
-    showAuthed();
+    showAuthForm();
   }
 
   // Menu modal
@@ -1248,30 +1248,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const recoveryToken = params.get('access_token');
     if (recoveryToken) {
       accessToken = recoveryToken;
-      const saved = (() => { try { return JSON.parse(localStorage.getItem('pending_recovery')); } catch(_) { return null; } })();
-      if (saved && saved.password) {
-        // Auto-apply: use the saved password directly
-        (async () => {
-          try {
-            const res = await fetch(SUPABASE_URL + '/auth/v1/user', {
-              method: 'PUT',
-              headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': 'Bearer ' + accessToken, 'Content-Type': 'application/json' },
-              body: JSON.stringify({ password: saved.password }),
-            });
-            if (!res.ok) throw new Error('API error');
-            try { localStorage.removeItem('pending_recovery'); } catch(_) {}
-            window.location.hash = '';
-            showToast('Password aggiornata! Ora accedi.', false);
-          } catch (_) {
-            // Fallback: show manual reset form
-            document.getElementById('splash-section').classList.add('hidden');
-            document.getElementById('reset-section').classList.remove('hidden');
-          }
-        })();
-      } else {
-        document.getElementById('splash-section').classList.add('hidden');
-        document.getElementById('reset-section').classList.remove('hidden');
-      }
+      localStorage.removeItem('pending_recovery');
+      document.getElementById('splash-section').classList.add('hidden');
+      document.getElementById('reset-section').classList.remove('hidden');
     }
   }
 });

@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://pub-f106953afafa4b379122130a0f038335.r2.dev; connect-src 'self' https://zhrvhhzcsdadoolxqpro.supabase.co; form-action 'self';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Gundam Collection Database</title>
   <link rel="manifest" href="manifest.json">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -70,12 +73,12 @@
       <!-- Auth form (login / register) -->
       <div id="auth-form" class="auth-card bg-black/40 backdrop-blur-sm rounded-2xl shadow-lg border border-white/10 p-6">
         <div id="auth-fields">
-          <input id="auth-nickname" type="text" placeholder="Nickname" autocomplete="nickname"
+          <input id="auth-nickname" type="text" placeholder="Nickname" autocomplete="username"
             class="hidden w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
-          <input id="auth-email" type="text" placeholder="Email o Username" autocomplete="email"
+          <input id="auth-email" type="text" placeholder="Email o Username" autocomplete="username" name="login-uid"
             class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
           <div class="relative mb-3">
-            <input id="auth-password" type="password" placeholder="Password" autocomplete="current-password"
+            <input id="auth-password" type="password" placeholder="Password" autocomplete="current-password" name="login-pwd"
               class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm pr-10 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
             <button id="eye-password" type="button" class="eye-btn absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center transition select-none focus:outline-none active:outline-none bg-transparent" tabindex="-1">
               <span class="relative w-6 h-6 block">
@@ -87,7 +90,7 @@
             </button>
           </div>
           <div id="auth-confirm-group" class="relative mb-4 hidden">
-            <input id="auth-confirm" type="password" placeholder="Conferma Password"
+            <input id="auth-confirm" type="password" placeholder="Conferma Password" autocomplete="new-password" name="reg-pwd-confirm"
               class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm pr-10 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
             <button id="eye-confirm" type="button" class="eye-btn absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center transition select-none focus:outline-none active:outline-none" tabindex="-1">
               <span class="relative w-6 h-6 block">
@@ -101,7 +104,7 @@
         </div>
 
         <label class="flex items-center gap-2 mb-4 cursor-pointer select-none">
-          <input id="auth-remember" type="checkbox" checked
+          <input id="auth-remember" type="checkbox"
             class="w-4 h-4 rounded border-white/30 text-primary focus:ring-primary/30 cursor-pointer bg-white/10">
           <span class="text-xs text-white/70 font-medium">Ricordami</span>
         </label>
@@ -127,7 +130,7 @@
           class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
 
         <div class="relative mb-3">
-          <input id="recover-new-password" type="password" placeholder="Nuova Password" autocomplete="new-password"
+          <input id="recover-new-password" type="password" placeholder="Nuova Password" autocomplete="new-password" name="rec-pwd"
             class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm pr-10 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
           <button id="eye-recover" type="button" class="eye-btn absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center transition select-none focus:outline-none active:outline-none" tabindex="-1">
               <span class="relative w-6 h-6 block">
@@ -139,7 +142,7 @@
             </button>
         </div>
         <div class="relative mb-4">
-          <input id="recover-confirm" type="password" placeholder="Conferma Password"
+          <input id="recover-confirm" type="password" placeholder="Conferma Password" autocomplete="new-password" name="rec-pwd-confirm"
             class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm pr-10 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
           <button id="eye-recover-confirm" type="button" class="eye-btn absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center transition select-none focus:outline-none active:outline-none" tabindex="-1">
               <span class="relative w-6 h-6 block">
@@ -199,7 +202,7 @@
       <div id="reset-form" class="auth-card bg-black/40 backdrop-blur-sm rounded-2xl shadow-lg border border-white/10 p-6">
         <p class="text-sm text-white/70 mb-4 text-center font-medium">Nuova Password</p>
         <div class="relative mb-3">
-          <input id="reset-password" type="password" placeholder="Nuova Password"
+          <input id="reset-password" type="password" placeholder="Nuova Password" autocomplete="new-password" name="rst-pwd"
             class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm pr-10 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
           <button id="eye-reset" type="button" class="eye-btn absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center transition select-none focus:outline-none active:outline-none" tabindex="-1">
               <span class="relative w-6 h-6 block">
@@ -211,7 +214,7 @@
             </button>
         </div>
         <div class="relative mb-4">
-          <input id="reset-confirm" type="password" placeholder="Conferma Password"
+          <input id="reset-confirm" type="password" placeholder="Conferma Password" autocomplete="new-password" name="rst-pwd-confirm"
             class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm pr-10 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
           <button id="eye-reset-confirm" type="button" class="eye-btn absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center transition select-none focus:outline-none active:outline-none" tabindex="-1">
               <span class="relative w-6 h-6 block">

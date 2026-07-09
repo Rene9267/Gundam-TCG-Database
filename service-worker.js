@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gundamdb-v3';
+const CACHE_NAME = 'gundamdb-v4';
 const IMG_CACHE = 'gundam-images-v1';
 
 const PRECACHE_URLS = [
