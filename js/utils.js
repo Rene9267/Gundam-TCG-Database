@@ -56,18 +56,6 @@ window.addEventListener('popstate', e => {
   _applyView(state.view, state.set || undefined);
 });
 
-function rarityColor(rarity) {
-  const map = {
-    'Common': 'text-gray-500',
-    'Uncommon': 'text-green-600',
-    'Rare': 'text-blue-600',
-    'Super Rare': 'text-purple-600',
-    'Secret Rare': 'text-yellow-600',
-    'Promo': 'text-orange-600'
-  };
-  return map[rarity] || 'text-gray-500';
-}
-
 function escapeHtml(str) {
   if (str == null) return '';
   return String(str)
@@ -80,14 +68,15 @@ function escapeHtml(str) {
 
 function imageOrFallback(url, name) {
   if (!url) return `<div class="card-img-fallback w-full h-full text-2xl">🃏</div>`;
-  return `<img src="${escapeHtml(url)}" alt="${escapeHtml(name)}" class="w-full h-full object-cover" loading="lazy" onerror="this.outerHTML='<div class=\\'card-img-fallback w-full h-full text-2xl\\'>🃏</div>'">`;
+  return `<img src="${escapeHtml(url)}" alt="${escapeHtml(name)}" class="w-full h-full object-cover" loading="lazy" data-img-fallback="1">`;
 }
 
-function setGroup(setName) {
-  const code = setName.match(/\[(\w+)\]/)?.[1] || '';
-  if (code.startsWith('ST')) return 'st';
-  return 'gd';
-}
+document.addEventListener('error', e => {
+  const t = e.target;
+  if (t && t.tagName === 'IMG' && t.dataset && t.dataset.imgFallback) {
+    t.outerHTML = '<div class="card-img-fallback w-full h-full text-2xl">🃏</div>';
+  }
+}, true);
 
 function showToast(msg, isError = true) {
   const el = document.getElementById('auth-toast');

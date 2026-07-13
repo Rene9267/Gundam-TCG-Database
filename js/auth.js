@@ -1,3 +1,43 @@
+// Guard per prevenire submission concorrenti (Enter key bypassa il disable del bottone)
+let isSubmitting = false;
+
+// Mappa gli errori Supabase a messaggi generici italiani.
+// Prevende account enumeration e information leakage via error messages.
+function mapAuthError(err) {
+  const msg = (err && err.message) ? String(err.message).toLowerCase() : '';
+  if (msg.includes('invalid login credentials') || msg.includes('invalid credentials')) {
+    return 'Email o password errata.';
+  }
+  if (msg.includes('user already registered') || msg.includes('already registered')) {
+    return 'Questa email è già registrata. Prova ad accedere.';
+  }
+  if (msg.includes('email not confirmed') || msg.includes('email_not_confirmed')) {
+    return 'Email non ancora confermata. Controlla la tua casella di posta.';
+  }
+  if (msg.includes('user not found')) {
+    return 'Credenziali non valide.';
+  }
+  if (msg.includes('password should be at least') || msg.includes('weak password')) {
+    return 'La password deve avere almeno 6 caratteri.';
+  }
+  if (msg.includes('rate limit') || msg.includes('too many requests')) {
+    return 'Troppi tentativi. Riprova tra qualche minuto.';
+  }
+  if (msg.includes('token') && (msg.includes('expired') || msg.includes('invalid'))) {
+    return 'Sessione scaduta o non valida. Riprova.';
+  }
+  if (msg.includes('refresh') && msg.includes('token')) {
+    return 'Sessione scaduta. Effettua di nuovo il login.';
+  }
+  if (msg.includes('error sending email') || msg.includes('email sending')) {
+    return 'Errore nell\'invio dell\'email. Riprova più tardi.';
+  }
+  if (msg.includes('network') || msg.includes('failed to fetch')) {
+    return 'Errore di rete. Controlla la connessione.';
+  }
+  return 'Si è verificato un errore. Riprova.';
+}
+
 async function renderProfile() {
   if (!currentUser) return;
   const emailEl = document.getElementById('profile-email');
@@ -75,6 +115,7 @@ function switchToLogin() {
 }
 
 async function handleAuthSubmit() {
+  if (isSubmitting) return;
   const email = document.getElementById('auth-email').value.trim();
   const password = document.getElementById('auth-password').value;
   if (!email || !password) { showToast('Inserisci email e password.'); return; }
@@ -87,6 +128,7 @@ async function handleAuthSubmit() {
     if (!nickname) { showToast('Inserisci un nickname.'); return; }
   }
 
+  isSubmitting = true;
   setLoading(true);
   try {
     if (authMode === 'login') {
@@ -101,9 +143,10 @@ async function handleAuthSubmit() {
       switchToLogin();
     }
   } catch (err) {
-    showToast(err.message === 'Invalid login credentials' ? 'Email o password errata.' : err.message);
+    showToast(mapAuthError(err));
   } finally {
     setLoading(false);
+    isSubmitting = false;
   }
 }
 
@@ -122,9 +165,11 @@ function showAuthFormFromRecover() {
 }
 
 async function handleRecoverSubmit() {
+  if (isSubmitting) return;
   const email = document.getElementById('recover-email').value.trim();
   if (!email) { showToast('Inserisci la tua email.'); return; }
 
+  isSubmitting = true;
   const btn = document.getElementById('recover-submit');
   btn.disabled = true;
   document.getElementById('recover-submit-text').classList.add('invisible');
@@ -138,20 +183,23 @@ async function handleRecoverSubmit() {
     document.getElementById('recover-form').classList.add('hidden');
     document.getElementById('recover-success').classList.remove('hidden');
   } catch (err) {
-    showToast(err.message || 'Errore durante l\'invio della richiesta.');
+    showToast(mapAuthError(err));
   } finally {
     btn.disabled = false;
     document.getElementById('recover-submit-text').classList.remove('invisible');
     document.getElementById('recover-spinner').classList.add('invisible');
+    isSubmitting = false;
   }
 }
 
 async function handleResetSubmit() {
+  if (isSubmitting) return;
   const pwd = document.getElementById('reset-password').value;
   const confirm = document.getElementById('reset-confirm').value;
   if (!pwd || pwd.length < 6) { showToast('Password: almeno 6 caratteri.'); return; }
   if (pwd !== confirm) { showToast('Le password non coincidono.'); return; }
 
+  isSubmitting = true;
   const btn = document.getElementById('reset-submit');
   btn.disabled = true;
   document.getElementById('reset-submit-text').classList.add('invisible');
@@ -163,23 +211,18 @@ async function handleResetSubmit() {
       body: JSON.stringify({ password: pwd }),
     });
     if (!res.ok) {
-      const errData = await res.json().catch(() => ({}));
-      throw new Error(errData.msg || errData.error_description || errData.error || 'Richiesta fallita (' + res.status + ')');
+      throw new Error('reset failed (' + res.status + ')');
     }
     sanitizeUrl();
     showToast('Password aggiornata! Ora accedi.', false);
     showSection('splash-section');
     showAuthForm();
   } catch (err) {
-    const msg = err.message || 'riprova';
-    if (msg.includes('401') || msg.includes('unauthorized') || msg.includes('expired')) {
-      showToast('Link scaduto. Richiedi un nuovo reset.', true);
-    } else {
-      showToast('Errore: ' + msg);
-    }
+    showToast(mapAuthError(err));
   } finally {
     btn.disabled = false;
     document.getElementById('reset-submit-text').classList.remove('invisible');
     document.getElementById('reset-spinner').classList.add('invisible');
+    isSubmitting = false;
   }
 }

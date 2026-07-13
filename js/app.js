@@ -39,8 +39,8 @@ async function enterApp() {
       });
     }
     await loadReferenceCards();
-    await refreshCards();
     if (!currentUser) return;
+    await refreshCards();
     await playTransition();
     showSection('app-section');
     renderProfile();

@@ -466,7 +466,10 @@ function populateSetFilter() {
   const sets = setOrder.length ? setOrder : [];
   const extra = [...new Set(allCards.map(c => c.set_name).filter(Boolean))].filter(s => sets.indexOf(s) === -1);
   const allSets = [...sets, ...extra];
-  sel.innerHTML = allSets.map(s => `<option value="${s}" title="${s}">${s}</option>`).join('');
+  sel.innerHTML = allSets.map(s => {
+    const esc = escapeHtml(s);
+    return `<option value="${esc}" title="${esc}">${esc}</option>`;
+  }).join('');
   if (allSets.includes(prevValue)) sel.value = prevValue;
   else if (allSets.length) sel.value = allSets[0];
   updateSetHeader();

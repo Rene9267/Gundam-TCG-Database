@@ -5,7 +5,7 @@ const SRC_DIR = path.resolve(__dirname, '..');
 const OUT_DIR = path.join(SRC_DIR, '_minified');
 
 const FILES = [
-  'app.js','style.css','index.html','service-worker.js',
+  'style.css','index.html','service-worker.js',
   'js/app.js','js/auth.js','js/cards.js','js/cardtrader.js',
   'js/collection.js','js/config.js','js/dashboard.js','js/menu.js',
   'js/reference.js','js/sheet.js','js/state.js','js/supabase.js','js/utils.js',

@@ -36,13 +36,26 @@ async function refreshUserSession() {
 
 async function ensureValidSession() {
   if (expiresAt && Date.now() > expiresAt) {
-    await refreshUserSession();
+    try {
+      await refreshUserSession();
+    } catch (_) {
+      // Refresh fallito (es. refresh token assente al reload): redirect al login
+      clearSession();
+      closeSheet(true);
+      showSection('splash-section');
+      showAuthForm();
+      throw new Error('Sessione scaduta');
+    }
   }
 }
 
 function saveSession(user, token, remember = true, refresh_token, expires_in) {
   currentUser = user;
   accessToken = token;
+  // Refresh token mantenuto SOLO in memoria: mai persistito in storage.
+  // Un eventuale XSS può rubare solo l'access token (short-lived, ~1h),
+  // non il refresh token (long-lived) che resta nel closure JS.
+  // Trade-off: al reload della pagina con token scaduto, l'utente deve rifare login.
   refreshToken = refresh_token || null;
   if (expires_in) {
     expiresAt = Date.now() + expires_in * 1000;
@@ -51,16 +64,15 @@ function saveSession(user, token, remember = true, refresh_token, expires_in) {
     const store = remember ? localStorage : sessionStorage;
     store.setItem('supabase_user', JSON.stringify(user));
     store.setItem('supabase_token', token);
-    if (refresh_token) {
-      store.setItem('supabase_refresh_token', refresh_token);
-    }
     if (expires_in) {
       store.setItem('supabase_expires_at', String(Date.now() + expires_in * 1000));
     }
+    // Cleanup: rimuovi eventuale refresh token legacy da versioni precedenti
+    localStorage.removeItem('supabase_refresh_token');
+    sessionStorage.removeItem('supabase_refresh_token');
     if (!remember) {
       localStorage.removeItem('supabase_user');
       localStorage.removeItem('supabase_token');
-      localStorage.removeItem('supabase_refresh_token');
       localStorage.removeItem('supabase_expires_at');
     }
   } catch (_) {}
@@ -85,23 +97,37 @@ function clearSession() {
 
 function loadSession() {
   try {
-    let u, t, rt, ea;
+    let u, t, ea;
     u = localStorage.getItem('supabase_user');
     t = localStorage.getItem('supabase_token');
-    rt = localStorage.getItem('supabase_refresh_token');
     ea = localStorage.getItem('supabase_expires_at');
     if (!u || !t) {
       u = sessionStorage.getItem('supabase_user');
       t = sessionStorage.getItem('supabase_token');
-      rt = sessionStorage.getItem('supabase_refresh_token');
       ea = sessionStorage.getItem('supabase_expires_at');
     }
+    // refreshToken NON viene caricato dal storage: resta null al reload.
+    refreshToken = null;
+    const parsedExpiry = ea ? Number(ea) : null;
+
+    // Validazione scadenza: se il token è già scaduto (con 30s di buffer
+    // di sicurezza), non caricare la sessione e pulisci lo storage.
+    // Il refresh token non è disponibile dopo reload, quindi non possiamo
+    // rinnovare — l'utente deve rifare login.
+    const TOKEN_EXPIRY_BUFFER_MS = 30 * 1000;
+    if (parsedExpiry && Date.now() + TOKEN_EXPIRY_BUFFER_MS > parsedExpiry) {
+      clearSession();
+      return;
+    }
+
     if (u && t) {
       currentUser = JSON.parse(u);
       accessToken = t;
+      expiresAt = parsedExpiry;
     }
-    refreshToken = rt || null;
-    expiresAt = ea ? Number(ea) : null;
+    // Cleanup: rimuovi eventuale refresh token legacy da versioni precedenti
+    localStorage.removeItem('supabase_refresh_token');
+    sessionStorage.removeItem('supabase_refresh_token');
   } catch (_) {}
 }
 
@@ -173,11 +199,9 @@ function handleHashCallback() {
       const expiresAt = Date.now() + Number(hashExpiresIn) * 1000;
       saveSession(user, hashAccessToken, true, hashRefreshToken, Number(hashExpiresIn));
       history.replaceState(null, '', window.location.pathname + window.location.search);
-      window.dispatchEvent(new CustomEvent('supabase:hash-session', { detail: { user, expiresAt } }));
       return true;
     } catch (err) {
       clearSession();
-      window.dispatchEvent(new CustomEvent('supabase:hash-session-error', { detail: { error: err } }));
       return false;
     }
   })();

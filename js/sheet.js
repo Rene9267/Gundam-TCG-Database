@@ -1,6 +1,3 @@
-const variantOverrides = {
-};
-
 function getAltVersions(cardCode) {
   if (!cardCode) return [];
   const baseId = cardCode.replace(/_[a-z0-9]+$/, '');
@@ -21,11 +18,6 @@ function populateAltVersions(cardCode) {
   container.classList.remove('hidden');
   container.innerHTML = versions.map(v => {
     const isActive = v.card_code === cardCode;
-    const override = variantOverrides[v.card_code];
-    if (override) {
-      const cls = override === 'Base' ? 'version-dot-base' : 'version-dot-alt';
-      return `<button class="version-dot${isActive ? ' version-dot-active' : ''} ${cls}" data-code="${escapeHtml(v.card_code)}" title="${escapeHtml(v.card_code)}">${override}</button>`;
-    }
     const suffix = v.card_code.match(/_p(\d+)$/);
     const isBase = !suffix && v.card_code.split('-')[0] === v.set_code;
     let cls = 'version-dot-base';

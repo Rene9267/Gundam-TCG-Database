@@ -13,9 +13,10 @@ async function handle401() {
 }
 
 async function loadCards() {
+  if (!currentUser) return [];
   await ensureValidSession();
-  // RLS su Supabase filtra automaticamente per auth.uid(): nessun filtro lato client necessario
-  const r = await fetch(SUPABASE_URL + '/rest/v1/cards?select=*&order=updated_at.desc', {
+  // Defense-in-depth: filtra per user_id anche se RLS è attivo
+  const r = await fetch(SUPABASE_URL + '/rest/v1/cards?select=*&user_id=eq.' + encodeURIComponent(currentUser.id) + '&order=updated_at.desc', {
     headers: getAuthHeaders(),
   });
   if (r.status === 401) { handle401(); return []; }
@@ -24,12 +25,13 @@ async function loadCards() {
 }
 
 async function addCard(card) {
+  if (!currentUser) return null;
   await ensureValidSession();
-  // user_id NON viene più inviato dal client: lo imposta Supabase tramite la sessione (DEFAULT auth.uid())
+  // Defense-in-depth: imposta user_id dal client oltre al DEFAULT auth.uid()
   const r = await fetch(SUPABASE_URL + '/rest/v1/cards', {
     method: 'POST',
     headers: { ...getAuthHeaders(), 'Prefer': 'return=representation' },
-    body: JSON.stringify({ ...card, updated_at: new Date().toISOString() }),
+    body: JSON.stringify({ ...card, user_id: currentUser.id, updated_at: new Date().toISOString() }),
   });
   if (r.status === 401) { handle401(); return null; }
   if (!r.ok) {
@@ -41,8 +43,10 @@ async function addCard(card) {
 }
 
 async function updateCard(id, updates) {
+  if (!currentUser) return null;
   await ensureValidSession();
-  const r = await fetch(SUPABASE_URL + '/rest/v1/cards?id=eq.' + id, {
+  // Defense-in-depth: filtra per user_id+id per modificare solo le proprie carte
+  const r = await fetch(SUPABASE_URL + '/rest/v1/cards?id=eq.' + encodeURIComponent(id) + '&user_id=eq.' + encodeURIComponent(currentUser.id), {
     method: 'PATCH',
     headers: { ...getAuthHeaders(), 'Prefer': 'return=representation' },
     body: JSON.stringify({ ...updates, updated_at: new Date().toISOString() }),
@@ -57,8 +61,10 @@ async function updateCard(id, updates) {
 }
 
 async function deleteCard(id) {
+  if (!currentUser) return;
   await ensureValidSession();
-  const r = await fetch(SUPABASE_URL + '/rest/v1/cards?id=eq.' + id, {
+  // Defense-in-depth: filtra per user_id+id per eliminare solo le proprie carte
+  const r = await fetch(SUPABASE_URL + '/rest/v1/cards?id=eq.' + encodeURIComponent(id) + '&user_id=eq.' + encodeURIComponent(currentUser.id), {
     method: 'DELETE',
     headers: getAuthHeaders(),
   });
