@@ -62,7 +62,7 @@ async function enterApp() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   loadSession();
 
   initFilterDrawer();
@@ -86,10 +86,24 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('reset-password').addEventListener('keydown', e => { if (e.key === 'Enter') handleResetSubmit(); });
   document.getElementById('reset-confirm').addEventListener('keydown', e => { if (e.key === 'Enter') handleResetSubmit(); });
 
-  document.getElementById('eye-password').addEventListener('click', () => toggleEye('auth-password', 'eye-password'));
-  document.getElementById('eye-confirm').addEventListener('click', () => toggleEye('auth-confirm', 'eye-confirm'));
+  document.getElementById('eye-password').addEventListener('click', () => {
+    toggleEye('auth-password', 'eye-password');
+    toggleEye('auth-confirm', 'eye-confirm');
+  });
+  document.getElementById('eye-confirm').addEventListener('click', () => {
+    toggleEye('auth-password', 'eye-password');
+    toggleEye('auth-confirm', 'eye-confirm');
+  });
   document.getElementById('eye-reset').addEventListener('click', () => toggleEye('reset-password', 'eye-reset'));
   document.getElementById('eye-reset-confirm').addEventListener('click', () => toggleEye('reset-confirm', 'eye-reset-confirm'));
+  document.getElementById('eye-recover').addEventListener('click', () => {
+    toggleEye('recover-new-password', 'eye-recover');
+    toggleEye('recover-confirm', 'eye-recover-confirm');
+  });
+  document.getElementById('eye-recover-confirm').addEventListener('click', () => {
+    toggleEye('recover-new-password', 'eye-recover');
+    toggleEye('recover-confirm', 'eye-recover-confirm');
+  });
 
   document.getElementById('auth-logout').addEventListener('click', async () => {
     await authSignOut();
@@ -203,17 +217,22 @@ document.addEventListener('DOMContentLoaded', () => {
     resetFilters();
   });
 
-  const hash = window.location.hash;
-  if (hash && hash.includes('type=recovery')) {
-    const params = new URLSearchParams(hash.replace('#', ''));
-    const recoveryToken = params.get('access_token');
-    if (recoveryToken) {
-      // Nessuna password salvata in localStorage: basta il token di recovery.
-      // L'utente imposterà la nuova password nella pagina di reset.
-      accessToken = recoveryToken;
-      sanitizeUrl();
-      document.getElementById('splash-section').classList.add('hidden');
-      document.getElementById('reset-section').classList.remove('hidden');
+  const fromHash = window._supabaseHashCallback ? await window._supabaseHashCallback : false;
+  if (fromHash) {
+    showAuthed();
+  } else {
+    const hash = window.location.hash;
+    if (hash && hash.includes('type=recovery')) {
+      const params = new URLSearchParams(hash.replace('#', ''));
+      const recoveryToken = params.get('access_token');
+      if (recoveryToken) {
+        // Nessuna password salvata in localStorage: basta il token di recovery.
+        // L'utente imposterà la nuova password nella pagina di reset.
+        accessToken = recoveryToken;
+        sanitizeUrl();
+        document.getElementById('splash-section').classList.add('hidden');
+        document.getElementById('reset-section').classList.remove('hidden');
+      }
     }
   }
 });

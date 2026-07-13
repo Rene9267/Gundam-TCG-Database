@@ -152,3 +152,35 @@ async function authSignOut() {
   }
   clearSession();
 }
+
+function handleHashCallback() {
+  const hash = window.location.hash;
+  if (!hash) return Promise.resolve(false);
+  const params = new URLSearchParams(hash.replace(/^#/, ''));
+  if (params.get('type') === 'recovery') return Promise.resolve(false);
+  const hashAccessToken = params.get('access_token');
+  const hashRefreshToken = params.get('refresh_token');
+  const hashExpiresIn = params.get('expires_in');
+  if (!hashAccessToken || !hashRefreshToken || !hashExpiresIn) return Promise.resolve(false);
+
+  return (async () => {
+    try {
+      const res = await fetch(SUPABASE_URL + '/auth/v1/user', {
+        headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': 'Bearer ' + hashAccessToken },
+      });
+      if (!res.ok) throw new Error('Recupero profilo utente fallito (' + res.status + ')');
+      const user = await res.json();
+      const expiresAt = Date.now() + Number(hashExpiresIn) * 1000;
+      saveSession(user, hashAccessToken, true, hashRefreshToken, Number(hashExpiresIn));
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+      window.dispatchEvent(new CustomEvent('supabase:hash-session', { detail: { user, expiresAt } }));
+      return true;
+    } catch (err) {
+      clearSession();
+      window.dispatchEvent(new CustomEvent('supabase:hash-session-error', { detail: { error: err } }));
+      return false;
+    }
+  })();
+}
+
+window._supabaseHashCallback = handleHashCallback();
