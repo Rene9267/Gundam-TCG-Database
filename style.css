@@ -511,6 +511,7 @@ body.sheet-open {
   position: relative;
   overflow: hidden;
 }
+
 .auth-card::before {
   content: '';
   position: absolute;

@@ -911,7 +911,7 @@ async function handleAuthSubmit() {
     if (authMode === 'login') {
       const remember = document.getElementById('auth-remember').checked;
       await authSignIn(email, password, remember);
-      showAuthed();
+      enterApp();
     } else {
       const nickname = document.getElementById('auth-nickname').value.trim();
       await authSignUp(email, password, nickname);
@@ -1073,6 +1073,7 @@ async function enterApp() {
     await playTransition();
     showSection('app-section');
     renderProfile();
+    history.replaceState(null, '', location.pathname);
     switchTab('dashboard');
     document.getElementById('bottom-dashboard').classList.add('active');
   } catch (err) {

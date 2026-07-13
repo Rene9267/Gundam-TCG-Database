@@ -93,7 +93,7 @@ async function handleAuthSubmit() {
       const remember = document.getElementById('auth-remember').checked;
       await authSignIn(email, password, remember);
       sanitizeUrl();
-      showAuthed();
+      enterApp();
     } else {
       const nickname = document.getElementById('auth-nickname').value.trim();
       await authSignUp(email, password, nickname);

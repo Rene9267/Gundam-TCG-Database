@@ -44,17 +44,9 @@ async function enterApp() {
     await playTransition();
     showSection('app-section');
     renderProfile();
-    const params = new URLSearchParams(location.search);
-    const view = params.get('view');
     sanitizeUrl();
-    if (view === 'collection' || view === 'profile') {
-      const set = params.get('set');
-      history.replaceState({ view, set }, '', location.href);
-      _applyView(view, set);
-    } else {
-      history.replaceState({ view: 'dashboard', set: null }, '', location.href);
-      _applyView('dashboard');
-    }
+    history.replaceState({ view: 'dashboard', set: null }, '', location.pathname);
+    _applyView('dashboard');
 
   } catch (err) {
     document.getElementById('splash-error').textContent = err.message;
