@@ -1,4 +1,9 @@
-tailwind.config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./index.html",
+    "./js/**/*.js",
+  ],
   theme: {
     extend: {
       colors: {
@@ -9,12 +14,12 @@ tailwind.config = {
         surface: '#f8fafc',
         'primary-light': '#e8edf7',
         'secondary-light': '#eef0f4',
-      }
+      },
     },
     fontFamily: {
       'heading': ['Space Grotesk', 'sans-serif'],
       'body': ['Inter', 'sans-serif'],
       'mono': ['JetBrains Mono', 'monospace'],
-    }
-  }
+    },
+  },
 }

@@ -5,7 +5,7 @@ const SRC_DIR = path.resolve(__dirname, '..');
 const OUT_DIR = path.join(SRC_DIR, '_minified');
 
 const FILES = [
-  'style.css','index.html','service-worker.js',
+  'style.css','dist/tailwind.css','index.html','service-worker.js',
   'js/app.js','js/auth.js','js/cards.js','js/cardtrader.js',
   'js/collection.js','js/config.js','js/dashboard.js','js/menu.js',
   'js/reference.js','js/sheet.js','js/state.js','js/supabase.js','js/utils.js',
@@ -155,7 +155,7 @@ for (const relPath of FILES) {
   let result = c;
   if (saved > 200 && type === 'js') result = SHIM + c;
 
-  const outRel = relPath.replace(/\.\w+$/, '.min.$&');
+  const outRel = relPath.replace(/\.\w+$/, '.min$&');
   const outPath = path.join(OUT_DIR, outRel);
   fs.writeFileSync(outPath, result, 'utf8');
 

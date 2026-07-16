@@ -143,7 +143,7 @@ async function authFetch(path, body) {
 }
 
 async function authSignUp(email, password, nickname) {
-  const body = { email, password };
+  const body = { email, password, redirect_to: window.location.origin };
   if (nickname) body.data = { nickname };
   const data = await authFetch('/auth/v1/signup', body);
   if (data.access_token) {

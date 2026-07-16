@@ -1,9 +1,10 @@
-const CACHE_NAME = 'gundamdb-v4';
+const CACHE_NAME = 'gundamdb-v7';
 const IMG_CACHE = 'gundam-images-v1';
 
 const PRECACHE_URLS = [
   './',
   './index.html',
+  './dist/tailwind.css',
   './style.css',
   './manifest.json',
   './reference_cards.json',

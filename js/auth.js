@@ -178,7 +178,7 @@ async function handleRecoverSubmit() {
   try {
     // Flusso standard Supabase: invia l'email di reset. Supabase non rivela
     // se l'email esiste (niente account enumeration) e non crea account spurii.
-    await authFetch('/auth/v1/recover', { email });
+    await authFetch('/auth/v1/recover', { email, redirect_to: window.location.origin });
     miniShimmer();
     document.getElementById('recover-form').classList.add('hidden');
     document.getElementById('recover-success').classList.remove('hidden');
