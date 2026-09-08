@@ -7,7 +7,8 @@ const OUT_DIR = path.join(SRC_DIR, '_minified');
 const FILES = [
   'style.css','dist/tailwind.css','index.html','service-worker.js',
   'js/app.js','js/auth.js','js/cards.js','js/cardtrader.js',
-  'js/collection.js','js/config.js','js/dashboard.js','js/menu.js',
+  'js/collection-filters.js','js/collection-overview.js','js/collection-grid.js','js/collection-stats.js',
+  'js/ui-progress.js','js/config.js','js/dashboard.js','js/menu.js',
   'js/reference.js','js/sheet.js','js/state.js','js/supabase.js','js/utils.js',
   'scripts/scrapers/scrape_cards.js','scripts/scrapers/enrich_rarity.js',
   'scripts/upload/upload_to_r2.js','supabase/functions/cardtrader-proxy/index.ts'

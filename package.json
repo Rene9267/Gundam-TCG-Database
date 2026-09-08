@@ -1,4 +1,11 @@
 {
+  "name": "gundam-tcg-database",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css",
+    "build:ref": "node scripts/optimize/partition_reference.mjs",
+    "test": "node --test tests/pure.test.mjs tests/auth-fetch.test.mjs tests/cardtrader-printings.test.mjs tests/cardtrader-integration.test.mjs"
+  },
   "devDependencies": {
     "tailwindcss": "^3.4.17"
   }

@@ -1,16 +1,5 @@
 [
   {
-    "card_code": "ST04-001_p4",
-    "card_name": "Aile Strike Gundam",
-    "set_code": "GD04",
-    "set_name": "Phantom Aria [GD04]",
-    "color": "White",
-    "card_type": "Unit",
-    "level": 5,
-    "cost": 4,
-    "rarity": "LR"
-  },
-  {
     "card_code": "GD01-002_p2",
     "card_name": "Unicorn Gundam (Destroy Mode)",
     "set_code": "GD04",
@@ -19,7 +8,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 6,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "unicorn-gundam-destroy-mode-lr-gd-04-phantom-aria",
+    "cardtrader_id": 388404
   },
   {
     "card_code": "GD03-026_p1",
@@ -30,7 +21,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-dynames-u-gd-04-phantom-aria",
+    "cardtrader_id": 388415
   },
   {
     "card_code": "GD03-039_p1",
@@ -41,7 +34,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "red-gundam-r-gd-04-phantom-aria",
+    "cardtrader_id": 388384
   },
   {
     "card_code": "GD03-056_p1",
@@ -52,7 +47,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-barbatos-adapt-r-gd-04-phantom-aria",
+    "cardtrader_id": 388392
   },
   {
     "card_code": "GD04-001",
@@ -63,7 +60,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-gd-04-phantom-aria",
+    "cardtrader_id": 384095
   },
   {
     "card_code": "GD04-001_p1",
@@ -74,7 +73,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-lr-gd-04-phantom-aria",
+    "cardtrader_id": 388396
   },
   {
     "card_code": "GD04-002",
@@ -85,7 +86,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "penelope-flight-form-gd-04-phantom-aria",
+    "cardtrader_id": 384096
   },
   {
     "card_code": "GD04-002_p1",
@@ -96,7 +99,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "penelope-flight-form-lr-gd-04-phantom-aria",
+    "cardtrader_id": 388405
   },
   {
     "card_code": "GD04-003",
@@ -107,7 +112,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "victory-gundam-gd-04-phantom-aria",
+    "cardtrader_id": 384097
   },
   {
     "card_code": "GD04-003_p1",
@@ -118,7 +125,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "victory-gundam-lr-gd-04-phantom-aria",
+    "cardtrader_id": 388403
   },
   {
     "card_code": "GD04-004",
@@ -129,7 +138,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 7,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "psycho-gundam-mk-ⅱ-r-gd-04-phantom-aria",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD04-005",
@@ -140,7 +151,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gm-iii-gd-04-phantom-aria",
+    "cardtrader_id": 384099
   },
   {
     "card_code": "GD04-006",
@@ -151,7 +164,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "v-dash-gundam-gd-04-phantom-aria",
+    "cardtrader_id": 384100
   },
   {
     "card_code": "GD04-006_p1",
@@ -162,7 +177,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "v-dash-gundam-r-gd-04-phantom-aria",
+    "cardtrader_id": 388388
   },
   {
     "card_code": "GD04-007",
@@ -173,7 +190,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "victory-gundam-hexa-gd-04-phantom-aria",
+    "cardtrader_id": 384101
   },
   {
     "card_code": "GD04-008",
@@ -184,7 +203,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-gd-04-phantom-aria",
+    "cardtrader_id": 384095
   },
   {
     "card_code": "GD04-009",
@@ -195,7 +216,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "guncannon-108-&amp;-guncannon-109-gd-04-phantom-aria",
+    "cardtrader_id": 384103
   },
   {
     "card_code": "GD04-009_p1",
@@ -206,7 +229,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "guncannon-108-&amp;-guncannon-109-r-gd-04-phantom-aria",
+    "cardtrader_id": 384103
   },
   {
     "card_code": "GD04-010",
@@ -217,7 +242,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gaplant-gd-04-phantom-aria",
+    "cardtrader_id": 384104
   },
   {
     "card_code": "GD04-011",
@@ -228,7 +255,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "victory-gundam-gd-04-phantom-aria",
+    "cardtrader_id": 384097
   },
   {
     "card_code": "GD04-012",
@@ -239,7 +268,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "core-booster-005-&amp;-core-booster-006-gd-04-phantom-aria",
+    "cardtrader_id": 384106
   },
   {
     "card_code": "GD04-013",
@@ -250,7 +281,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "core-fighter-gd-04-phantom-aria",
+    "cardtrader_id": 384107
   },
   {
     "card_code": "GD04-014",
@@ -261,7 +294,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "shokew-gd-04-phantom-aria",
+    "cardtrader_id": 384108
   },
   {
     "card_code": "GD04-015",
@@ -272,7 +307,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gun-ez-gd-04-phantom-aria",
+    "cardtrader_id": 384109
   },
   {
     "card_code": "GD04-016",
@@ -283,7 +320,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "zoloat-league-militaire-gd-04-phantom-aria",
+    "cardtrader_id": 384110
   },
   {
     "card_code": "GD04-017",
@@ -294,7 +333,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "zeong-gd-04-phantom-aria",
+    "cardtrader_id": 384111
   },
   {
     "card_code": "GD04-017_p1",
@@ -305,7 +346,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "zeong-lr-gd-04-phantom-aria",
+    "cardtrader_id": 388400
   },
   {
     "card_code": "GD04-017_p2",
@@ -316,7 +359,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "zeong-lr-gd-04-phantom-aria",
+    "cardtrader_id": 388400
   },
   {
     "card_code": "GD04-018",
@@ -327,7 +372,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-pharact-gd-04-phantom-aria",
+    "cardtrader_id": 384112
   },
   {
     "card_code": "GD04-018_p1",
@@ -338,7 +385,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-pharact-lr-gd-04-phantom-aria",
+    "cardtrader_id": 388407
   },
   {
     "card_code": "GD04-019",
@@ -349,7 +398,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gn-armor-type-d-trans-am-gd-04-phantom-aria",
+    "cardtrader_id": 384113
   },
   {
     "card_code": "GD04-020",
@@ -360,7 +411,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-lfrith-ur-gd-04-phantom-aria",
+    "cardtrader_id": 384114
   },
   {
     "card_code": "GD04-021",
@@ -371,7 +424,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-lfrith-thorn-gd-04-phantom-aria",
+    "cardtrader_id": 384115
   },
   {
     "card_code": "GD04-021_p1",
@@ -382,7 +437,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-lfrith-thorn-r-gd-04-phantom-aria",
+    "cardtrader_id": 388389
   },
   {
     "card_code": "GD04-022",
@@ -393,7 +450,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "kikeroga-ms-mode-gq-gd-04-phantom-aria",
+    "cardtrader_id": 384116
   },
   {
     "card_code": "GD04-022_p1",
@@ -404,7 +463,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "kikeroga-ms-mode-gq-r-gd-04-phantom-aria",
+    "cardtrader_id": 388395
   },
   {
     "card_code": "GD04-023",
@@ -415,7 +476,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-kyrios-tail-booster-gd-04-phantom-aria",
+    "cardtrader_id": 384117
   },
   {
     "card_code": "GD04-024",
@@ -426,7 +489,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-aerial-rebuild-gd-04-phantom-aria",
+    "cardtrader_id": 384118
   },
   {
     "card_code": "GD04-025",
@@ -437,7 +502,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundvölva-gd-04-phantom-aria",
+    "cardtrader_id": 384119
   },
   {
     "card_code": "GD04-026",
@@ -448,7 +515,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "garma&#039;s-dopp-c-gd-04-phantom-aria",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD04-027",
@@ -459,7 +528,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "bigro-gd-04-phantom-aria",
+    "cardtrader_id": 384121
   },
   {
     "card_code": "GD04-028",
@@ -470,7 +541,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "zakrello-gd-04-phantom-aria",
+    "cardtrader_id": 384122
   },
   {
     "card_code": "GD04-029",
@@ -481,7 +554,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-dynames-gn-full-shield-gd-04-phantom-aria",
+    "cardtrader_id": 384123
   },
   {
     "card_code": "GD04-030",
@@ -492,7 +567,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "chuchu&#039;s-demi-trainer-c-gd-04-phantom-aria",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD04-031",
@@ -503,7 +580,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "heindree-gd-04-phantom-aria",
+    "cardtrader_id": 384125
   },
   {
     "card_code": "GD04-032",
@@ -514,7 +593,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "xavier&#039;s-gyan-hakuji-packs-gq-c-gd-04-phantom-aria",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD04-033",
@@ -525,7 +606,9 @@
     "card_type": "Unit",
     "level": 9,
     "cost": 8,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "neo-zeong-gd-04-phantom-aria",
+    "cardtrader_id": 384127
   },
   {
     "card_code": "GD04-033_p1",
@@ -536,7 +619,9 @@
     "card_type": "Unit",
     "level": 9,
     "cost": 8,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "neo-zeong-lr-gd-04-phantom-aria",
+    "cardtrader_id": 388406
   },
   {
     "card_code": "GD04-034",
@@ -547,7 +632,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-kyrios-gd-04-phantom-aria",
+    "cardtrader_id": 384128
   },
   {
     "card_code": "GD04-034_p1",
@@ -558,7 +645,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-kyrios-lr-gd-04-phantom-aria",
+    "cardtrader_id": 388408
   },
   {
     "card_code": "GD04-035",
@@ -569,7 +658,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "ξ-gundam-r-gd-04-phantom-aria",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD04-036",
@@ -580,7 +671,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-throne-eins-gd-04-phantom-aria",
+    "cardtrader_id": 384130
   },
   {
     "card_code": "GD04-036_p1",
@@ -591,7 +684,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-throne-eins-r-gd-04-phantom-aria",
+    "cardtrader_id": 388387
   },
   {
     "card_code": "GD04-037",
@@ -602,7 +697,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-kyrios-trans-am-gd-04-phantom-aria",
+    "cardtrader_id": 384131
   },
   {
     "card_code": "GD04-038",
@@ -613,7 +710,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-exia-gd-04-phantom-aria",
+    "cardtrader_id": 384132
   },
   {
     "card_code": "GD04-039",
@@ -624,7 +723,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 6,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "rozen-zulu-gd-04-phantom-aria",
+    "cardtrader_id": 384133
   },
   {
     "card_code": "GD04-040",
@@ -635,7 +736,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "schuzrum-galluss-gd-04-phantom-aria",
+    "cardtrader_id": 384134
   },
   {
     "card_code": "GD04-041",
@@ -646,7 +749,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-throne-drei-gd-04-phantom-aria",
+    "cardtrader_id": 384135
   },
   {
     "card_code": "GD04-042",
@@ -657,7 +762,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "psycho-gundam-gq-gd-04-phantom-aria",
+    "cardtrader_id": 384136
   },
   {
     "card_code": "GD04-042_p1",
@@ -668,7 +775,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "psycho-gundam-gq-u-gd-04-phantom-aria",
+    "cardtrader_id": 388411
   },
   {
     "card_code": "GD04-043",
@@ -679,7 +788,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "zssa-sleeves-gd-04-phantom-aria",
+    "cardtrader_id": 384137
   },
   {
     "card_code": "GD04-044",
@@ -690,7 +801,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gadeel-gd-04-phantom-aria",
+    "cardtrader_id": 384138
   },
   {
     "card_code": "GD04-045",
@@ -701,7 +814,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-throne-zwei-gd-04-phantom-aria",
+    "cardtrader_id": 384139
   },
   {
     "card_code": "GD04-046",
@@ -712,7 +827,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-dynames-gd-04-phantom-aria",
+    "cardtrader_id": 384140
   },
   {
     "card_code": "GD04-047",
@@ -723,7 +840,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-virtue-gd-04-phantom-aria",
+    "cardtrader_id": 384141
   },
   {
     "card_code": "GD04-048",
@@ -734,7 +853,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "hambrabi-gq-gd-04-phantom-aria",
+    "cardtrader_id": 384142
   },
   {
     "card_code": "GD04-049",
@@ -745,7 +866,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 7,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-dx-gd-04-phantom-aria",
+    "cardtrader_id": 384143
   },
   {
     "card_code": "GD04-049_p1",
@@ -756,7 +879,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 7,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-dx-lr-gd-04-phantom-aria",
+    "cardtrader_id": 388397
   },
   {
     "card_code": "GD04-050",
@@ -767,7 +892,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "destiny-gundam-gd-04-phantom-aria",
+    "cardtrader_id": 384144
   },
   {
     "card_code": "GD04-050_p1",
@@ -778,7 +905,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "destiny-gundam-lr-gd-04-phantom-aria",
+    "cardtrader_id": 388398
   },
   {
     "card_code": "GD04-050_p2",
@@ -789,7 +918,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "destiny-gundam-lr-gd-04-phantom-aria",
+    "cardtrader_id": 388398
   },
   {
     "card_code": "GD04-051",
@@ -800,7 +931,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-airmaster-burst-gd-04-phantom-aria",
+    "cardtrader_id": 384145
   },
   {
     "card_code": "GD04-052",
@@ -811,7 +944,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-leopard-destroy-gd-04-phantom-aria",
+    "cardtrader_id": 384146
   },
   {
     "card_code": "GD04-053",
@@ -822,7 +957,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "rey&#039;s-blaze-zaku-phantom-r-gd-04-phantom-aria",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD04-053_p1",
@@ -833,7 +970,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "rey&#039;s-blaze-zaku-phantom-r-gd-04-phantom-aria",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD04-054",
@@ -844,7 +983,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-virtue-trans-am-gd-04-phantom-aria",
+    "cardtrader_id": 384148
   },
   {
     "card_code": "GD04-055",
@@ -855,7 +996,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "heine&#039;s-gouf-ignited-u-gd-04-phantom-aria",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD04-056",
@@ -866,7 +1009,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "sword-impulse-gundam-gd-04-phantom-aria",
+    "cardtrader_id": 384150
   },
   {
     "card_code": "GD04-057",
@@ -877,7 +1022,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-nadleeh-gd-04-phantom-aria",
+    "cardtrader_id": 384151
   },
   {
     "card_code": "GD04-058",
@@ -888,7 +1035,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "jamil&#039;s-gundam-x-c-gd-04-phantom-aria",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD04-059",
@@ -899,7 +1048,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "daughtress-high-mobility-command-wise-wallaby-gd-04-phantom-aria",
+    "cardtrader_id": 384153
   },
   {
     "card_code": "GD04-060",
@@ -910,7 +1061,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "esperansa-gd-04-phantom-aria",
+    "cardtrader_id": 384154
   },
   {
     "card_code": "GD04-061",
@@ -921,7 +1074,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "g-falcon-gd-04-phantom-aria",
+    "cardtrader_id": 384155
   },
   {
     "card_code": "GD04-062",
@@ -932,7 +1087,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "lunamaria&#039;s-gunner-zaku-warrior-c-gd-04-phantom-aria",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD04-063",
@@ -943,7 +1100,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gn-armor-type-e-gd-04-phantom-aria",
+    "cardtrader_id": 384157
   },
   {
     "card_code": "GD04-064",
@@ -954,7 +1113,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-exia-gd-04-phantom-aria",
+    "cardtrader_id": 384132
   },
   {
     "card_code": "GD04-065",
@@ -965,7 +1126,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "unicorn-gundam-02-banshee-norn-destroy-mode-gd-04-phantom-aria",
+    "cardtrader_id": 384159
   },
   {
     "card_code": "GD04-065_p1",
@@ -976,7 +1139,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "unicorn-gundam-02-banshee-norn-destroy-mode-lr-gd-04-phantom-aria",
+    "cardtrader_id": 388402
   },
   {
     "card_code": "GD04-066",
@@ -987,7 +1152,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "unicorn-gundam-awakened-gd-04-phantom-aria",
+    "cardtrader_id": 384160
   },
   {
     "card_code": "GD04-066_p1",
@@ -998,7 +1165,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "unicorn-gundam-awakened-lr-gd-04-phantom-aria",
+    "cardtrader_id": 388470
   },
   {
     "card_code": "GD04-067",
@@ -1009,7 +1178,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "∀-gundam-lr-gd-04-phantom-aria",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD04-067_p1",
@@ -1020,7 +1191,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "∀-gundam-lr-gd-04-phantom-aria",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD04-068",
@@ -1031,7 +1204,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "silver-bullet-gd-04-phantom-aria",
+    "cardtrader_id": 384162
   },
   {
     "card_code": "GD04-068_p1",
@@ -1042,7 +1217,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "silver-bullet-r-gd-04-phantom-aria",
+    "cardtrader_id": 388380
   },
   {
     "card_code": "GD04-069",
@@ -1053,7 +1230,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "∀-gundam-r-gd-04-phantom-aria",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD04-070",
@@ -1064,7 +1243,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "al-saachez&#039;s-aeu-enact-custom-moralia-development-experiment-type-gd-04-phantom-aria",
+    "cardtrader_id": 36946
   },
   {
     "card_code": "GD04-071",
@@ -1075,7 +1256,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "graham&#039;s-union-flag-custom-ⅱ-gn-flag-r-gd-04-phantom-aria",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD04-071_p1",
@@ -1086,7 +1269,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "graham&#039;s-union-flag-custom-ⅱ-gn-flag-r-gd-04-phantom-aria",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD04-072",
@@ -1097,7 +1282,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "unicorn-gundam-02-banshee-norn-unicorn-mode-gd-04-phantom-aria",
+    "cardtrader_id": 384166
   },
   {
     "card_code": "GD04-073",
@@ -1108,7 +1295,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "∀-gundam-u-gd-04-phantom-aria",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD04-074",
@@ -1119,7 +1308,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "kapool-gd-04-phantom-aria",
+    "cardtrader_id": 384168
   },
   {
     "card_code": "GD04-075",
@@ -1130,7 +1321,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 6,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gn-x-gd-04-phantom-aria",
+    "cardtrader_id": 384169
   },
   {
     "card_code": "GD04-076",
@@ -1141,7 +1334,9 @@
     "card_type": "Unit",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "hipheavy-gd-04-phantom-aria",
+    "cardtrader_id": 384170
   },
   {
     "card_code": "GD04-077",
@@ -1152,7 +1347,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "flat-militia-gd-04-phantom-aria",
+    "cardtrader_id": 384171
   },
   {
     "card_code": "GD04-078",
@@ -1163,7 +1360,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "borjarnon-gd-04-phantom-aria",
+    "cardtrader_id": 384172
   },
   {
     "card_code": "GD04-079",
@@ -1174,7 +1373,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "agrissa-gd-04-phantom-aria",
+    "cardtrader_id": 384173
   },
   {
     "card_code": "GD04-080",
@@ -1185,7 +1386,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 4,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "alvatore-gd-04-phantom-aria",
+    "cardtrader_id": 384174
   },
   {
     "card_code": "GD04-081",
@@ -1196,7 +1399,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "üso-ewin-gd-04-phantom-aria",
+    "cardtrader_id": 384175
   },
   {
     "card_code": "GD04-081_p1",
@@ -1207,7 +1412,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "üso-ewin-r-gd-04-phantom-aria",
+    "cardtrader_id": 388381
   },
   {
     "card_code": "GD04-082",
@@ -1218,7 +1425,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "rosamia-badam-gd-04-phantom-aria",
+    "cardtrader_id": 384176
   },
   {
     "card_code": "GD04-083",
@@ -1229,7 +1438,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "marbet-fingerhat-gd-04-phantom-aria",
+    "cardtrader_id": 384177
   },
   {
     "card_code": "GD04-084",
@@ -1240,7 +1451,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "sleggar-law-gd-04-phantom-aria",
+    "cardtrader_id": 384178
   },
   {
     "card_code": "GD04-085",
@@ -1251,7 +1464,9 @@
     "card_type": "Pilot",
     "level": 5,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "suletta-mercury-gd-04-phantom-aria",
+    "cardtrader_id": 384179
   },
   {
     "card_code": "GD04-085_p1",
@@ -1262,7 +1477,9 @@
     "card_type": "Pilot",
     "level": 5,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "suletta-mercury-r-gd-04-phantom-aria",
+    "cardtrader_id": 388382
   },
   {
     "card_code": "GD04-086",
@@ -1273,7 +1490,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "garma-zabi-gd-04-phantom-aria",
+    "cardtrader_id": 384180
   },
   {
     "card_code": "GD04-087",
@@ -1284,7 +1503,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "elan-ceres-enhanced-person-number-5-gd-04-phantom-aria",
+    "cardtrader_id": 384181
   },
   {
     "card_code": "GD04-088",
@@ -1295,7 +1516,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "tokwan-gd-04-phantom-aria",
+    "cardtrader_id": 384182
   },
   {
     "card_code": "GD04-089",
@@ -1306,7 +1529,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "nena-trinity-gd-04-phantom-aria",
+    "cardtrader_id": 384183
   },
   {
     "card_code": "GD04-089_p1",
@@ -1317,7 +1542,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "nena-trinity-r-gd-04-phantom-aria",
+    "cardtrader_id": 388385
   },
   {
     "card_code": "GD04-090",
@@ -1328,7 +1555,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "hallelujah-haptism-gd-04-phantom-aria",
+    "cardtrader_id": 384184
   },
   {
     "card_code": "GD04-091",
@@ -1339,7 +1568,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "deux-murasame-gd-04-phantom-aria",
+    "cardtrader_id": 384185
   },
   {
     "card_code": "GD04-092",
@@ -1350,7 +1581,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "michael-trinity-gd-04-phantom-aria",
+    "cardtrader_id": 384186
   },
   {
     "card_code": "GD04-093",
@@ -1361,7 +1594,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "rey-za-burrel-gd-04-phantom-aria",
+    "cardtrader_id": 384187
   },
   {
     "card_code": "GD04-093_p1",
@@ -1372,7 +1607,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "rey-za-burrel-r-gd-04-phantom-aria",
+    "cardtrader_id": 388383
   },
   {
     "card_code": "GD04-094",
@@ -1383,7 +1620,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "pala-sys-gd-04-phantom-aria",
+    "cardtrader_id": 384188
   },
   {
     "card_code": "GD04-095",
@@ -1394,7 +1633,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "lunamaria-hawke-gd-04-phantom-aria",
+    "cardtrader_id": 384189
   },
   {
     "card_code": "GD04-095_p1",
@@ -1405,7 +1646,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "lunamaria-hawke-u-gd-04-phantom-aria",
+    "cardtrader_id": 388414
   },
   {
     "card_code": "GD04-096",
@@ -1416,7 +1659,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "ennil-el-gd-04-phantom-aria",
+    "cardtrader_id": 384190
   },
   {
     "card_code": "GD04-097",
@@ -1427,7 +1672,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "loran-cehack-gd-04-phantom-aria",
+    "cardtrader_id": 384191
   },
   {
     "card_code": "GD04-097_p1",
@@ -1438,7 +1685,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "loran-cehack-r-gd-04-phantom-aria",
+    "cardtrader_id": 388386
   },
   {
     "card_code": "GD04-098",
@@ -1449,7 +1698,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "riddhe-marcenas-gd-04-phantom-aria",
+    "cardtrader_id": 384192
   },
   {
     "card_code": "GD04-099",
@@ -1460,7 +1711,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "ali-al-saachez-gd-04-phantom-aria",
+    "cardtrader_id": 384193
   },
   {
     "card_code": "GD04-100",
@@ -1471,7 +1724,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "sochie-heim-gd-04-phantom-aria",
+    "cardtrader_id": 384194
   },
   {
     "card_code": "GD04-101",
@@ -1482,7 +1737,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "kindhearted-gd-04-phantom-aria",
+    "cardtrader_id": 384195
   },
   {
     "card_code": "GD04-102",
@@ -1493,7 +1750,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "moment-of-rest-gd-04-phantom-aria",
+    "cardtrader_id": 384196
   },
   {
     "card_code": "GD04-102_p1",
@@ -1504,7 +1763,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "moment-of-rest-u-gd-04-phantom-aria",
+    "cardtrader_id": 388413
   },
   {
     "card_code": "GD04-103",
@@ -1515,7 +1776,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "spiritual-support-gd-04-phantom-aria",
+    "cardtrader_id": 384197
   },
   {
     "card_code": "GD04-104",
@@ -1526,7 +1789,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "shrike-team&#039;s-bulwark-gd-04-phantom-aria",
+    "cardtrader_id": 12770
   },
   {
     "card_code": "GD04-105",
@@ -1537,7 +1802,9 @@
     "card_type": "Command",
     "level": 5,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "encounter-gd-04-phantom-aria",
+    "cardtrader_id": 384199
   },
   {
     "card_code": "GD04-105_p1",
@@ -1548,7 +1815,9 @@
     "card_type": "Command",
     "level": 5,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "encounter-r-gd-04-phantom-aria",
+    "cardtrader_id": 388394
   },
   {
     "card_code": "GD04-106",
@@ -1559,7 +1828,9 @@
     "card_type": "Command",
     "level": 5,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "indiscriminate-violence-gd-04-phantom-aria",
+    "cardtrader_id": 384200
   },
   {
     "card_code": "GD04-107",
@@ -1570,7 +1841,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "destined-battle-gd-04-phantom-aria",
+    "cardtrader_id": 384201
   },
   {
     "card_code": "GD04-108",
@@ -1581,7 +1854,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "witches-from-earth-gd-04-phantom-aria",
+    "cardtrader_id": 384202
   },
   {
     "card_code": "GD04-109",
@@ -1592,7 +1867,9 @@
     "card_type": "Command",
     "level": 5,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "overwhelming-pressure-gd-04-phantom-aria",
+    "cardtrader_id": 384203
   },
   {
     "card_code": "GD04-110",
@@ -1603,7 +1880,9 @@
     "card_type": "Command",
     "level": 6,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "financier-gd-04-phantom-aria",
+    "cardtrader_id": 384204
   },
   {
     "card_code": "GD04-110_p1",
@@ -1614,7 +1893,9 @@
     "card_type": "Command",
     "level": 6,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "financier-u-gd-04-phantom-aria",
+    "cardtrader_id": 388416
   },
   {
     "card_code": "GD04-111",
@@ -1625,7 +1906,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "trinity-gd-04-phantom-aria",
+    "cardtrader_id": 384183
   },
   {
     "card_code": "GD04-112",
@@ -1636,7 +1919,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "inspector-gd-04-phantom-aria",
+    "cardtrader_id": 384206
   },
   {
     "card_code": "GD04-113",
@@ -1647,7 +1932,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "damage-control-gd-04-phantom-aria",
+    "cardtrader_id": 384207
   },
   {
     "card_code": "GD04-114",
@@ -1658,7 +1945,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "reformationist-gd-04-phantom-aria",
+    "cardtrader_id": 384208
   },
   {
     "card_code": "GD04-114_p1",
@@ -1669,7 +1958,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "reformationist-u-gd-04-phantom-aria",
+    "cardtrader_id": 388412
   },
   {
     "card_code": "GD04-115",
@@ -1680,7 +1971,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "backup-gd-04-phantom-aria",
+    "cardtrader_id": 384209
   },
   {
     "card_code": "GD04-116",
@@ -1691,7 +1984,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "reliable-big-brother-gd-04-phantom-aria",
+    "cardtrader_id": 384210
   },
   {
     "card_code": "GD04-117",
@@ -1702,7 +1997,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "graceful-demeanor-gd-04-phantom-aria",
+    "cardtrader_id": 384211
   },
   {
     "card_code": "GD04-117_p1",
@@ -1713,7 +2010,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "graceful-demeanor-r-gd-04-phantom-aria",
+    "cardtrader_id": 388391
   },
   {
     "card_code": "GD04-118",
@@ -1724,7 +2023,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "world-distortion-gd-04-phantom-aria",
+    "cardtrader_id": 384212
   },
   {
     "card_code": "GD04-119",
@@ -1735,7 +2036,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "fighting-alone-gd-04-phantom-aria",
+    "cardtrader_id": 384213
   },
   {
     "card_code": "GD04-120",
@@ -1746,7 +2049,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "machine-doll-squad-gd-04-phantom-aria",
+    "cardtrader_id": 384214
   },
   {
     "card_code": "GD04-121",
@@ -1757,7 +2062,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "reineforce-jr.-r-gd-04-phantom-aria",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD04-122",
@@ -1768,7 +2075,9 @@
     "card_type": "Base",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "jaburo-gd-04-phantom-aria",
+    "cardtrader_id": 384216
   },
   {
     "card_code": "GD04-123",
@@ -1779,7 +2088,9 @@
     "card_type": "Base",
     "level": 5,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "a-baoa-qu-gd-04-phantom-aria",
+    "cardtrader_id": 384217
   },
   {
     "card_code": "GD04-124",
@@ -1790,7 +2101,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "9th-tactical-testing-sector-gd-04-phantom-aria",
+    "cardtrader_id": 384218
   },
   {
     "card_code": "GD04-125",
@@ -1801,7 +2114,9 @@
     "card_type": "Base",
     "level": 4,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "trinity-warship-gd-04-phantom-aria",
+    "cardtrader_id": 384219
   },
   {
     "card_code": "GD04-126",
@@ -1812,7 +2127,9 @@
     "card_type": "Base",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "izuma-colony-gd-04-phantom-aria",
+    "cardtrader_id": 384220
   },
   {
     "card_code": "GD04-127",
@@ -1823,7 +2140,9 @@
     "card_type": "Base",
     "level": 4,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "freeden-ⅱ-gd-04-phantom-aria",
+    "cardtrader_id": 353570
   },
   {
     "card_code": "GD04-128",
@@ -1834,7 +2153,9 @@
     "card_type": "Base",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "armory-one-gd-04-phantom-aria",
+    "cardtrader_id": 384222
   },
   {
     "card_code": "GD04-129",
@@ -1845,7 +2166,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "willgem-gd-04-phantom-aria",
+    "cardtrader_id": 384223
   },
   {
     "card_code": "GD04-130",
@@ -1856,39 +2179,9 @@
     "card_type": "Base",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
-  },
-  {
-    "card_code": "T-021",
-    "card_name": "Parts",
-    "set_code": "GD04",
-    "set_name": "Phantom Aria [GD04]",
-    "card_type": "Token",
-    "rarity": "C"
-  },
-  {
-    "card_code": "T-022",
-    "card_name": "Wire-Guided Arm",
-    "set_code": "GD04",
-    "set_name": "Phantom Aria [GD04]",
-    "card_type": "Token",
-    "rarity": "C"
-  },
-  {
-    "card_code": "T-023",
-    "card_name": "Zeong (Head)",
-    "set_code": "GD04",
-    "set_name": "Phantom Aria [GD04]",
-    "card_type": "Token",
-    "rarity": "C"
-  },
-  {
-    "card_code": "T-024",
-    "card_name": "Alvaaron",
-    "set_code": "GD04",
-    "set_name": "Phantom Aria [GD04]",
-    "card_type": "Token",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "industrial-7-gd-04-phantom-aria",
+    "cardtrader_id": 384224
   },
   {
     "card_code": "R-031",
@@ -1896,7 +2189,9 @@
     "set_code": "GD04",
     "set_name": "Phantom Aria [GD04]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-04-phantom-aria",
+    "cardtrader_id": 384225
   },
   {
     "card_code": "R-031_p1",
@@ -1904,7 +2199,9 @@
     "set_code": "GD04",
     "set_name": "Phantom Aria [GD04]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-04-phantom-aria",
+    "cardtrader_id": 384226
   },
   {
     "card_code": "R-032",
@@ -1912,7 +2209,9 @@
     "set_code": "GD04",
     "set_name": "Phantom Aria [GD04]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-04-phantom-aria",
+    "cardtrader_id": 384225
   },
   {
     "card_code": "R-032_p1",
@@ -1920,7 +2219,9 @@
     "set_code": "GD04",
     "set_name": "Phantom Aria [GD04]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-04-phantom-aria",
+    "cardtrader_id": 384226
   },
   {
     "card_code": "R-033",
@@ -1928,7 +2229,9 @@
     "set_code": "GD04",
     "set_name": "Phantom Aria [GD04]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-04-phantom-aria",
+    "cardtrader_id": 384225
   },
   {
     "card_code": "R-033_p1",
@@ -1936,7 +2239,9 @@
     "set_code": "GD04",
     "set_name": "Phantom Aria [GD04]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-04-phantom-aria",
+    "cardtrader_id": 384226
   },
   {
     "card_code": "R-034",
@@ -1944,7 +2249,9 @@
     "set_code": "GD04",
     "set_name": "Phantom Aria [GD04]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-04-phantom-aria",
+    "cardtrader_id": 384225
   },
   {
     "card_code": "R-034_p1",
@@ -1952,7 +2259,9 @@
     "set_code": "GD04",
     "set_name": "Phantom Aria [GD04]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-04-phantom-aria",
+    "cardtrader_id": 384226
   },
   {
     "card_code": "R-035",
@@ -1960,7 +2269,9 @@
     "set_code": "GD04",
     "set_name": "Phantom Aria [GD04]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-04-phantom-aria",
+    "cardtrader_id": 384225
   },
   {
     "card_code": "R-035_p1",
@@ -1968,7 +2279,9 @@
     "set_code": "GD04",
     "set_name": "Phantom Aria [GD04]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-04-phantom-aria",
+    "cardtrader_id": 384226
   },
   {
     "card_code": "R-036",
@@ -1976,7 +2289,9 @@
     "set_code": "GD04",
     "set_name": "Phantom Aria [GD04]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-04-phantom-aria",
+    "cardtrader_id": 384225
   },
   {
     "card_code": "R-036_p1",
@@ -1984,7 +2299,9 @@
     "set_code": "GD04",
     "set_name": "Phantom Aria [GD04]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-04-phantom-aria",
+    "cardtrader_id": 384226
   },
   {
     "card_code": "R-037",
@@ -1992,7 +2309,9 @@
     "set_code": "GD04",
     "set_name": "Phantom Aria [GD04]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-04-phantom-aria",
+    "cardtrader_id": 384225
   },
   {
     "card_code": "R-037_p1",
@@ -2000,7 +2319,9 @@
     "set_code": "GD04",
     "set_name": "Phantom Aria [GD04]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-04-phantom-aria",
+    "cardtrader_id": 384226
   },
   {
     "card_code": "R-038",
@@ -2008,7 +2329,9 @@
     "set_code": "GD04",
     "set_name": "Phantom Aria [GD04]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-04-phantom-aria",
+    "cardtrader_id": 384225
   },
   {
     "card_code": "R-038_p1",
@@ -2016,7 +2339,9 @@
     "set_code": "GD04",
     "set_name": "Phantom Aria [GD04]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-04-phantom-aria",
+    "cardtrader_id": 384226
   },
   {
     "card_code": "R-038_p2",
@@ -2024,7 +2349,9 @@
     "set_code": "GD04",
     "set_name": "Phantom Aria [GD04]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-04-phantom-aria",
+    "cardtrader_id": 384226
   },
   {
     "card_code": "R-039",
@@ -2032,7 +2359,9 @@
     "set_code": "GD04",
     "set_name": "Phantom Aria [GD04]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-04-phantom-aria",
+    "cardtrader_id": 384225
   },
   {
     "card_code": "R-039_p1",
@@ -2040,7 +2369,9 @@
     "set_code": "GD04",
     "set_name": "Phantom Aria [GD04]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-04-phantom-aria",
+    "cardtrader_id": 384226
   },
   {
     "card_code": "R-040",
@@ -2048,7 +2379,9 @@
     "set_code": "GD04",
     "set_name": "Phantom Aria [GD04]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-04-phantom-aria",
+    "cardtrader_id": 384225
   },
   {
     "card_code": "R-040_p1",
@@ -2056,6 +2389,61 @@
     "set_code": "GD04",
     "set_name": "Phantom Aria [GD04]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-04-phantom-aria",
+    "cardtrader_id": 384226
+  },
+  {
+    "card_code": "ST04-001_p4",
+    "card_name": "Aile Strike Gundam",
+    "set_code": "GD04",
+    "set_name": "Phantom Aria [GD04]",
+    "color": "White",
+    "card_type": "Unit",
+    "level": 5,
+    "cost": 4,
+    "rarity": "LR",
+    "cardtrader_slug": "aile-strike-gundam-lr-gd-04-phantom-aria",
+    "cardtrader_id": 388399
+  },
+  {
+    "card_code": "T-021",
+    "card_name": "Parts",
+    "set_code": "GD04",
+    "set_name": "Phantom Aria [GD04]",
+    "card_type": "Token",
+    "rarity": "C",
+    "cardtrader_slug": "parts-gd-04-phantom-aria",
+    "cardtrader_id": 384245
+  },
+  {
+    "card_code": "T-022",
+    "card_name": "Wire-Guided Arm",
+    "set_code": "GD04",
+    "set_name": "Phantom Aria [GD04]",
+    "card_type": "Token",
+    "rarity": "C",
+    "cardtrader_slug": "wire-guided-arm-gd-04-phantom-aria",
+    "cardtrader_id": 384246
+  },
+  {
+    "card_code": "T-023",
+    "card_name": "Zeong (Head)",
+    "set_code": "GD04",
+    "set_name": "Phantom Aria [GD04]",
+    "card_type": "Token",
+    "rarity": "C",
+    "cardtrader_slug": "zeong-head-gd-04-phantom-aria",
+    "cardtrader_id": 384247
+  },
+  {
+    "card_code": "T-024",
+    "card_name": "Alvaaron",
+    "set_code": "GD04",
+    "set_name": "Phantom Aria [GD04]",
+    "card_type": "Token",
+    "rarity": "C",
+    "cardtrader_slug": "alvaaron-gd-04-phantom-aria",
+    "cardtrader_id": 384248
   }
 ]

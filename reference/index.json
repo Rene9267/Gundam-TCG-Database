@@ -1,0 +1,148 @@
+{
+  "version": 1,
+  "sets": [
+    {
+      "set_code": "EB01",
+      "set_name": "Eternal Nexus [EB01]",
+      "total": 108,
+      "cross_ref_sets": []
+    },
+    {
+      "set_code": "GD01",
+      "set_name": "Newtype Rising [GD01]",
+      "total": 179,
+      "cross_ref_sets": [
+        "GD03",
+        "GD04",
+        "GD05",
+        "ST09"
+      ]
+    },
+    {
+      "set_code": "GD02",
+      "set_name": "Dual Impact [GD02]",
+      "total": 187,
+      "cross_ref_sets": [
+        "ST09"
+      ]
+    },
+    {
+      "set_code": "GD03",
+      "set_name": "Steel Requiem [GD03]",
+      "total": 202,
+      "cross_ref_sets": [
+        "GD04",
+        "PC01A",
+        "PC02A"
+      ]
+    },
+    {
+      "set_code": "GD04",
+      "set_name": "Phantom Aria [GD04]",
+      "total": 194,
+      "cross_ref_sets": []
+    },
+    {
+      "set_code": "GD05",
+      "set_name": "Freedom Ascension [GD05]",
+      "total": 197,
+      "cross_ref_sets": []
+    },
+    {
+      "set_code": "PC01A",
+      "set_name": "Premium Card Collection GUNDAM ASSEMBLE Set -Mobile Suit Gundam IRON-BLOODED ORPHANS- [PC01A]",
+      "total": 7,
+      "cross_ref_sets": []
+    },
+    {
+      "set_code": "PC02A",
+      "set_name": "Premium Card Collection GUNDAM ASSEMBLE Set -Mobile Suit Gundam GQuuuuuuX- [PC02A]",
+      "total": 6,
+      "cross_ref_sets": []
+    },
+    {
+      "set_code": "ST01",
+      "set_name": "Heroic Beginnings [ST01]",
+      "total": 35,
+      "cross_ref_sets": [
+        "GD05",
+        "ST05",
+        "ST09"
+      ]
+    },
+    {
+      "set_code": "ST02",
+      "set_name": "Wings of Advance [ST02]",
+      "total": 34,
+      "cross_ref_sets": [
+        "GD05",
+        "ST08"
+      ]
+    },
+    {
+      "set_code": "ST03",
+      "set_name": "Zeon's Rush [ST03]",
+      "total": 34,
+      "cross_ref_sets": [
+        "GD05",
+        "ST06"
+      ]
+    },
+    {
+      "set_code": "ST04",
+      "set_name": "SEED Strike [ST04]",
+      "total": 35,
+      "cross_ref_sets": [
+        "GD04",
+        "GD05",
+        "ST09"
+      ]
+    },
+    {
+      "set_code": "ST05",
+      "set_name": "Iron Bloom [ST05]",
+      "total": 32,
+      "cross_ref_sets": [
+        "GD03",
+        "PC01A",
+        "ST07"
+      ]
+    },
+    {
+      "set_code": "ST06",
+      "set_name": "Clan Unity [ST06]",
+      "total": 32,
+      "cross_ref_sets": [
+        "PC02A"
+      ]
+    },
+    {
+      "set_code": "ST07",
+      "set_name": "Celestial Drive [ST07]",
+      "total": 32,
+      "cross_ref_sets": [
+        "GD05"
+      ]
+    },
+    {
+      "set_code": "ST08",
+      "set_name": "Flash of Radiance [ST08]",
+      "total": 32,
+      "cross_ref_sets": []
+    },
+    {
+      "set_code": "ST09",
+      "set_name": "Destiny Ignition [ST09]",
+      "total": 39,
+      "cross_ref_sets": []
+    },
+    {
+      "set_code": "ST10",
+      "set_name": "Generation Pulse [ST10]",
+      "total": 35,
+      "cross_ref_sets": [
+        "EB01"
+      ]
+    }
+  ]
+}

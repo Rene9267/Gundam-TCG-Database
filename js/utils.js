@@ -109,7 +109,7 @@ function miniShimmer() {
 }
 
 function clearAuthFields() {
-  ['auth-email','auth-password','auth-confirm','auth-nickname','recover-email','recover-new-password','recover-confirm']
+  ['auth-email','auth-password','auth-confirm','auth-nickname','recover-email']
     .forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
 }
 
@@ -124,5 +124,5 @@ function sanitizeUrl() {
   history.replaceState(null, '', url.pathname + (url.search || ''));
 }
 
-const isTokenOrResource = (code) => code.startsWith('T-') || code.startsWith('R-');
+const isTokenOrResource = (code) => code.startsWith('T-') || code.startsWith('R-') || code.startsWith('EXR-');
 const getCardImageUrl = (code) => `${CARD_IMAGE_BASE}/${code}.webp`;

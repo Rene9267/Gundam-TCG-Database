@@ -8,7 +8,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "siege-ploy-c-st-08-flash-of-radiance",
+    "cardtrader_id": 365975
   },
   {
     "card_code": "ST02-014_p3",
@@ -19,7 +21,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "siege-ploy-c-st-08-flash-of-radiance",
+    "cardtrader_id": 365975
   },
   {
     "card_code": "ST08-001",
@@ -30,7 +34,9 @@
     "card_type": "Unit",
     "level": 9,
     "cost": 8,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "ξ-gundam-lr-st-08-flash-of-radiance",
+    "cardtrader_id": null
   },
   {
     "card_code": "ST08-001_p1",
@@ -41,7 +47,9 @@
     "card_type": "Unit",
     "level": 9,
     "cost": 8,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "ξ-gundam-lr-st-08-flash-of-radiance",
+    "cardtrader_id": null
   },
   {
     "card_code": "ST08-002",
@@ -52,7 +60,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "ξ-gundam-c-st-08-flash-of-radiance",
+    "cardtrader_id": null
   },
   {
     "card_code": "ST08-002_p1",
@@ -63,7 +73,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "ξ-gundam-c-st-08-flash-of-radiance",
+    "cardtrader_id": null
   },
   {
     "card_code": "ST08-003",
@@ -74,7 +86,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "messer-type-f-naked-commander-type-st-08-flash-of-radiance",
+    "cardtrader_id": 364775
   },
   {
     "card_code": "ST08-003_p1",
@@ -85,7 +99,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "messer-type-f-naked-commander-type-c-st-08-flash-of-radiance",
+    "cardtrader_id": 365963
   },
   {
     "card_code": "ST08-004",
@@ -96,7 +112,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "messer-type-f01-st-08-flash-of-radiance",
+    "cardtrader_id": 364776
   },
   {
     "card_code": "ST08-004_p1",
@@ -107,7 +125,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "messer-type-f01-c-st-08-flash-of-radiance",
+    "cardtrader_id": 365964
   },
   {
     "card_code": "ST08-005",
@@ -118,7 +138,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "messer-type-f02-minelayer-st-08-flash-of-radiance",
+    "cardtrader_id": 364777
   },
   {
     "card_code": "ST08-005_p1",
@@ -129,7 +151,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "messer-type-f02-minelayer-c-st-08-flash-of-radiance",
+    "cardtrader_id": 365965
   },
   {
     "card_code": "ST08-006",
@@ -140,7 +164,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 6,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "penelope-st-08-flash-of-radiance",
+    "cardtrader_id": 365950
   },
   {
     "card_code": "ST08-006_p1",
@@ -151,7 +177,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 6,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "penelope-lr-st-08-flash-of-radiance",
+    "cardtrader_id": 365966
   },
   {
     "card_code": "ST08-007",
@@ -162,7 +190,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "penelope-st-08-flash-of-radiance",
+    "cardtrader_id": 365950
   },
   {
     "card_code": "ST08-007_p1",
@@ -173,7 +203,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "penelope-c-st-08-flash-of-radiance",
+    "cardtrader_id": 365967
   },
   {
     "card_code": "ST08-008",
@@ -184,7 +216,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gustav-karl-type-00-st-08-flash-of-radiance",
+    "cardtrader_id": 365952
   },
   {
     "card_code": "ST08-008_p1",
@@ -195,7 +229,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gustav-karl-type-00-c-st-08-flash-of-radiance",
+    "cardtrader_id": 365968
   },
   {
     "card_code": "ST08-009",
@@ -206,7 +242,9 @@
     "card_type": "Unit",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "jegan-ground-type-a-man-hunter-st-08-flash-of-radiance",
+    "cardtrader_id": 365953
   },
   {
     "card_code": "ST08-009_p1",
@@ -217,7 +255,9 @@
     "card_type": "Unit",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "jegan-ground-type-a-man-hunter-c-st-08-flash-of-radiance",
+    "cardtrader_id": 365969
   },
   {
     "card_code": "ST08-010",
@@ -228,7 +268,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "hathaway-noa-st-08-flash-of-radiance",
+    "cardtrader_id": 365954
   },
   {
     "card_code": "ST08-010_p1",
@@ -239,7 +281,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "hathaway-noa-c-st-08-flash-of-radiance",
+    "cardtrader_id": 365970
   },
   {
     "card_code": "ST08-011",
@@ -250,7 +294,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "lane-aim-st-08-flash-of-radiance",
+    "cardtrader_id": 365955
   },
   {
     "card_code": "ST08-011_p1",
@@ -261,7 +307,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "lane-aim-c-st-08-flash-of-radiance",
+    "cardtrader_id": 365971
   },
   {
     "card_code": "ST08-012",
@@ -272,7 +320,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "words-for-hathaway-st-08-flash-of-radiance",
+    "cardtrader_id": 365956
   },
   {
     "card_code": "ST08-012_p1",
@@ -283,7 +333,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "words-for-hathaway-c-st-08-flash-of-radiance",
+    "cardtrader_id": 365972
   },
   {
     "card_code": "ST08-013",
@@ -294,7 +346,9 @@
     "card_type": "Command",
     "level": 5,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "lady-luck-st-08-flash-of-radiance",
+    "cardtrader_id": 365957
   },
   {
     "card_code": "ST08-013_p1",
@@ -305,7 +359,9 @@
     "card_type": "Command",
     "level": 5,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "lady-luck-c-st-08-flash-of-radiance",
+    "cardtrader_id": 365973
   },
   {
     "card_code": "ST08-014",
@@ -316,7 +372,9 @@
     "card_type": "Base",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "valiant-st-08-flash-of-radiance",
+    "cardtrader_id": 365958
   },
   {
     "card_code": "ST08-014_p1",
@@ -327,7 +385,9 @@
     "card_type": "Base",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "valiant-c-st-08-flash-of-radiance",
+    "cardtrader_id": 365974
   },
   {
     "card_code": "ST08-015",
@@ -338,7 +398,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "davao-st-08-flash-of-radiance",
+    "cardtrader_id": 365959
   },
   {
     "card_code": "ST08-015_p1",
@@ -349,6 +411,8 @@
     "card_type": "Base",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "davao-c-st-08-flash-of-radiance",
+    "cardtrader_id": 366546
   }
 ]

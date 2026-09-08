@@ -8,7 +8,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "fatal-strike-c-st-07-celestial-drive",
+    "cardtrader_id": 366004
   },
   {
     "card_code": "ST05-014_p3",
@@ -19,7 +21,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "fatal-strike-c-st-07-celestial-drive",
+    "cardtrader_id": 366004
   },
   {
     "card_code": "ST07-001",
@@ -30,7 +34,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-exia-st-07-celestial-drive",
+    "cardtrader_id": 364769
   },
   {
     "card_code": "ST07-001_p1",
@@ -41,7 +47,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-exia-lr-st-07-celestial-drive",
+    "cardtrader_id": 365989
   },
   {
     "card_code": "ST07-002",
@@ -52,7 +60,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-exia-st-07-celestial-drive",
+    "cardtrader_id": 364769
   },
   {
     "card_code": "ST07-002_p1",
@@ -63,7 +73,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-exia-c-st-07-celestial-drive",
+    "cardtrader_id": 365990
   },
   {
     "card_code": "ST07-003",
@@ -74,7 +86,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-virtue-st-07-celestial-drive",
+    "cardtrader_id": 364771
   },
   {
     "card_code": "ST07-003_p1",
@@ -85,7 +99,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-virtue-c-st-07-celestial-drive",
+    "cardtrader_id": 365991
   },
   {
     "card_code": "ST07-004",
@@ -96,7 +112,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-virtue-st-07-celestial-drive",
+    "cardtrader_id": 364771
   },
   {
     "card_code": "ST07-004_p1",
@@ -107,7 +125,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-virtue-c-st-07-celestial-drive",
+    "cardtrader_id": 365991
   },
   {
     "card_code": "ST07-005",
@@ -118,7 +138,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-dynames-st-07-celestial-drive",
+    "cardtrader_id": 365977
   },
   {
     "card_code": "ST07-005_p1",
@@ -129,7 +151,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-dynames-lr-st-07-celestial-drive",
+    "cardtrader_id": 365993
   },
   {
     "card_code": "ST07-006",
@@ -140,7 +164,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-dynames-st-07-celestial-drive",
+    "cardtrader_id": 365977
   },
   {
     "card_code": "ST07-006_p1",
@@ -151,7 +177,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-dynames-c-st-07-celestial-drive",
+    "cardtrader_id": 365994
   },
   {
     "card_code": "ST07-007",
@@ -162,7 +190,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-kyrios-st-07-celestial-drive",
+    "cardtrader_id": 365979
   },
   {
     "card_code": "ST07-007_p1",
@@ -173,7 +203,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-kyrios-c-st-07-celestial-drive",
+    "cardtrader_id": 365995
   },
   {
     "card_code": "ST07-008",
@@ -184,7 +216,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-kyrios-flight-mode-st-07-celestial-drive",
+    "cardtrader_id": 365980
   },
   {
     "card_code": "ST07-008_p1",
@@ -195,7 +229,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-kyrios-flight-mode-c-st-07-celestial-drive",
+    "cardtrader_id": 365996
   },
   {
     "card_code": "ST07-009",
@@ -206,7 +242,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "setsuna-f.-seiei-c-st-07-celestial-drive",
+    "cardtrader_id": null
   },
   {
     "card_code": "ST07-009_p1",
@@ -217,7 +255,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "setsuna-f.-seiei-c-st-07-celestial-drive",
+    "cardtrader_id": null
   },
   {
     "card_code": "ST07-010",
@@ -228,7 +268,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "tieria-erde-st-07-celestial-drive",
+    "cardtrader_id": 365982
   },
   {
     "card_code": "ST07-010_p1",
@@ -239,7 +281,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "tieria-erde-c-st-07-celestial-drive",
+    "cardtrader_id": 365998
   },
   {
     "card_code": "ST07-011",
@@ -250,7 +294,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "lockon-stratos-neil-st-07-celestial-drive",
+    "cardtrader_id": 365983
   },
   {
     "card_code": "ST07-011_p1",
@@ -261,7 +307,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "lockon-stratos-neil-c-st-07-celestial-drive",
+    "cardtrader_id": 365999
   },
   {
     "card_code": "ST07-012",
@@ -272,7 +320,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "allelujah-haptism-st-07-celestial-drive",
+    "cardtrader_id": 365984
   },
   {
     "card_code": "ST07-012_p1",
@@ -283,7 +333,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "allelujah-haptism-c-st-07-celestial-drive",
+    "cardtrader_id": 366000
   },
   {
     "card_code": "ST07-013",
@@ -294,7 +346,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "armed-intervention-st-07-celestial-drive",
+    "cardtrader_id": 365985
   },
   {
     "card_code": "ST07-013_p1",
@@ -305,7 +359,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "armed-intervention-c-st-07-celestial-drive",
+    "cardtrader_id": 366001
   },
   {
     "card_code": "ST07-014",
@@ -316,7 +372,9 @@
     "card_type": "Command",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "tactical-visionary-st-07-celestial-drive",
+    "cardtrader_id": 365986
   },
   {
     "card_code": "ST07-014_p1",
@@ -327,7 +385,9 @@
     "card_type": "Command",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "tactical-visionary-c-st-07-celestial-drive",
+    "cardtrader_id": 366002
   },
   {
     "card_code": "ST07-015",
@@ -338,7 +398,9 @@
     "card_type": "Base",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "ptolemaios-st-07-celestial-drive",
+    "cardtrader_id": 365987
   },
   {
     "card_code": "ST07-015_p1",
@@ -349,6 +411,8 @@
     "card_type": "Base",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "ptolemaios-c-st-07-celestial-drive",
+    "cardtrader_id": 366003
   }
 ]

@@ -1,0 +1,71 @@
+[
+  {
+    "card_code": "GD03-106_p1",
+    "card_name": "M.A.V. Tactics",
+    "set_code": "PC02A",
+    "set_name": "Premium Card Collection GUNDAM ASSEMBLE Set -Mobile Suit Gundam GQuuuuuuX- [PC02A]",
+    "rarity": "U",
+    "color": "Green",
+    "card_type": "Command",
+    "level": 6,
+    "cost": 4,
+    "cardtrader_slug": "m.a.v.-tactics-u-pc-02a-premium-card-collection-gundam-assemble-set-mobile-suit-gundam-gquuuuuux",
+    "cardtrader_id": null
+  },
+  {
+    "card_code": "ST06-001_p2",
+    "card_name": "GQuuuuuuX (Omega Psycommu)",
+    "set_code": "PC02A",
+    "set_name": "Premium Card Collection GUNDAM ASSEMBLE Set -Mobile Suit Gundam GQuuuuuuX- [PC02A]",
+    "rarity": "LR",
+    "color": "Red",
+    "card_type": "Unit",
+    "level": 5,
+    "cost": 3,
+    "cardtrader_slug": "gquuuuuux-omega-psycommu-lr-pc-02a-premium-card-collection-gundam-assemble-set-mobile-suit-gundam-gquuuuuux",
+    "cardtrader_id": 353548
+  },
+  {
+    "card_code": "ST06-005_p2",
+    "card_name": "Red Gundam",
+    "set_code": "PC02A",
+    "set_name": "Premium Card Collection GUNDAM ASSEMBLE Set -Mobile Suit Gundam GQuuuuuuX- [PC02A]",
+    "rarity": "LR",
+    "color": "Green",
+    "card_type": "Unit",
+    "level": 4,
+    "cost": 3,
+    "cardtrader_slug": "red-gundam-lr-pc-02a-premium-card-collection-gundam-assemble-set-mobile-suit-gundam-gquuuuuux",
+    "cardtrader_id": 353599
+  },
+  {
+    "card_code": "T-018_p1",
+    "card_name": "Red Gundam",
+    "set_code": "PC02A",
+    "set_name": "Premium Card Collection GUNDAM ASSEMBLE Set -Mobile Suit Gundam GQuuuuuuX- [PC02A]",
+    "rarity": "C",
+    "card_type": "Token",
+    "cardtrader_slug": "red-gundam-c-pc-02a-premium-card-collection-gundam-assemble-set-mobile-suit-gundam-gquuuuuux",
+    "cardtrader_id": 353599
+  },
+  {
+    "card_code": "T-019_p1",
+    "card_name": "GQuuuuuuX (Omega Psycommu)",
+    "set_code": "PC02A",
+    "set_name": "Premium Card Collection GUNDAM ASSEMBLE Set -Mobile Suit Gundam GQuuuuuuX- [PC02A]",
+    "rarity": "C",
+    "card_type": "Token",
+    "cardtrader_slug": "gquuuuuux-omega-psycommu-c-pc-02a-premium-card-collection-gundam-assemble-set-mobile-suit-gundam-gquuuuuux",
+    "cardtrader_id": 353548
+  },
+  {
+    "card_code": "T-020_p1",
+    "card_name": "GFreD",
+    "set_code": "PC02A",
+    "set_name": "Premium Card Collection GUNDAM ASSEMBLE Set -Mobile Suit Gundam GQuuuuuuX- [PC02A]",
+    "rarity": "C",
+    "card_type": "Token",
+    "cardtrader_slug": "gfred-c-pc-02a-premium-card-collection-gundam-assemble-set-mobile-suit-gundam-gquuuuuux",
+    "cardtrader_id": 368350
+  }
+]

@@ -101,38 +101,13 @@
         </div>
       </div>
 
-      <!-- Password recovery: Email + Nuova Password + Conferma -->
+      <!-- Password recovery: email only (reset via link) -->
       <div id="recover-form" class="auth-card hidden bg-black/40 backdrop-blur-sm rounded-2xl shadow-lg border border-white/10 p-6">
         <p class="text-sm text-white/70 mb-4 text-center font-medium">Recupera Password</p>
         <input id="recover-email" type="email" placeholder="La tua Email" autocomplete="email"
-          class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
-
-        <div class="relative mb-3">
-          <input id="recover-new-password" type="password" placeholder="Nuova Password" autocomplete="new-password" name="rec-pwd"
-            class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm pr-10 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
-          <button id="eye-recover" type="button" class="eye-btn absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center transition select-none focus:outline-none active:outline-none" tabindex="-1">
-              <span class="relative w-6 h-6 block">
-                <img src="img/zaku.png" alt="" class="w-full h-full object-contain">
-                <span class="eye-overlay absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <span class="eye-dot w-1.5 h-1.5 rounded-full bg-pink-500 shadow-[0_0_8px_3px_rgba(236,72,153,0.9)]"></span>
-                </span>
-              </span>
-            </button>
-        </div>
-        <div class="relative mb-4">
-          <input id="recover-confirm" type="password" placeholder="Conferma Password" autocomplete="new-password" name="rec-pwd-confirm"
-            class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm pr-10 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
-          <button id="eye-recover-confirm" type="button" class="eye-btn absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center transition select-none focus:outline-none active:outline-none" tabindex="-1">
-              <span class="relative w-6 h-6 block">
-                <img src="img/zaku.png" alt="" class="w-full h-full object-contain">
-                <span class="eye-overlay absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <span class="eye-dot w-1.5 h-1.5 rounded-full bg-pink-500 shadow-[0_0_8px_3px_rgba(236,72,153,0.9)]"></span>
-                </span>
-              </span>
-            </button>
-        </div>
+          class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm mb-4 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder-white/40 text-white">
         <button id="recover-submit" class="relative w-full bg-[#2c52b3] hover:bg-[#1e3a7a] text-white text-base font-bold py-3 rounded-full shadow-sm transition hover:scale-[1.02] active:scale-95 disabled:opacity-60 disabled:hover:scale-100">
-          <span id="recover-submit-text">Avanti</span>
+          <span id="recover-submit-text">Invia link di reset</span>
           <span id="recover-spinner" class="absolute inset-0 flex items-center justify-center invisible">
             <span class="w-5 h-5 border-2 border-[#fff867] border-t-transparent rounded-full animate-spin"></span>
           </span>
@@ -405,7 +380,7 @@
                     <p class="text-xs font-semibold text-white/60 uppercase tracking-wider mb-3">Variante</p>
                     <div class="flex flex-wrap gap-2">
                       <button class="variant-btn active" data-filter="base">Base</button>
-                      <button class="variant-btn" data-filter="altart">Alt Art</button>
+                      <button class="variant-btn" data-filter="altart">Alt</button>
                       <button class="variant-btn" data-filter="resources">Token</button>
                     </div>
                   </div>
@@ -467,6 +442,7 @@
             </div>
 
             <div id="collection-grid" class="grid grid-cols-2 md:grid-cols-4 gap-3"></div>
+            <div id="collection-pagination" class="hidden mt-4 flex items-center justify-center gap-4"></div>
             <div id="collection-empty" class="hidden text-center py-16">
               <p class="text-white/60 text-lg">Nessuna carta trovata</p>
             </div>
@@ -578,9 +554,10 @@
               <span>🛒</span> CardTrader
             </a>
             <div id="sheet-pricing-ctr" class="flex items-center gap-2 hidden">
-              <span id="sheet-price-min" class="text-xs font-semibold text-white"></span>
-              <span class="text-white/30">|</span>
-              <span id="sheet-price-avg" class="text-xs text-white/70"></span>
+              <span id="sheet-price-status" class="text-xs text-white/60 hidden"></span>
+              <span id="sheet-price-min" class="text-xs font-semibold text-white hidden"></span>
+              <span id="sheet-price-sep" class="text-white/30 hidden">|</span>
+              <span id="sheet-price-avg" class="text-xs text-white/70 hidden"></span>
             </div>
           </div>
         </div>
@@ -641,19 +618,23 @@
     </div>
   </div>
 
-  <script src="js/config.js"></script>
-  <script src="js/state.js"></script>
-  <script src="js/supabase.js"></script>
-  <script src="js/utils.js"></script>
-  <script src="js/cardtrader.js"></script>
-  <script src="js/reference.js"></script>
-  <script src="js/cards.js"></script>
-  <script src="js/auth.js"></script>
-  <script src="js/dashboard.js"></script>
-  <script src="js/collection.js"></script>
-  <script src="js/sheet.js"></script>
-  <script src="js/menu.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/sw-register.js"></script>
+  <script src="js/config.js" defer></script>
+  <script src="js/state.js" defer></script>
+  <script src="js/supabase.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/ui-progress.js" defer></script>
+  <script src="js/cardtrader.js" defer></script>
+  <script src="js/reference.js" defer></script>
+  <script src="js/cards.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/dashboard.js" defer></script>
+  <script src="js/collection-filters.js" defer></script>
+  <script src="js/collection-overview.js" defer></script>
+  <script src="js/collection-grid.js" defer></script>
+  <script src="js/collection-stats.js" defer></script>
+  <script src="js/sheet.js" defer></script>
+  <script src="js/menu.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/sw-register.js" defer></script>
 </body>
 </html>

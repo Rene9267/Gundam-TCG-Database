@@ -8,7 +8,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "unforeseen-incident-c-st-05-iron-bloom",
+    "cardtrader_id": 351166
   },
   {
     "card_code": "ST01-014_p5",
@@ -19,7 +21,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "unforeseen-incident-c-st-05-iron-bloom",
+    "cardtrader_id": 351166
   },
   {
     "card_code": "ST05-001",
@@ -30,7 +34,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-barbatos-4th-form-st-05-iron-bloom",
+    "cardtrader_id": 351184
   },
   {
     "card_code": "ST05-001_p1",
@@ -41,7 +47,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-barbatos-4th-form-lr-st-05-iron-bloom",
+    "cardtrader_id": 351183
   },
   {
     "card_code": "ST05-002",
@@ -52,7 +60,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-barbatos-2nd-form-st-05-iron-bloom",
+    "cardtrader_id": 351186
   },
   {
     "card_code": "ST05-002_p1",
@@ -63,7 +73,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-barbatos-2nd-form-c-st-05-iron-bloom",
+    "cardtrader_id": 351185
   },
   {
     "card_code": "ST05-003",
@@ -74,7 +86,9 @@
     "card_type": "Unit",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "cgs-mobile-worker-st-05-iron-bloom",
+    "cardtrader_id": 351195
   },
   {
     "card_code": "ST05-003_p1",
@@ -85,7 +99,9 @@
     "card_type": "Unit",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "cgs-mobile-worker-c-st-05-iron-bloom",
+    "cardtrader_id": 351196
   },
   {
     "card_code": "ST05-004",
@@ -96,7 +112,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "graze-custom-st-05-iron-bloom",
+    "cardtrader_id": 351188
   },
   {
     "card_code": "ST05-004_p1",
@@ -107,7 +125,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "graze-custom-c-st-05-iron-bloom",
+    "cardtrader_id": 351187
   },
   {
     "card_code": "ST05-005",
@@ -118,7 +138,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-gusion-rebake-st-05-iron-bloom",
+    "cardtrader_id": 351181
   },
   {
     "card_code": "ST05-005_p1",
@@ -129,7 +151,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-gusion-rebake-c-st-05-iron-bloom",
+    "cardtrader_id": 351182
   },
   {
     "card_code": "ST05-006",
@@ -140,7 +164,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "hyakuren-st-05-iron-bloom",
+    "cardtrader_id": 351180
   },
   {
     "card_code": "ST05-006_p1",
@@ -151,7 +177,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "hyakuren-c-st-05-iron-bloom",
+    "cardtrader_id": 351179
   },
   {
     "card_code": "ST05-007",
@@ -162,7 +190,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "mcgillis&#039;-schwalbe-graze-lr-st-05-iron-bloom",
+    "cardtrader_id": null
   },
   {
     "card_code": "ST05-007_p1",
@@ -173,7 +203,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "mcgillis&#039;-schwalbe-graze-lr-st-05-iron-bloom",
+    "cardtrader_id": null
   },
   {
     "card_code": "ST05-008",
@@ -184,7 +216,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "graze-commander-type-st-05-iron-bloom",
+    "cardtrader_id": 351190
   },
   {
     "card_code": "ST05-008_p1",
@@ -195,7 +229,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "graze-commander-type-c-st-05-iron-bloom",
+    "cardtrader_id": 351189
   },
   {
     "card_code": "ST05-009",
@@ -206,7 +242,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "graze-st-05-iron-bloom",
+    "cardtrader_id": 351174
   },
   {
     "card_code": "ST05-009_p1",
@@ -217,7 +255,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "graze-c-st-05-iron-bloom",
+    "cardtrader_id": 351191
   },
   {
     "card_code": "ST05-010",
@@ -228,7 +268,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "mikazuki-augus-st-05-iron-bloom",
+    "cardtrader_id": 351171
   },
   {
     "card_code": "ST05-010_p1",
@@ -239,7 +281,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "mikazuki-augus-c-st-05-iron-bloom",
+    "cardtrader_id": 351170
   },
   {
     "card_code": "ST05-011",
@@ -250,7 +294,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "akihiro-altland-st-05-iron-bloom",
+    "cardtrader_id": 351167
   },
   {
     "card_code": "ST05-011_p1",
@@ -261,7 +307,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "akihiro-altland-c-st-05-iron-bloom",
+    "cardtrader_id": 351168
   },
   {
     "card_code": "ST05-012",
@@ -272,7 +320,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "mcgillis-fareed-st-05-iron-bloom",
+    "cardtrader_id": 351176
   },
   {
     "card_code": "ST05-012_p1",
@@ -283,7 +333,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "mcgillis-fareed-c-st-05-iron-bloom",
+    "cardtrader_id": 351175
   },
   {
     "card_code": "ST05-013",
@@ -294,7 +346,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "with-iron-and-blood-st-05-iron-bloom",
+    "cardtrader_id": 351172
   },
   {
     "card_code": "ST05-013_p1",
@@ -305,7 +359,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "with-iron-and-blood-c-st-05-iron-bloom",
+    "cardtrader_id": 351169
   },
   {
     "card_code": "ST05-014",
@@ -316,7 +372,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "fatal-strike-st-05-iron-bloom",
+    "cardtrader_id": 351194
   },
   {
     "card_code": "ST05-014_p1",
@@ -327,7 +385,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "fatal-strike-c-st-05-iron-bloom",
+    "cardtrader_id": 351193
   },
   {
     "card_code": "ST05-015",
@@ -338,7 +398,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "isaribi-st-05-iron-bloom",
+    "cardtrader_id": 351177
   },
   {
     "card_code": "ST05-015_p1",
@@ -349,6 +411,8 @@
     "card_type": "Base",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "isaribi-c-st-05-iron-bloom",
+    "cardtrader_id": 351178
   }
 ]

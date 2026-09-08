@@ -12,8 +12,10 @@ capacitor.config.json
 # Build output
 dist/
 build/
+_minified/
 *.apk
 *.aab
+reference_cards.json.bak
 
 # Environment & secrets
 .env

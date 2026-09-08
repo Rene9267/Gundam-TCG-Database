@@ -29,6 +29,7 @@ const SETS = [
   { packageId: '616102', setCode: 'GD02', setName: 'Dual Impact' },
   { packageId: '616103', setCode: 'GD03', setName: 'Steel Requiem' },
   { packageId: '616104', setCode: 'GD04', setName: 'Phantom Aria' },
+  { packageId: '616105', setCode: 'GD05', setName: 'Freedom Ascension' },
   { packageId: '616201', setCode: 'EB01', setName: 'Eternal Nexus' },
 ];
 
@@ -206,6 +207,7 @@ async function main() {
     if (prev) {
       card.cardtrader_slug = prev.cardtrader_slug || card.cardtrader_slug;
       card.cardtrader_id = prev.cardtrader_id || card.cardtrader_id;
+      card.printings = prev.printings || card.printings;
     }
 
     // Fallback: eredità cardtrader dati dalla carta base se la variante non li ha
