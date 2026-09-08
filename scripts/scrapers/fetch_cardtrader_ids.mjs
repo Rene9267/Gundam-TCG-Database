@@ -1,157 +1,110 @@
-import https from 'https';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { resolveCardBatch } from './cardtrader_router.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const REF_PATH = path.join(__dirname, '..', '..', 'reference_cards.json');
 
-function slugify(name) {
-  return name
-    .toLowerCase()
-    .replace(/[()',]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '');
+function isBaseCode(code) {
+  return !/_p\d+$/.test(code) && !/_(beta|reprint|event|stp|winner|championship|other)(\d+)?$/i.test(code);
 }
 
-function isVariantCode(code) {
-  return /_p\d+$/.test(code);
+function parseSetArg() {
+  const eq = process.argv.find((a) => a.startsWith('--set='));
+  if (eq) return eq.split('=')[1].toUpperCase();
+  const idx = process.argv.indexOf('--set');
+  if (idx !== -1 && process.argv[idx + 1]) return process.argv[idx + 1].toUpperCase();
+  return null;
 }
 
-function computeSetSlug(setCode, setName) {
-  const codeSlug = setCode.toLowerCase().slice(0, 2) + '-' + setCode.toLowerCase().slice(2);
-  const namePart = setName.replace(/\[.*?\]$/, '').trim();
-  const nameSlug = slugify(namePart);
-  return `${codeSlug}-${nameSlug}`;
+function parseCodeArg() {
+  const eq = process.argv.find((a) => a.startsWith('--code='));
+  if (eq) return eq.split('=')[1].toUpperCase();
+  const idx = process.argv.indexOf('--code');
+  if (idx !== -1 && process.argv[idx + 1]) return process.argv[idx + 1].toUpperCase();
+  return null;
 }
 
-function fetchFollowRedirect(url, redirects = 0) {
-  if (redirects > 5) return Promise.resolve(null);
-  return new Promise((resolve, reject) => {
-    const req = https.get(url, {
-      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
-      timeout: 15000,
-    }, (res) => {
-      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        const loc = res.headers.location.startsWith('http')
-          ? res.headers.location
-          : `https://www.cardtrader.com${res.headers.location}`;
-        res.resume();
-        fetchFollowRedirect(loc, redirects + 1).then(resolve).catch(reject);
-        return;
-      }
-      if (res.statusCode === 404 || res.statusCode >= 400) {
-        res.resume();
-        resolve(null);
-        return;
-      }
-      let data = '';
-      res.on('data', (chunk) => data += chunk);
-      res.on('end', () => resolve(data));
-    });
-    req.on('error', (err) => reject(err));
-    req.on('timeout', () => { req.destroy(); resolve(null); });
+function applyPrintingsToCatalog(refCards, baseCode, printings) {
+  const byCode = new Map(refCards.map((c) => [c.card_code, c]));
+  const baseCard = byCode.get(baseCode);
+  if (!baseCard || !printings?.length) return 0;
+
+  baseCard.printings = printings;
+  let updated = 1;
+
+  for (const p of printings) {
+    const row = byCode.get(p.printing_id);
+    if (row) {
+      row.cardtrader_id = p.cardtrader_id;
+      row.cardtrader_slug = p.cardtrader_slug;
+      updated++;
+    }
+  }
+
+  const primary = printings.find((p) => p.printing_id === baseCode) || printings[0];
+  if (primary) {
+    baseCard.cardtrader_id = primary.cardtrader_id;
+    baseCard.cardtrader_slug = primary.cardtrader_slug;
+  }
+
+  return updated;
+}
+
+async function processSet(setCode, refCards) {
+  const setCards = refCards.filter((c) => c.set_code === setCode);
+  if (!setCards.length) {
+    console.warn(`Set ${setCode}: nessuna carta in reference_cards.json`);
+    return 0;
+  }
+  const setName = setCards[0].set_name;
+  const baseCards = setCards.filter((c) => isBaseCode(c.card_code));
+  console.log(`\n=== ${setCode}: ${setName} (${baseCards.length} base cards) ===\n`);
+
+  const batchResults = await resolveCardBatch(setCards, setName, setCode, 'en', (i, total, name, result) => {
+    const count = result.printings?.length || 0;
+    console.log(`  [${i}/${total}] ${name.padEnd(40)} → ${count} version${count === 1 ? '' : 'i'}`);
   });
-}
 
-function extractBlueprintId(html) {
-  const match = html.match(/<meta\s+property="og:url"\s+content="[^"]*\/cards\/(\d+)/i);
-  return match ? parseInt(match[1], 10) : null;
-}
+  let updated = 0;
+  for (const [baseCode, result] of Object.entries(batchResults)) {
+    if (!result.found || !result.printings?.length) continue;
+    updated += applyPrintingsToCatalog(refCards, baseCode, result.printings);
+  }
 
-function extractTitle(html) {
-  const match = html.match(/<title>([^<]+)/i);
-  return match ? match[1].trim() : null;
+  console.log(`  → Updated ${updated} catalog rows in set ${setCode}`);
+  return updated;
 }
 
 async function main() {
-  const refPath = path.join(__dirname, '..', '..', 'reference_cards.json');
-  const refCards = JSON.parse(fs.readFileSync(refPath, 'utf-8'));
+  const targetSet = parseSetArg();
+  const targetCode = parseCodeArg();
+  const refCards = JSON.parse(fs.readFileSync(REF_PATH, 'utf-8'));
 
-  // Group all unique set codes with their set name
-  const setMap = {};
-  for (const card of refCards) {
-    if (!setMap[card.set_code]) {
-      setMap[card.set_code] = card.set_name;
+  if (targetCode) {
+    const baseCard = refCards.find((c) => c.card_code === targetCode);
+    if (!baseCard) {
+      console.error(`Card ${targetCode} not found`);
+      process.exit(1);
+    }
+    const { resolveCardVersions } = await import('./cardtrader_router.mjs');
+    const result = await resolveCardVersions(baseCard, 'en');
+    applyPrintingsToCatalog(refCards, targetCode, result.printings);
+    console.log(`Updated ${targetCode} with ${result.printings?.length || 0} printings`);
+  } else if (targetSet) {
+    await processSet(targetSet, refCards);
+  } else {
+    const setCodes = [...new Set(refCards.map((c) => c.set_code))].sort();
+    for (const setCode of setCodes) {
+      await processSet(setCode, refCards);
     }
   }
 
-  const setEntries = Object.entries(setMap).sort((a, b) => a[0].localeCompare(b[0]));
-
-  for (const [setCode, setName] of setEntries) {
-    const setSlug = computeSetSlug(setCode, setName);
-    const setCards = refCards.filter(c => c.set_code === setCode);
-
-    // Group by (card_name, rarity) — each unique combo gets up to 2 lookups
-    const groups = {};
-    for (const card of setCards) {
-      const key = `${card.card_name}||${(card.rarity || '').toLowerCase()}`;
-      if (!groups[key]) {
-        groups[key] = { name: card.card_name, rarity: (card.rarity || '').toLowerCase(), slug: setSlug };
-      }
-    }
-
-    console.log(`\n=== ${setCode} (${setCards.length} cards, ${Object.keys(groups).length} unique name+rarity combos) ===\n`);
-
-    const results = {};
-    for (const [key, group] of Object.entries(groups)) {
-      const { name, rarity } = group;
-      const baseSlug = `${slugify(name)}-${setSlug}`;
-      const variantSlug = rarity ? `${slugify(name)}-${rarity}-${setSlug}` : baseSlug;
-
-      let baseId = null;
-      let variantId = null;
-
-      const baseUrl = `https://www.cardtrader.com/en/cards/${baseSlug}`;
-      const variantUrl = `https://www.cardtrader.com/en/cards/${variantSlug}`;
-
-      // Try base slug (no rarity)
-      if (baseSlug !== variantSlug) {
-        const html = await fetchFollowRedirect(baseUrl);
-        if (html) {
-          baseId = extractBlueprintId(html);
-        }
-        await new Promise(r => setTimeout(r, 1000));
-      }
-
-      // Try variant slug (with rarity)
-      const html = await fetchFollowRedirect(variantUrl);
-      if (html) {
-        variantId = extractBlueprintId(html);
-      }
-      await new Promise(r => setTimeout(r, 1000));
-
-      const baseLabel = baseId ? `id=${baseId}` : 'NOT FOUND';
-      const variantLabel = variantId ? `id=${variantId}` : 'NOT FOUND';
-      console.log(`  ${name.padEnd(50)} base→${baseLabel}  variant→${variantLabel}`);
-
-      results[key] = { baseSlug, baseId, variantSlug, variantId };
-    }
-
-    // Apply results to cards
-    let updated = 0;
-    for (const card of setCards) {
-      const key = `${card.card_name}||${(card.rarity || '').toLowerCase()}`;
-      const result = results[key];
-      if (!result) continue;
-
-      const isVariant = isVariantCode(card.card_code);
-
-      if (isVariant) {
-        card.cardtrader_slug = result.variantSlug;
-        card.cardtrader_id = result.variantId || result.baseId;
-      } else {
-        card.cardtrader_slug = result.baseId ? result.baseSlug : result.variantSlug;
-        card.cardtrader_id = result.baseId || result.variantId;
-      }
-      updated++;
-    }
-
-    console.log(`  → Updated ${updated}/${setCards.length} cards in set ${setCode}`);
-  }
-
-  fs.writeFileSync(refPath, JSON.stringify(refCards, null, 2), 'utf-8');
-  console.log('\nDone! reference_cards.json updated with corrected CardTrader IDs.');
+  fs.writeFileSync(REF_PATH, JSON.stringify(refCards, null, 2), 'utf-8');
+  console.log('\nDone! reference_cards.json updated with CardTrader printings.');
+  console.log('Usage: node scripts/scrapers/fetch_cardtrader_ids.mjs --set GD01');
+  console.log('       node scripts/scrapers/fetch_cardtrader_ids.mjs --code GD01-005');
 }
 
 main().catch(console.error);

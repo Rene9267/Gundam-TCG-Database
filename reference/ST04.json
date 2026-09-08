@@ -8,7 +8,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "aile-strike-gundam-st-04-seed-strike",
+    "cardtrader_id": 341455
   },
   {
     "card_code": "ST04-001_p1",
@@ -19,7 +21,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "aile-strike-gundam-lr-st-04-seed-strike",
+    "cardtrader_id": 341456
   },
   {
     "card_code": "ST04-002",
@@ -30,7 +34,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "strike-gundam-st-04-seed-strike",
+    "cardtrader_id": 341455
   },
   {
     "card_code": "ST04-002_p1",
@@ -41,7 +47,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "strike-gundam-c-st-04-seed-strike",
+    "cardtrader_id": 341458
   },
   {
     "card_code": "ST04-003",
@@ -52,7 +60,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "moebius-zero-st-04-seed-strike",
+    "cardtrader_id": 341459
   },
   {
     "card_code": "ST04-003_p1",
@@ -63,7 +73,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "moebius-zero-c-st-04-seed-strike",
+    "cardtrader_id": 341460
   },
   {
     "card_code": "ST04-004",
@@ -74,7 +86,9 @@
     "card_type": "Unit",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "moebius-st-04-seed-strike",
+    "cardtrader_id": 341461
   },
   {
     "card_code": "ST04-004_p1",
@@ -85,7 +99,9 @@
     "card_type": "Unit",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "moebius-c-st-04-seed-strike",
+    "cardtrader_id": 341462
   },
   {
     "card_code": "ST04-005",
@@ -96,7 +112,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "strike-dagger-st-04-seed-strike",
+    "cardtrader_id": 341463
   },
   {
     "card_code": "ST04-005_p1",
@@ -107,7 +125,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "strike-dagger-c-st-04-seed-strike",
+    "cardtrader_id": 341464
   },
   {
     "card_code": "ST04-006",
@@ -118,7 +138,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "aegis-gundam-st-04-seed-strike",
+    "cardtrader_id": 341465
   },
   {
     "card_code": "ST04-006_p1",
@@ -129,7 +151,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "aegis-gundam-lr-st-04-seed-strike",
+    "cardtrader_id": 341466
   },
   {
     "card_code": "ST04-007",
@@ -140,7 +164,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "aegis-gundam-ma-mode-st-04-seed-strike",
+    "cardtrader_id": 341467
   },
   {
     "card_code": "ST04-007_p1",
@@ -151,7 +177,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "aegis-gundam-ma-mode-c-st-04-seed-strike",
+    "cardtrader_id": 341468
   },
   {
     "card_code": "ST04-008",
@@ -162,7 +190,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "ginn-st-04-seed-strike",
+    "cardtrader_id": 341469
   },
   {
     "card_code": "ST04-008_p1",
@@ -173,7 +203,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "ginn-c-st-04-seed-strike",
+    "cardtrader_id": 341470
   },
   {
     "card_code": "ST04-009",
@@ -184,7 +216,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "miguels-ginn-c-st-04-seed-strike",
+    "cardtrader_id": null
   },
   {
     "card_code": "ST04-009_p1",
@@ -195,7 +229,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "miguels-ginn-c-st-04-seed-strike",
+    "cardtrader_id": null
   },
   {
     "card_code": "ST04-010",
@@ -206,7 +242,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "kira-yamato-st-04-seed-strike",
+    "cardtrader_id": 341473
   },
   {
     "card_code": "ST04-010_p1",
@@ -217,7 +255,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "kira-yamato-c-st-04-seed-strike",
+    "cardtrader_id": 341474
   },
   {
     "card_code": "ST04-011",
@@ -228,7 +268,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "athrun-zala-st-04-seed-strike",
+    "cardtrader_id": 341475
   },
   {
     "card_code": "ST04-011_p1",
@@ -239,7 +281,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "athrun-zala-c-st-04-seed-strike",
+    "cardtrader_id": 341476
   },
   {
     "card_code": "ST04-012",
@@ -250,7 +294,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "striker-pack-st-04-seed-strike",
+    "cardtrader_id": 341477
   },
   {
     "card_code": "ST04-012_p1",
@@ -261,7 +307,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "striker-pack-c-st-04-seed-strike",
+    "cardtrader_id": 341478
   },
   {
     "card_code": "ST04-013",
@@ -272,7 +320,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "hawk-of-endymion-st-04-seed-strike",
+    "cardtrader_id": 341479
   },
   {
     "card_code": "ST04-013_p1",
@@ -283,7 +333,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "hawk-of-endymion-c-st-04-seed-strike",
+    "cardtrader_id": 341480
   },
   {
     "card_code": "ST04-014",
@@ -294,7 +346,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "the-magic-bullet-of-dusk-st-04-seed-strike",
+    "cardtrader_id": 341481
   },
   {
     "card_code": "ST04-014_p1",
@@ -305,7 +359,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "the-magic-bullet-of-dusk-c-st-04-seed-strike",
+    "cardtrader_id": 341482
   },
   {
     "card_code": "ST04-015",
@@ -316,7 +372,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "archangel-st-04-seed-strike",
+    "cardtrader_id": 341483
   },
   {
     "card_code": "ST04-015_p1",
@@ -327,7 +385,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "archangel-c-st-04-seed-strike",
+    "cardtrader_id": 341484
   },
   {
     "card_code": "ST04-016",
@@ -338,7 +398,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "vesalius-st-04-seed-strike",
+    "cardtrader_id": 341485
   },
   {
     "card_code": "ST04-016_p1",
@@ -349,7 +411,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "vesalius-c-st-04-seed-strike",
+    "cardtrader_id": 341486
   },
   {
     "card_code": "T-008",
@@ -357,7 +421,9 @@
     "set_code": "ST04",
     "set_name": "SEED Strike [ST04]",
     "card_type": "Token",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "aile-strike-gundam-st-04-seed-strike",
+    "cardtrader_id": 341455
   },
   {
     "card_code": "T-009",
@@ -365,7 +431,9 @@
     "set_code": "ST04",
     "set_name": "SEED Strike [ST04]",
     "card_type": "Token",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "launcher-strike-gundam-st-04-seed-strike",
+    "cardtrader_id": 341197
   },
   {
     "card_code": "T-010",
@@ -373,6 +441,8 @@
     "set_code": "ST04",
     "set_name": "SEED Strike [ST04]",
     "card_type": "Token",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "sword-strike-gundam-st-04-seed-strike",
+    "cardtrader_id": 294938
   }
 ]

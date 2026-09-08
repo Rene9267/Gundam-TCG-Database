@@ -1,23 +1,5 @@
 [
   {
-    "card_code": "ST10-006_p2",
-    "card_name": "Phoenix Gundam (Power Unleashed) (EX)",
-    "set_code": "EB01",
-    "set_name": "Eternal Nexus [EB01]",
-    "color": "White",
-    "card_type": "Unit",
-    "level": 5,
-    "cost": 3,
-    "rarity": "LR"
-  },
-  {
-    "card_code": "T-025",
-    "card_name": "Gundam Exia",
-    "set_code": "EB01",
-    "set_name": "Eternal Nexus [EB01]",
-    "rarity": "C"
-  },
-  {
     "card_code": "EB01-001",
     "card_name": "Gundam Astray Red Frame Custom (EX)",
     "set_code": "EB01",
@@ -26,7 +8,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-astray-red-frame-custom-ex-eb-01-eternal-nexus",
+    "cardtrader_id": 396535
   },
   {
     "card_code": "EB01-001_p1",
@@ -37,7 +21,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-astray-red-frame-custom-ex-lr-eb-01-eternal-nexus",
+    "cardtrader_id": 396535
   },
   {
     "card_code": "EB01-002",
@@ -48,7 +34,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 7,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "hi-nu-gundam-ex-eb-01-eternal-nexus",
+    "cardtrader_id": 396536
   },
   {
     "card_code": "EB01-002_p1",
@@ -59,7 +47,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 7,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "hi-nu-gundam-ex-lr-eb-01-eternal-nexus",
+    "cardtrader_id": 396536
   },
   {
     "card_code": "EB01-003",
@@ -70,7 +60,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "narrative-gundam-a-packs-ex-eb-01-eternal-nexus",
+    "cardtrader_id": 395333
   },
   {
     "card_code": "EB01-003_p1",
@@ -81,7 +73,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "narrative-gundam-a-packs-ex-r-eb-01-eternal-nexus",
+    "cardtrader_id": 396537
   },
   {
     "card_code": "EB01-004",
@@ -92,7 +86,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-barbatos-lupus-rex-ex-eb-01-eternal-nexus",
+    "cardtrader_id": 395334
   },
   {
     "card_code": "EB01-004_p1",
@@ -103,7 +99,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-barbatos-lupus-rex-ex-r-eb-01-eternal-nexus",
+    "cardtrader_id": 396550
   },
   {
     "card_code": "EB01-005",
@@ -114,7 +112,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 6,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "zeta-gundam-ⅲ-p2-type-eb-01-eternal-nexus",
+    "cardtrader_id": 353553
   },
   {
     "card_code": "EB01-006",
@@ -125,7 +125,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-astray-gold-frame-amatsu-eb-01-eternal-nexus",
+    "cardtrader_id": 395336
   },
   {
     "card_code": "EB01-006_p1",
@@ -136,7 +138,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-astray-gold-frame-amatsu-u-eb-01-eternal-nexus",
+    "cardtrader_id": 396549
   },
   {
     "card_code": "EB01-007",
@@ -147,7 +151,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-tr-1-&quot;hazel-rah&quot;-eb-01-eternal-nexus",
+    "cardtrader_id": 395337
   },
   {
     "card_code": "EB01-008",
@@ -158,7 +164,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-delta-kai-eb-01-eternal-nexus",
+    "cardtrader_id": 395338
   },
   {
     "card_code": "EB01-009",
@@ -169,7 +177,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-full-armor-thunderbolt-ex-eb-01-eternal-nexus",
+    "cardtrader_id": 395339
   },
   {
     "card_code": "EB01-009_p1",
@@ -180,7 +190,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-full-armor-thunderbolt-ex-u-eb-01-eternal-nexus",
+    "cardtrader_id": 396538
   },
   {
     "card_code": "EB01-010",
@@ -191,7 +203,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-barbatos-6th-form-eb-01-eternal-nexus",
+    "cardtrader_id": 395340
   },
   {
     "card_code": "EB01-011",
@@ -202,7 +216,9 @@
     "card_type": "Unit",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "beginning-gundam-eb-01-eternal-nexus",
+    "cardtrader_id": 395341
   },
   {
     "card_code": "EB01-012",
@@ -213,7 +229,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "dom-bein-nichts-eb-01-eternal-nexus",
+    "cardtrader_id": 395342
   },
   {
     "card_code": "EB01-013",
@@ -224,7 +242,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "red-gundam0085-eb-01-eternal-nexus",
+    "cardtrader_id": 2070
   },
   {
     "card_code": "EB01-014",
@@ -235,7 +255,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gouf-vijayanta-eb-01-eternal-nexus",
+    "cardtrader_id": 395344
   },
   {
     "card_code": "EB01-015",
@@ -246,7 +268,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "prototype-asshimar-tr-3-&quot;kehaar&quot;-eb-01-eternal-nexus",
+    "cardtrader_id": 395345
   },
   {
     "card_code": "EB01-016",
@@ -257,7 +281,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "tornado-gundam-eb-01-eternal-nexus",
+    "cardtrader_id": 395346
   },
   {
     "card_code": "EB01-017",
@@ -268,7 +294,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "haro-eb-01-eternal-nexus",
+    "cardtrader_id": 395347
   },
   {
     "card_code": "EB01-018",
@@ -279,7 +307,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-astray-blue-frame-second-l-eb-01-eternal-nexus",
+    "cardtrader_id": 395348
   },
   {
     "card_code": "EB01-019",
@@ -290,7 +320,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-pixy-eb-01-eternal-nexus",
+    "cardtrader_id": 395349
   },
   {
     "card_code": "EB01-020",
@@ -301,7 +333,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-mk-ⅲ-eb-01-eternal-nexus",
+    "cardtrader_id": 353561
   },
   {
     "card_code": "EB01-021",
@@ -312,7 +346,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "build-strike-gundam-full-package-ex-eb-01-eternal-nexus",
+    "cardtrader_id": 395351
   },
   {
     "card_code": "EB01-021_p1",
@@ -323,7 +359,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "build-strike-gundam-full-package-ex-lr-eb-01-eternal-nexus",
+    "cardtrader_id": 396539
   },
   {
     "card_code": "EB01-022",
@@ -334,7 +372,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 7,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-exia-ex-eb-01-eternal-nexus",
+    "cardtrader_id": 395352
   },
   {
     "card_code": "EB01-022_p1",
@@ -345,7 +385,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 7,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-exia-ex-lr-eb-01-eternal-nexus",
+    "cardtrader_id": 396548
   },
   {
     "card_code": "EB01-023",
@@ -356,7 +398,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "le-cygne-ex-eb-01-eternal-nexus",
+    "cardtrader_id": 395353
   },
   {
     "card_code": "EB01-023_p1",
@@ -367,7 +411,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "le-cygne-ex-r-eb-01-eternal-nexus",
+    "cardtrader_id": 396547
   },
   {
     "card_code": "EB01-024",
@@ -378,7 +424,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gquuuuuux-omega-psycommu-eb-01-eternal-nexus",
+    "cardtrader_id": 395354
   },
   {
     "card_code": "EB01-025",
@@ -389,7 +437,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "tallgeese-ⅱ-eb-01-eternal-nexus",
+    "cardtrader_id": 341269
   },
   {
     "card_code": "EB01-025_p1",
@@ -400,7 +450,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "tallgeese-ⅱ-r-eb-01-eternal-nexus",
+    "cardtrader_id": 341269
   },
   {
     "card_code": "EB01-026",
@@ -411,7 +463,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-astaroth-origin-eb-01-eternal-nexus",
+    "cardtrader_id": 395356
   },
   {
     "card_code": "EB01-027",
@@ -422,7 +476,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "tallgeese-eb-01-eternal-nexus",
+    "cardtrader_id": 395357
   },
   {
     "card_code": "EB01-028",
@@ -433,7 +489,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-plutone-eb-01-eternal-nexus",
+    "cardtrader_id": 395358
   },
   {
     "card_code": "EB01-029",
@@ -444,7 +502,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 4,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-astaroth-rinascimento-ex-eb-01-eternal-nexus",
+    "cardtrader_id": 395359
   },
   {
     "card_code": "EB01-030",
@@ -455,7 +515,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "big-rang-eb-01-eternal-nexus",
+    "cardtrader_id": 395360
   },
   {
     "card_code": "EB01-031",
@@ -466,7 +528,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "oggo-eb-01-eternal-nexus",
+    "cardtrader_id": 395361
   },
   {
     "card_code": "EB01-032",
@@ -477,7 +541,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-ez8-high-mobility-custom-eb-01-eternal-nexus",
+    "cardtrader_id": 395362
   },
   {
     "card_code": "EB01-033",
@@ -488,7 +554,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "taurus-sanc-kingdom-eb-01-eternal-nexus",
+    "cardtrader_id": 395363
   },
   {
     "card_code": "EB01-034",
@@ -499,7 +567,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-lfrith-ur-eb-01-eternal-nexus",
+    "cardtrader_id": 395364
   },
   {
     "card_code": "EB01-035",
@@ -510,7 +580,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-lfrith-thorn-eb-01-eternal-nexus",
+    "cardtrader_id": 395365
   },
   {
     "card_code": "EB01-036",
@@ -521,7 +593,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "darilbalde-eb-01-eternal-nexus",
+    "cardtrader_id": 395366
   },
   {
     "card_code": "EB01-037",
@@ -532,7 +606,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "zudah-unit-1-eb-01-eternal-nexus",
+    "cardtrader_id": 395367
   },
   {
     "card_code": "EB01-038",
@@ -543,7 +619,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "g-self-eb-01-eternal-nexus",
+    "cardtrader_id": 395368
   },
   {
     "card_code": "EB01-039",
@@ -554,7 +632,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "rising-freedom-gundam-eb-01-eternal-nexus",
+    "cardtrader_id": 395369
   },
   {
     "card_code": "EB01-040",
@@ -565,7 +645,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 7,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-epyon-eb-01-eternal-nexus",
+    "cardtrader_id": 395370
   },
   {
     "card_code": "EB01-041",
@@ -576,7 +658,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 6,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "strike-freedom-gundam-ex-eb-01-eternal-nexus",
+    "cardtrader_id": 395371
   },
   {
     "card_code": "EB01-041_p1",
@@ -587,7 +671,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 6,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "strike-freedom-gundam-ex-lr-eb-01-eternal-nexus",
+    "cardtrader_id": 396540
   },
   {
     "card_code": "EB01-042",
@@ -598,7 +684,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 7,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "psycho-haro-ex-eb-01-eternal-nexus",
+    "cardtrader_id": 395372
   },
   {
     "card_code": "EB01-042_p1",
@@ -609,7 +697,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 7,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "psycho-haro-ex-lr-eb-01-eternal-nexus",
+    "cardtrader_id": 396544
   },
   {
     "card_code": "EB01-043",
@@ -620,7 +710,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "blue-destiny-unit-1-ex-eb-01-eternal-nexus",
+    "cardtrader_id": 395373
   },
   {
     "card_code": "EB01-043_p1",
@@ -631,7 +723,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "blue-destiny-unit-1-ex-r-eb-01-eternal-nexus",
+    "cardtrader_id": 396545
   },
   {
     "card_code": "EB01-044",
@@ -642,7 +736,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "justice-gundam-ex-eb-01-eternal-nexus",
+    "cardtrader_id": 395374
   },
   {
     "card_code": "EB01-044_p1",
@@ -653,7 +749,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "justice-gundam-ex-r-eb-01-eternal-nexus",
+    "cardtrader_id": 396541
   },
   {
     "card_code": "EB01-045",
@@ -664,7 +762,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "psycho-zaku-ex-eb-01-eternal-nexus",
+    "cardtrader_id": 395375
   },
   {
     "card_code": "EB01-045_p1",
@@ -675,7 +775,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "psycho-zaku-ex-r-eb-01-eternal-nexus",
+    "cardtrader_id": 396543
   },
   {
     "card_code": "EB01-046",
@@ -686,7 +788,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "striker-custom-ex-eb-01-eternal-nexus",
+    "cardtrader_id": 395376
   },
   {
     "card_code": "EB01-046_p1",
@@ -697,7 +801,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "striker-custom-ex-u-eb-01-eternal-nexus",
+    "cardtrader_id": 396542
   },
   {
     "card_code": "EB01-047",
@@ -708,7 +814,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "casval&#039;s-gundam-u-eb-01-eternal-nexus",
+    "cardtrader_id": null
   },
   {
     "card_code": "EB01-048",
@@ -719,7 +827,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "s-gundam-eb-01-eternal-nexus",
+    "cardtrader_id": 395377
   },
   {
     "card_code": "EB01-049",
@@ -730,7 +840,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "pale-rider-ground-heavy-equipment-type-eb-01-eternal-nexus",
+    "cardtrader_id": 395379
   },
   {
     "card_code": "EB01-050",
@@ -741,7 +853,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 6,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "saikoro-gundam-eb-01-eternal-nexus",
+    "cardtrader_id": 395380
   },
   {
     "card_code": "EB01-051",
@@ -752,7 +866,9 @@
     "card_type": "Unit",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "ze&#039;gok-c-eb-01-eternal-nexus",
+    "cardtrader_id": null
   },
   {
     "card_code": "EB01-052",
@@ -763,7 +879,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "hildolfr-eb-01-eternal-nexus",
+    "cardtrader_id": 395382
   },
   {
     "card_code": "EB01-053",
@@ -774,7 +892,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-gp00-eb-01-eternal-nexus",
+    "cardtrader_id": 395383
   },
   {
     "card_code": "EB01-054",
@@ -785,7 +905,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gaplant-tr-5-&quot;hrairoo&quot;-unit-1-eb-01-eternal-nexus",
+    "cardtrader_id": 395384
   },
   {
     "card_code": "EB01-055",
@@ -796,7 +918,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "dom-gross-beil-eb-01-eternal-nexus",
+    "cardtrader_id": 395385
   },
   {
     "card_code": "EB01-056",
@@ -807,7 +931,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-geminass-01-eb-01-eternal-nexus",
+    "cardtrader_id": 395386
   },
   {
     "card_code": "EB01-057",
@@ -818,7 +944,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-geminass-02-eb-01-eternal-nexus",
+    "cardtrader_id": 395387
   },
   {
     "card_code": "EB01-058",
@@ -829,7 +957,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "extreme-gundam-eb-01-eternal-nexus",
+    "cardtrader_id": 395388
   },
   {
     "card_code": "EB01-059",
@@ -840,7 +970,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "psycho-zaku-eb-01-eternal-nexus",
+    "cardtrader_id": 395389
   },
   {
     "card_code": "EB01-060",
@@ -851,7 +983,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-aquarius-eb-01-eternal-nexus",
+    "cardtrader_id": 395390
   },
   {
     "card_code": "EB01-061",
@@ -862,7 +996,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "ellis-claude-eb-01-eternal-nexus",
+    "cardtrader_id": 395391
   },
   {
     "card_code": "EB01-062",
@@ -873,7 +1009,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "jona-basta-eb-01-eternal-nexus",
+    "cardtrader_id": 395392
   },
   {
     "card_code": "EB01-063",
@@ -884,7 +1022,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "io-fleming-eb-01-eternal-nexus",
+    "cardtrader_id": 395393
   },
   {
     "card_code": "EB01-064",
@@ -895,7 +1035,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "rondo-gina-sahaku-eb-01-eternal-nexus",
+    "cardtrader_id": 395394
   },
   {
     "card_code": "EB01-065",
@@ -906,7 +1048,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "meir-siva-eb-01-eternal-nexus",
+    "cardtrader_id": 395395
   },
   {
     "card_code": "EB01-066",
@@ -917,7 +1061,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "reiji-eb-01-eternal-nexus",
+    "cardtrader_id": 395396
   },
   {
     "card_code": "EB01-067",
@@ -928,7 +1074,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "asuna-elmarit-eb-01-eternal-nexus",
+    "cardtrader_id": 395397
   },
   {
     "card_code": "EB01-068",
@@ -939,7 +1087,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "chall-acustica-eb-01-eternal-nexus",
+    "cardtrader_id": 395398
   },
   {
     "card_code": "EB01-069",
@@ -950,7 +1100,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "beside-pain-eb-01-eternal-nexus",
+    "cardtrader_id": 395399
   },
   {
     "card_code": "EB01-070",
@@ -961,7 +1113,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "daryl-lorenz-eb-01-eternal-nexus",
+    "cardtrader_id": 395400
   },
   {
     "card_code": "EB01-071",
@@ -972,7 +1126,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "ittou-tsurugi-eb-01-eternal-nexus",
+    "cardtrader_id": 395401
   },
   {
     "card_code": "EB01-072",
@@ -983,7 +1139,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "yuu-kajima-eb-01-eternal-nexus",
+    "cardtrader_id": 395402
   },
   {
     "card_code": "EB01-073",
@@ -994,7 +1152,9 @@
     "card_type": "Command",
     "level": 6,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "character-requests-eb-01-eternal-nexus",
+    "cardtrader_id": 395403
   },
   {
     "card_code": "EB01-074",
@@ -1005,7 +1165,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "eternal-road-eb-01-eternal-nexus",
+    "cardtrader_id": 395404
   },
   {
     "card_code": "EB01-075",
@@ -1016,7 +1178,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "fierce-enemy-assault-eb-01-eternal-nexus",
+    "cardtrader_id": 395405
   },
   {
     "card_code": "EB01-076",
@@ -1027,7 +1191,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gerbera-straight-eb-01-eternal-nexus",
+    "cardtrader_id": 395406
   },
   {
     "card_code": "EB01-077",
@@ -1038,7 +1204,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "master-league-begins-eb-01-eternal-nexus",
+    "cardtrader_id": 395407
   },
   {
     "card_code": "EB01-078",
@@ -1049,7 +1217,9 @@
     "card_type": "Command",
     "level": 1,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "premium-unit-assembly-eb-01-eternal-nexus",
+    "cardtrader_id": 395408
   },
   {
     "card_code": "EB01-079",
@@ -1060,7 +1230,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "modification-eb-01-eternal-nexus",
+    "cardtrader_id": 395409
   },
   {
     "card_code": "EB01-080",
@@ -1071,7 +1243,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "sturm-faust-eb-01-eternal-nexus",
+    "cardtrader_id": 395410
   },
   {
     "card_code": "EB01-081",
@@ -1082,7 +1256,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "map-weapon-eb-01-eternal-nexus",
+    "cardtrader_id": 395411
   },
   {
     "card_code": "EB01-082",
@@ -1093,7 +1269,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "warship-cruise-eb-01-eternal-nexus",
+    "cardtrader_id": 395412
   },
   {
     "card_code": "EB01-083",
@@ -1104,7 +1282,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "sp-conversion-chips-eb-01-eternal-nexus",
+    "cardtrader_id": 395413
   },
   {
     "card_code": "EB01-084",
@@ -1115,7 +1295,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "30cm-cannon-apfsds-round-eb-01-eternal-nexus",
+    "cardtrader_id": 395414
   },
   {
     "card_code": "EB01-085",
@@ -1126,7 +1308,9 @@
     "card_type": "Base",
     "level": 5,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "kudelia-aina-bernstein-&-isaribi-eb-01-eternal-nexus",
+    "cardtrader_id": 395415
   },
   {
     "card_code": "EB01-086",
@@ -1137,7 +1321,9 @@
     "card_type": "Base",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "kycilia-zabi-&-gwazine-eb-01-eternal-nexus",
+    "cardtrader_id": 395416
   },
   {
     "card_code": "EB01-087",
@@ -1148,7 +1334,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "marina-ismail-&-ptolemaios-2-eb-01-eternal-nexus",
+    "cardtrader_id": 395417
   },
   {
     "card_code": "EB01-088",
@@ -1159,7 +1347,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "miorine-rembran-&-academy-ship-eb-01-eternal-nexus",
+    "cardtrader_id": 395418
   },
   {
     "card_code": "EB01-089",
@@ -1170,7 +1360,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "lacus-clyne-&-eternal-eb-01-eternal-nexus",
+    "cardtrader_id": 395419
   },
   {
     "card_code": "EB01-090",
@@ -1181,6 +1373,30 @@
     "card_type": "Base",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "tiffa-adill-&-freeden-eb-01-eternal-nexus",
+    "cardtrader_id": 395420
+  },
+  {
+    "card_code": "ST10-006_p2",
+    "card_name": "Phoenix Gundam (Power Unleashed) (EX)",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "color": "White",
+    "card_type": "Unit",
+    "level": 5,
+    "cost": 3,
+    "rarity": "LR",
+    "cardtrader_slug": "phoenix-gundam-power-unleashed-ex-lr-eb-01-eternal-nexus",
+    "cardtrader_id": 396534
+  },
+  {
+    "card_code": "T-025",
+    "card_name": "Gundam Exia",
+    "set_code": "EB01",
+    "set_name": "Eternal Nexus [EB01]",
+    "rarity": "C",
+    "cardtrader_slug": "gundam-exia-eb-01-eternal-nexus",
+    "cardtrader_id": 396820
   }
 ]

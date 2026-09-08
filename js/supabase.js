@@ -131,21 +131,44 @@ function loadSession() {
   } catch (_) {}
 }
 
-async function authFetch(path, body) {
-  const r = await fetch(SUPABASE_URL + path, {
+function parseAuthResponse(text, status) {
+  const trimmed = (text || '').trim();
+  if (!trimmed) return {};
+  try {
+    return JSON.parse(trimmed);
+  } catch (_) {
+    throw new Error('Risposta non valida dal server (' + status + ')');
+  }
+}
+
+function buildAuthUrl(path, query = {}) {
+  const qs = new URLSearchParams();
+  for (const [key, value] of Object.entries(query)) {
+    if (value != null && value !== '') qs.set(key, value);
+  }
+  const queryString = qs.toString();
+  if (!queryString) return SUPABASE_URL + path;
+  const sep = path.includes('?') ? '&' : '?';
+  return SUPABASE_URL + path + sep + queryString;
+}
+
+async function authFetch(path, body, query = {}) {
+  const r = await fetch(buildAuthUrl(path, query), {
     method: 'POST',
     headers: { 'apikey': SUPABASE_ANON_KEY, 'Content-Type': 'application/json' },
     body: body ? JSON.stringify(body) : undefined,
   });
-  const data = await r.json();
-  if (!r.ok) throw new Error(data.msg || data.error_description || data.error || 'Errore');
+  const data = parseAuthResponse(await r.text(), r.status);
+  if (!r.ok) {
+    throw new Error(data.msg || data.error_description || data.error || data.message || 'Errore');
+  }
   return data;
 }
 
 async function authSignUp(email, password, nickname) {
-  const body = { email, password, redirect_to: window.location.origin };
+  const body = { email, password };
   if (nickname) body.data = { nickname };
-  const data = await authFetch('/auth/v1/signup', body);
+  const data = await authFetch('/auth/v1/signup', body, { redirect_to: window.location.origin });
   if (data.access_token) {
     saveSession(data.user, data.access_token);
     if (nickname) {

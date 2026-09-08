@@ -11,4 +11,6 @@ let editingCardId = null;
 let currentSheetCard = null;
 let pendingSheetQty = 0;
 let currentColTab = 'cards';
+let collectionPage = 0;
+const COLLECTION_PAGE_SIZE = 40;
 let authMode = 'login';

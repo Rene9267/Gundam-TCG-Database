@@ -1,0 +1,84 @@
+[
+  {
+    "card_code": "GD03-060_p1",
+    "card_name": "CGS Mobile Worker (Commander Type)",
+    "set_code": "PC01A",
+    "set_name": "Premium Card Collection GUNDAM ASSEMBLE Set -Mobile Suit Gundam IRON-BLOODED ORPHANS- [PC01A]",
+    "rarity": "U",
+    "color": "Purple",
+    "card_type": "Unit",
+    "level": 2,
+    "cost": 2,
+    "cardtrader_slug": "cgs-mobile-worker-commander-type-u-pc-01a-premium-card-collection-gundam-assemble-set-mobile-suit-gundam-iron-blooded-orphans",
+    "cardtrader_id": 368375
+  },
+  {
+    "card_code": "GD03-117_p1",
+    "card_name": "Orga&#039;s Order",
+    "set_code": "PC01A",
+    "set_name": "Premium Card Collection GUNDAM ASSEMBLE Set -Mobile Suit Gundam IRON-BLOODED ORPHANS- [PC01A]",
+    "rarity": "C",
+    "color": "Purple",
+    "card_type": "Command",
+    "level": 3,
+    "cost": 1,
+    "cardtrader_slug": "orga&#039;s-order-c-pc-01a-premium-card-collection-gundam-assemble-set-mobile-suit-gundam-iron-blooded-orphans",
+    "cardtrader_id": null
+  },
+  {
+    "card_code": "ST05-001_p2",
+    "card_name": "Gundam Barbatos 4th Form",
+    "set_code": "PC01A",
+    "set_name": "Premium Card Collection GUNDAM ASSEMBLE Set -Mobile Suit Gundam IRON-BLOODED ORPHANS- [PC01A]",
+    "rarity": "LR",
+    "color": "Purple",
+    "card_type": "Unit",
+    "level": 6,
+    "cost": 4,
+    "cardtrader_slug": "gundam-barbatos-4th-form-lr-pc-01a-premium-card-collection-gundam-assemble-set-mobile-suit-gundam-iron-blooded-orphans",
+    "cardtrader_id": 351183
+  },
+  {
+    "card_code": "ST05-007_p2",
+    "card_name": "McGillis&#039; Schwalbe Graze",
+    "set_code": "PC01A",
+    "set_name": "Premium Card Collection GUNDAM ASSEMBLE Set -Mobile Suit Gundam IRON-BLOODED ORPHANS- [PC01A]",
+    "rarity": "LR",
+    "color": "White",
+    "card_type": "Unit",
+    "level": 4,
+    "cost": 3,
+    "cardtrader_slug": "mcgillis&#039;-schwalbe-graze-lr-pc-01a-premium-card-collection-gundam-assemble-set-mobile-suit-gundam-iron-blooded-orphans",
+    "cardtrader_id": null
+  },
+  {
+    "card_code": "T-015_p1",
+    "card_name": "CGS Mobile Worker",
+    "set_code": "PC01A",
+    "set_name": "Premium Card Collection GUNDAM ASSEMBLE Set -Mobile Suit Gundam IRON-BLOODED ORPHANS- [PC01A]",
+    "rarity": "C",
+    "card_type": "Token",
+    "cardtrader_slug": "cgs-mobile-worker-c-pc-01a-premium-card-collection-gundam-assemble-set-mobile-suit-gundam-iron-blooded-orphans",
+    "cardtrader_id": 351195
+  },
+  {
+    "card_code": "T-016_p1",
+    "card_name": "Graze Custom",
+    "set_code": "PC01A",
+    "set_name": "Premium Card Collection GUNDAM ASSEMBLE Set -Mobile Suit Gundam IRON-BLOODED ORPHANS- [PC01A]",
+    "rarity": "C",
+    "card_type": "Token",
+    "cardtrader_slug": "graze-custom-c-pc-01a-premium-card-collection-gundam-assemble-set-mobile-suit-gundam-iron-blooded-orphans",
+    "cardtrader_id": 351187
+  },
+  {
+    "card_code": "T-017_p1",
+    "card_name": "Gundam Barbatos 4th Form",
+    "set_code": "PC01A",
+    "set_name": "Premium Card Collection GUNDAM ASSEMBLE Set -Mobile Suit Gundam IRON-BLOODED ORPHANS- [PC01A]",
+    "rarity": "C",
+    "card_type": "Token",
+    "cardtrader_slug": "gundam-barbatos-4th-form-c-pc-01a-premium-card-collection-gundam-assemble-set-mobile-suit-gundam-iron-blooded-orphans",
+    "cardtrader_id": 351183
+  }
+]

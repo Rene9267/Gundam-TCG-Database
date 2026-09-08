@@ -8,7 +8,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "a-show-of-resolve-u-gd-03-steel-requiem",
+    "cardtrader_id": 341225
   },
   {
     "card_code": "GD01-107_p3",
@@ -19,7 +21,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "first-contact-u-gd-03-steel-requiem",
+    "cardtrader_id": 341232
   },
   {
     "card_code": "GD01-111_p2",
@@ -30,7 +34,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "battle-of-aces-r-gd-03-steel-requiem",
+    "cardtrader_id": 341236
   },
   {
     "card_code": "GD01-118_p5",
@@ -41,7 +47,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "overflowing-affection-u-gd-03-steel-requiem",
+    "cardtrader_id": 341243
   },
   {
     "card_code": "GD03-001",
@@ -52,7 +60,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-nt-1-gd-03-steel-requiem",
+    "cardtrader_id": 368316
   },
   {
     "card_code": "GD03-001_p1",
@@ -63,7 +73,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-nt-1-lr-gd-03-steel-requiem",
+    "cardtrader_id": 371450
   },
   {
     "card_code": "GD03-002",
@@ -74,7 +86,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "the-o-gd-03-steel-requiem",
+    "cardtrader_id": 368317
   },
   {
     "card_code": "GD03-002_p1",
@@ -85,7 +99,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "the-o-lr-gd-03-steel-requiem",
+    "cardtrader_id": 371451
   },
   {
     "card_code": "GD03-003",
@@ -96,7 +112,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "messala-gd-03-steel-requiem",
+    "cardtrader_id": 368318
   },
   {
     "card_code": "GD03-003_p1",
@@ -107,7 +125,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "messala-r-gd-03-steel-requiem",
+    "cardtrader_id": 371452
   },
   {
     "card_code": "GD03-004",
@@ -118,7 +138,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "hambrabi-gd-03-steel-requiem",
+    "cardtrader_id": 368319
   },
   {
     "card_code": "GD03-005",
@@ -129,7 +151,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "kshatriya-besserung-gd-03-steel-requiem",
+    "cardtrader_id": 368320
   },
   {
     "card_code": "GD03-006",
@@ -140,7 +164,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "penelope-middle-form-gd-03-steel-requiem",
+    "cardtrader_id": 368321
   },
   {
     "card_code": "GD03-007",
@@ -151,7 +177,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-nt-1-full-armor-gd-03-steel-requiem",
+    "cardtrader_id": 368322
   },
   {
     "card_code": "GD03-008",
@@ -162,7 +190,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "bolinoak-sammahn-gd-03-steel-requiem",
+    "cardtrader_id": 368323
   },
   {
     "card_code": "GD03-009",
@@ -173,7 +203,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "palace-athene-gd-03-steel-requiem",
+    "cardtrader_id": 368324
   },
   {
     "card_code": "GD03-010",
@@ -184,7 +216,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 6,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "full-armor-unicorn-gundam-destroy-mode-gd-03-steel-requiem",
+    "cardtrader_id": 368325
   },
   {
     "card_code": "GD03-010_p1",
@@ -195,7 +229,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 6,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "full-armor-unicorn-gundam-destroy-mode-u-gd-03-steel-requiem",
+    "cardtrader_id": 371453
   },
   {
     "card_code": "GD03-011",
@@ -206,7 +242,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gm-sniper-ii-gd-03-steel-requiem",
+    "cardtrader_id": 368326
   },
   {
     "card_code": "GD03-012",
@@ -217,7 +255,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "messala-ma-mode-gd-03-steel-requiem",
+    "cardtrader_id": 368327
   },
   {
     "card_code": "GD03-013",
@@ -228,7 +268,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "hizack-gd-03-steel-requiem",
+    "cardtrader_id": 368328
   },
   {
     "card_code": "GD03-014",
@@ -239,7 +281,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "hizack-custom-gd-03-steel-requiem",
+    "cardtrader_id": 368329
   },
   {
     "card_code": "GD03-015",
@@ -250,7 +294,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "baund-doc-gd-03-steel-requiem",
+    "cardtrader_id": 368330
   },
   {
     "card_code": "GD03-016",
@@ -261,7 +307,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "full-armor-unicorn-gundam-unicorn-mode-gd-03-steel-requiem",
+    "cardtrader_id": 368331
   },
   {
     "card_code": "GD03-017",
@@ -272,7 +320,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "kämpfer-gd-03-steel-requiem",
+    "cardtrader_id": 368332
   },
   {
     "card_code": "GD03-017_p1",
@@ -283,7 +333,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "kämpfer-lr-gd-03-steel-requiem",
+    "cardtrader_id": 371454
   },
   {
     "card_code": "GD03-017_p2",
@@ -294,7 +346,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "kämpfer-lr-gd-03-steel-requiem",
+    "cardtrader_id": 371454
   },
   {
     "card_code": "GD03-018",
@@ -305,7 +359,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 6,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "altron-gundam-gd-03-steel-requiem",
+    "cardtrader_id": 368333
   },
   {
     "card_code": "GD03-018_p1",
@@ -316,7 +372,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 6,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "altron-gundam-lr-gd-03-steel-requiem",
+    "cardtrader_id": 371456
   },
   {
     "card_code": "GD03-019",
@@ -327,7 +385,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-age-2-normal-gd-03-steel-requiem",
+    "cardtrader_id": 368334
   },
   {
     "card_code": "GD03-019_p1",
@@ -338,7 +398,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-age-2-normal-lr-gd-03-steel-requiem",
+    "cardtrader_id": 371457
   },
   {
     "card_code": "GD03-020",
@@ -349,7 +411,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "zaku-ⅱ-fz-gd-03-steel-requiem",
+    "cardtrader_id": 341160
   },
   {
     "card_code": "GD03-020_p1",
@@ -360,7 +424,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "zaku-ⅱ-fz-r-gd-03-steel-requiem",
+    "cardtrader_id": 341160
   },
   {
     "card_code": "GD03-021",
@@ -371,7 +437,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 7,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-deathscythe-hell-gd-03-steel-requiem",
+    "cardtrader_id": 368336
   },
   {
     "card_code": "GD03-022",
@@ -382,7 +450,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-kyrios-gd-03-steel-requiem",
+    "cardtrader_id": 368337
   },
   {
     "card_code": "GD03-022_p1",
@@ -393,7 +463,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-kyrios-r-gd-03-steel-requiem",
+    "cardtrader_id": 371459
   },
   {
     "card_code": "GD03-023",
@@ -404,7 +476,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "g-bouncer-gd-03-steel-requiem",
+    "cardtrader_id": 368338
   },
   {
     "card_code": "GD03-024",
@@ -415,7 +489,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "hy-gogg-gd-03-steel-requiem",
+    "cardtrader_id": 368339
   },
   {
     "card_code": "GD03-025",
@@ -426,7 +502,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-sandrock-custom-gd-03-steel-requiem",
+    "cardtrader_id": 368340
   },
   {
     "card_code": "GD03-026",
@@ -437,7 +515,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-dynames-gd-03-steel-requiem",
+    "cardtrader_id": 368341
   },
   {
     "card_code": "GD03-027",
@@ -448,7 +528,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "z’gok-e-c-gd-03-steel-requiem",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD03-028",
@@ -459,7 +541,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "auda&#039;s-maganac-c-gd-03-steel-requiem",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD03-029",
@@ -470,7 +554,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-heavyarms-custom-gd-03-steel-requiem",
+    "cardtrader_id": 368344
   },
   {
     "card_code": "GD03-030",
@@ -481,7 +567,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-kyrios-tail-unit-flight-mode-gd-03-steel-requiem",
+    "cardtrader_id": 368345
   },
   {
     "card_code": "GD03-031",
@@ -492,7 +580,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-age-1-flat-gd-03-steel-requiem",
+    "cardtrader_id": 368346
   },
   {
     "card_code": "GD03-032",
@@ -503,7 +593,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "zaku-four-snake-eyes&#039;-[yeti]-gq-gd-03-steel-requiem",
+    "cardtrader_id": 368347
   },
   {
     "card_code": "GD03-033",
@@ -514,7 +606,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "providence-gundam-gd-03-steel-requiem",
+    "cardtrader_id": 7351
   },
   {
     "card_code": "GD03-033_p1",
@@ -525,7 +619,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "providence-gundam-lr-gd-03-steel-requiem",
+    "cardtrader_id": 371460
   },
   {
     "card_code": "GD03-034",
@@ -536,7 +632,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 7,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gquuuuuux-omega-psycommu-gd-03-steel-requiem",
+    "cardtrader_id": 368349
   },
   {
     "card_code": "GD03-034_p1",
@@ -547,7 +645,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 7,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gquuuuuux-omega-psycommu-lr-gd-03-steel-requiem",
+    "cardtrader_id": 371461
   },
   {
     "card_code": "GD03-035",
@@ -558,7 +658,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gfred-gd-03-steel-requiem",
+    "cardtrader_id": 368350
   },
   {
     "card_code": "GD03-035_p1",
@@ -569,7 +671,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gfred-lr-gd-03-steel-requiem",
+    "cardtrader_id": 371462
   },
   {
     "card_code": "GD03-035_p2",
@@ -580,7 +684,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gfred-lr-gd-03-steel-requiem",
+    "cardtrader_id": 371462
   },
   {
     "card_code": "GD03-036",
@@ -591,7 +697,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "ξ-gundam-flight-form-r-gd-03-steel-requiem",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD03-036_p1",
@@ -602,7 +710,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "ξ-gundam-flight-form-r-gd-03-steel-requiem",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD03-037",
@@ -613,7 +723,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "bertigo-gd-03-steel-requiem",
+    "cardtrader_id": 368352
   },
   {
     "card_code": "GD03-037_p1",
@@ -624,7 +736,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "bertigo-r-gd-03-steel-requiem",
+    "cardtrader_id": 371465
   },
   {
     "card_code": "GD03-038",
@@ -635,7 +749,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "guaiz-commander-type-gd-03-steel-requiem",
+    "cardtrader_id": 368353
   },
   {
     "card_code": "GD03-039",
@@ -646,7 +762,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "red-gundam-gd-03-steel-requiem",
+    "cardtrader_id": 368354
   },
   {
     "card_code": "GD03-040",
@@ -657,7 +775,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-virsago-&-gundam-ashtaron-gd-03-steel-requiem",
+    "cardtrader_id": 354479
   },
   {
     "card_code": "GD03-041",
@@ -668,7 +788,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 6,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "patulia-gd-03-steel-requiem",
+    "cardtrader_id": 368356
   },
   {
     "card_code": "GD03-042",
@@ -679,7 +801,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "duel-gundam-assault-shroud-gd-03-steel-requiem",
+    "cardtrader_id": 368357
   },
   {
     "card_code": "GD03-043",
@@ -690,7 +814,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "messer-type-f02-gd-03-steel-requiem",
+    "cardtrader_id": 368358
   },
   {
     "card_code": "GD03-044",
@@ -701,7 +827,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "daughtress-flyer-gd-03-steel-requiem",
+    "cardtrader_id": 368359
   },
   {
     "card_code": "GD03-045",
@@ -712,7 +840,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "balient-gd-03-steel-requiem",
+    "cardtrader_id": 368360
   },
   {
     "card_code": "GD03-046",
@@ -723,7 +853,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "cgue-gd-03-steel-requiem",
+    "cardtrader_id": 368361
   },
   {
     "card_code": "GD03-047",
@@ -734,7 +866,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "dinn-commander-type-gd-03-steel-requiem",
+    "cardtrader_id": 368362
   },
   {
     "card_code": "GD03-048",
@@ -745,7 +879,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gfred-gd-03-steel-requiem",
+    "cardtrader_id": 368350
   },
   {
     "card_code": "GD03-049",
@@ -756,7 +892,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 6,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-exia-trans-am-gd-03-steel-requiem",
+    "cardtrader_id": 368364
   },
   {
     "card_code": "GD03-049_p1",
@@ -767,7 +905,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 6,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-exia-trans-am-lr-gd-03-steel-requiem",
+    "cardtrader_id": 371466
   },
   {
     "card_code": "GD03-050",
@@ -778,7 +918,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 6,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-barbatos-lupus-gd-03-steel-requiem",
+    "cardtrader_id": 368365
   },
   {
     "card_code": "GD03-050_p1",
@@ -789,7 +931,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 6,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-barbatos-lupus-lr-gd-03-steel-requiem",
+    "cardtrader_id": 371467
   },
   {
     "card_code": "GD03-051",
@@ -800,7 +944,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-x-divider-gd-03-steel-requiem",
+    "cardtrader_id": 368366
   },
   {
     "card_code": "GD03-052",
@@ -811,7 +957,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-virtue-gd-03-steel-requiem",
+    "cardtrader_id": 368367
   },
   {
     "card_code": "GD03-052_p1",
@@ -822,7 +970,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-virtue-r-gd-03-steel-requiem",
+    "cardtrader_id": 371468
   },
   {
     "card_code": "GD03-053",
@@ -833,7 +983,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-gusion-rebake-full-city-gd-03-steel-requiem",
+    "cardtrader_id": 368368
   },
   {
     "card_code": "GD03-053_p1",
@@ -844,7 +996,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-gusion-rebake-full-city-r-gd-03-steel-requiem",
+    "cardtrader_id": 371469
   },
   {
     "card_code": "GD03-054",
@@ -855,7 +1009,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "zeydra-gd-03-steel-requiem",
+    "cardtrader_id": 368369
   },
   {
     "card_code": "GD03-055",
@@ -866,7 +1022,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-hajiroboshi-2nd-form-gd-03-steel-requiem",
+    "cardtrader_id": 368370
   },
   {
     "card_code": "GD03-056",
@@ -877,7 +1035,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-barbatos-adapt-gd-03-steel-requiem",
+    "cardtrader_id": 368371
   },
   {
     "card_code": "GD03-057",
@@ -888,7 +1048,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gn-armor-type-e-gd-03-steel-requiem",
+    "cardtrader_id": 368372
   },
   {
     "card_code": "GD03-058",
@@ -899,7 +1061,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "farsia-gd-03-steel-requiem",
+    "cardtrader_id": 368373
   },
   {
     "card_code": "GD03-059",
@@ -910,7 +1074,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "zedas-r-gd-03-steel-requiem",
+    "cardtrader_id": 368374
   },
   {
     "card_code": "GD03-060",
@@ -921,7 +1087,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "cgs-mobile-worker-commander-type-gd-03-steel-requiem",
+    "cardtrader_id": 368375
   },
   {
     "card_code": "GD03-061",
@@ -932,7 +1100,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-barbatos-6th-form-gd-03-steel-requiem",
+    "cardtrader_id": 368376
   },
   {
     "card_code": "GD03-062",
@@ -943,7 +1113,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gx-bit-gd-03-steel-requiem",
+    "cardtrader_id": 368377
   },
   {
     "card_code": "GD03-063",
@@ -954,7 +1126,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "0-gundam-gd-03-steel-requiem",
+    "cardtrader_id": 368378
   },
   {
     "card_code": "GD03-064",
@@ -965,7 +1139,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "defurse-gd-03-steel-requiem",
+    "cardtrader_id": 368379
   },
   {
     "card_code": "GD03-065",
@@ -976,7 +1152,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "zedas-m-gd-03-steel-requiem",
+    "cardtrader_id": 368380
   },
   {
     "card_code": "GD03-066",
@@ -987,7 +1165,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-barbatos-5th-form-ground-type-gd-03-steel-requiem",
+    "cardtrader_id": 368381
   },
   {
     "card_code": "GD03-067",
@@ -998,7 +1178,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "rouei-gd-03-steel-requiem",
+    "cardtrader_id": 368382
   },
   {
     "card_code": "GD03-068",
@@ -1009,7 +1191,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-hajiroboshi-gd-03-steel-requiem",
+    "cardtrader_id": 368383
   },
   {
     "card_code": "GD03-069",
@@ -1020,7 +1204,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "graham&#039;s-union-flag-custom-lr-gd-03-steel-requiem",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD03-069_p1",
@@ -1031,7 +1217,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "graham&#039;s-union-flag-custom-lr-gd-03-steel-requiem",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD03-070",
@@ -1042,7 +1230,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "freedom-gundam-gd-03-steel-requiem",
+    "cardtrader_id": 368385
   },
   {
     "card_code": "GD03-070_p1",
@@ -1053,7 +1243,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "freedom-gundam-lr-gd-03-steel-requiem",
+    "cardtrader_id": 371471
   },
   {
     "card_code": "GD03-071",
@@ -1064,7 +1256,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "z-gundam-biosensor-gd-03-steel-requiem",
+    "cardtrader_id": 368386
   },
   {
     "card_code": "GD03-071_p1",
@@ -1075,7 +1269,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "z-gundam-biosensor-r-gd-03-steel-requiem",
+    "cardtrader_id": 371472
   },
   {
     "card_code": "GD03-072",
@@ -1086,7 +1282,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "aile-strike-gundam-gd-03-steel-requiem",
+    "cardtrader_id": 368387
   },
   {
     "card_code": "GD03-073",
@@ -1097,7 +1295,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "graze-ein-gd-03-steel-requiem",
+    "cardtrader_id": 368388
   },
   {
     "card_code": "GD03-073_p1",
@@ -1108,7 +1308,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "graze-ein-r-gd-03-steel-requiem",
+    "cardtrader_id": 371473
   },
   {
     "card_code": "GD03-074",
@@ -1119,7 +1321,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "tieren-taozi-gd-03-steel-requiem",
+    "cardtrader_id": 368389
   },
   {
     "card_code": "GD03-075",
@@ -1130,7 +1334,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "super-gundam-gd-03-steel-requiem",
+    "cardtrader_id": 368390
   },
   {
     "card_code": "GD03-076",
@@ -1141,7 +1347,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 6,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "freedom-gundam-meteor-gd-03-steel-requiem",
+    "cardtrader_id": 368391
   },
   {
     "card_code": "GD03-077",
@@ -1152,7 +1360,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 7,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "justice-gundam-meteor-gd-03-steel-requiem",
+    "cardtrader_id": 368392
   },
   {
     "card_code": "GD03-078",
@@ -1163,7 +1373,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "tieren-high-mobility-type-gd-03-steel-requiem",
+    "cardtrader_id": 368393
   },
   {
     "card_code": "GD03-079",
@@ -1174,7 +1386,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "g-defenser-gd-03-steel-requiem",
+    "cardtrader_id": 368394
   },
   {
     "card_code": "GD03-080",
@@ -1185,7 +1399,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-kimaris-trooper-trooper-mode-gd-03-steel-requiem",
+    "cardtrader_id": 368395
   },
   {
     "card_code": "GD03-081",
@@ -1196,7 +1412,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "aeu-enact-demonstration-color-gd-03-steel-requiem",
+    "cardtrader_id": 368396
   },
   {
     "card_code": "GD03-082",
@@ -1207,7 +1425,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "union-flag-gd-03-steel-requiem",
+    "cardtrader_id": 368397
   },
   {
     "card_code": "GD03-083",
@@ -1218,7 +1438,9 @@
     "card_type": "Unit",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "aeu-hellion-gd-03-steel-requiem",
+    "cardtrader_id": 368398
   },
   {
     "card_code": "GD03-084",
@@ -1229,7 +1451,9 @@
     "card_type": "Pilot",
     "level": 5,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "paptimus-scirocco-gd-03-steel-requiem",
+    "cardtrader_id": 368399
   },
   {
     "card_code": "GD03-084_p1",
@@ -1240,7 +1464,9 @@
     "card_type": "Pilot",
     "level": 5,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "paptimus-scirocco-r-gd-03-steel-requiem",
+    "cardtrader_id": 371474
   },
   {
     "card_code": "GD03-085",
@@ -1251,7 +1477,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "christina-mackenzie-gd-03-steel-requiem",
+    "cardtrader_id": 368400
   },
   {
     "card_code": "GD03-086",
@@ -1262,7 +1490,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "yazan-gable-gd-03-steel-requiem",
+    "cardtrader_id": 368401
   },
   {
     "card_code": "GD03-087",
@@ -1273,7 +1503,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "sarah-zabiarov-gd-03-steel-requiem",
+    "cardtrader_id": 368402
   },
   {
     "card_code": "GD03-088",
@@ -1284,7 +1516,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "asemu-asuno-gd-03-steel-requiem",
+    "cardtrader_id": 368403
   },
   {
     "card_code": "GD03-088_p1",
@@ -1295,7 +1529,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "asemu-asuno-r-gd-03-steel-requiem",
+    "cardtrader_id": 371475
   },
   {
     "card_code": "GD03-089",
@@ -1306,7 +1542,9 @@
     "card_type": "Pilot",
     "level": 2,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "bernard-wiseman-gd-03-steel-requiem",
+    "cardtrader_id": 368404
   },
   {
     "card_code": "GD03-090",
@@ -1317,7 +1555,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "mikhail-kaminsky-gd-03-steel-requiem",
+    "cardtrader_id": 368405
   },
   {
     "card_code": "GD03-091",
@@ -1328,7 +1568,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "rau-le-creuset-gd-03-steel-requiem",
+    "cardtrader_id": 368406
   },
   {
     "card_code": "GD03-091_p1",
@@ -1339,7 +1581,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "rau-le-creuset-r-gd-03-steel-requiem",
+    "cardtrader_id": 371476
   },
   {
     "card_code": "GD03-092",
@@ -1350,7 +1594,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "nyaan-gd-03-steel-requiem",
+    "cardtrader_id": 368407
   },
   {
     "card_code": "GD03-093",
@@ -1361,7 +1607,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "carris-nautilus-gd-03-steel-requiem",
+    "cardtrader_id": 368408
   },
   {
     "card_code": "GD03-094",
@@ -1372,7 +1620,9 @@
     "card_type": "Pilot",
     "level": 5,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "zeheart-galette-gd-03-steel-requiem",
+    "cardtrader_id": 368409
   },
   {
     "card_code": "GD03-094_p1",
@@ -1383,7 +1633,9 @@
     "card_type": "Pilot",
     "level": 5,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "zeheart-galette-r-gd-03-steel-requiem",
+    "cardtrader_id": 371477
   },
   {
     "card_code": "GD03-095",
@@ -1394,7 +1646,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "azee-gurumin-gd-03-steel-requiem",
+    "cardtrader_id": 368410
   },
   {
     "card_code": "GD03-096",
@@ -1405,7 +1659,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "jamil-neate-gd-03-steel-requiem",
+    "cardtrader_id": 368411
   },
   {
     "card_code": "GD03-097",
@@ -1416,7 +1672,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "wistario-afam-gd-03-steel-requiem",
+    "cardtrader_id": 368412
   },
   {
     "card_code": "GD03-098",
@@ -1427,7 +1685,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "graham-aker-gd-03-steel-requiem",
+    "cardtrader_id": 368413
   },
   {
     "card_code": "GD03-098_p1",
@@ -1438,7 +1698,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "graham-aker-r-gd-03-steel-requiem",
+    "cardtrader_id": 371478
   },
   {
     "card_code": "GD03-099",
@@ -1449,7 +1711,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "emma-sheen-gd-03-steel-requiem",
+    "cardtrader_id": 368414
   },
   {
     "card_code": "GD03-100",
@@ -1460,7 +1724,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "soma-peries-gd-03-steel-requiem",
+    "cardtrader_id": 368415
   },
   {
     "card_code": "GD03-101",
@@ -1471,7 +1737,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "a-healthy-curiosity-gd-03-steel-requiem",
+    "cardtrader_id": 368416
   },
   {
     "card_code": "GD03-101_p1",
@@ -1482,7 +1750,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "a-healthy-curiosity-r-gd-03-steel-requiem",
+    "cardtrader_id": 371479
   },
   {
     "card_code": "GD03-102",
@@ -1493,7 +1763,9 @@
     "card_type": "Command",
     "level": 6,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "privileged-position-gd-03-steel-requiem",
+    "cardtrader_id": 368417
   },
   {
     "card_code": "GD03-103",
@@ -1504,7 +1776,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "field-directive-gd-03-steel-requiem",
+    "cardtrader_id": 368418
   },
   {
     "card_code": "GD03-104",
@@ -1515,7 +1789,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "reccoa&#039;s-shadow-u-gd-03-steel-requiem",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD03-105",
@@ -1526,7 +1802,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "bridge-crew-gd-03-steel-requiem",
+    "cardtrader_id": 368420
   },
   {
     "card_code": "GD03-105_p1",
@@ -1537,7 +1815,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "bridge-crew-r-gd-03-steel-requiem",
+    "cardtrader_id": 371480
   },
   {
     "card_code": "GD03-106",
@@ -1548,7 +1828,9 @@
     "card_type": "Command",
     "level": 6,
     "cost": 4,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "m.a.v.-tactics-u-gd-03-steel-requiem",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD03-107",
@@ -1559,7 +1841,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "over-the-river-and-through-the-woods-gd-03-steel-requiem",
+    "cardtrader_id": 368422
   },
   {
     "card_code": "GD03-108",
@@ -1570,7 +1854,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "how-many-miles-to-the-battlefield?-gd-03-steel-requiem",
+    "cardtrader_id": 368423
   },
   {
     "card_code": "GD03-109",
@@ -1581,7 +1867,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "improved-technique-gd-03-steel-requiem",
+    "cardtrader_id": 368424
   },
   {
     "card_code": "GD03-109_p1",
@@ -1592,7 +1880,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "improved-technique-r-gd-03-steel-requiem",
+    "cardtrader_id": 371481
   },
   {
     "card_code": "GD03-110",
@@ -1603,7 +1893,9 @@
     "card_type": "Command",
     "level": 6,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "eliminate-target-gd-03-steel-requiem",
+    "cardtrader_id": 368425
   },
   {
     "card_code": "GD03-111",
@@ -1614,7 +1906,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "infiltrator-present-gd-03-steel-requiem",
+    "cardtrader_id": 368426
   },
   {
     "card_code": "GD03-112",
@@ -1625,7 +1919,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "warped-intent-gd-03-steel-requiem",
+    "cardtrader_id": 368427
   },
   {
     "card_code": "GD03-113",
@@ -1636,7 +1932,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "human-karma-gd-03-steel-requiem",
+    "cardtrader_id": 368428
   },
   {
     "card_code": "GD03-114",
@@ -1647,7 +1945,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "look-of-determination-gd-03-steel-requiem",
+    "cardtrader_id": 368429
   },
   {
     "card_code": "GD03-114_p1",
@@ -1658,7 +1958,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "look-of-determination-r-gd-03-steel-requiem",
+    "cardtrader_id": 371482
   },
   {
     "card_code": "GD03-115",
@@ -1669,7 +1971,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "distant-reunion-gd-03-steel-requiem",
+    "cardtrader_id": 368430
   },
   {
     "card_code": "GD03-116",
@@ -1680,7 +1984,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "towards-destiny-gd-03-steel-requiem",
+    "cardtrader_id": 368431
   },
   {
     "card_code": "GD03-117",
@@ -1691,7 +1997,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "orga&#039;s-order-c-gd-03-steel-requiem",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD03-118",
@@ -1702,7 +2010,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "awakened-potential-gd-03-steel-requiem",
+    "cardtrader_id": 368433
   },
   {
     "card_code": "GD03-118_p1",
@@ -1713,7 +2023,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "awakened-potential-r-gd-03-steel-requiem",
+    "cardtrader_id": 371483
   },
   {
     "card_code": "GD03-119",
@@ -1724,7 +2036,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "awkward-approach-gd-03-steel-requiem",
+    "cardtrader_id": 368434
   },
   {
     "card_code": "GD03-120",
@@ -1735,7 +2049,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "immortal-colasour-gd-03-steel-requiem",
+    "cardtrader_id": 368435
   },
   {
     "card_code": "GD03-121",
@@ -1746,7 +2062,9 @@
     "card_type": "Command",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "unheralded-attack-gd-03-steel-requiem",
+    "cardtrader_id": 368436
   },
   {
     "card_code": "GD03-122",
@@ -1757,7 +2075,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "veteran-tactics-gd-03-steel-requiem",
+    "cardtrader_id": 368437
   },
   {
     "card_code": "GD03-123",
@@ -1768,7 +2088,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "jupitris-gd-03-steel-requiem",
+    "cardtrader_id": 368438
   },
   {
     "card_code": "GD03-124",
@@ -1779,7 +2101,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "ribo-colony-gd-03-steel-requiem",
+    "cardtrader_id": 368439
   },
   {
     "card_code": "GD03-125",
@@ -1790,7 +2114,9 @@
     "card_type": "Base",
     "level": 6,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "peacemillion-gd-03-steel-requiem",
+    "cardtrader_id": 368440
   },
   {
     "card_code": "GD03-126",
@@ -1801,7 +2127,9 @@
     "card_type": "Base",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "cyclops-team-gd-03-steel-requiem",
+    "cardtrader_id": 368441
   },
   {
     "card_code": "GD03-127",
@@ -1812,7 +2140,9 @@
     "card_type": "Base",
     "level": 6,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "jachin-due-gd-03-steel-requiem",
+    "cardtrader_id": 368442
   },
   {
     "card_code": "GD03-128",
@@ -1823,7 +2153,9 @@
     "card_type": "Base",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "doritea-gd-03-steel-requiem",
+    "cardtrader_id": 368443
   },
   {
     "card_code": "GD03-129",
@@ -1834,7 +2166,9 @@
     "card_type": "Base",
     "level": 4,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "hotarubi-gd-03-steel-requiem",
+    "cardtrader_id": 368444
   },
   {
     "card_code": "GD03-130",
@@ -1845,7 +2179,9 @@
     "card_type": "Base",
     "level": 5,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "downes-gd-03-steel-requiem",
+    "cardtrader_id": 368445
   },
   {
     "card_code": "GD03-131",
@@ -1856,7 +2192,9 @@
     "card_type": "Base",
     "level": 5,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "eternal-gd-03-steel-requiem",
+    "cardtrader_id": 368446
   },
   {
     "card_code": "GD03-132",
@@ -1867,7 +2205,219 @@
     "card_type": "Base",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "radish-gd-03-steel-requiem",
+    "cardtrader_id": 368447
+  },
+  {
+    "card_code": "R-020",
+    "card_name": "Resource",
+    "set_code": "GD03",
+    "set_name": "Steel Requiem [GD03]",
+    "card_type": "Resource",
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-03-steel-requiem",
+    "cardtrader_id": 368448
+  },
+  {
+    "card_code": "R-020_p1",
+    "card_name": "Resource",
+    "set_code": "GD03",
+    "set_name": "Steel Requiem [GD03]",
+    "card_type": "Resource",
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-03-steel-requiem",
+    "cardtrader_id": 371484
+  },
+  {
+    "card_code": "R-021",
+    "card_name": "Resource",
+    "set_code": "GD03",
+    "set_name": "Steel Requiem [GD03]",
+    "card_type": "Resource",
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-03-steel-requiem",
+    "cardtrader_id": 368448
+  },
+  {
+    "card_code": "R-021_p1",
+    "card_name": "Resource",
+    "set_code": "GD03",
+    "set_name": "Steel Requiem [GD03]",
+    "card_type": "Resource",
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-03-steel-requiem",
+    "cardtrader_id": 371484
+  },
+  {
+    "card_code": "R-022",
+    "card_name": "Resource",
+    "set_code": "GD03",
+    "set_name": "Steel Requiem [GD03]",
+    "card_type": "Resource",
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-03-steel-requiem",
+    "cardtrader_id": 368448
+  },
+  {
+    "card_code": "R-022_p1",
+    "card_name": "Resource",
+    "set_code": "GD03",
+    "set_name": "Steel Requiem [GD03]",
+    "card_type": "Resource",
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-03-steel-requiem",
+    "cardtrader_id": 371484
+  },
+  {
+    "card_code": "R-023",
+    "card_name": "Resource",
+    "set_code": "GD03",
+    "set_name": "Steel Requiem [GD03]",
+    "card_type": "Resource",
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-03-steel-requiem",
+    "cardtrader_id": 368448
+  },
+  {
+    "card_code": "R-023_p1",
+    "card_name": "Resource",
+    "set_code": "GD03",
+    "set_name": "Steel Requiem [GD03]",
+    "card_type": "Resource",
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-03-steel-requiem",
+    "cardtrader_id": 371484
+  },
+  {
+    "card_code": "R-024",
+    "card_name": "Resource",
+    "set_code": "GD03",
+    "set_name": "Steel Requiem [GD03]",
+    "card_type": "Resource",
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-03-steel-requiem",
+    "cardtrader_id": 368448
+  },
+  {
+    "card_code": "R-024_p1",
+    "card_name": "Resource",
+    "set_code": "GD03",
+    "set_name": "Steel Requiem [GD03]",
+    "card_type": "Resource",
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-03-steel-requiem",
+    "cardtrader_id": 371484
+  },
+  {
+    "card_code": "R-025",
+    "card_name": "Resource",
+    "set_code": "GD03",
+    "set_name": "Steel Requiem [GD03]",
+    "card_type": "Resource",
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-03-steel-requiem",
+    "cardtrader_id": 368448
+  },
+  {
+    "card_code": "R-025_p1",
+    "card_name": "Resource",
+    "set_code": "GD03",
+    "set_name": "Steel Requiem [GD03]",
+    "card_type": "Resource",
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-03-steel-requiem",
+    "cardtrader_id": 371484
+  },
+  {
+    "card_code": "R-025_p2",
+    "card_name": "Resource",
+    "set_code": "GD03",
+    "set_name": "Steel Requiem [GD03]",
+    "card_type": "Resource",
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-03-steel-requiem",
+    "cardtrader_id": 371484
+  },
+  {
+    "card_code": "R-026",
+    "card_name": "Resource",
+    "set_code": "GD03",
+    "set_name": "Steel Requiem [GD03]",
+    "card_type": "Resource",
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-03-steel-requiem",
+    "cardtrader_id": 368448
+  },
+  {
+    "card_code": "R-026_p1",
+    "card_name": "Resource",
+    "set_code": "GD03",
+    "set_name": "Steel Requiem [GD03]",
+    "card_type": "Resource",
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-03-steel-requiem",
+    "cardtrader_id": 371484
+  },
+  {
+    "card_code": "R-027",
+    "card_name": "Resource",
+    "set_code": "GD03",
+    "set_name": "Steel Requiem [GD03]",
+    "card_type": "Resource",
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-03-steel-requiem",
+    "cardtrader_id": 368448
+  },
+  {
+    "card_code": "R-027_p1",
+    "card_name": "Resource",
+    "set_code": "GD03",
+    "set_name": "Steel Requiem [GD03]",
+    "card_type": "Resource",
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-03-steel-requiem",
+    "cardtrader_id": 371484
+  },
+  {
+    "card_code": "R-028",
+    "card_name": "Resource",
+    "set_code": "GD03",
+    "set_name": "Steel Requiem [GD03]",
+    "card_type": "Resource",
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-03-steel-requiem",
+    "cardtrader_id": 368448
+  },
+  {
+    "card_code": "R-028_p1",
+    "card_name": "Resource",
+    "set_code": "GD03",
+    "set_name": "Steel Requiem [GD03]",
+    "card_type": "Resource",
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-03-steel-requiem",
+    "cardtrader_id": 371484
+  },
+  {
+    "card_code": "R-029",
+    "card_name": "Resource",
+    "set_code": "GD03",
+    "set_name": "Steel Requiem [GD03]",
+    "card_type": "Resource",
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-03-steel-requiem",
+    "cardtrader_id": 368448
+  },
+  {
+    "card_code": "R-029_p1",
+    "card_name": "Resource",
+    "set_code": "GD03",
+    "set_name": "Steel Requiem [GD03]",
+    "card_type": "Resource",
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-03-steel-requiem",
+    "cardtrader_id": 371484
   },
   {
     "card_code": "ST05-010_p3",
@@ -1878,7 +2428,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "mikazuki-augus-c-gd-03-steel-requiem",
+    "cardtrader_id": 351170
   },
   {
     "card_code": "ST05-013_p3",
@@ -1889,7 +2441,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "with-iron-and-blood-c-gd-03-steel-requiem",
+    "cardtrader_id": 351169
   },
   {
     "card_code": "ST05-014_p4",
@@ -1900,7 +2454,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "fatal-strike-c-gd-03-steel-requiem",
+    "cardtrader_id": 351193
   },
   {
     "card_code": "T-013",
@@ -1908,7 +2464,9 @@
     "set_code": "GD03",
     "set_name": "Steel Requiem [GD03]",
     "card_type": "Token",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "hy-gogg-gd-03-steel-requiem",
+    "cardtrader_id": 368339
   },
   {
     "card_code": "T-014",
@@ -1916,7 +2474,9 @@
     "set_code": "GD03",
     "set_name": "Steel Requiem [GD03]",
     "card_type": "Token",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "ad-balloon-gd-03-steel-requiem",
+    "cardtrader_id": 368459
   },
   {
     "card_code": "T-015",
@@ -1924,7 +2484,9 @@
     "set_code": "GD03",
     "set_name": "Steel Requiem [GD03]",
     "card_type": "Token",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "cgs-mobile-worker-gd-03-steel-requiem",
+    "cardtrader_id": 351195
   },
   {
     "card_code": "T-016",
@@ -1932,7 +2494,9 @@
     "set_code": "GD03",
     "set_name": "Steel Requiem [GD03]",
     "card_type": "Token",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "graze-custom-gd-03-steel-requiem",
+    "cardtrader_id": 351187
   },
   {
     "card_code": "T-017",
@@ -1940,7 +2504,9 @@
     "set_code": "GD03",
     "set_name": "Steel Requiem [GD03]",
     "card_type": "Token",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-barbatos-4th-form-gd-03-steel-requiem",
+    "cardtrader_id": 351183
   },
   {
     "card_code": "T-018",
@@ -1948,7 +2514,9 @@
     "set_code": "GD03",
     "set_name": "Steel Requiem [GD03]",
     "card_type": "Token",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "red-gundam-gd-03-steel-requiem",
+    "cardtrader_id": 368354
   },
   {
     "card_code": "T-019",
@@ -1956,7 +2524,9 @@
     "set_code": "GD03",
     "set_name": "Steel Requiem [GD03]",
     "card_type": "Token",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gquuuuuux-omega-psycommu-gd-03-steel-requiem",
+    "cardtrader_id": 368349
   },
   {
     "card_code": "T-020",
@@ -1964,174 +2534,8 @@
     "set_code": "GD03",
     "set_name": "Steel Requiem [GD03]",
     "card_type": "Token",
-    "rarity": "C"
-  },
-  {
-    "card_code": "R-020",
-    "card_name": "Resource",
-    "set_code": "GD03",
-    "set_name": "Steel Requiem [GD03]",
-    "card_type": "Resource",
-    "rarity": "C"
-  },
-  {
-    "card_code": "R-020_p1",
-    "card_name": "Resource",
-    "set_code": "GD03",
-    "set_name": "Steel Requiem [GD03]",
-    "card_type": "Resource",
-    "rarity": "C"
-  },
-  {
-    "card_code": "R-021",
-    "card_name": "Resource",
-    "set_code": "GD03",
-    "set_name": "Steel Requiem [GD03]",
-    "card_type": "Resource",
-    "rarity": "C"
-  },
-  {
-    "card_code": "R-021_p1",
-    "card_name": "Resource",
-    "set_code": "GD03",
-    "set_name": "Steel Requiem [GD03]",
-    "card_type": "Resource",
-    "rarity": "C"
-  },
-  {
-    "card_code": "R-022",
-    "card_name": "Resource",
-    "set_code": "GD03",
-    "set_name": "Steel Requiem [GD03]",
-    "card_type": "Resource",
-    "rarity": "C"
-  },
-  {
-    "card_code": "R-022_p1",
-    "card_name": "Resource",
-    "set_code": "GD03",
-    "set_name": "Steel Requiem [GD03]",
-    "card_type": "Resource",
-    "rarity": "C"
-  },
-  {
-    "card_code": "R-023",
-    "card_name": "Resource",
-    "set_code": "GD03",
-    "set_name": "Steel Requiem [GD03]",
-    "card_type": "Resource",
-    "rarity": "C"
-  },
-  {
-    "card_code": "R-023_p1",
-    "card_name": "Resource",
-    "set_code": "GD03",
-    "set_name": "Steel Requiem [GD03]",
-    "card_type": "Resource",
-    "rarity": "C"
-  },
-  {
-    "card_code": "R-024",
-    "card_name": "Resource",
-    "set_code": "GD03",
-    "set_name": "Steel Requiem [GD03]",
-    "card_type": "Resource",
-    "rarity": "C"
-  },
-  {
-    "card_code": "R-024_p1",
-    "card_name": "Resource",
-    "set_code": "GD03",
-    "set_name": "Steel Requiem [GD03]",
-    "card_type": "Resource",
-    "rarity": "C"
-  },
-  {
-    "card_code": "R-025",
-    "card_name": "Resource",
-    "set_code": "GD03",
-    "set_name": "Steel Requiem [GD03]",
-    "card_type": "Resource",
-    "rarity": "C"
-  },
-  {
-    "card_code": "R-025_p1",
-    "card_name": "Resource",
-    "set_code": "GD03",
-    "set_name": "Steel Requiem [GD03]",
-    "card_type": "Resource",
-    "rarity": "C"
-  },
-  {
-    "card_code": "R-025_p2",
-    "card_name": "Resource",
-    "set_code": "GD03",
-    "set_name": "Steel Requiem [GD03]",
-    "card_type": "Resource",
-    "rarity": "C"
-  },
-  {
-    "card_code": "R-026",
-    "card_name": "Resource",
-    "set_code": "GD03",
-    "set_name": "Steel Requiem [GD03]",
-    "card_type": "Resource",
-    "rarity": "C"
-  },
-  {
-    "card_code": "R-026_p1",
-    "card_name": "Resource",
-    "set_code": "GD03",
-    "set_name": "Steel Requiem [GD03]",
-    "card_type": "Resource",
-    "rarity": "C"
-  },
-  {
-    "card_code": "R-027",
-    "card_name": "Resource",
-    "set_code": "GD03",
-    "set_name": "Steel Requiem [GD03]",
-    "card_type": "Resource",
-    "rarity": "C"
-  },
-  {
-    "card_code": "R-027_p1",
-    "card_name": "Resource",
-    "set_code": "GD03",
-    "set_name": "Steel Requiem [GD03]",
-    "card_type": "Resource",
-    "rarity": "C"
-  },
-  {
-    "card_code": "R-028",
-    "card_name": "Resource",
-    "set_code": "GD03",
-    "set_name": "Steel Requiem [GD03]",
-    "card_type": "Resource",
-    "rarity": "C"
-  },
-  {
-    "card_code": "R-028_p1",
-    "card_name": "Resource",
-    "set_code": "GD03",
-    "set_name": "Steel Requiem [GD03]",
-    "card_type": "Resource",
-    "rarity": "C"
-  },
-  {
-    "card_code": "R-029",
-    "card_name": "Resource",
-    "set_code": "GD03",
-    "set_name": "Steel Requiem [GD03]",
-    "card_type": "Resource",
-    "rarity": "C"
-  },
-  {
-    "card_code": "R-029_p1",
-    "card_name": "Resource",
-    "set_code": "GD03",
-    "set_name": "Steel Requiem [GD03]",
-    "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gfred-gd-03-steel-requiem",
+    "cardtrader_id": 368350
   }
 ]

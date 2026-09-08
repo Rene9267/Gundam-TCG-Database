@@ -384,7 +384,7 @@ body.sheet-open {
 #sheet-overlay { cursor: pointer; }
 #sheet-panel { overscroll-behavior: contain; touch-action: pan-y; }
 
-/* ---- Version dots (large with text labels) ---- */
+/* ---- Version dots (badge icons) ---- */
 .version-dot {
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
@@ -394,31 +394,50 @@ body.sheet-open {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   border: 2px solid rgba(255,255,255,0.3);
   color: white;
+  padding: 0;
+  background: transparent;
+}
+.version-dot-text-sm {
+  font-size: 9px;
 }
 .version-dot:hover {
   transform: scale(1.15);
   border-color: rgba(255,255,255,0.7);
 }
-.version-dot-base {
+.version-dot-base,
+.version-dot-set {
   background: rgba(44,82,179,0.85);
 }
-.version-dot-alt {
+.version-dot-alt,
+.version-dot-rarity {
   background: rgba(255,248,103,0.25);
   color: #fff867;
   border-color: rgba(255,248,103,0.4);
+}
+.version-dot-event {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.35);
+  color: #fff;
+}
+.version-dot-icon {
+  display: block;
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  pointer-events: none;
 }
 .version-dot-active {
   border-color: #fff;
   box-shadow: 0 0 0 2px rgba(255,255,255,0.5), 0 0 12px rgba(255,255,255,0.15);
   transform: scale(1.15);
 }
-.version-dot-active.version-dot-alt {
+.version-dot-active.version-dot-alt,
+.version-dot-active.version-dot-rarity {
   border-color: #fff867;
   box-shadow: 0 0 0 2px rgba(255,248,103,0.4);
 }

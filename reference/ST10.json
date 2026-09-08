@@ -1,5 +1,35 @@
 [
   {
+    "card_code": "EXB-003",
+    "card_name": "EX Base",
+    "set_code": "ST10",
+    "set_name": "Generation Pulse [ST10]",
+    "card_type": "ExBase",
+    "rarity": "C",
+    "cardtrader_slug": "ex-base-st-10-generation-pulse",
+    "cardtrader_id": 395907
+  },
+  {
+    "card_code": "EXR-003",
+    "card_name": "EX Resource",
+    "set_code": "ST10",
+    "set_name": "Generation Pulse [ST10]",
+    "card_type": "ExResource",
+    "rarity": "C",
+    "cardtrader_slug": "ex-resource-st-10-generation-pulse",
+    "cardtrader_id": 395908
+  },
+  {
+    "card_code": "R-041",
+    "card_name": "Resource",
+    "set_code": "ST10",
+    "set_name": "Generation Pulse [ST10]",
+    "card_type": "Resource",
+    "rarity": "C",
+    "cardtrader_slug": "resource-st-10-generation-pulse",
+    "cardtrader_id": 395908
+  },
+  {
     "card_code": "ST10-001",
     "card_name": "Zeta Gundam (EX)",
     "set_code": "ST10",
@@ -8,7 +38,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 6,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "zeta-gundam-ex-st-10-generation-pulse",
+    "cardtrader_id": 395910
   },
   {
     "card_code": "ST10-001_p1",
@@ -19,7 +51,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 6,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "zeta-gundam-ex-lr-st-10-generation-pulse",
+    "cardtrader_id": 396551
   },
   {
     "card_code": "ST10-002",
@@ -30,7 +64,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "zeta-gundam-st-10-generation-pulse",
+    "cardtrader_id": 395911
   },
   {
     "card_code": "ST10-002_p1",
@@ -41,7 +77,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "zeta-gundam-c-st-10-generation-pulse",
+    "cardtrader_id": 396552
   },
   {
     "card_code": "ST10-003",
@@ -52,7 +90,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-mk-ii-aeug-st-10-generation-pulse",
+    "cardtrader_id": 395912
   },
   {
     "card_code": "ST10-003_p1",
@@ -63,7 +103,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-mk-ii-aeug-c-st-10-generation-pulse",
+    "cardtrader_id": 396566
   },
   {
     "card_code": "ST10-004",
@@ -74,7 +116,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "super-gundam-st-10-generation-pulse",
+    "cardtrader_id": 395913
   },
   {
     "card_code": "ST10-004_p1",
@@ -85,7 +129,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "super-gundam-c-st-10-generation-pulse",
+    "cardtrader_id": 396564
   },
   {
     "card_code": "ST10-005",
@@ -96,7 +142,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "nemo-st-10-generation-pulse",
+    "cardtrader_id": 395914
   },
   {
     "card_code": "ST10-005_p1",
@@ -107,7 +155,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "nemo-c-st-10-generation-pulse",
+    "cardtrader_id": 396565
   },
   {
     "card_code": "ST10-006",
@@ -118,7 +168,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "phoenix-gundam-power-unleashed-ex-st-10-generation-pulse",
+    "cardtrader_id": 395915
   },
   {
     "card_code": "ST10-006_p1",
@@ -129,7 +181,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "phoenix-gundam-power-unleashed-ex-lr-st-10-generation-pulse",
+    "cardtrader_id": 396563
   },
   {
     "card_code": "ST10-007",
@@ -140,7 +194,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-barbatos-4th-form-st-10-generation-pulse",
+    "cardtrader_id": 395916
   },
   {
     "card_code": "ST10-007_p1",
@@ -151,7 +207,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-barbatos-4th-form-c-st-10-generation-pulse",
+    "cardtrader_id": 396561
   },
   {
     "card_code": "ST10-008",
@@ -162,7 +220,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-barbatos-1st-form-st-10-generation-pulse",
+    "cardtrader_id": 395917
   },
   {
     "card_code": "ST10-008_p1",
@@ -173,7 +233,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-barbatos-1st-form-c-st-10-generation-pulse",
+    "cardtrader_id": 396562
   },
   {
     "card_code": "ST10-009",
@@ -184,7 +246,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "graze-duel-type-st-10-generation-pulse",
+    "cardtrader_id": 395918
   },
   {
     "card_code": "ST10-009_p1",
@@ -195,7 +259,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "graze-duel-type-c-st-10-generation-pulse",
+    "cardtrader_id": 396555
   },
   {
     "card_code": "ST10-010",
@@ -206,7 +272,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "mobile-worker-tekkadan-st-10-generation-pulse",
+    "cardtrader_id": 395919
   },
   {
     "card_code": "ST10-010_p1",
@@ -217,7 +285,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "mobile-worker-tekkadan-c-st-10-generation-pulse",
+    "cardtrader_id": 396560
   },
   {
     "card_code": "ST10-011",
@@ -228,7 +298,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "kamille-bidan-st-10-generation-pulse",
+    "cardtrader_id": 395920
   },
   {
     "card_code": "ST10-011_p1",
@@ -239,7 +311,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "kamille-bidan-c-st-10-generation-pulse",
+    "cardtrader_id": 396559
   },
   {
     "card_code": "ST10-012",
@@ -250,7 +324,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "mark-guilder-st-10-generation-pulse",
+    "cardtrader_id": 395921
   },
   {
     "card_code": "ST10-012_p1",
@@ -261,7 +337,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "mark-guilder-c-st-10-generation-pulse",
+    "cardtrader_id": 396558
   },
   {
     "card_code": "ST10-013",
@@ -272,7 +350,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "tactical-training-st-10-generation-pulse",
+    "cardtrader_id": 395922
   },
   {
     "card_code": "ST10-013_p1",
@@ -283,7 +363,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "tactical-training-c-st-10-generation-pulse",
+    "cardtrader_id": 396556
   },
   {
     "card_code": "ST10-014",
@@ -294,7 +376,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 4,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "unlocking-the-development-diagram-st-10-generation-pulse",
+    "cardtrader_id": 395923
   },
   {
     "card_code": "ST10-014_p1",
@@ -305,7 +389,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 4,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "unlocking-the-development-diagram-c-st-10-generation-pulse",
+    "cardtrader_id": 396557
   },
   {
     "card_code": "ST10-015",
@@ -316,7 +402,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "diffuse-beam-cannon-st-10-generation-pulse",
+    "cardtrader_id": 395924
   },
   {
     "card_code": "ST10-015_p1",
@@ -327,7 +415,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "diffuse-beam-cannon-c-st-10-generation-pulse",
+    "cardtrader_id": 396554
   },
   {
     "card_code": "ST10-016",
@@ -338,7 +428,9 @@
     "card_type": "Base",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "luna-mana-&-carry-base-c-st-10-generation-pulse",
+    "cardtrader_id": null
   },
   {
     "card_code": "ST10-016_p1",
@@ -349,30 +441,8 @@
     "card_type": "Base",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
-  },
-  {
-    "card_code": "R-041",
-    "card_name": "Resource",
-    "set_code": "ST10",
-    "set_name": "Generation Pulse [ST10]",
-    "card_type": "Resource",
-    "rarity": "C"
-  },
-  {
-    "card_code": "EXB-003",
-    "card_name": "EX Base",
-    "set_code": "ST10",
-    "set_name": "Generation Pulse [ST10]",
-    "card_type": "ExBase",
-    "rarity": "C"
-  },
-  {
-    "card_code": "EXR-003",
-    "card_name": "EX Resource",
-    "set_code": "ST10",
-    "set_name": "Generation Pulse [ST10]",
-    "card_type": "ExResource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "luna-mana-&-carry-base-c-st-10-generation-pulse",
+    "cardtrader_id": null
   }
 ]

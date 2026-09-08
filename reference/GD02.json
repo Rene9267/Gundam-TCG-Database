@@ -8,7 +8,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "psycho-gundam-gd-02-dual-impact",
+    "cardtrader_id": 354480
   },
   {
     "card_code": "GD02-001_p1",
@@ -19,7 +21,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "psycho-gundam-lr-gd-02-dual-impact",
+    "cardtrader_id": 354491
   },
   {
     "card_code": "GD02-002",
@@ -30,7 +34,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 7,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-epyon-gd-02-dual-impact",
+    "cardtrader_id": 353551
   },
   {
     "card_code": "GD02-002_p1",
@@ -41,7 +47,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 7,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-epyon-lr-gd-02-dual-impact",
+    "cardtrader_id": 354486
   },
   {
     "card_code": "GD02-003",
@@ -52,7 +60,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-mk-ii-titans-gd-02-dual-impact",
+    "cardtrader_id": 353561
   },
   {
     "card_code": "GD02-003_p1",
@@ -63,7 +73,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-mk-ii-titans-r-gd-02-dual-impact",
+    "cardtrader_id": 354525
   },
   {
     "card_code": "GD02-004",
@@ -74,7 +86,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "byarlant-gd-02-dual-impact",
+    "cardtrader_id": 354498
   },
   {
     "card_code": "GD02-005",
@@ -85,7 +99,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "tallgeese-gd-02-dual-impact",
+    "cardtrader_id": 354514
   },
   {
     "card_code": "GD02-005_p1",
@@ -96,7 +112,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "tallgeese-r-gd-02-dual-impact",
+    "cardtrader_id": 354532
   },
   {
     "card_code": "GD02-006",
@@ -107,7 +125,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "forbidden-gundam-gd-02-dual-impact",
+    "cardtrader_id": 354502
   },
   {
     "card_code": "GD02-007",
@@ -118,7 +138,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "psycho-gundam-ma-mode-gd-02-dual-impact",
+    "cardtrader_id": 353579
   },
   {
     "card_code": "GD02-008",
@@ -129,7 +151,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gabthley-gd-02-dual-impact",
+    "cardtrader_id": 354537
   },
   {
     "card_code": "GD02-009",
@@ -140,7 +164,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "calamity-gundam-gd-02-dual-impact",
+    "cardtrader_id": 353568
   },
   {
     "card_code": "GD02-010",
@@ -151,7 +177,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "raider-gundam-gd-02-dual-impact",
+    "cardtrader_id": 354547
   },
   {
     "card_code": "GD02-011",
@@ -162,7 +190,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "moebius-peacemaker-team-gd-02-dual-impact",
+    "cardtrader_id": 353578
   },
   {
     "card_code": "GD02-012",
@@ -173,7 +203,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "core-booster-gd-02-dual-impact",
+    "cardtrader_id": 353585
   },
   {
     "card_code": "GD02-013",
@@ -184,7 +216,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "hizack-gd-02-dual-impact",
+    "cardtrader_id": 354578
   },
   {
     "card_code": "GD02-014",
@@ -195,7 +229,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "galbaldy-beta-gd-02-dual-impact",
+    "cardtrader_id": 354571
   },
   {
     "card_code": "GD02-015",
@@ -206,7 +242,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "marasai-gd-02-dual-impact",
+    "cardtrader_id": 354582
   },
   {
     "card_code": "GD02-016",
@@ -217,7 +255,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "barzam-gd-02-dual-impact",
+    "cardtrader_id": 354559
   },
   {
     "card_code": "GD02-017",
@@ -228,7 +268,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "delta-plus-waverider-mode-gd-02-dual-impact",
+    "cardtrader_id": 341131
   },
   {
     "card_code": "GD02-018",
@@ -239,7 +281,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "taurus-gd-02-dual-impact",
+    "cardtrader_id": 353593
   },
   {
     "card_code": "GD02-019",
@@ -250,7 +294,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "raider-gundam-ma-mode-gd-02-dual-impact",
+    "cardtrader_id": 354587
   },
   {
     "card_code": "GD02-020",
@@ -261,7 +307,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "elmeth-gd-02-dual-impact",
+    "cardtrader_id": 353549
   },
   {
     "card_code": "GD02-020_p1",
@@ -272,7 +320,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "elmeth-lr-gd-02-dual-impact",
+    "cardtrader_id": 354482
   },
   {
     "card_code": "GD02-021",
@@ -283,7 +333,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-age-1-normal-gd-02-dual-impact",
+    "cardtrader_id": 353550
   },
   {
     "card_code": "GD02-021_p1",
@@ -294,7 +346,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-age-1-normal-lr-gd-02-dual-impact",
+    "cardtrader_id": 354484
   },
   {
     "card_code": "GD02-022",
@@ -305,7 +359,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "g-exes-gd-02-dual-impact",
+    "cardtrader_id": 353558
   },
   {
     "card_code": "GD02-023",
@@ -316,7 +372,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-age-1-spallow-gd-02-dual-impact",
+    "cardtrader_id": 354504
   },
   {
     "card_code": "GD02-023_p1",
@@ -327,7 +385,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-age-1-spallow-r-gd-02-dual-impact",
+    "cardtrader_id": 354523
   },
   {
     "card_code": "GD02-024",
@@ -338,7 +398,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "red-gundam-gd-02-dual-impact",
+    "cardtrader_id": 354510
   },
   {
     "card_code": "GD02-024_p1",
@@ -349,7 +411,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "red-gundam-r-gd-02-dual-impact",
+    "cardtrader_id": 354530
   },
   {
     "card_code": "GD02-025",
@@ -360,7 +424,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-heavyarms-gd-02-dual-impact",
+    "cardtrader_id": 353574
   },
   {
     "card_code": "GD02-026",
@@ -371,7 +437,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "genoace-custom-gd-02-dual-impact",
+    "cardtrader_id": 354538
   },
   {
     "card_code": "GD02-027",
@@ -382,7 +450,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 4,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-age-1-titus-gd-02-dual-impact",
+    "cardtrader_id": 353590
   },
   {
     "card_code": "GD02-028",
@@ -393,7 +463,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "abdul&#039;s-maganac-c-gd-02-dual-impact",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD02-029",
@@ -404,7 +476,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-age-1-normal-gd-02-dual-impact",
+    "cardtrader_id": 353550
   },
   {
     "card_code": "GD02-030",
@@ -415,7 +489,9 @@
     "card_type": "Unit",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "genoace-gd-02-dual-impact",
+    "cardtrader_id": 354572
   },
   {
     "card_code": "GD02-031",
@@ -426,7 +502,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-age-1-titus-gd-02-dual-impact",
+    "cardtrader_id": 353590
   },
   {
     "card_code": "GD02-032",
@@ -437,7 +515,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "white-gundam-gd-02-dual-impact",
+    "cardtrader_id": 354601
   },
   {
     "card_code": "GD02-033",
@@ -448,7 +528,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "kikeroga-ma-mode-gq-gd-02-dual-impact",
+    "cardtrader_id": 354580
   },
   {
     "card_code": "GD02-034",
@@ -459,7 +541,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gquuuuuux-gd-02-dual-impact",
+    "cardtrader_id": 354566
   },
   {
     "card_code": "GD02-035",
@@ -470,7 +554,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "police-zaku-armored-rru-type-gd-02-dual-impact",
+    "cardtrader_id": 353591
   },
   {
     "card_code": "GD02-036",
@@ -481,7 +567,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "qubeley-gd-02-dual-impact",
+    "cardtrader_id": 354481
   },
   {
     "card_code": "GD02-036_p1",
@@ -492,7 +580,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "qubeley-lr-gd-02-dual-impact",
+    "cardtrader_id": 354492
   },
   {
     "card_code": "GD02-037",
@@ -503,7 +593,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-virsago-gd-02-dual-impact",
+    "cardtrader_id": 354479
   },
   {
     "card_code": "GD02-037_p1",
@@ -514,7 +606,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-virsago-lr-gd-02-dual-impact",
+    "cardtrader_id": 354489
   },
   {
     "card_code": "GD02-038",
@@ -525,7 +619,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gquuuuuux-omega-psycommu-gd-02-dual-impact",
+    "cardtrader_id": 354475
   },
   {
     "card_code": "GD02-038_p1",
@@ -536,7 +632,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gquuuuuux-omega-psycommu-lr-gd-02-dual-impact",
+    "cardtrader_id": 354483
   },
   {
     "card_code": "GD02-038_p2",
@@ -547,7 +645,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gquuuuuux-omega-psycommu-lr-gd-02-dual-impact",
+    "cardtrader_id": 354483
   },
   {
     "card_code": "GD02-039",
@@ -558,7 +658,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "haman-karn&#039;s-gaza-c-gd-02-dual-impact",
+    "cardtrader_id": 354508
   },
   {
     "card_code": "GD02-040",
@@ -569,7 +671,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-ashtaron-gd-02-dual-impact",
+    "cardtrader_id": 354505
   },
   {
     "card_code": "GD02-040_p1",
@@ -580,7 +684,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-ashtaron-r-gd-02-dual-impact",
+    "cardtrader_id": 354524
   },
   {
     "card_code": "GD02-041",
@@ -591,7 +697,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "sugai&#039;s-gelgoog-gq-r-gd-02-dual-impact",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD02-041_p1",
@@ -602,7 +710,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "sugai&#039;s-gelgoog-gq-r-gd-02-dual-impact",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD02-042",
@@ -613,7 +723,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-ashtaron-ma-mode-gd-02-dual-impact",
+    "cardtrader_id": 353573
   },
   {
     "card_code": "GD02-043",
@@ -624,7 +736,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "daughtress-weapon-gd-02-dual-impact",
+    "cardtrader_id": 354535
   },
   {
     "card_code": "GD02-044",
@@ -635,7 +749,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "daughtress-command-gd-02-dual-impact",
+    "cardtrader_id": 354534
   },
   {
     "card_code": "GD02-045",
@@ -646,7 +762,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "ginn-long-range-reconnaissance-type-gd-02-dual-impact",
+    "cardtrader_id": 353571
   },
   {
     "card_code": "GD02-046",
@@ -657,7 +775,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "sayla&#039;s-light-type-guncannon-u-gd-02-dual-impact",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD02-047",
@@ -668,7 +788,9 @@
     "card_type": "Unit",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gaza-c-gd-02-dual-impact",
+    "cardtrader_id": 353587
   },
   {
     "card_code": "GD02-048",
@@ -679,7 +801,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "zaku-ⅲ-sleeves-gd-02-dual-impact",
+    "cardtrader_id": 341160
   },
   {
     "card_code": "GD02-049",
@@ -690,7 +814,9 @@
     "card_type": "Unit",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "daughtress-gd-02-dual-impact",
+    "cardtrader_id": 353586
   },
   {
     "card_code": "GD02-050",
@@ -701,7 +827,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "ga-zowmn-sleeves-gd-02-dual-impact",
+    "cardtrader_id": 354567
   },
   {
     "card_code": "GD02-051",
@@ -712,7 +840,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "01-gundam-gd-02-dual-impact",
+    "cardtrader_id": 1
   },
   {
     "card_code": "GD02-052",
@@ -723,7 +853,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "guncannon-gq-gd-02-dual-impact",
+    "cardtrader_id": 353588
   },
   {
     "card_code": "GD02-053",
@@ -734,7 +866,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-x-gd-02-dual-impact",
+    "cardtrader_id": 353552
   },
   {
     "card_code": "GD02-053_p1",
@@ -745,7 +879,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-x-lr-gd-02-dual-impact",
+    "cardtrader_id": 354490
   },
   {
     "card_code": "GD02-054",
@@ -756,7 +892,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-barbatos-1st-form-gd-02-dual-impact",
+    "cardtrader_id": 354476
   },
   {
     "card_code": "GD02-054_p1",
@@ -767,7 +905,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-barbatos-1st-form-lr-gd-02-dual-impact",
+    "cardtrader_id": 354485
   },
   {
     "card_code": "GD02-054_p2",
@@ -778,7 +918,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-barbatos-1st-form-lr-gd-02-dual-impact",
+    "cardtrader_id": 354485
   },
   {
     "card_code": "GD02-055",
@@ -789,7 +931,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-gusion-rebake-gd-02-dual-impact",
+    "cardtrader_id": 354477
   },
   {
     "card_code": "GD02-055_p1",
@@ -800,7 +944,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-gusion-rebake-lr-gd-02-dual-impact",
+    "cardtrader_id": 354487
   },
   {
     "card_code": "GD02-056",
@@ -811,7 +957,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-x-gd-02-dual-impact",
+    "cardtrader_id": 353552
   },
   {
     "card_code": "GD02-057",
@@ -822,7 +970,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "zedas-gd-02-dual-impact",
+    "cardtrader_id": 354515
   },
   {
     "card_code": "GD02-058",
@@ -833,7 +983,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "ryusei-go-graze-custom-ⅱ-gd-02-dual-impact",
+    "cardtrader_id": 354511
   },
   {
     "card_code": "GD02-059",
@@ -844,7 +996,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-airmaster-gd-02-dual-impact",
+    "cardtrader_id": 353572
   },
   {
     "card_code": "GD02-059_p1",
@@ -855,7 +1009,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-airmaster-u-gd-02-dual-impact",
+    "cardtrader_id": 354553
   },
   {
     "card_code": "GD02-060",
@@ -866,7 +1022,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-leopard-gd-02-dual-impact",
+    "cardtrader_id": 353575
   },
   {
     "card_code": "GD02-060_p1",
@@ -877,7 +1035,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-leopard-u-gd-02-dual-impact",
+    "cardtrader_id": 354554
   },
   {
     "card_code": "GD02-061",
@@ -888,7 +1048,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "hyakuri-gd-02-dual-impact",
+    "cardtrader_id": 354542
   },
   {
     "card_code": "GD02-062",
@@ -899,7 +1061,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "amida&#039;s-hyakuren-u-gd-02-dual-impact",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD02-063",
@@ -910,7 +1074,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-airmaster-fighter-mode-gd-02-dual-impact",
+    "cardtrader_id": 353572
   },
   {
     "card_code": "GD02-064",
@@ -921,7 +1087,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-leopard-gd-02-dual-impact",
+    "cardtrader_id": 353575
   },
   {
     "card_code": "GD02-065",
@@ -932,7 +1100,9 @@
     "card_type": "Unit",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "jenice-custom-gd-02-dual-impact",
+    "cardtrader_id": 354579
   },
   {
     "card_code": "GD02-066",
@@ -943,7 +1113,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gafran-gd-02-dual-impact",
+    "cardtrader_id": 354570
   },
   {
     "card_code": "GD02-067",
@@ -954,7 +1126,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "baqto-gd-02-dual-impact",
+    "cardtrader_id": 354558
   },
   {
     "card_code": "GD02-068",
@@ -965,7 +1139,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-barbatos-3rd-form-gd-02-dual-impact",
+    "cardtrader_id": 354575
   },
   {
     "card_code": "GD02-069",
@@ -976,7 +1152,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "zeta-gundam-gd-02-dual-impact",
+    "cardtrader_id": 353553
   },
   {
     "card_code": "GD02-069_p1",
@@ -987,7 +1165,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "zeta-gundam-lr-gd-02-dual-impact",
+    "cardtrader_id": 354493
   },
   {
     "card_code": "GD02-070",
@@ -998,7 +1178,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-kimaris-gd-02-dual-impact",
+    "cardtrader_id": 354478
   },
   {
     "card_code": "GD02-070_p1",
@@ -1009,7 +1191,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-kimaris-lr-gd-02-dual-impact",
+    "cardtrader_id": 354488
   },
   {
     "card_code": "GD02-071",
@@ -1020,7 +1204,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-mk-ii-aeug-gd-02-dual-impact",
+    "cardtrader_id": 354506
   },
   {
     "card_code": "GD02-072",
@@ -1031,7 +1217,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "hyaku-shiki-gd-02-dual-impact",
+    "cardtrader_id": 353563
   },
   {
     "card_code": "GD02-072_p1",
@@ -1042,7 +1230,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "hyaku-shiki-r-gd-02-dual-impact",
+    "cardtrader_id": 354527
   },
   {
     "card_code": "GD02-073",
@@ -1053,7 +1243,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "carta&#039;s-graze-ritter-ground-type-r-gd-02-dual-impact",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD02-073_p1",
@@ -1064,7 +1256,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "carta&#039;s-graze-ritter-ground-type-r-gd-02-dual-impact",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD02-074",
@@ -1075,7 +1269,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-aerial-rebuild-gd-02-dual-impact",
+    "cardtrader_id": 353560
   },
   {
     "card_code": "GD02-075",
@@ -1086,7 +1282,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "rick-dias-red-gd-02-dual-impact",
+    "cardtrader_id": 353581
   },
   {
     "card_code": "GD02-076",
@@ -1097,7 +1295,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "buster-gundam-gd-02-dual-impact",
+    "cardtrader_id": 353567
   },
   {
     "card_code": "GD02-077",
@@ -1108,7 +1308,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "ein&#039;s-schwalbe-graze-u-gd-02-dual-impact",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD02-078",
@@ -1119,7 +1321,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-pharact-gd-02-dual-impact",
+    "cardtrader_id": 354540
   },
   {
     "card_code": "GD02-079",
@@ -1130,7 +1334,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "rick-dias-gd-02-dual-impact",
+    "cardtrader_id": 353592
   },
   {
     "card_code": "GD02-080",
@@ -1141,7 +1347,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "nemo-gd-02-dual-impact",
+    "cardtrader_id": 354545
   },
   {
     "card_code": "GD02-081",
@@ -1152,7 +1360,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "methuss-gd-02-dual-impact",
+    "cardtrader_id": 354583
   },
   {
     "card_code": "GD02-082",
@@ -1163,7 +1373,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gaelio&#039;s-schwalbe-graze-c-gd-02-dual-impact",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD02-083",
@@ -1174,7 +1386,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "graze-ritter-ground-type-gd-02-dual-impact",
+    "cardtrader_id": 354499
   },
   {
     "card_code": "GD02-084",
@@ -1185,7 +1399,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "lauda&#039;s-dilanza-c-gd-02-dual-impact",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD02-085",
@@ -1196,7 +1412,9 @@
     "card_type": "Pilot",
     "level": 5,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "four-murasame-gd-02-dual-impact",
+    "cardtrader_id": 354503
   },
   {
     "card_code": "GD02-085_p1",
@@ -1207,7 +1425,9 @@
     "card_type": "Pilot",
     "level": 5,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "four-murasame-r-gd-02-dual-impact",
+    "cardtrader_id": 354521
   },
   {
     "card_code": "GD02-086",
@@ -1218,7 +1438,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "jerid-messa-gd-02-dual-impact",
+    "cardtrader_id": 354544
   },
   {
     "card_code": "GD02-087",
@@ -1229,7 +1451,9 @@
     "card_type": "Pilot",
     "level": 5,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "orga-crot-and-shani-gd-02-dual-impact",
+    "cardtrader_id": 354586
   },
   {
     "card_code": "GD02-088",
@@ -1240,7 +1464,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "flit-asuno-gd-02-dual-impact",
+    "cardtrader_id": 353557
   },
   {
     "card_code": "GD02-088_p1",
@@ -1251,7 +1477,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "flit-asuno-r-gd-02-dual-impact",
+    "cardtrader_id": 354520
   },
   {
     "card_code": "GD02-089",
@@ -1262,7 +1490,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "lalah-sune-gd-02-dual-impact",
+    "cardtrader_id": 353577
   },
   {
     "card_code": "GD02-090",
@@ -1273,7 +1503,9 @@
     "card_type": "Pilot",
     "level": 5,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "challia-bull-gq-gd-02-dual-impact",
+    "cardtrader_id": 353584
   },
   {
     "card_code": "GD02-091",
@@ -1284,7 +1516,9 @@
     "card_type": "Pilot",
     "level": 5,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "haman-karn-gd-02-dual-impact",
+    "cardtrader_id": 354508
   },
   {
     "card_code": "GD02-091_p1",
@@ -1295,7 +1529,9 @@
     "card_type": "Pilot",
     "level": 5,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "haman-karn-r-gd-02-dual-impact",
+    "cardtrader_id": 354526
   },
   {
     "card_code": "GD02-092",
@@ -1306,7 +1542,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "shagia-frost-gd-02-dual-impact",
+    "cardtrader_id": 354549
   },
   {
     "card_code": "GD02-093",
@@ -1317,7 +1555,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "olba-frost-gd-02-dual-impact",
+    "cardtrader_id": 354585
   },
   {
     "card_code": "GD02-094",
@@ -1328,7 +1568,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "garrod-ran-&-tiffa-adill-gd-02-dual-impact",
+    "cardtrader_id": 353559
   },
   {
     "card_code": "GD02-094_p1",
@@ -1339,7 +1581,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "garrod-ran-&-tiffa-adill-r-gd-02-dual-impact",
+    "cardtrader_id": 353559
   },
   {
     "card_code": "GD02-095",
@@ -1350,7 +1594,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "lafter-frankland-gd-02-dual-impact",
+    "cardtrader_id": 353576
   },
   {
     "card_code": "GD02-096",
@@ -1361,7 +1607,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "desil-galette-gd-02-dual-impact",
+    "cardtrader_id": 354563
   },
   {
     "card_code": "GD02-097",
@@ -1372,7 +1620,9 @@
     "card_type": "Pilot",
     "level": 5,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "kamille-bidan-gd-02-dual-impact",
+    "cardtrader_id": 353564
   },
   {
     "card_code": "GD02-097_p1",
@@ -1383,7 +1633,9 @@
     "card_type": "Pilot",
     "level": 5,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "kamille-bidan-r-gd-02-dual-impact",
+    "cardtrader_id": 354528
   },
   {
     "card_code": "GD02-098",
@@ -1394,7 +1646,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "quattro-bajeena-gd-02-dual-impact",
+    "cardtrader_id": 353580
   },
   {
     "card_code": "GD02-099",
@@ -1405,7 +1659,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gaelio-bauduin-gd-02-dual-impact",
+    "cardtrader_id": 354568
   },
   {
     "card_code": "GD02-100",
@@ -1416,7 +1672,9 @@
     "card_type": "Command",
     "level": 5,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "dramatic-turnabout-gd-02-dual-impact",
+    "cardtrader_id": 354501
   },
   {
     "card_code": "GD02-100_p1",
@@ -1427,7 +1685,9 @@
     "card_type": "Command",
     "level": 5,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "dramatic-turnabout-r-gd-02-dual-impact",
+    "cardtrader_id": 354519
   },
   {
     "card_code": "GD02-101",
@@ -1438,7 +1698,9 @@
     "card_type": "Command",
     "level": 1,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "beneath-the-mask-gd-02-dual-impact",
+    "cardtrader_id": 353566
   },
   {
     "card_code": "GD02-102",
@@ -1449,7 +1711,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "mouar’s-determination-c-gd-02-dual-impact",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD02-103",
@@ -1460,7 +1724,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "age-device-gd-02-dual-impact",
+    "cardtrader_id": 354496
   },
   {
     "card_code": "GD02-103_p1",
@@ -1471,7 +1737,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "age-device-r-gd-02-dual-impact",
+    "cardtrader_id": 354516
   },
   {
     "card_code": "GD02-104",
@@ -1482,7 +1750,9 @@
     "card_type": "Command",
     "level": 1,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "turning-point-of-history-gd-02-dual-impact",
+    "cardtrader_id": 353582
   },
   {
     "card_code": "GD02-105",
@@ -1493,7 +1763,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "valedictorian-gd-02-dual-impact",
+    "cardtrader_id": 354552
   },
   {
     "card_code": "GD02-106",
@@ -1504,7 +1776,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "white-wolf-gd-02-dual-impact",
+    "cardtrader_id": 353594
   },
   {
     "card_code": "GD02-107",
@@ -1515,7 +1789,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "all-range-attack-gd-02-dual-impact",
+    "cardtrader_id": 354497
   },
   {
     "card_code": "GD02-107_p1",
@@ -1526,7 +1802,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "all-range-attack-r-gd-02-dual-impact",
+    "cardtrader_id": 358434
   },
   {
     "card_code": "GD02-108",
@@ -1537,7 +1815,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "that-one-looks-a-lot-stronger?-gd-02-dual-impact",
+    "cardtrader_id": 354551
   },
   {
     "card_code": "GD02-109",
@@ -1548,7 +1828,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "undying-persistence-gd-02-dual-impact",
+    "cardtrader_id": 354600
   },
   {
     "card_code": "GD02-110",
@@ -1559,7 +1841,9 @@
     "card_type": "Command",
     "level": 6,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "awakened-power-gd-02-dual-impact",
+    "cardtrader_id": 353556
   },
   {
     "card_code": "GD02-110_p1",
@@ -1570,7 +1854,9 @@
     "card_type": "Command",
     "level": 6,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "awakened-power-r-gd-02-dual-impact",
+    "cardtrader_id": 356679
   },
   {
     "card_code": "GD02-111",
@@ -1581,7 +1867,9 @@
     "card_type": "Command",
     "level": 5,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "decisive-last-resort-gd-02-dual-impact",
+    "cardtrader_id": 354500
   },
   {
     "card_code": "GD02-112",
@@ -1592,7 +1880,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "momentary-respite-gd-02-dual-impact",
+    "cardtrader_id": 353565
   },
   {
     "card_code": "GD02-112_p1",
@@ -1603,7 +1893,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "momentary-respite-r-gd-02-dual-impact",
+    "cardtrader_id": 354529
   },
   {
     "card_code": "GD02-113",
@@ -1614,7 +1906,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "sisterly-care-gd-02-dual-impact",
+    "cardtrader_id": 354550
   },
   {
     "card_code": "GD02-114",
@@ -1625,7 +1919,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "it&#039;s-name-is-ryusei-go-u-gd-02-dual-impact",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD02-115",
@@ -1636,7 +1932,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "familial-devotion-gd-02-dual-impact",
+    "cardtrader_id": 354565
   },
   {
     "card_code": "GD02-116",
@@ -1647,7 +1945,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "comrades-come-first-gd-02-dual-impact",
+    "cardtrader_id": 354560
   },
   {
     "card_code": "GD02-117",
@@ -1658,7 +1958,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "a-new-sign-gd-02-dual-impact",
+    "cardtrader_id": 353554
   },
   {
     "card_code": "GD02-118",
@@ -1669,7 +1971,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "heart-set-on-revenge-gd-02-dual-impact",
+    "cardtrader_id": 354541
   },
   {
     "card_code": "GD02-119",
@@ -1680,7 +1984,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "persistent-and-fortudinous-gd-02-dual-impact",
+    "cardtrader_id": 354546
   },
   {
     "card_code": "GD02-120",
@@ -1691,7 +1997,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "aspiring-pilot-gd-02-dual-impact",
+    "cardtrader_id": 354557
   },
   {
     "card_code": "GD02-121",
@@ -1702,7 +2010,9 @@
     "card_type": "Base",
     "level": 4,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "dominion-gd-02-dual-impact",
+    "cardtrader_id": 353569
   },
   {
     "card_code": "GD02-122",
@@ -1713,7 +2023,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "alexandria-gd-02-dual-impact",
+    "cardtrader_id": 354556
   },
   {
     "card_code": "GD02-123",
@@ -1724,7 +2036,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "sodon-gd-02-dual-impact",
+    "cardtrader_id": 354512
   },
   {
     "card_code": "GD02-124",
@@ -1735,7 +2049,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "diva-gd-02-dual-impact",
+    "cardtrader_id": 354564
   },
   {
     "card_code": "GD02-125",
@@ -1746,7 +2062,9 @@
     "card_type": "Base",
     "level": 4,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gwadan-gd-02-dual-impact",
+    "cardtrader_id": 354507
   },
   {
     "card_code": "GD02-126",
@@ -1757,7 +2075,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "shuji&#039;s-hideout-c-gd-02-dual-impact",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD02-127",
@@ -1768,7 +2088,9 @@
     "card_type": "Base",
     "level": 2,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "freeden-gd-02-dual-impact",
+    "cardtrader_id": 353570
   },
   {
     "card_code": "GD02-128",
@@ -1779,7 +2101,9 @@
     "card_type": "Base",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "hammerhead-gd-02-dual-impact",
+    "cardtrader_id": 354577
   },
   {
     "card_code": "GD02-129",
@@ -1790,7 +2114,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "argama-gd-02-dual-impact",
+    "cardtrader_id": 353555
   },
   {
     "card_code": "GD02-129_p1",
@@ -1801,7 +2127,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "argama-r-gd-02-dual-impact",
+    "cardtrader_id": 354517
   },
   {
     "card_code": "GD02-130",
@@ -1812,15 +2140,9 @@
     "card_type": "Base",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
-  },
-  {
-    "card_code": "T-012",
-    "card_name": "Daughtress",
-    "set_code": "GD02",
-    "set_name": "Dual Impact [GD02]",
-    "card_type": "Token",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "sleipnir-gd-02-dual-impact",
+    "cardtrader_id": 354599
   },
   {
     "card_code": "R-010",
@@ -1828,7 +2150,9 @@
     "set_code": "GD02",
     "set_name": "Dual Impact [GD02]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-02-dual-impact",
+    "cardtrader_id": 354588
   },
   {
     "card_code": "R-010_p1",
@@ -1836,7 +2160,9 @@
     "set_code": "GD02",
     "set_name": "Dual Impact [GD02]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-02-dual-impact",
+    "cardtrader_id": 354603
   },
   {
     "card_code": "R-011",
@@ -1844,7 +2170,9 @@
     "set_code": "GD02",
     "set_name": "Dual Impact [GD02]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-02-dual-impact",
+    "cardtrader_id": 354588
   },
   {
     "card_code": "R-011_p1",
@@ -1852,7 +2180,9 @@
     "set_code": "GD02",
     "set_name": "Dual Impact [GD02]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-02-dual-impact",
+    "cardtrader_id": 354603
   },
   {
     "card_code": "R-012",
@@ -1860,7 +2190,9 @@
     "set_code": "GD02",
     "set_name": "Dual Impact [GD02]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-02-dual-impact",
+    "cardtrader_id": 354588
   },
   {
     "card_code": "R-012_p1",
@@ -1868,7 +2200,9 @@
     "set_code": "GD02",
     "set_name": "Dual Impact [GD02]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-02-dual-impact",
+    "cardtrader_id": 354603
   },
   {
     "card_code": "R-013",
@@ -1876,7 +2210,9 @@
     "set_code": "GD02",
     "set_name": "Dual Impact [GD02]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-02-dual-impact",
+    "cardtrader_id": 354588
   },
   {
     "card_code": "R-013_p1",
@@ -1884,7 +2220,9 @@
     "set_code": "GD02",
     "set_name": "Dual Impact [GD02]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-02-dual-impact",
+    "cardtrader_id": 354603
   },
   {
     "card_code": "R-014",
@@ -1892,7 +2230,9 @@
     "set_code": "GD02",
     "set_name": "Dual Impact [GD02]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-02-dual-impact",
+    "cardtrader_id": 354588
   },
   {
     "card_code": "R-014_p1",
@@ -1900,7 +2240,9 @@
     "set_code": "GD02",
     "set_name": "Dual Impact [GD02]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-02-dual-impact",
+    "cardtrader_id": 354603
   },
   {
     "card_code": "R-015",
@@ -1908,7 +2250,9 @@
     "set_code": "GD02",
     "set_name": "Dual Impact [GD02]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-02-dual-impact",
+    "cardtrader_id": 354588
   },
   {
     "card_code": "R-015_p1",
@@ -1916,7 +2260,9 @@
     "set_code": "GD02",
     "set_name": "Dual Impact [GD02]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-02-dual-impact",
+    "cardtrader_id": 354603
   },
   {
     "card_code": "R-015_p2",
@@ -1924,7 +2270,9 @@
     "set_code": "GD02",
     "set_name": "Dual Impact [GD02]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-02-dual-impact",
+    "cardtrader_id": 354603
   },
   {
     "card_code": "R-016",
@@ -1932,7 +2280,9 @@
     "set_code": "GD02",
     "set_name": "Dual Impact [GD02]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-02-dual-impact",
+    "cardtrader_id": 354588
   },
   {
     "card_code": "R-016_p1",
@@ -1940,7 +2290,9 @@
     "set_code": "GD02",
     "set_name": "Dual Impact [GD02]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-02-dual-impact",
+    "cardtrader_id": 354603
   },
   {
     "card_code": "R-017",
@@ -1948,7 +2300,9 @@
     "set_code": "GD02",
     "set_name": "Dual Impact [GD02]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-02-dual-impact",
+    "cardtrader_id": 354588
   },
   {
     "card_code": "R-017_p1",
@@ -1956,7 +2310,9 @@
     "set_code": "GD02",
     "set_name": "Dual Impact [GD02]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-02-dual-impact",
+    "cardtrader_id": 354603
   },
   {
     "card_code": "R-018",
@@ -1964,7 +2320,9 @@
     "set_code": "GD02",
     "set_name": "Dual Impact [GD02]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-02-dual-impact",
+    "cardtrader_id": 354588
   },
   {
     "card_code": "R-018_p1",
@@ -1972,7 +2330,9 @@
     "set_code": "GD02",
     "set_name": "Dual Impact [GD02]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-02-dual-impact",
+    "cardtrader_id": 354603
   },
   {
     "card_code": "R-019",
@@ -1980,7 +2340,9 @@
     "set_code": "GD02",
     "set_name": "Dual Impact [GD02]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-02-dual-impact",
+    "cardtrader_id": 354588
   },
   {
     "card_code": "R-019_p1",
@@ -1988,6 +2350,18 @@
     "set_code": "GD02",
     "set_name": "Dual Impact [GD02]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-02-dual-impact",
+    "cardtrader_id": 354603
+  },
+  {
+    "card_code": "T-012",
+    "card_name": "Daughtress",
+    "set_code": "GD02",
+    "set_name": "Dual Impact [GD02]",
+    "card_type": "Token",
+    "rarity": "C",
+    "cardtrader_slug": "daughtress-gd-02-dual-impact",
+    "cardtrader_id": 353586
   }
 ]

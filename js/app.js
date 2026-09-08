@@ -1,19 +1,28 @@
 async function refreshCards() {
   try {
     allCards = await loadCards();
-    renderDashboardStats();
-    renderLatestHorizontal();
-    renderExpansionsList();
-    populateSetFilter();
-    const detail = document.getElementById('collection-detail');
-    const overview = document.getElementById('collection-overview');
-    if (!detail.classList.contains('hidden')) {
-      renderCollection(filterCollection());
-    } else if (!overview.classList.contains('hidden')) {
-      renderCollectionOverview();
-    }
+    syncCardsUI();
   } catch (err) {
     console.error('Errore caricamento carte:', err);
+    showToast('Errore caricamento collezione.', true);
+  }
+}
+
+function syncCardsUI() {
+  renderDashboardStats();
+  renderLatestHorizontal();
+  renderExpansionsList();
+  populateSetFilter();
+  const detail = document.getElementById('collection-detail');
+  const overview = document.getElementById('collection-overview');
+  if (!detail.classList.contains('hidden')) {
+    if (currentColTab === 'stats') {
+      renderSetStatistics(document.getElementById('col-set-filter').value);
+    } else {
+      renderCollection(filterCollection());
+    }
+  } else if (!overview.classList.contains('hidden')) {
+    renderCollectionOverview();
   }
 }
 
@@ -26,7 +35,7 @@ function playTransition() {
       overlay.classList.add('opacity-0');
       overlay.classList.remove('opacity-100');
       resolve();
-    }, 1800);
+    }, 500);
   });
 }
 
@@ -38,15 +47,19 @@ async function enterApp() {
         setTimeout(resolve, 3000);
       });
     }
-    await loadReferenceCards();
+    const refPromise = loadReferenceCards();
+    const cardsPromise = currentUser ? loadCards() : Promise.resolve([]);
+    const [, cards] = await Promise.all([refPromise, cardsPromise]);
     if (!currentUser) return;
-    await refreshCards();
-    await playTransition();
+    allCards = cards;
+    const transitionPromise = playTransition();
     showSection('app-section');
     renderProfile();
     sanitizeUrl();
     history.replaceState({ view: 'dashboard', set: null }, '', location.pathname);
     _applyView('dashboard');
+    syncCardsUI();
+    await transitionPromise;
 
   } catch (err) {
     document.getElementById('splash-error').textContent = err.message;
@@ -58,6 +71,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   loadSession();
 
   initFilterDrawer();
+  initCollectionGridDelegation();
 
   document.getElementById('auth-submit').addEventListener('click', handleAuthSubmit);
   document.getElementById('auth-email').addEventListener('keydown', e => { if (e.key === 'Enter') handleAuthSubmit(); });
@@ -88,14 +102,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
   document.getElementById('eye-reset').addEventListener('click', () => toggleEye('reset-password', 'eye-reset'));
   document.getElementById('eye-reset-confirm').addEventListener('click', () => toggleEye('reset-confirm', 'eye-reset-confirm'));
-  document.getElementById('eye-recover').addEventListener('click', () => {
-    toggleEye('recover-new-password', 'eye-recover');
-    toggleEye('recover-confirm', 'eye-recover-confirm');
-  });
-  document.getElementById('eye-recover-confirm').addEventListener('click', () => {
-    toggleEye('recover-new-password', 'eye-recover');
-    toggleEye('recover-confirm', 'eye-recover-confirm');
-  });
 
   document.getElementById('auth-logout').addEventListener('click', async () => {
     await authSignOut();
@@ -123,7 +129,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (val) await saveNickname(val);
   });
 
-  // Richiedi login esplicito — non mostrare automaticamente l'email su caricamento pagina
   if (currentUser) {
     showAuthForm();
   }
@@ -135,10 +140,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('menu-collection').addEventListener('click', () => {
     switchTab('collection');
   });
-  // "Decks" non ancora implementata: voce nascosta in attesa di sviluppo
-  // document.getElementById('menu-decks').addEventListener('click', () => {
-  //   switchTab('dashboard');
-  // });
   document.getElementById('menu-profile').addEventListener('click', () => {
     switchTab('profile');
   });
@@ -181,12 +182,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('col-search').addEventListener('input', () => {
     clearTimeout(searchTimeout);
     searchTimeout = setTimeout(() => {
+      collectionPage = 0;
       if (currentColTab === 'stats') switchColTab('cards');
       else renderCollection(filterCollection());
     }, 250);
   });
 
-  document.getElementById('col-set-filter').addEventListener('change', () => {
+  document.getElementById('col-set-filter').addEventListener('change', async () => {
+    const setCode = getSetCodeFromFilter();
+    await ensureSetLoaded(setCode);
     updateSetHeader();
     resetCollectionFilters();
     if (currentColTab === 'stats') switchColTab('cards');
@@ -218,8 +222,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       const params = new URLSearchParams(hash.replace('#', ''));
       const recoveryToken = params.get('access_token');
       if (recoveryToken) {
-        // Nessuna password salvata in localStorage: basta il token di recovery.
-        // L'utente imposterà la nuova password nella pagina di reset.
         accessToken = recoveryToken;
         sanitizeUrl();
         document.getElementById('splash-section').classList.add('hidden');

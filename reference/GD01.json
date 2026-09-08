@@ -8,7 +8,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-gd-01-newtype-rising",
+    "cardtrader_id": 341124
   },
   {
     "card_code": "GD01-001_p1",
@@ -19,7 +21,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-lr-gd-01-newtype-rising",
+    "cardtrader_id": 344080
   },
   {
     "card_code": "GD01-001_p2",
@@ -30,7 +34,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-lr-gd-01-newtype-rising",
+    "cardtrader_id": 344080
   },
   {
     "card_code": "GD01-002",
@@ -41,7 +47,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 6,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "unicorn-gundam-destroy-mode-gd-01-newtype-rising",
+    "cardtrader_id": 341127
   },
   {
     "card_code": "GD01-002_p1",
@@ -52,7 +60,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 6,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "unicorn-gundam-destroy-mode-lr-gd-01-newtype-rising",
+    "cardtrader_id": 344077
   },
   {
     "card_code": "GD01-003",
@@ -63,7 +73,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "unicorn-gundam-02-banshee-destroy-mode-gd-01-newtype-rising",
+    "cardtrader_id": 341128
   },
   {
     "card_code": "GD01-003_p1",
@@ -74,7 +86,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "unicorn-gundam-02-banshee-destroy-mode-lr-gd-01-newtype-rising",
+    "cardtrader_id": 341128
   },
   {
     "card_code": "GD01-004",
@@ -85,7 +99,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "guncannon-gd-01-newtype-rising",
+    "cardtrader_id": 341129
   },
   {
     "card_code": "GD01-005",
@@ -96,7 +112,76 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "341130-unicorn-gundam-unicorn-mode-foil-gd-01-newtype-rising",
+    "cardtrader_id": 341130,
+    "printings": [
+      {
+        "printing_id": "GD01-005",
+        "kind": "base",
+        "badge": {
+          "type": "set",
+          "text": "GD01"
+        },
+        "ct_rarity": "Foil",
+        "collector_number": "GD01-005",
+        "expansion": "GD-01: Newtype Rising",
+        "cardtrader_id": 341130,
+        "cardtrader_slug": "341130-unicorn-gundam-unicorn-mode-foil-gd-01-newtype-rising"
+      },
+      {
+        "printing_id": "GD01-005_p1",
+        "kind": "alt",
+        "badge": {
+          "type": "rarity",
+          "text": "R+"
+        },
+        "ct_rarity": "R+",
+        "collector_number": "GD01-005a",
+        "expansion": "GD-01: Newtype Rising",
+        "cardtrader_id": 344066,
+        "cardtrader_slug": "344066-unicorn-gundam-unicorn-mode-r-gd-01-newtype-rising"
+      },
+      {
+        "printing_id": "GD01-005_beta",
+        "kind": "beta",
+        "badge": {
+          "type": "set",
+          "text": "BETA"
+        },
+        "ct_rarity": null,
+        "collector_number": "GD01-005",
+        "expansion": "Edition Beta",
+        "cardtrader_id": 341280,
+        "cardtrader_slug": "341280-unicorn-gundam-unicorn-mode-edition-beta"
+      },
+      {
+        "printing_id": "GD01-005_event",
+        "kind": "event",
+        "badge": {
+          "type": "event",
+          "text": null
+        },
+        "ct_rarity": "GD01 Release Event",
+        "collector_number": "GD01-005",
+        "expansion": "Release Event Promos",
+        "cardtrader_id": 347724,
+        "cardtrader_slug": "347724-unicorn-gundam-unicorn-mode-gd01-release-event-release-event-promos"
+      },
+      {
+        "printing_id": "GD01-005_reprint",
+        "kind": "reprint",
+        "badge": {
+          "type": "set",
+          "text": "RP"
+        },
+        "ct_rarity": "Non-Foil",
+        "collector_number": "GD01-005",
+        "expansion": "Reprints",
+        "cardtrader_id": 400390,
+        "cardtrader_slug": "400390-unicorn-gundam-unicorn-mode-non-foil-reprints"
+      }
+    ]
   },
   {
     "card_code": "GD01-005_p1",
@@ -107,7 +192,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "344066-unicorn-gundam-unicorn-mode-r-gd-01-newtype-rising",
+    "cardtrader_id": 344066
   },
   {
     "card_code": "GD01-006",
@@ -118,7 +205,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "delta-plus-gd-01-newtype-rising",
+    "cardtrader_id": 341131
   },
   {
     "card_code": "GD01-006_p1",
@@ -129,7 +218,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "delta-plus-r-gd-01-newtype-rising",
+    "cardtrader_id": 344057
   },
   {
     "card_code": "GD01-007",
@@ -140,7 +231,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "noin&#039;s-aries-r-gd-01-newtype-rising",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD01-008",
@@ -151,7 +244,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "guntank-gd-01-newtype-rising",
+    "cardtrader_id": 341133
   },
   {
     "card_code": "GD01-009",
@@ -162,7 +257,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "g-fighter-gd-01-newtype-rising",
+    "cardtrader_id": 341134
   },
   {
     "card_code": "GD01-010",
@@ -173,7 +270,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "unicorn-gundam-02-banshee-unicorn-mode-gd-01-newtype-rising",
+    "cardtrader_id": 341135
   },
   {
     "card_code": "GD01-011",
@@ -184,7 +283,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "loto-gd-01-newtype-rising",
+    "cardtrader_id": 341136
   },
   {
     "card_code": "GD01-012",
@@ -195,7 +296,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "zechs&#039;-leo-u-gd-01-newtype-rising",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD01-013",
@@ -206,7 +309,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-gd-01-newtype-rising",
+    "cardtrader_id": 341124
   },
   {
     "card_code": "GD01-014",
@@ -217,7 +322,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "g-sky-easy-gd-01-newtype-rising",
+    "cardtrader_id": 341139
   },
   {
     "card_code": "GD01-015",
@@ -228,7 +335,9 @@
     "card_type": "Unit",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "ball-gd-01-newtype-rising",
+    "cardtrader_id": 341140
   },
   {
     "card_code": "GD01-016",
@@ -239,7 +348,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "jegan-gd-01-newtype-rising",
+    "cardtrader_id": 341141
   },
   {
     "card_code": "GD01-017",
@@ -250,7 +361,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "stark-jegan-gd-01-newtype-rising",
+    "cardtrader_id": 341142
   },
   {
     "card_code": "GD01-018",
@@ -261,7 +374,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "rezel-gd-01-newtype-rising",
+    "cardtrader_id": 341143
   },
   {
     "card_code": "GD01-019",
@@ -272,7 +387,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "byarlant-custom-gd-01-newtype-rising",
+    "cardtrader_id": 341144
   },
   {
     "card_code": "GD01-020",
@@ -283,7 +400,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "anksha-gd-01-newtype-rising",
+    "cardtrader_id": 341145
   },
   {
     "card_code": "GD01-021",
@@ -294,7 +413,9 @@
     "card_type": "Unit",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "pisces-gd-01-newtype-rising",
+    "cardtrader_id": 341146
   },
   {
     "card_code": "GD01-022",
@@ -305,7 +426,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "cancer-gd-01-newtype-rising",
+    "cardtrader_id": 341147
   },
   {
     "card_code": "GD01-023",
@@ -316,7 +439,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "char&#039;s-gelgoog-lr-gd-01-newtype-rising",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD01-023_p1",
@@ -327,7 +452,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "char&#039;s-gelgoog-lr-gd-01-newtype-rising",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD01-024",
@@ -338,7 +465,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 8,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "wing-gundam-zero-gd-01-newtype-rising",
+    "cardtrader_id": 341149
   },
   {
     "card_code": "GD01-024_p1",
@@ -349,7 +478,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 8,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "wing-gundam-zero-lr-gd-01-newtype-rising",
+    "cardtrader_id": 344079
   },
   {
     "card_code": "GD01-025",
@@ -360,7 +491,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-deathscythe-gd-01-newtype-rising",
+    "cardtrader_id": 341150
   },
   {
     "card_code": "GD01-025_p1",
@@ -371,7 +504,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-deathscythe-lr-gd-01-newtype-rising",
+    "cardtrader_id": 344082
   },
   {
     "card_code": "GD01-026",
@@ -382,7 +517,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "char&#039;s-zaku-ⅱ-r-gd-01-newtype-rising",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD01-027",
@@ -393,7 +530,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "big-zam-gd-01-newtype-rising",
+    "cardtrader_id": 341152
   },
   {
     "card_code": "GD01-027_p1",
@@ -404,7 +543,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "big-zam-r-gd-01-newtype-rising",
+    "cardtrader_id": 344054
   },
   {
     "card_code": "GD01-028",
@@ -415,7 +556,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-sandrock-gd-01-newtype-rising",
+    "cardtrader_id": 341153
   },
   {
     "card_code": "GD01-029",
@@ -426,7 +569,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "shenlong-gundam-gd-01-newtype-rising",
+    "cardtrader_id": 341154
   },
   {
     "card_code": "GD01-029_p1",
@@ -437,7 +582,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "shenlong-gundam-r-gd-01-newtype-rising",
+    "cardtrader_id": 344067
   },
   {
     "card_code": "GD01-030",
@@ -448,7 +595,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "rick-dom-gd-01-newtype-rising",
+    "cardtrader_id": 341155
   },
   {
     "card_code": "GD01-031",
@@ -459,7 +608,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gelgoog-gd-01-newtype-rising",
+    "cardtrader_id": 341148
   },
   {
     "card_code": "GD01-032",
@@ -470,7 +621,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gyan-gd-01-newtype-rising",
+    "cardtrader_id": 341157
   },
   {
     "card_code": "GD01-033",
@@ -481,7 +634,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-deathscythe-gd-01-newtype-rising",
+    "cardtrader_id": 341150
   },
   {
     "card_code": "GD01-034",
@@ -492,7 +647,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-heavyarms-gd-01-newtype-rising",
+    "cardtrader_id": 341159
   },
   {
     "card_code": "GD01-035",
@@ -503,7 +660,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "zaku-ⅱ-gd-01-newtype-rising",
+    "cardtrader_id": 341160
   },
   {
     "card_code": "GD01-036",
@@ -514,7 +673,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gouf-gd-01-newtype-rising",
+    "cardtrader_id": 341161
   },
   {
     "card_code": "GD01-037",
@@ -525,7 +686,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gogg-gd-01-newtype-rising",
+    "cardtrader_id": 341162
   },
   {
     "card_code": "GD01-038",
@@ -536,7 +699,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "adzam-gd-01-newtype-rising",
+    "cardtrader_id": 341163
   },
   {
     "card_code": "GD01-039",
@@ -547,7 +712,9 @@
     "card_type": "Unit",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "dopp-gd-01-newtype-rising",
+    "cardtrader_id": 341164
   },
   {
     "card_code": "GD01-040",
@@ -558,7 +725,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "wing-gundam-gd-01-newtype-rising",
+    "cardtrader_id": 341165
   },
   {
     "card_code": "GD01-041",
@@ -569,7 +738,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "shenlong-gundam-gd-01-newtype-rising",
+    "cardtrader_id": 341154
   },
   {
     "card_code": "GD01-042",
@@ -580,7 +751,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "duo&#039;s-leo-c-gd-01-newtype-rising",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD01-043",
@@ -591,7 +764,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "rasid&#039;s-maganac-c-gd-01-newtype-rising",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD01-044",
@@ -602,7 +777,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "kshatriya-gd-01-newtype-rising",
+    "cardtrader_id": 341169
   },
   {
     "card_code": "GD01-044_p1",
@@ -613,7 +790,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "kshatriya-lr-gd-01-newtype-rising",
+    "cardtrader_id": 344073
   },
   {
     "card_code": "GD01-045",
@@ -624,7 +803,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "duel-gundam-assault-shroud-gd-01-newtype-rising",
+    "cardtrader_id": 341170
   },
   {
     "card_code": "GD01-045_p1",
@@ -635,7 +816,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "duel-gundam-assault-shroud-lr-gd-01-newtype-rising",
+    "cardtrader_id": 344085
   },
   {
     "card_code": "GD01-046",
@@ -646,7 +829,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "buster-gundam-gd-01-newtype-rising",
+    "cardtrader_id": 341171
   },
   {
     "card_code": "GD01-046_p1",
@@ -657,7 +842,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "buster-gundam-lr-gd-01-newtype-rising",
+    "cardtrader_id": 344087
   },
   {
     "card_code": "GD01-047",
@@ -668,7 +855,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 7,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "shamblo-gd-01-newtype-rising",
+    "cardtrader_id": 341172
   },
   {
     "card_code": "GD01-047_p1",
@@ -679,7 +868,9 @@
     "card_type": "Unit",
     "level": 8,
     "cost": 7,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "shamblo-r-gd-01-newtype-rising",
+    "cardtrader_id": 344068
   },
   {
     "card_code": "GD01-048",
@@ -690,7 +881,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "zaku-i-sniper-type-gd-01-newtype-rising",
+    "cardtrader_id": 341173
   },
   {
     "card_code": "GD01-049",
@@ -701,7 +894,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "blitz-gundam-gd-01-newtype-rising",
+    "cardtrader_id": 341174
   },
   {
     "card_code": "GD01-050",
@@ -712,7 +907,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "lagowe-gd-01-newtype-rising",
+    "cardtrader_id": 341175
   },
   {
     "card_code": "GD01-050_p1",
@@ -723,7 +920,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "lagowe-r-gd-01-newtype-rising",
+    "cardtrader_id": 344071
   },
   {
     "card_code": "GD01-051",
@@ -734,7 +933,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "kshatriya-gd-01-newtype-rising",
+    "cardtrader_id": 341169
   },
   {
     "card_code": "GD01-052",
@@ -745,7 +946,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "geara-zulu-guards-type-gd-01-newtype-rising",
+    "cardtrader_id": 341177
   },
   {
     "card_code": "GD01-053",
@@ -756,7 +959,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "geara-doga-heavy-armed-type-gd-01-newtype-rising",
+    "cardtrader_id": 341178
   },
   {
     "card_code": "GD01-054",
@@ -767,7 +972,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "duel-gundam-gd-01-newtype-rising",
+    "cardtrader_id": 341179
   },
   {
     "card_code": "GD01-055",
@@ -778,7 +985,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "bucue-gd-01-newtype-rising",
+    "cardtrader_id": 341180
   },
   {
     "card_code": "GD01-056",
@@ -789,7 +998,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "geara-doga-sleeves-gd-01-newtype-rising",
+    "cardtrader_id": 341181
   },
   {
     "card_code": "GD01-057",
@@ -800,7 +1011,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "dreissen-sleeves-gd-01-newtype-rising",
+    "cardtrader_id": 341182
   },
   {
     "card_code": "GD01-058",
@@ -811,7 +1024,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "galluss-k-gd-01-newtype-rising",
+    "cardtrader_id": 341183
   },
   {
     "card_code": "GD01-059",
@@ -822,7 +1037,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "zee-zulu-gd-01-newtype-rising",
+    "cardtrader_id": 341184
   },
   {
     "card_code": "GD01-060",
@@ -833,7 +1050,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "zaku-mariner-gd-01-newtype-rising",
+    "cardtrader_id": 341185
   },
   {
     "card_code": "GD01-061",
@@ -844,7 +1063,9 @@
     "card_type": "Unit",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "zuoot-gd-01-newtype-rising",
+    "cardtrader_id": 341186
   },
   {
     "card_code": "GD01-062",
@@ -855,7 +1076,9 @@
     "card_type": "Unit",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "goohn-gd-01-newtype-rising",
+    "cardtrader_id": 341187
   },
   {
     "card_code": "GD01-063",
@@ -866,7 +1089,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "zno-gd-01-newtype-rising",
+    "cardtrader_id": 341188
   },
   {
     "card_code": "GD01-064",
@@ -877,7 +1102,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "dinn-gd-01-newtype-rising",
+    "cardtrader_id": 341189
   },
   {
     "card_code": "GD01-065",
@@ -888,7 +1115,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "freedom-gundam-gd-01-newtype-rising",
+    "cardtrader_id": 341190
   },
   {
     "card_code": "GD01-065_p1",
@@ -899,7 +1128,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "freedom-gundam-lr-gd-01-newtype-rising",
+    "cardtrader_id": 344084
   },
   {
     "card_code": "GD01-066",
@@ -910,7 +1141,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "justice-gundam-gd-01-newtype-rising",
+    "cardtrader_id": 341191
   },
   {
     "card_code": "GD01-066_p1",
@@ -921,7 +1154,9 @@
     "card_type": "Unit",
     "level": 7,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "justice-gundam-lr-gd-01-newtype-rising",
+    "cardtrader_id": 344080
   },
   {
     "card_code": "GD01-067",
@@ -932,7 +1167,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-aerial-rebuild-gd-01-newtype-rising",
+    "cardtrader_id": 341192
   },
   {
     "card_code": "GD01-067_p1",
@@ -943,7 +1180,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-aerial-rebuild-lr-gd-01-newtype-rising",
+    "cardtrader_id": 344083
   },
   {
     "card_code": "GD01-067_p2",
@@ -954,7 +1193,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 5,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gundam-aerial-rebuild-lr-gd-01-newtype-rising",
+    "cardtrader_id": 344083
   },
   {
     "card_code": "GD01-068",
@@ -965,7 +1206,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "perfect-strike-gundam-gd-01-newtype-rising",
+    "cardtrader_id": 341193
   },
   {
     "card_code": "GD01-069",
@@ -976,7 +1219,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "strike-rouge-gd-01-newtype-rising",
+    "cardtrader_id": 341194
   },
   {
     "card_code": "GD01-069_p1",
@@ -987,7 +1232,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "strike-rouge-r-gd-01-newtype-rising",
+    "cardtrader_id": 344064
   },
   {
     "card_code": "GD01-070",
@@ -998,7 +1245,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-aerial-gd-01-newtype-rising",
+    "cardtrader_id": 341195
   },
   {
     "card_code": "GD01-071",
@@ -1009,7 +1258,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-pharact-gd-01-newtype-rising",
+    "cardtrader_id": 341196
   },
   {
     "card_code": "GD01-071_p1",
@@ -1020,7 +1271,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "gundam-pharact-r-gd-01-newtype-rising",
+    "cardtrader_id": 344072
   },
   {
     "card_code": "GD01-072",
@@ -1031,7 +1284,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "launcher-strike-gundam-gd-01-newtype-rising",
+    "cardtrader_id": 341197
   },
   {
     "card_code": "GD01-073",
@@ -1042,7 +1297,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "sword-strike-gundam-gd-01-newtype-rising",
+    "cardtrader_id": 341198
   },
   {
     "card_code": "GD01-074",
@@ -1053,7 +1310,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "chuchu&#039;s-demi-trainer-r-gd-01-newtype-rising",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD01-075",
@@ -1064,7 +1323,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "darilbalde-gd-01-newtype-rising",
+    "cardtrader_id": 341200
   },
   {
     "card_code": "GD01-076",
@@ -1075,7 +1336,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "michaelis-gd-01-newtype-rising",
+    "cardtrader_id": 341201
   },
   {
     "card_code": "GD01-077",
@@ -1086,7 +1349,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "strike-gundam-gd-01-newtype-rising",
+    "cardtrader_id": 341193
   },
   {
     "card_code": "GD01-078",
@@ -1097,7 +1362,9 @@
     "card_type": "Unit",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "mistral-gd-01-newtype-rising",
+    "cardtrader_id": 341203
   },
   {
     "card_code": "GD01-079",
@@ -1108,7 +1375,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "skygrasper-gd-01-newtype-rising",
+    "cardtrader_id": 341204
   },
   {
     "card_code": "GD01-080",
@@ -1119,7 +1388,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "cagalli&#039;s-skygrasper-c-gd-01-newtype-rising",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD01-081",
@@ -1130,7 +1401,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "m1-astray-gd-01-newtype-rising",
+    "cardtrader_id": 341206
   },
   {
     "card_code": "GD01-082",
@@ -1141,7 +1414,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gundam-aerial-mirasoul-flight-unit-gd-01-newtype-rising",
+    "cardtrader_id": 341207
   },
   {
     "card_code": "GD01-083",
@@ -1152,7 +1427,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "guel&#039;s-dilanza-c-gd-01-newtype-rising",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD01-084",
@@ -1163,7 +1440,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "beguir-pente-gd-01-newtype-rising",
+    "cardtrader_id": 341209
   },
   {
     "card_code": "GD01-085",
@@ -1174,7 +1453,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "demi-garrison-gd-01-newtype-rising",
+    "cardtrader_id": 341210
   },
   {
     "card_code": "GD01-086",
@@ -1185,7 +1466,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-lfrith-gd-01-newtype-rising",
+    "cardtrader_id": 341211
   },
   {
     "card_code": "GD01-087",
@@ -1196,7 +1479,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "sayla-mass-gd-01-newtype-rising",
+    "cardtrader_id": 341212
   },
   {
     "card_code": "GD01-087_p1",
@@ -1207,7 +1492,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "sayla-mass-r-gd-01-newtype-rising",
+    "cardtrader_id": 344069
   },
   {
     "card_code": "GD01-088",
@@ -1218,7 +1505,9 @@
     "card_type": "Pilot",
     "level": 5,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "banagher-links-gd-01-newtype-rising",
+    "cardtrader_id": 341213
   },
   {
     "card_code": "GD01-089",
@@ -1229,7 +1518,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "riddhe-marcenas-gd-01-newtype-rising",
+    "cardtrader_id": 341214
   },
   {
     "card_code": "GD01-090",
@@ -1240,7 +1531,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "duo-maxwell-gd-01-newtype-rising",
+    "cardtrader_id": 341215
   },
   {
     "card_code": "GD01-090_p1",
@@ -1251,7 +1544,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "duo-maxwell-r-gd-01-newtype-rising",
+    "cardtrader_id": 344058
   },
   {
     "card_code": "GD01-091",
@@ -1262,7 +1557,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "chang-wufei-gd-01-newtype-rising",
+    "cardtrader_id": 341216
   },
   {
     "card_code": "GD01-092",
@@ -1273,7 +1570,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "m&#039;quve-c-gd-01-newtype-rising",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD01-093",
@@ -1284,7 +1583,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "marida-cruz-gd-01-newtype-rising",
+    "cardtrader_id": 341218
   },
   {
     "card_code": "GD01-093_p1",
@@ -1295,7 +1596,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "marida-cruz-r-gd-01-newtype-rising",
+    "cardtrader_id": 344070
   },
   {
     "card_code": "GD01-094",
@@ -1306,7 +1609,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "yzak-jule-gd-01-newtype-rising",
+    "cardtrader_id": 341219
   },
   {
     "card_code": "GD01-095",
@@ -1317,7 +1622,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "dearka-elthman-gd-01-newtype-rising",
+    "cardtrader_id": 341220
   },
   {
     "card_code": "GD01-096",
@@ -1328,7 +1635,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "cagalli-yula-athha-gd-01-newtype-rising",
+    "cardtrader_id": 341221
   },
   {
     "card_code": "GD01-096_p1",
@@ -1339,7 +1648,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "cagalli-yula-athha-r-gd-01-newtype-rising",
+    "cardtrader_id": 344056
   },
   {
     "card_code": "GD01-097",
@@ -1350,7 +1661,9 @@
     "card_type": "Pilot",
     "level": 3,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "guel-jeturk-gd-01-newtype-rising",
+    "cardtrader_id": 341222
   },
   {
     "card_code": "GD01-098",
@@ -1361,7 +1674,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "elan-ceres-enhanced-person-number-4-gd-01-newtype-rising",
+    "cardtrader_id": 341223
   },
   {
     "card_code": "GD01-099",
@@ -1372,7 +1687,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "intercept-orders-gd-01-newtype-rising",
+    "cardtrader_id": 341224
   },
   {
     "card_code": "GD01-100",
@@ -1383,7 +1700,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "a-show-of-resolve-gd-01-newtype-rising",
+    "cardtrader_id": 341225
   },
   {
     "card_code": "GD01-100_p1",
@@ -1394,7 +1713,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "a-show-of-resolve-u-gd-01-newtype-rising",
+    "cardtrader_id": 344098
   },
   {
     "card_code": "GD01-101",
@@ -1405,7 +1726,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "deep-devotion-gd-01-newtype-rising",
+    "cardtrader_id": 341226
   },
   {
     "card_code": "GD01-102",
@@ -1416,7 +1739,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "securing-the-supply-line-gd-01-newtype-rising",
+    "cardtrader_id": 341227
   },
   {
     "card_code": "GD01-103",
@@ -1427,7 +1752,9 @@
     "card_type": "Command",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "the-stubborn-cog-gd-01-newtype-rising",
+    "cardtrader_id": 341228
   },
   {
     "card_code": "GD01-104",
@@ -1438,7 +1765,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "signs-of-a-revolution-gd-01-newtype-rising",
+    "cardtrader_id": 341229
   },
   {
     "card_code": "GD01-105",
@@ -1449,7 +1778,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "citizens-take-a-stand!-gd-01-newtype-rising",
+    "cardtrader_id": 341230
   },
   {
     "card_code": "GD01-105_p1",
@@ -1460,7 +1791,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "citizens-take-a-stand!-r-gd-01-newtype-rising",
+    "cardtrader_id": 341230
   },
   {
     "card_code": "GD01-106",
@@ -1471,7 +1804,9 @@
     "card_type": "Command",
     "level": 5,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "fortress-defense-gd-01-newtype-rising",
+    "cardtrader_id": 341231
   },
   {
     "card_code": "GD01-107",
@@ -1482,7 +1817,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 3,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "first-contact-gd-01-newtype-rising",
+    "cardtrader_id": 341232
   },
   {
     "card_code": "GD01-108",
@@ -1493,7 +1830,9 @@
     "card_type": "Command",
     "level": 6,
     "cost": 6,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "strategic-arms-gd-01-newtype-rising",
+    "cardtrader_id": 341233
   },
   {
     "card_code": "GD01-109",
@@ -1504,7 +1843,9 @@
     "card_type": "Command",
     "level": 5,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "the-path-to-victory-or-defeat-gd-01-newtype-rising",
+    "cardtrader_id": 341234
   },
   {
     "card_code": "GD01-110",
@@ -1515,7 +1856,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "rasid&#039;s-orders-c-gd-01-newtype-rising",
+    "cardtrader_id": null
   },
   {
     "card_code": "GD01-111",
@@ -1526,7 +1869,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "battle-of-aces-gd-01-newtype-rising",
+    "cardtrader_id": 341236
   },
   {
     "card_code": "GD01-111_p1",
@@ -1537,7 +1882,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "battle-of-aces-r-gd-01-newtype-rising",
+    "cardtrader_id": 344053
   },
   {
     "card_code": "GD01-112",
@@ -1548,7 +1895,9 @@
     "card_type": "Command",
     "level": 6,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "extreme-hatred-gd-01-newtype-rising",
+    "cardtrader_id": 341237
   },
   {
     "card_code": "GD01-113",
@@ -1559,7 +1908,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "the-desert-tiger-gd-01-newtype-rising",
+    "cardtrader_id": 341238
   },
   {
     "card_code": "GD01-114",
@@ -1570,7 +1921,9 @@
     "card_type": "Command",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "assault-on-torrington-base-gd-01-newtype-rising",
+    "cardtrader_id": 341239
   },
   {
     "card_code": "GD01-115",
@@ -1581,7 +1934,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "zeon-remnant-forces-gd-01-newtype-rising",
+    "cardtrader_id": 341240
   },
   {
     "card_code": "GD01-116",
@@ -1592,7 +1947,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "stealth-stratagem-gd-01-newtype-rising",
+    "cardtrader_id": 341241
   },
   {
     "card_code": "GD01-117",
@@ -1603,7 +1960,9 @@
     "card_type": "Command",
     "level": 5,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "the-witch-and-the-bride-gd-01-newtype-rising",
+    "cardtrader_id": 341242
   },
   {
     "card_code": "GD01-117_p1",
@@ -1614,7 +1973,9 @@
     "card_type": "Command",
     "level": 5,
     "cost": 2,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "the-witch-and-the-bride-r-gd-01-newtype-rising",
+    "cardtrader_id": 344065
   },
   {
     "card_code": "GD01-118",
@@ -1625,7 +1986,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "overflowing-affection-gd-01-newtype-rising",
+    "cardtrader_id": 341243
   },
   {
     "card_code": "GD01-118_p1",
@@ -1636,7 +1999,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "overflowing-affection-u-gd-01-newtype-rising",
+    "cardtrader_id": 344100
   },
   {
     "card_code": "GD01-119",
@@ -1647,7 +2012,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 1,
-    "rarity": "R"
+    "rarity": "R",
+    "cardtrader_slug": "iron-fisted-discipline-gd-01-newtype-rising",
+    "cardtrader_id": 341244
   },
   {
     "card_code": "GD01-120",
@@ -1658,7 +2025,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "naval-bombardment-gd-01-newtype-rising",
+    "cardtrader_id": 341245
   },
   {
     "card_code": "GD01-121",
@@ -1669,7 +2038,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "midair-modifications-gd-01-newtype-rising",
+    "cardtrader_id": 341246
   },
   {
     "card_code": "GD01-122",
@@ -1680,7 +2051,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "covert-operative-gd-01-newtype-rising",
+    "cardtrader_id": 341247
   },
   {
     "card_code": "GD01-123",
@@ -1691,7 +2064,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "nahel-argama-gd-01-newtype-rising",
+    "cardtrader_id": 341248
   },
   {
     "card_code": "GD01-124",
@@ -1702,7 +2077,9 @@
     "card_type": "Base",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "side-7-gd-01-newtype-rising",
+    "cardtrader_id": 341249
   },
   {
     "card_code": "GD01-125",
@@ -1713,7 +2090,9 @@
     "card_type": "Base",
     "level": 4,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "zanzibar-gd-01-newtype-rising",
+    "cardtrader_id": 341250
   },
   {
     "card_code": "GD01-126",
@@ -1724,7 +2103,9 @@
     "card_type": "Base",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "underground-desert-base-gd-01-newtype-rising",
+    "cardtrader_id": 341251
   },
   {
     "card_code": "GD01-127",
@@ -1735,7 +2116,9 @@
     "card_type": "Base",
     "level": 2,
     "cost": 1,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "gamow-gd-01-newtype-rising",
+    "cardtrader_id": 341252
   },
   {
     "card_code": "GD01-128",
@@ -1746,7 +2129,9 @@
     "card_type": "Base",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "mining-asteroid-palau-gd-01-newtype-rising",
+    "cardtrader_id": 341253
   },
   {
     "card_code": "GD01-129",
@@ -1757,7 +2142,9 @@
     "card_type": "Base",
     "level": 4,
     "cost": 2,
-    "rarity": "U"
+    "rarity": "U",
+    "cardtrader_slug": "kusanagi-gd-01-newtype-rising",
+    "cardtrader_id": 341254
   },
   {
     "card_code": "GD01-130",
@@ -1768,15 +2155,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
-  },
-  {
-    "card_code": "T-011",
-    "card_name": "Fatum-00",
-    "set_code": "GD01",
-    "set_name": "Newtype Rising [GD01]",
-    "card_type": "Token",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "13th-tactical-testing-sector-gd-01-newtype-rising",
+    "cardtrader_id": 341255
   },
   {
     "card_code": "R-002",
@@ -1784,7 +2165,9 @@
     "set_code": "GD01",
     "set_name": "Newtype Rising [GD01]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-01-newtype-rising",
+    "cardtrader_id": 341125
   },
   {
     "card_code": "R-002_p1",
@@ -1792,7 +2175,9 @@
     "set_code": "GD01",
     "set_name": "Newtype Rising [GD01]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-01-newtype-rising",
+    "cardtrader_id": 344090
   },
   {
     "card_code": "R-002_p2",
@@ -1800,7 +2185,9 @@
     "set_code": "GD01",
     "set_name": "Newtype Rising [GD01]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-01-newtype-rising",
+    "cardtrader_id": 344090
   },
   {
     "card_code": "R-003",
@@ -1808,7 +2195,9 @@
     "set_code": "GD01",
     "set_name": "Newtype Rising [GD01]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-01-newtype-rising",
+    "cardtrader_id": 341125
   },
   {
     "card_code": "R-003_p1",
@@ -1816,7 +2205,9 @@
     "set_code": "GD01",
     "set_name": "Newtype Rising [GD01]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-01-newtype-rising",
+    "cardtrader_id": 344090
   },
   {
     "card_code": "R-004",
@@ -1824,7 +2215,9 @@
     "set_code": "GD01",
     "set_name": "Newtype Rising [GD01]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-01-newtype-rising",
+    "cardtrader_id": 341125
   },
   {
     "card_code": "R-004_p1",
@@ -1832,7 +2225,9 @@
     "set_code": "GD01",
     "set_name": "Newtype Rising [GD01]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-01-newtype-rising",
+    "cardtrader_id": 344090
   },
   {
     "card_code": "R-005",
@@ -1840,7 +2235,9 @@
     "set_code": "GD01",
     "set_name": "Newtype Rising [GD01]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-01-newtype-rising",
+    "cardtrader_id": 341125
   },
   {
     "card_code": "R-005_p1",
@@ -1848,7 +2245,9 @@
     "set_code": "GD01",
     "set_name": "Newtype Rising [GD01]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-01-newtype-rising",
+    "cardtrader_id": 344090
   },
   {
     "card_code": "R-006",
@@ -1856,7 +2255,9 @@
     "set_code": "GD01",
     "set_name": "Newtype Rising [GD01]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-01-newtype-rising",
+    "cardtrader_id": 341125
   },
   {
     "card_code": "R-006_p1",
@@ -1864,7 +2265,9 @@
     "set_code": "GD01",
     "set_name": "Newtype Rising [GD01]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-01-newtype-rising",
+    "cardtrader_id": 344090
   },
   {
     "card_code": "R-007",
@@ -1872,7 +2275,9 @@
     "set_code": "GD01",
     "set_name": "Newtype Rising [GD01]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-01-newtype-rising",
+    "cardtrader_id": 341125
   },
   {
     "card_code": "R-007_p1",
@@ -1880,7 +2285,9 @@
     "set_code": "GD01",
     "set_name": "Newtype Rising [GD01]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-01-newtype-rising",
+    "cardtrader_id": 344090
   },
   {
     "card_code": "R-008",
@@ -1888,7 +2295,9 @@
     "set_code": "GD01",
     "set_name": "Newtype Rising [GD01]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-01-newtype-rising",
+    "cardtrader_id": 341125
   },
   {
     "card_code": "R-008_p1",
@@ -1896,7 +2305,9 @@
     "set_code": "GD01",
     "set_name": "Newtype Rising [GD01]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-01-newtype-rising",
+    "cardtrader_id": 344090
   },
   {
     "card_code": "R-009",
@@ -1904,7 +2315,9 @@
     "set_code": "GD01",
     "set_name": "Newtype Rising [GD01]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-gd-01-newtype-rising",
+    "cardtrader_id": 341125
   },
   {
     "card_code": "R-009_p1",
@@ -1912,6 +2325,18 @@
     "set_code": "GD01",
     "set_name": "Newtype Rising [GD01]",
     "card_type": "Resource",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "resource-c-gd-01-newtype-rising",
+    "cardtrader_id": 344090
+  },
+  {
+    "card_code": "T-011",
+    "card_name": "Fatum-00",
+    "set_code": "GD01",
+    "set_name": "Newtype Rising [GD01]",
+    "card_type": "Token",
+    "rarity": "C",
+    "cardtrader_slug": "fatum-00-gd-01-newtype-rising",
+    "cardtrader_id": 341275
   }
 ]

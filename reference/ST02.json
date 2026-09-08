@@ -8,7 +8,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "wing-gundam-st-02-wings-of-advance",
+    "cardtrader_id": 341391
   },
   {
     "card_code": "ST02-001_p1",
@@ -19,7 +21,9 @@
     "card_type": "Unit",
     "level": 6,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "wing-gundam-lr-st-02-wings-of-advance",
+    "cardtrader_id": 341392
   },
   {
     "card_code": "ST02-002",
@@ -30,7 +34,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "wing-gundam-bird-mode-st-02-wings-of-advance",
+    "cardtrader_id": 341393
   },
   {
     "card_code": "ST02-002_p1",
@@ -41,7 +47,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "wing-gundam-bird-mode-c-st-02-wings-of-advance",
+    "cardtrader_id": 341394
   },
   {
     "card_code": "ST02-003",
@@ -52,7 +60,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-heavyarms-st-02-wings-of-advance",
+    "cardtrader_id": 341395
   },
   {
     "card_code": "ST02-003_p1",
@@ -63,7 +73,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-heavyarms-c-st-02-wings-of-advance",
+    "cardtrader_id": 341396
   },
   {
     "card_code": "ST02-004",
@@ -74,7 +86,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-sandrock-st-02-wings-of-advance",
+    "cardtrader_id": 341397
   },
   {
     "card_code": "ST02-004_p1",
@@ -85,7 +99,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gundam-sandrock-c-st-02-wings-of-advance",
+    "cardtrader_id": 341398
   },
   {
     "card_code": "ST02-005",
@@ -96,7 +112,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "maganac-st-02-wings-of-advance",
+    "cardtrader_id": 341399
   },
   {
     "card_code": "ST02-005_p1",
@@ -107,7 +125,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "maganac-c-st-02-wings-of-advance",
+    "cardtrader_id": 341400
   },
   {
     "card_code": "ST02-006",
@@ -118,7 +138,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "tallgeese-st-02-wings-of-advance",
+    "cardtrader_id": 341401
   },
   {
     "card_code": "ST02-006_p1",
@@ -129,7 +151,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 4,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "tallgeese-lr-st-02-wings-of-advance",
+    "cardtrader_id": 341402
   },
   {
     "card_code": "ST02-007",
@@ -140,7 +164,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "leo-st-02-wings-of-advance",
+    "cardtrader_id": 341403
   },
   {
     "card_code": "ST02-007_p1",
@@ -151,7 +177,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "leo-c-st-02-wings-of-advance",
+    "cardtrader_id": 341404
   },
   {
     "card_code": "ST02-008",
@@ -162,7 +190,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "aries-st-02-wings-of-advance",
+    "cardtrader_id": 341405
   },
   {
     "card_code": "ST02-008_p1",
@@ -173,7 +203,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "aries-c-st-02-wings-of-advance",
+    "cardtrader_id": 341406
   },
   {
     "card_code": "ST02-009",
@@ -184,7 +216,9 @@
     "card_type": "Unit",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "tragos-st-02-wings-of-advance",
+    "cardtrader_id": 341407
   },
   {
     "card_code": "ST02-009_p1",
@@ -195,7 +229,9 @@
     "card_type": "Unit",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "tragos-c-st-02-wings-of-advance",
+    "cardtrader_id": 341408
   },
   {
     "card_code": "ST02-010",
@@ -206,7 +242,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "heero-yuy-st-02-wings-of-advance",
+    "cardtrader_id": 341409
   },
   {
     "card_code": "ST02-010_p1",
@@ -217,7 +255,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "heero-yuy-c-st-02-wings-of-advance",
+    "cardtrader_id": 341410
   },
   {
     "card_code": "ST02-011",
@@ -228,7 +268,9 @@
     "card_type": "Pilot",
     "level": 5,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "zechs-merquise-st-02-wings-of-advance",
+    "cardtrader_id": 341411
   },
   {
     "card_code": "ST02-011_p1",
@@ -239,7 +281,9 @@
     "card_type": "Pilot",
     "level": 5,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "zechs-merquise-c-st-02-wings-of-advance",
+    "cardtrader_id": 341412
   },
   {
     "card_code": "ST02-012",
@@ -250,7 +294,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "simultaneous-fire-st-02-wings-of-advance",
+    "cardtrader_id": 341413
   },
   {
     "card_code": "ST02-012_p1",
@@ -261,7 +307,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "simultaneous-fire-c-st-02-wings-of-advance",
+    "cardtrader_id": 341414
   },
   {
     "card_code": "ST02-013",
@@ -272,7 +320,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "peaceful-timbre-st-02-wings-of-advance",
+    "cardtrader_id": 341415
   },
   {
     "card_code": "ST02-013_p1",
@@ -283,7 +333,9 @@
     "card_type": "Command",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "peaceful-timbre-c-st-02-wings-of-advance",
+    "cardtrader_id": 341416
   },
   {
     "card_code": "ST02-014",
@@ -294,7 +346,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "siege-ploy-st-02-wings-of-advance",
+    "cardtrader_id": 341417
   },
   {
     "card_code": "ST02-014_p1",
@@ -305,7 +359,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "siege-ploy-c-st-02-wings-of-advance",
+    "cardtrader_id": 341418
   },
   {
     "card_code": "ST02-015",
@@ -316,7 +372,9 @@
     "card_type": "Base",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "saint-gabriel-institute-st-02-wings-of-advance",
+    "cardtrader_id": 341419
   },
   {
     "card_code": "ST02-015_p1",
@@ -327,7 +385,9 @@
     "card_type": "Base",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "saint-gabriel-institute-c-st-02-wings-of-advance",
+    "cardtrader_id": 341420
   },
   {
     "card_code": "ST02-016",
@@ -338,7 +398,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "corsica-base-st-02-wings-of-advance",
+    "cardtrader_id": 341421
   },
   {
     "card_code": "ST02-016_p1",
@@ -349,7 +411,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "corsica-base-c-st-02-wings-of-advance",
+    "cardtrader_id": 341422
   },
   {
     "card_code": "T-004",
@@ -357,7 +421,9 @@
     "set_code": "ST02",
     "set_name": "Wings of Advance [ST02]",
     "card_type": "Token",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "leo-st-02-wings-of-advance",
+    "cardtrader_id": 341403
   },
   {
     "card_code": "T-005",
@@ -365,6 +431,8 @@
     "set_code": "ST02",
     "set_name": "Wings of Advance [ST02]",
     "card_type": "Token",
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "tallgeese-st-02-wings-of-advance",
+    "cardtrader_id": 341401
   }
 ]

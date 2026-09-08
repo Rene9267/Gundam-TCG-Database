@@ -1,10 +1,26 @@
-function getAltVersions(cardCode) {
-  if (!cardCode) return [];
-  const baseId = cardCode.replace(/_[a-z0-9]+$/, '');
-  return refCards.filter(rc => {
-    const rcBaseId = rc.card_code.replace(/_[a-z0-9]+$/, '');
-    return rcBaseId === baseId;
-  });
+function renderVersionDotContent(v) {
+  const badge = v.badge || v.printing?.badge;
+  if (!badge) return { cls: 'version-dot-base', html: '?' };
+  if (badge.type === 'event') {
+    return {
+      cls: 'version-dot-event',
+      html: '<img src="img/badges/gcg-event.svg" alt="" class="version-dot-icon" width="26" height="26">',
+    };
+  }
+  if (badge.type === 'rarity') {
+    const len = (badge.text || '').length;
+    const sizeCls = len > 3 ? ' version-dot-text-sm' : '';
+    return {
+      cls: `version-dot-alt version-dot-rarity${sizeCls}`,
+      html: escapeHtml(badge.text),
+    };
+  }
+  const len = (badge.text || '').length;
+  const sizeCls = len > 4 ? ' version-dot-text-sm' : '';
+  return {
+    cls: `version-dot-base version-dot-set${sizeCls}`,
+    html: escapeHtml(badge.text),
+  };
 }
 
 function populateAltVersions(cardCode) {
@@ -16,40 +32,28 @@ function populateAltVersions(cardCode) {
     return;
   }
   container.classList.remove('hidden');
-  container.innerHTML = versions.map(v => {
+  container.innerHTML = versions.map((v) => {
     const isActive = v.card_code === cardCode;
-    const suffix = v.card_code.match(/_p(\d+)$/);
-    const isBase = !suffix && v.card_code.split('-')[0] === v.set_code;
-    let cls = 'version-dot-base';
-    let label = 'Base';
-
-    if (!isBase) {
-      cls = 'version-dot-alt';
-      if (suffix || v.rarity && v.rarity.includes('+')) {
-        label = 'Plus';
-      } else {
-        label = 'Alt Art';
-      }
-    }
-
-    return `<button class="version-dot${isActive ? ' version-dot-active' : ''} ${cls}" data-code="${escapeHtml(v.card_code)}" title="${escapeHtml(v.card_code)}">${label}</button>`;
+    const { cls, html } = renderVersionDotContent(v);
+    const title = v.printing?.expansion || v.card_code;
+    return `<button type="button" class="version-dot${isActive ? ' version-dot-active' : ''} ${cls}" data-code="${escapeHtml(v.card_code)}" title="${escapeHtml(title)}">${html}</button>`;
   }).join('');
 
-  container.querySelectorAll('.version-dot').forEach(btn => {
+  container.querySelectorAll('.version-dot').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
       if (currentSheetCard) {
         saveSheetQuantity(pendingSheetQty).catch(() => {});
       }
       const code = btn.dataset.code;
-      const rc = refCardByCode[code];
+      const rc = resolveRefCard(code);
       if (rc) loadSheetCard(rc);
     });
   });
 }
 
 function loadSheetCard(rc) {
-  const owned = allCards.find(c => c.card_code === rc.card_code && c.set_name === rc.set_name);
+  const owned = allCards.find((c) => c.card_code === rc.card_code);
   const card = {
     id: owned?.id || null,
     card_code: rc.card_code,
@@ -92,30 +96,96 @@ function resolveCardtraderCard(rc) {
 
 function updateCardtraderLink(cardCode) {
   const link = document.getElementById('sheet-cardtrader');
-  const rc = resolveCardtraderCard(refCardByCode[cardCode]);
+  const rc = resolveRefCard(cardCode) || resolveCardtraderCard(refCardByCode[cardCode]);
   if (rc && rc.cardtrader_slug) {
     link.href = `https://www.cardtrader.com/it/cards/${rc.cardtrader_slug}`;
+  } else if (rc && rc.cardtrader_id) {
+    link.href = `https://www.cardtrader.com/it/cards/${rc.cardtrader_id}`;
   } else {
     const query = cardCode.replace(/-/g, '+');
     link.href = `https://www.cardtrader.com/it/cards?search=${query}`;
   }
 }
 
-async function loadCardtraderPrices(rc) {
+let _ctPriceLoadId = 0;
+
+function setSheetPriceState({ showCtr, statusText, minText, avgText }) {
   const ctr = document.getElementById('sheet-pricing-ctr');
+  const statusEl = document.getElementById('sheet-price-status');
   const minEl = document.getElementById('sheet-price-min');
   const avgEl = document.getElementById('sheet-price-avg');
-  ctr.classList.add('hidden');
-  const card = resolveCardtraderCard(rc);
-  if (!card.cardtrader_id) return;
-  const prices = await fetchCardtraderPrices(card.cardtrader_id);
-  if (prices) {
-    const sym = prices.currency === 'EUR' ? '€' : prices.currency === 'USD' ? '$' : prices.currency + ' ';
-    const fmt = (v) => sym + v.toFixed(2);
-    minEl.textContent = `Min ${fmt(prices.minPrice)}`;
-    avgEl.textContent = `Media ${fmt(prices.avgPrice)}`;
-    ctr.classList.remove('hidden');
+  const sepEl = document.getElementById('sheet-price-sep');
+  if (!ctr || !statusEl || !minEl || !avgEl || !sepEl) return;
+
+  if (!showCtr) {
+    ctr.classList.add('hidden');
+    return;
   }
+
+  ctr.classList.remove('hidden');
+  const hasPrices = Boolean(minText && avgText);
+  statusEl.classList.toggle('hidden', hasPrices);
+  minEl.classList.toggle('hidden', !hasPrices);
+  sepEl.classList.toggle('hidden', !hasPrices);
+  avgEl.classList.toggle('hidden', !hasPrices);
+
+  if (hasPrices) {
+    minEl.textContent = minText;
+    avgEl.textContent = avgText;
+  } else {
+    statusEl.textContent = statusText || '';
+  }
+}
+
+async function loadCardtraderPrices(rc) {
+  const loadId = ++_ctPriceLoadId;
+  const card = resolveCardtraderCard(rc);
+  if (!card.cardtrader_id) {
+    setSheetPriceState({ showCtr: false });
+    return;
+  }
+
+  setSheetPriceState({ showCtr: true, statusText: 'Prezzi…' });
+  const result = await fetchCardtraderPrices(card.cardtrader_id);
+  if (loadId !== _ctPriceLoadId) return;
+
+  if (result.status === 'ok') {
+    const sym = result.currency === 'EUR' ? '€' : result.currency === 'USD' ? '$' : result.currency + ' ';
+    const fmt = (v) => sym + v.toFixed(2);
+    setSheetPriceState({
+      showCtr: true,
+      minText: `Min ${fmt(result.minPrice)}`,
+      avgText: `Media ${fmt(result.avgPrice)}`,
+    });
+    return;
+  }
+
+  const statusText = result.status === 'unauthenticated'
+    ? 'Accedi per i prezzi'
+    : result.status === 'no_listings'
+      ? 'Nessuna offerta'
+      : 'Prezzi non disponibili';
+  setSheetPriceState({ showCtr: true, statusText });
+}
+
+function applySavedCard(saved, optimisticId) {
+  if (!saved) return false;
+  const optIdx = optimisticId
+    ? allCards.findIndex(c => c.id === optimisticId)
+    : allCards.findIndex(c => String(c.id).startsWith('optimistic-'));
+  if (optIdx !== -1) {
+    allCards[optIdx] = saved;
+  } else {
+    const existIdx = allCards.findIndex(c => c.id === saved.id);
+    if (existIdx !== -1) {
+      allCards[existIdx] = saved;
+    } else {
+      allCards.unshift(saved);
+    }
+  }
+  editingCardId = saved.id;
+  if (currentSheetCard) currentSheetCard.id = saved.id;
+  return true;
 }
 
 async function saveSheetQuantity(newQty) {
@@ -124,23 +194,24 @@ async function saveSheetQuantity(newQty) {
   if (!currentSheetCard || !currentSheetCard.card_code) return;
 
   const snapshot = JSON.parse(JSON.stringify(allCards));
+  const optimisticId = editingCardId && String(editingCardId).startsWith('optimistic-') ? editingCardId : null;
   try {
     const now = new Date().toISOString();
 
-    if (editingCardId) {
+    if (editingCardId && !String(editingCardId).startsWith('optimistic-')) {
       const idx = allCards.findIndex(c => c.id === editingCardId);
       if (newQty <= 0) {
-        if (idx !== -1) {
-          allCards.splice(idx, 1);
-          renderExpansionsList();
-        }
+        if (idx !== -1) allCards.splice(idx, 1);
         await deleteCard(editingCardId);
+        editingCardId = null;
+        if (currentSheetCard) currentSheetCard.id = null;
       } else {
         if (idx !== -1) {
           allCards[idx] = { ...allCards[idx], quantity: newQty, updated_at: now };
-          renderExpansionsList();
         }
-        await updateCard(editingCardId, { quantity: newQty });
+        const saved = await updateCard(editingCardId, { quantity: newQty });
+        if (saved && idx !== -1) allCards[idx] = saved;
+        else if (!saved) await refreshCards();
       }
     } else if (newQty > 0) {
       const cardData = {
@@ -150,20 +221,24 @@ async function saveSheetQuantity(newQty) {
         rarity: currentSheetCard.rarity || null,
         quantity: newQty,
       };
-      allCards.push({
-        id: 'optimistic-' + Date.now(),
+      const tempId = 'optimistic-' + Date.now();
+      allCards.unshift({
+        id: tempId,
         ...cardData,
-        created_at: now,
         updated_at: now,
       });
-      renderExpansionsList();
-      await addCard(cardData);
+      const saved = await addCard(cardData);
+      if (!applySavedCard(saved, tempId)) await refreshCards();
+    } else if (optimisticId) {
+      const idx = allCards.findIndex(c => c.id === optimisticId);
+      if (idx !== -1) allCards.splice(idx, 1);
+      editingCardId = null;
     }
 
-    await refreshCards();
+    syncCardsUI();
   } catch (err) {
     allCards = JSON.parse(JSON.stringify(snapshot));
-    renderExpansionsList();
+    syncCardsUI();
     console.error('Salvataggio carta fallito, rollback dello stato:', err);
     if (typeof showToast === 'function') showToast('Salvataggio fallito. Modifica annullata.', true);
     if (errEl) {
@@ -175,8 +250,9 @@ async function saveSheetQuantity(newQty) {
 
 function openSheet(card) {
   if (!card) return;
-  const rc = refCardByCode[card.card_code];
-  if (rc) {
+  const setCode = card.set_code || (card.card_code && card.card_code.split('-')[0]);
+  const doOpen = () => {
+    const rc = refCardByCode[card.card_code] || card;
     initSheetSwipe();
     const sheet = document.getElementById('card-sheet');
     const panel = document.getElementById('sheet-panel');
@@ -186,7 +262,12 @@ function openSheet(card) {
     panel.getBoundingClientRect();
     panel.style.transform = 'translateY(0)';
     loadSheetCard(rc);
+  };
+  if (setCode && !loadedSets.has(setCode)) {
+    ensureSetLoaded(setCode).then(doOpen).catch(doOpen);
+    return;
   }
+  doOpen();
 }
 
 let sheetSwipeReady = false;
@@ -197,8 +278,6 @@ function initSheetSwipe() {
   if (!sheet || !panel) return;
   sheetSwipeReady = true;
 
-  // The sheet slides up from the bottom, so the primary swipe-to-dismiss axis
-  // is vertical (Y): dragging downward past the threshold closes it.
   const SWIPE_THRESHOLD = 60;
   let startX = 0;
   let startY = 0;
@@ -218,8 +297,6 @@ function initSheetSwipe() {
     const dx = e.touches[0].clientX - startX;
     const dy = e.touches[0].clientY - startY;
     if (Math.abs(dy) > Math.abs(dx) && dy > 0 && startScroll <= 0) {
-      // Intercept downward swipes only when scrolled to the top, so internal
-      // content scrolling still works; preventDefault stops viewport bounce.
       e.preventDefault();
       panel.style.transition = 'none';
       panel.style.transform = `translateY(${Math.max(0, dy)}px)`;

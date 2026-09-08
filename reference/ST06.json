@@ -8,7 +8,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "close-combat-c-st-06-clan-unity",
+    "cardtrader_id": 355513
   },
   {
     "card_code": "ST03-013_p4",
@@ -19,7 +21,9 @@
     "card_type": "Command",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "close-combat-c-st-06-clan-unity",
+    "cardtrader_id": 355513
   },
   {
     "card_code": "ST06-001",
@@ -30,7 +34,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gquuuuuux-omega-psycommu-st-06-clan-unity",
+    "cardtrader_id": 355516
   },
   {
     "card_code": "ST06-001_p1",
@@ -41,7 +47,9 @@
     "card_type": "Unit",
     "level": 5,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "gquuuuuux-omega-psycommu-lr-st-06-clan-unity",
+    "cardtrader_id": 355519
   },
   {
     "card_code": "ST06-002",
@@ -52,7 +60,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gquuuuuux-omega-psycommu-st-06-clan-unity",
+    "cardtrader_id": 355516
   },
   {
     "card_code": "ST06-002_p1",
@@ -63,7 +73,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gquuuuuux-omega-psycommu-c-st-06-clan-unity",
+    "cardtrader_id": 355517
   },
   {
     "card_code": "ST06-003",
@@ -74,7 +86,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gaia&#039;s-rick-dom-gq-c-st-06-clan-unity",
+    "cardtrader_id": null
   },
   {
     "card_code": "ST06-003_p1",
@@ -85,7 +99,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gaia&#039;s-rick-dom-gq-c-st-06-clan-unity",
+    "cardtrader_id": null
   },
   {
     "card_code": "ST06-004",
@@ -96,7 +112,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gelgoog-gq-st-06-clan-unity",
+    "cardtrader_id": 355522
   },
   {
     "card_code": "ST06-004_p1",
@@ -107,7 +125,9 @@
     "card_type": "Unit",
     "level": 2,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "gelgoog-gq-c-st-06-clan-unity",
+    "cardtrader_id": 355523
   },
   {
     "card_code": "ST06-005",
@@ -118,7 +138,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "red-gundam-st-06-clan-unity",
+    "cardtrader_id": 355528
   },
   {
     "card_code": "ST06-005_p1",
@@ -129,7 +151,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 3,
-    "rarity": "LR"
+    "rarity": "LR",
+    "cardtrader_slug": "red-gundam-lr-st-06-clan-unity",
+    "cardtrader_id": 355529
   },
   {
     "card_code": "ST06-006",
@@ -140,7 +164,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "red-gundam-st-06-clan-unity",
+    "cardtrader_id": 355528
   },
   {
     "card_code": "ST06-006_p1",
@@ -151,7 +177,9 @@
     "card_type": "Unit",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "red-gundam-c-st-06-clan-unity",
+    "cardtrader_id": 355531
   },
   {
     "card_code": "ST06-007",
@@ -162,7 +190,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "ortega&#039;s-rick-dom-gq-c-st-06-clan-unity",
+    "cardtrader_id": null
   },
   {
     "card_code": "ST06-007_p1",
@@ -173,7 +203,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "ortega&#039;s-rick-dom-gq-c-st-06-clan-unity",
+    "cardtrader_id": null
   },
   {
     "card_code": "ST06-008",
@@ -184,7 +216,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "sugai&#039;s-gelgoog-gq-c-st-06-clan-unity",
+    "cardtrader_id": null
   },
   {
     "card_code": "ST06-008_p1",
@@ -195,7 +229,9 @@
     "card_type": "Unit",
     "level": 3,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "sugai&#039;s-gelgoog-gq-c-st-06-clan-unity",
+    "cardtrader_id": null
   },
   {
     "card_code": "ST06-009",
@@ -206,7 +242,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "amate-yuzuriha-machu-st-06-clan-unity",
+    "cardtrader_id": 355508
   },
   {
     "card_code": "ST06-009_p1",
@@ -217,7 +255,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "amate-yuzuriha-machu-c-st-06-clan-unity",
+    "cardtrader_id": 355509
   },
   {
     "card_code": "ST06-010",
@@ -228,7 +268,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "shuji-itō-st-06-clan-unity",
+    "cardtrader_id": 355536
   },
   {
     "card_code": "ST06-010_p1",
@@ -239,7 +281,9 @@
     "card_type": "Pilot",
     "level": 4,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "shuji-itō-c-st-06-clan-unity",
+    "cardtrader_id": 355537
   },
   {
     "card_code": "ST06-011",
@@ -250,7 +294,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "ruthless-tactics-st-06-clan-unity",
+    "cardtrader_id": 355532
   },
   {
     "card_code": "ST06-011_p1",
@@ -261,7 +307,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "ruthless-tactics-c-st-06-clan-unity",
+    "cardtrader_id": 355533
   },
   {
     "card_code": "ST06-012",
@@ -272,7 +320,9 @@
     "card_type": "Command",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "schoolgirl-and-smuggler-st-06-clan-unity",
+    "cardtrader_id": 355534
   },
   {
     "card_code": "ST06-012_p1",
@@ -283,7 +333,9 @@
     "card_type": "Command",
     "level": 1,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "schoolgirl-and-smuggler-c-st-06-clan-unity",
+    "cardtrader_id": 355535
   },
   {
     "card_code": "ST06-013",
@@ -294,7 +346,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "fierce-unity-st-06-clan-unity",
+    "cardtrader_id": 355514
   },
   {
     "card_code": "ST06-013_p1",
@@ -305,7 +359,9 @@
     "card_type": "Command",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "fierce-unity-c-st-06-clan-unity",
+    "cardtrader_id": 355515
   },
   {
     "card_code": "ST06-014",
@@ -316,7 +372,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "clan-battle-st-06-clan-unity",
+    "cardtrader_id": 355510
   },
   {
     "card_code": "ST06-014_p1",
@@ -327,7 +385,9 @@
     "card_type": "Base",
     "level": 3,
     "cost": 1,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "clan-battle-c-st-06-clan-unity",
+    "cardtrader_id": 355511
   },
   {
     "card_code": "ST06-015",
@@ -338,7 +398,9 @@
     "card_type": "Base",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "kaneban-co.-ltd.-c-st-06-clan-unity",
+    "cardtrader_id": null
   },
   {
     "card_code": "ST06-015_p1",
@@ -349,6 +411,8 @@
     "card_type": "Base",
     "level": 4,
     "cost": 2,
-    "rarity": "C"
+    "rarity": "C",
+    "cardtrader_slug": "kaneban-co.-ltd.-c-st-06-clan-unity",
+    "cardtrader_id": null
   }
 ]
