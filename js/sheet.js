@@ -1,10 +1,11 @@
+const GCG_EVENT_DOT_HTML = '<img src="img/badges/gcg-logo.webp" alt="" class="version-dot-icon" width="26" height="26">';
+
 function renderVersionDotContent(v) {
-  const badge = v.badge || v.printing?.badge;
-  if (!badge) return { cls: 'version-dot-base', html: '?' };
+  const badge = v.badge || v.printing?.badge || inferBadgeFromCode(v.card_code, v.rarity);
   if (badge.type === 'event') {
     return {
       cls: 'version-dot-event',
-      html: '<img src="img/badges/gcg-event.svg" alt="" class="version-dot-icon" width="26" height="26">',
+      html: GCG_EVENT_DOT_HTML,
     };
   }
   if (badge.type === 'rarity') {

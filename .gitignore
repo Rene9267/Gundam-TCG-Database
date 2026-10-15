@@ -37,6 +37,7 @@ Desktop.ini
 
 # Supabase local
 supabase/.temp
+scripts/dev/.mock-data.json
 
 # Logs
 *.log

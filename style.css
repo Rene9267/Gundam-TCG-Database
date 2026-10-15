@@ -166,6 +166,9 @@ body.sheet-open {
   box-shadow: 0 2px 10px rgba(234, 179, 8, 0.25);
   cursor: pointer;
 }
+.card-img-wrapper {
+  position: relative;
+}
 .card-img-wrapper.grayscale img { filter: grayscale(1); }
 .missing-overlay {
   position: absolute;
@@ -175,6 +178,7 @@ body.sheet-open {
   justify-content: center;
   background: rgba(0, 0, 0, 0.5);
   transition: background 0.15s ease;
+  z-index: 5;
 }
 .missing-overlay span {
   width: 48px;
@@ -187,11 +191,16 @@ body.sheet-open {
   justify-content: center;
   font-size: 28px;
   font-weight: 700;
+  line-height: 1;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   transition: transform 0.15s ease, background 0.15s ease;
+  transform: translateY(-1px);
 }
 .card-missing:hover .missing-overlay { background: rgba(255, 255, 255, 0.15); }
-.card-missing:hover .missing-overlay span { transform: scale(1.1); background: #eab308; }
+.card-missing:hover .missing-overlay span {
+  transform: translateY(-1px) scale(1.1);
+  background: #eab308;
+}
 
 /* ---- Filter drawer ---- */
 #filter-drawer-panel {
@@ -429,6 +438,8 @@ body.sheet-open {
   width: 26px;
   height: 26px;
   object-fit: contain;
+  object-position: center;
+  padding: 2px;
   pointer-events: none;
 }
 .version-dot-active {

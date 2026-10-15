@@ -26,6 +26,26 @@ function cardBaseId(cardCode) {
   return cardCode.replace(/_(?:p\d+|beta|reprint|event|stp|winner|championship|other\d*)$/i, '');
 }
 
+function inferBadgeFromCode(cardCode, rarity) {
+  const code = cardCode || '';
+  if (/_event$|_stp$|_winner$|_championship$/i.test(code)) {
+    return { type: 'event', text: null };
+  }
+  if (/_reprint$/i.test(code)) {
+    return { type: 'set', text: '2' };
+  }
+  if (/_beta$/i.test(code)) {
+    return { type: 'set', text: 'BETA' };
+  }
+  if (/_p\d+$/i.test(code)) {
+    const r = (rarity || 'R').trim();
+    const text = r.includes('+') ? r.replace(/\s+/g, '') : `${r}+`;
+    return { type: 'rarity', text };
+  }
+  const setCode = code.split('-')[0];
+  return { type: 'set', text: setCode || 'SET' };
+}
+
 function buildPrintingRef(baseRc, printing) {
   const official = refCardByCode[printing.printing_id];
   if (official) {

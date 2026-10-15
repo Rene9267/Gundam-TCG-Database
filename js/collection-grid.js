@@ -125,9 +125,9 @@ function renderCollection(cards) {
       ${!isMissing ? '<div class="absolute top-0 left-0 right-0 h-[3px] bg-[#fb2f38] z-10 rounded-t-lg"></div>' : ''}
       <div class="card-img-wrapper ${isMissing ? 'grayscale' : ''}">
         ${imageOrFallback(getCardImageUrl(c.card_code), c.card_name)}
+        ${isMissing ? '<div class="missing-overlay"><span>+</span></div>' : ''}
       </div>
       ${isPlayset ? '<span class="playset-diamond"></span>' : ''}
-      ${isMissing ? '<div class="missing-overlay"><span>+</span></div>' : ''}
       <div class="card-label">
         <div class="card-label-row">
           <div class="min-w-0 flex-1">

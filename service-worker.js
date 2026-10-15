@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gundamdb-v8';
+const CACHE_NAME = 'gundamdb-v9';
 const IMG_CACHE = 'gundam-images-v2';
 const R2_HOST = 'pub-f106953afafa4b379122130a0f038335.r2.dev';
 const IMG_CACHE_MAX = 200;
@@ -30,7 +30,7 @@ const PRECACHE_URLS = [
 ];
 
 function isApiRequest(url) {
-  return url.hostname.includes('supabase.co');
+  return url.hostname.includes('supabase.co') || url.port === '54321';
 }
 
 function isStaticAsset(url) {

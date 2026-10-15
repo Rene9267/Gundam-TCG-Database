@@ -30,6 +30,20 @@ function parseSetArg() {
   return null;
 }
 
+function parseCodeArg() {
+  const eq = process.argv.find((a) => a.startsWith('--code='));
+  if (eq) return eq.split('=')[1].split(',').map((s) => s.trim()).filter(Boolean);
+  const idx = process.argv.indexOf('--code');
+  if (idx !== -1 && process.argv[idx + 1]) {
+    return process.argv[idx + 1].split(',').map((s) => s.trim()).filter(Boolean);
+  }
+  return null;
+}
+
+function parseForceArg() {
+  return process.argv.includes('--force');
+}
+
 loadEnvFile();
 
 // === Config ===
@@ -143,12 +157,25 @@ async function imageExists(cardCode) {
   }
 }
 
+function detectImageContentType(buffer) {
+  if (!buffer || buffer.length < 4) return 'application/octet-stream';
+  if (buffer[0] === 0xFF && buffer[1] === 0xD8 && buffer[2] === 0xFF) return 'image/jpeg';
+  if (buffer[0] === 0x89 && buffer[1] === 0x50 && buffer[2] === 0x4E && buffer[3] === 0x47) return 'image/png';
+  if (buffer.length >= 12
+    && buffer[0] === 0x52 && buffer[1] === 0x49 && buffer[2] === 0x46 && buffer[3] === 0x46
+    && buffer[8] === 0x57 && buffer[9] === 0x45 && buffer[10] === 0x42 && buffer[11] === 0x50) {
+    return 'image/webp';
+  }
+  return 'image/webp';
+}
+
 async function uploadImage(cardCode, buffer) {
+  const contentType = detectImageContentType(buffer);
   await S3.send(new PutObjectCommand({
     Bucket: BUCKET,
     Key: `${cardCode}.webp`,
     Body: buffer,
-    ContentType: 'image/webp',
+    ContentType: contentType,
     CacheControl: 'public, max-age=31536000, immutable',
   }));
 }
@@ -157,10 +184,16 @@ async function uploadImage(cardCode, buffer) {
 async function main() {
   const refCards = JSON.parse(fs.readFileSync(REF_CARDS_PATH, 'utf-8'));
   const setFilter = parseSetArg();
-  const targets = collectUploadTargets(refCards, setFilter);
+  const codeFilter = parseCodeArg();
+  const force = parseForceArg();
+  let targets = collectUploadTargets(refCards, setFilter);
+  if (codeFilter?.length) {
+    const allowed = new Set(codeFilter);
+    targets = targets.filter((t) => allowed.has(t.code));
+  }
 
   console.log(`Total cards in JSON: ${refCards.length}`);
-  console.log(`Upload targets: ${targets.length}`);
+  console.log(`Upload targets: ${targets.length}${force ? ' (force)' : ''}`);
 
   let uploaded = 0;
   let skipped = 0;
@@ -170,7 +203,7 @@ async function main() {
     const target = targets[i];
     const code = target.code;
 
-    const exists = await imageExists(code);
+    const exists = !force && await imageExists(code);
     if (exists) {
       skipped++;
       continue;

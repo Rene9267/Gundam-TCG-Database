@@ -69,7 +69,7 @@ test('buildPrintingsFromVersions maps GD01-005 to five printings with badges', (
   assert.equal(byId.get('GD01-005_p1').badge.text, 'R+');
   assert.equal(byId.get('GD01-005_beta').badge.text, 'BETA');
   assert.equal(byId.get('GD01-005_event').badge.type, 'event');
-  assert.equal(byId.get('GD01-005_reprint').badge.text, 'RP');
+  assert.equal(byId.get('GD01-005_reprint').badge.text, '2');
 });
 
 test('extractCtRarityFromHtml reads rarity badge from title', () => {
@@ -79,7 +79,7 @@ test('extractCtRarityFromHtml reads rarity badge from title', () => {
 
 test('plusBadgeFromRarity and computeBadge', () => {
   assert.equal(plusBadgeFromRarity('LR'), 'LR+');
-  assert.deepEqual(computeBadge({ kind: 'reprint', setCode: 'GD01' }), { type: 'set', text: 'RP' });
+  assert.deepEqual(computeBadge({ kind: 'reprint', setCode: 'GD01' }), { type: 'set', text: '2' });
   assert.deepEqual(computeBadge({ kind: 'event' }), { type: 'event', text: null });
 });
 

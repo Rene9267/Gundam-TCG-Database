@@ -73,7 +73,7 @@ export function plusBadgeFromRarity(rarity) {
 
 export function computeBadge({ kind, ctRarity, setCode, expansion }) {
   if (kind === 'beta') return { type: 'set', text: 'BETA' };
-  if (kind === 'reprint') return { type: 'set', text: 'RP' };
+  if (kind === 'reprint') return { type: 'set', text: '2' };
   if (kind === 'event') return { type: 'event', text: null };
   if (ctRarity && /\+\+/.test(ctRarity)) return { type: 'rarity', text: ctRarity.replace(/\s+/g, '') };
   if (ctRarity && /\+/.test(ctRarity)) return { type: 'rarity', text: ctRarity.replace(/\s+/g, '') };
